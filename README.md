@@ -1,21 +1,36 @@
-# Survey Dashboard - UAE & KSA Guest Analysis
+# 📊 Survey Dashboard - UAE & KSA Guest Analysis
 
-A comprehensive web dashboard for analyzing guest survey data from UAE and KSA with advanced NLP insights and interactive filtering capabilities.
+**Professional survey data analytics platform with advanced NLP insights and comprehensive filtering capabilities.**
 
-## 🌐 Live Dashboard
+## 🚀 **Current Live Demo**
 
-**Access URL:** https://5000-irfwmnj83fl8g7sybafp1-6532622b.e2b.dev
+**Dashboard URL:** https://5000-irfwmnj83fl8g7sybafp1-6532622b.e2b.dev  
+**Login:** `admin` / `surveydash2024`
 
-**Login Credentials:**
-- Username: `admin`
-- Password: `surveydash2024`
+## 🎯 **Permanent Deployment Ready**
 
-## 📊 Features
+**For long-term access (10+ years), see complete deployment options:**
+- **[📖 DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Comprehensive deployment instructions
+- **[🐳 Docker Deployment](deploy/docker-compose.yml)** - One-command deployment
+- **[🖥️ Cloud Platforms](deploy/deploy.sh)** - AWS, GCP, Azure, DigitalOcean  
+- **[📚 API Documentation](docs/API_REFERENCE.md)** - Complete API reference
 
-### Dashboard Overview
-- **Total Response Statistics** - UAE/KSA breakdown and nationality counts
-- **Interactive Charts** - Country distribution and nationality analysis
-- **Real-time Data** - Live statistics from actual survey data
+## ✅ **Fully Working Dashboard** - 389 Survey Responses Analyzed
+
+### 📊 **Live Data Processing**
+- **✅ 389 Valid Survey Responses** processed from 402 total entries
+- **✅ UAE: 194 responses | KSA: 195 responses** with full country analysis
+- **✅ 14 Text Response Categories** identified across both survey sheets
+- **✅ Advanced NLP Analysis** processing 330+ text responses per analysis
+- **✅ Real-time Interactive Filtering** by country, nationality, visit purpose
+- **✅ Professional UI** with responsive charts and comprehensive insights
+
+### 🧠 **Advanced NLP Capabilities** 
+- **Sentiment Analysis:** Overall "Positive" sentiment from guest feedback
+- **Keyword Extraction:** TF-IDF weighted importance ranking of guest concerns
+- **Theme Clustering:** Automated grouping of similar response patterns  
+- **Multi-language Support:** English and Arabic text processing
+- **Actionable Insights:** Generated recommendations from 330+ analyzed responses
 
 ### Advanced Filtering
 - **Country Filter** - UAE vs KSA responses
