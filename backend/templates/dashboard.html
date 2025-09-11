@@ -1,0 +1,614 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Survey Dashboard{% endblock %}
+
+{% block content %}
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="px-3">
+        <h4><i class="fas fa-chart-bar"></i> Dashboard</h4>
+        <hr>
+        <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+                <a class="nav-link text-white active" href="#overview" onclick="showSection('overview')">
+                    <i class="fas fa-home"></i> Overview
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link text-white" href="#filters" onclick="showSection('filters')">
+                    <i class="fas fa-filter"></i> Filters & Analysis
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link text-white" href="#nlp" onclick="showSection('nlp')">
+                    <i class="fas fa-brain"></i> NLP Insights
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link text-white" href="#rawdata" onclick="showSection('rawdata')">
+                    <i class="fas fa-database"></i> Raw Data
+                </a>
+            </li>
+            <hr>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col">
+            <h1>Survey Dashboard</h1>
+            <p class="text-muted">Welcome back, {{ user }}!</p>
+        </div>
+    </div>
+
+    <!-- Overview Section -->
+    <div id="overview-section" class="section">
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card stat-card">
+                    <h3 id="total-responses">-</h3>
+                    <p>Total Responses</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stat-card">
+                    <h3 id="uae-responses">-</h3>
+                    <p>UAE Responses</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stat-card">
+                    <h3 id="ksa-responses">-</h3>
+                    <p>KSA Responses</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stat-card">
+                    <h3 id="unique-nationalities">-</h3>
+                    <p>Nationalities</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Response Distribution by Country</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="countryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Top Nationalities</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="nationalityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters Section -->
+    <div id="filters-section" class="section" style="display: none;">
+        <div class="filter-panel">
+            <h5><i class="fas fa-filter"></i> Filter Data</h5>
+            <div class="row">
+                <div class="col-md-3">
+                    <label class="form-label">Country:</label>
+                    <select id="country-filter" class="form-select" onchange="applyFilters()">
+                        <option value="">All Countries</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Nationality:</label>
+                    <select id="nationality-filter" class="form-select" onchange="applyFilters()">
+                        <option value="">All Nationalities</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Visit Purpose:</label>
+                    <select id="purpose-filter" class="form-select" onchange="applyFilters()">
+                        <option value="">All Purposes</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <div class="mt-4">
+                        <button class="btn btn-secondary" onclick="clearFilters()">
+                            <i class="fas fa-times"></i> Clear Filters
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="filtered-results">
+            <!-- Filtered results will be displayed here -->
+        </div>
+    </div>
+
+    <!-- NLP Section -->
+    <div id="nlp-section" class="section" style="display: none;">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fas fa-brain"></i> Text Response Analysis</h5>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Select Text Column:</label>
+                        <select id="text-column-select" class="form-select" onchange="analyzeText()">
+                            <option value="">Choose a text response field...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Filter by Country:</label>
+                        <select id="nlp-country-filter" class="form-select" onchange="analyzeText()">
+                            <option value="">All Countries</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="nlp-results">
+                    <p class="text-muted">Select a text column to analyze responses using NLP.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Raw Data Section -->
+    <div id="rawdata-section" class="section" style="display: none;">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fas fa-database"></i> Raw Survey Data</h5>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Select Sheet:</label>
+                        <select id="sheet-select" class="form-select" onchange="loadRawData()">
+                            <option value="">All Sheets</option>
+                            <option value="Guests (UAE)">Guests (UAE)</option>
+                            <option value="Guests Online (KSA)">Guests Online (KSA)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="raw-data-container">
+                    <p class="text-muted">Select a sheet to view raw survey data.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// Global variables
+let currentFilters = {};
+let allData = [];
+
+// Initialize dashboard
+document.addEventListener('DOMContentLoaded', function() {
+    loadDashboard();
+});
+
+// Load initial dashboard data
+async function loadDashboard() {
+    try {
+        await Promise.all([
+            loadSummaryStats(),
+            loadFilters(),
+            loadTextColumns()
+        ]);
+    } catch (error) {
+        console.error('Error loading dashboard:', error);
+        showError('Failed to load dashboard data');
+    }
+}
+
+// Load summary statistics
+async function loadSummaryStats() {
+    try {
+        const response = await axios.get('/api/summary');
+        const stats = response.data;
+        
+        document.getElementById('total-responses').textContent = stats.total_responses || 0;
+        document.getElementById('uae-responses').textContent = stats.countries.UAE || 0;
+        document.getElementById('ksa-responses').textContent = stats.countries.KSA || 0;
+        
+        // Count unique nationalities (approximate)
+        let nationalityCount = 0;
+        Object.values(stats.response_distribution).forEach(dist => {
+            if (typeof dist === 'object') {
+                nationalityCount = Math.max(nationalityCount, Object.keys(dist).length);
+            }
+        });
+        document.getElementById('unique-nationalities').textContent = nationalityCount;
+        
+        // Update charts
+        updateCountryChart(stats.countries);
+        
+    } catch (error) {
+        console.error('Error loading summary stats:', error);
+    }
+}
+
+// Load filter options
+async function loadFilters() {
+    try {
+        const response = await axios.get('/api/filters');
+        const filters = response.data;
+        
+        // Populate country filter
+        const countrySelect = document.getElementById('country-filter');
+        const nlpCountrySelect = document.getElementById('nlp-country-filter');
+        
+        filters.countries.forEach(country => {
+            const option1 = new Option(country, country);
+            const option2 = new Option(country, country);
+            countrySelect.add(option1);
+            nlpCountrySelect.add(option2);
+        });
+        
+        // Populate nationality filter
+        const nationalitySelect = document.getElementById('nationality-filter');
+        filters.nationalities.forEach(nationality => {
+            if (nationality && nationality.trim()) {
+                nationalitySelect.add(new Option(nationality, nationality));
+            }
+        });
+        
+    } catch (error) {
+        console.error('Error loading filters:', error);
+    }
+}
+
+// Load text columns for NLP analysis
+async function loadTextColumns() {
+    try {
+        const response = await axios.get('/api/text-columns');
+        const textColumns = response.data;
+        
+        const select = document.getElementById('text-column-select');
+        Object.entries(textColumns).forEach(([sheet, columns]) => {
+            columns.forEach(column => {
+                select.add(new Option(`${column} (${sheet})`, column));
+            });
+        });
+        
+    } catch (error) {
+        console.error('Error loading text columns:', error);
+    }
+}
+
+// Show/hide sections
+function showSection(sectionName) {
+    // Hide all sections
+    document.querySelectorAll('.section').forEach(section => {
+        section.style.display = 'none';
+    });
+    
+    // Show selected section
+    document.getElementById(sectionName + '-section').style.display = 'block';
+    
+    // Update active nav
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+    event.target.classList.add('active');
+}
+
+// Apply filters
+async function applyFilters() {
+    const country = document.getElementById('country-filter').value;
+    const nationality = document.getElementById('nationality-filter').value;
+    const purpose = document.getElementById('purpose-filter').value;
+    
+    currentFilters = {};
+    if (country) currentFilters.Country = country;
+    if (nationality) currentFilters.nationality = nationality;
+    if (purpose) currentFilters.purpose = purpose;
+    
+    try {
+        const params = new URLSearchParams(currentFilters);
+        const response = await axios.get(`/api/data/filtered?${params}`);
+        const data = response.data;
+        
+        displayFilteredResults(data);
+        
+    } catch (error) {
+        console.error('Error applying filters:', error);
+        showError('Failed to apply filters');
+    }
+}
+
+// Clear filters
+function clearFilters() {
+    document.getElementById('country-filter').value = '';
+    document.getElementById('nationality-filter').value = '';
+    document.getElementById('purpose-filter').value = '';
+    currentFilters = {};
+    document.getElementById('filtered-results').innerHTML = '';
+}
+
+// Display filtered results
+function displayFilteredResults(data) {
+    const container = document.getElementById('filtered-results');
+    
+    let html = `
+        <div class="card">
+            <div class="card-header">
+                <h5>Filtered Results (${data.total_records} records)</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+    `;
+    
+    // Add headers
+    data.columns.slice(0, 10).forEach(col => {
+        html += `<th>${col}</th>`;
+    });
+    html += '</tr></thead><tbody>';
+    
+    // Add rows (limit to first 50 for performance)
+    data.data.slice(0, 50).forEach(row => {
+        html += '<tr>';
+        data.columns.slice(0, 10).forEach(col => {
+            const value = row[col] || '';
+            html += `<td>${String(value).substring(0, 100)}</td>`;
+        });
+        html += '</tr>';
+    });
+    
+    html += '</tbody></table>';
+    if (data.data.length > 50) {
+        html += '<p class="text-muted">Showing first 50 records...</p>';
+    }
+    html += '</div></div></div>';
+    
+    container.innerHTML = html;
+}
+
+// Analyze text responses
+async function analyzeText() {
+    const column = document.getElementById('text-column-select').value;
+    const country = document.getElementById('nlp-country-filter').value;
+    
+    if (!column) {
+        document.getElementById('nlp-results').innerHTML = 
+            '<p class="text-muted">Select a text column to analyze responses using NLP.</p>';
+        return;
+    }
+    
+    document.getElementById('nlp-results').innerHTML = 
+        '<div class="loading"><i class="fas fa-spinner fa-spin"></i> Analyzing text responses...</div>';
+    
+    try {
+        const params = new URLSearchParams({ column });
+        if (country) params.append('country', country);
+        
+        const response = await axios.get(`/api/text-analysis?${params}`);
+        const analysis = response.data;
+        
+        displayNLPResults(analysis);
+        
+    } catch (error) {
+        console.error('Error analyzing text:', error);
+        document.getElementById('nlp-results').innerHTML = 
+            '<div class="error">Failed to analyze text responses</div>';
+    }
+}
+
+// Display NLP analysis results
+function displayNLPResults(analysis) {
+    if (analysis.error) {
+        document.getElementById('nlp-results').innerHTML = 
+            `<div class="error">${analysis.error}</div>`;
+        return;
+    }
+    
+    const sentiment = analysis.sentiment_summary;
+    const sentimentClass = sentiment.sentiment_label.toLowerCase();
+    
+    let html = `
+        <div class="row">
+            <div class="col-md-4">
+                <div class="text-analysis-card">
+                    <h6><i class="fas fa-heart"></i> Sentiment Analysis</h6>
+                    <p class="mb-1"><strong>Overall Sentiment:</strong> 
+                        <span class="sentiment-${sentimentClass}">${sentiment.sentiment_label}</span>
+                    </p>
+                    <p class="mb-1"><strong>Polarity:</strong> ${sentiment.average_polarity.toFixed(3)}</p>
+                    <p class="mb-0"><strong>Subjectivity:</strong> ${sentiment.average_subjectivity.toFixed(3)}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-analysis-card">
+                    <h6><i class="fas fa-tags"></i> Top Keywords</h6>
+    `;
+    
+    analysis.top_keywords.slice(0, 5).forEach(keyword => {
+        html += `<span class="badge bg-primary me-1">${keyword.word}</span>`;
+    });
+    
+    html += `
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-analysis-card">
+                    <h6><i class="fas fa-chart-pie"></i> Response Stats</h6>
+                    <p class="mb-0"><strong>Total Responses:</strong> ${analysis.total_responses}</p>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    if (analysis.themes && analysis.themes.length > 0) {
+        html += `
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h6><i class="fas fa-layer-group"></i> Response Themes</h6>
+                </div>
+                <div class="card-body">
+        `;
+        
+        analysis.themes.forEach((theme, index) => {
+            html += `
+                <div class="mb-3">
+                    <h6>Theme ${index + 1} (${theme.count} responses)</h6>
+                    <div class="text-muted">
+            `;
+            
+            theme.sample_texts.forEach(text => {
+                html += `<p class="small">"${text.substring(0, 200)}..."</p>`;
+            });
+            
+            html += '</div></div>';
+        });
+        
+        html += '</div></div>';
+    }
+    
+    if (analysis.sample_responses && analysis.sample_responses.length > 0) {
+        html += `
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h6><i class="fas fa-comments"></i> Sample Responses</h6>
+                </div>
+                <div class="card-body">
+        `;
+        
+        analysis.sample_responses.forEach(response => {
+            html += `<blockquote class="blockquote-footer mb-2">${response}</blockquote>`;
+        });
+        
+        html += '</div></div>';
+    }
+    
+    document.getElementById('nlp-results').innerHTML = html;
+}
+
+// Load raw data
+async function loadRawData() {
+    const sheet = document.getElementById('sheet-select').value;
+    const container = document.getElementById('raw-data-container');
+    
+    container.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading raw data...</div>';
+    
+    try {
+        const params = sheet ? `?sheet=${encodeURIComponent(sheet)}` : '';
+        const response = await axios.get(`/api/raw-data${params}`);
+        const data = response.data;
+        
+        displayRawData(data, sheet);
+        
+    } catch (error) {
+        console.error('Error loading raw data:', error);
+        container.innerHTML = '<div class="error">Failed to load raw data</div>';
+    }
+}
+
+// Display raw data
+function displayRawData(data, sheet) {
+    const container = document.getElementById('raw-data-container');
+    
+    if (sheet && data.data) {
+        // Single sheet
+        displaySheetData(data, container);
+    } else {
+        // Multiple sheets
+        let html = '';
+        Object.entries(data).forEach(([sheetName, sheetData]) => {
+            html += `<h5>${sheetName} (${sheetData.shape[0]} rows, ${sheetData.shape[1]} columns)</h5>`;
+            html += '<div class="mb-4">';
+            displaySheetData(sheetData, { innerHTML: '' });
+            html += container.innerHTML;
+            html += '</div>';
+        });
+        container.innerHTML = html;
+    }
+}
+
+// Display single sheet data
+function displaySheetData(sheetData, container) {
+    let html = `
+        <div class="table-responsive">
+            <table class="table table-sm table-bordered">
+                <thead class="table-dark">
+                    <tr>
+    `;
+    
+    // Headers
+    sheetData.columns.slice(0, 15).forEach(col => {
+        html += `<th style="white-space: nowrap;">${col}</th>`;
+    });
+    html += '</tr></thead><tbody>';
+    
+    // Data rows (limit to 20 for performance)
+    sheetData.data.slice(0, 20).forEach(row => {
+        html += '<tr>';
+        sheetData.columns.slice(0, 15).forEach(col => {
+            const value = row[col] || '';
+            html += `<td>${String(value).substring(0, 50)}</td>`;
+        });
+        html += '</tr>';
+    });
+    
+    html += '</tbody></table>';
+    if (sheetData.data.length > 20) {
+        html += '<p class="text-muted">Showing first 20 records of ' + sheetData.data.length + ' total records...</p>';
+    }
+    html += '</div>';
+    
+    container.innerHTML = html;
+}
+
+// Update country chart
+function updateCountryChart(countries) {
+    const ctx = document.getElementById('countryChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: Object.keys(countries),
+            datasets: [{
+                data: Object.values(countries),
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Survey Responses by Country'
+                }
+            }
+        }
+    });
+}
+
+// Utility function to show errors
+function showError(message) {
+    console.error(message);
+    // You could implement a toast notification here
+}
+</script>
+{% endblock %}
