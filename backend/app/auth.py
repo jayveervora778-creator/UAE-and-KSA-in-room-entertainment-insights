@@ -21,7 +21,7 @@ def load_user(username):
 def login():
     """Login endpoint"""
     if current_user.is_authenticated:
-        return redirect(url_for('main.osn_enterprise_dashboard'))
+        return redirect(url_for('main.dynamic_questions_dashboard'))
     
     if request.method == 'POST':
         if request.is_json:
@@ -50,7 +50,7 @@ def login():
                 })
             else:
                 flash('Login successful!', 'success')
-                return redirect(url_for('main.osn_enterprise_dashboard'))
+                return redirect(url_for('main.dynamic_questions_dashboard'))
         else:
             print(f"Login failed - Username: '{username}', Expected: '{Config.ADMIN_USERNAME}', Password match: {password == Config.ADMIN_PASSWORD}")
             if request.is_json:

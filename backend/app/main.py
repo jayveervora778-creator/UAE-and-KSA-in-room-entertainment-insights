@@ -15,9 +15,9 @@ def index():
 @bp.route('/dashboard')
 @login_required
 def dashboard():
-    """Redirect legacy dashboard to unified OSN analytics"""
+    """Redirect legacy dashboard to dynamic questions dashboard"""
     from flask import redirect, url_for
-    return redirect(url_for('main.osn_enterprise_dashboard'))
+    return redirect(url_for('main.dynamic_questions_dashboard'))
 
 @bp.route('/osn-analytics')
 @login_required

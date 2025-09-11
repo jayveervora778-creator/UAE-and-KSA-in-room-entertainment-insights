@@ -62,6 +62,31 @@
         </div>
     </header>
 
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-sm border-b">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="/dynamic-questions" class="flex items-center text-blue-600 font-semibold border-b-2 border-blue-600 pb-2">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        Dynamic Questions
+                    </a>
+                    <a href="/osn-analytics" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors pb-2">
+                        <i class="fas fa-brain mr-2"></i>
+                        Enterprise Analytics
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Welcome, {{ user }}</span>
+                    <a href="/logout" class="text-sm text-red-600 hover:text-red-800 transition-colors">
+                        <i class="fas fa-sign-out-alt mr-1"></i>
+                        Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <!-- Filters Section -->
     <section class="py-6 bg-white shadow-sm">
         <div class="container mx-auto px-6">
