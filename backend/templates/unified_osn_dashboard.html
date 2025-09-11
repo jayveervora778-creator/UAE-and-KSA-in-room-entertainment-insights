@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSN Survey Analytics - Complete Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        .dashboard-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .question-card {
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .question-card:hover {
+            border-color: #007bff;
+            box-shadow: 0 4px 8px rgba(0,123,255,0.2);
+        }
+        
+        .question-card.selected {
+            border-color: #28a745;
+            background-color: #f8fff9;
+            box-shadow: 0 4px 12px rgba(40,167,69,0.3);
+        }
+        
+        .chart-container {
+            height: 400px;
+            margin-bottom: 2rem;
+        }
+        
+        .section-header {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 1rem;
+            margin: 2rem 0 1rem 0;
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .loading-spinner {
+            display: none;
+        }
+        
+        .loading-spinner.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+        
+        .filter-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .insight-card {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<!-- Header -->
+<header class="dashboard-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="mb-2">
+                    <i class="fas fa-chart-line me-3"></i>
+                    OSN Survey Analytics Dashboard
+                </h1>
+                <p class="mb-0 opacity-75">
+                    Complete UAE & KSA Guest Survey Analysis with Dynamic Multi-Question Visualization
+                </p>
+            </div>
+            <div class="col-md-4 text-end">
+                <span class="me-3">Welcome, {{ user }}</span>
+                <a href="/logout" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-sign-out-alt me-1"></i> Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Dashboard -->
+<div class="container-fluid my-4">
+    
+    <!-- Filters Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="filter-section">
+                <h5 class="mb-3"><i class="fas fa-filter me-2"></i>Analysis Filters</h5>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="form-label">Country</label>
+                        <select id="countryFilter" class="form-select">
+                            <option value="">All Countries</option>
+                            <option value="UAE">UAE</option>
+                            <option value="KSA">KSA</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Visit Purpose</label>
+                        <select id="purposeFilter" class="form-select">
+                            <option value="">All Purposes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Nationality</label>
+                        <select id="nationalityFilter" class="form-select">
+                            <option value="">All Nationalities</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-end">
+                        <button id="applyFiltersBtn" class="btn btn-primary w-100">
+                            <i class="fas fa-search me-2"></i>Apply Filters
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overview Metrics -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="metric-card">
+                <div class="d-flex align-items-center">
+                    <div class="flex-grow-1">
+                        <h6 class="text-muted mb-1">Total Responses</h6>
+                        <h3 class="mb-0" id="totalResponsesMetric">400</h3>
+                    </div>
+                    <i class="fas fa-users fa-2x text-primary"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="metric-card">
+                <div class="d-flex align-items-center">
+                    <div class="flex-grow-1">
+                        <h6 class="text-muted mb-1">UAE Responses</h6>
+                        <h3 class="mb-0" id="uaeResponsesMetric">200</h3>
+                    </div>
+                    <i class="fas fa-flag fa-2x text-success"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="metric-card">
+                <div class="d-flex align-items-center">
+                    <div class="flex-grow-1">
+                        <h6 class="text-muted mb-1">KSA Responses</h6>
+                        <h3 class="mb-0" id="ksaResponsesMetric">200</h3>
+                    </div>
+                    <i class="fas fa-flag fa-2x text-info"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="metric-card">
+                <div class="d-flex align-items-center">
+                    <div class="flex-grow-1">
+                        <h6 class="text-muted mb-1">High Entertainment Priority</h6>
+                        <h3 class="mb-0" id="highPriorityMetric">--</h3>
+                    </div>
+                    <i class="fas fa-star fa-2x text-warning"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Tabs -->
+    <ul class="nav nav-tabs mb-4" id="dashboardTabs">
+        <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#overview-tab">
+                <i class="fas fa-chart-pie me-2"></i>Overview Analytics
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#dynamic-questions-tab">
+                <i class="fas fa-chart-line me-2"></i>Multi-Question Analysis
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#insights-tab">
+                <i class="fas fa-brain me-2"></i>AI Insights
+            </button>
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+        
+        <!-- Overview Analytics Tab -->
+        <div class="tab-pane fade show active" id="overview-tab">
+            <div class="row">
+                <!-- Entertainment Importance Chart -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-star me-2 text-warning"></i>
+                                Entertainment Importance by Country
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="entertainmentImportanceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Payment Willingness Chart -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-dollar-sign me-2 text-success"></i>
+                                Payment Willingness by Visitor Type
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="paymentWillingnessChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content Preferences -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-tv me-2 text-primary"></i>
+                                Content Preferences
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="contentPreferencesChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Market Opportunities -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-bullseye me-2 text-danger"></i>
+                                Market Opportunity Matrix
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="marketOpportunityMatrix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Multi-Question Analysis Tab -->
+        <div class="tab-pane fade" id="dynamic-questions-tab">
+            
+            <!-- Question Selection Interface -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">
+                                <i class="fas fa-list-check me-2"></i>
+                                Select Questions to Analyze
+                            </h5>
+                            <div>
+                                <button id="selectAllQuestionsBtn" class="btn btn-outline-primary btn-sm me-2">
+                                    <i class="fas fa-check-double me-1"></i>Select All
+                                </button>
+                                <button id="clearQuestionsBtn" class="btn btn-outline-secondary btn-sm me-2">
+                                    <i class="fas fa-times me-1"></i>Clear All
+                                </button>
+                                <button id="generateMultiChartsBtn" class="btn btn-success">
+                                    <i class="fas fa-magic me-1"></i>Generate Analysis
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row" id="questionSelectionGrid">
+                                <!-- Question cards will be populated here -->
+                                <div class="col-12 text-center py-4">
+                                    <div class="loading-spinner active">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading questions...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Mode Selection -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="mb-3">Analysis Mode</h6>
+                            <div class="btn-group" role="group" id="comparisonModeGroup">
+                                <input type="radio" class="btn-check" name="comparisonMode" id="overall" value="overall" checked>
+                                <label class="btn btn-outline-primary" for="overall">
+                                    <i class="fas fa-globe me-1"></i>Overall
+                                </label>
+                                
+                                <input type="radio" class="btn-check" name="comparisonMode" id="byCountry" value="by_country">
+                                <label class="btn btn-outline-primary" for="byCountry">
+                                    <i class="fas fa-flag me-1"></i>By Country
+                                </label>
+                                
+                                <input type="radio" class="btn-check" name="comparisonMode" id="byNationality" value="by_nationality">
+                                <label class="btn btn-outline-primary" for="byNationality">
+                                    <i class="fas fa-passport me-1"></i>By Nationality
+                                </label>
+                                
+                                <input type="radio" class="btn-check" name="comparisonMode" id="byPurpose" value="by_visit_purpose">
+                                <label class="btn btn-outline-primary" for="byPurpose">
+                                    <i class="fas fa-suitcase me-1"></i>By Visit Purpose
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Charts Grid -->
+            <div class="row" id="dynamicChartsGrid">
+                <div class="col-12 text-center py-5">
+                    <i class="fas fa-chart-line fa-3x text-muted mb-3"></i>
+                    <h5 class="text-muted">Select questions above and click "Generate Analysis" to create dynamic visualizations</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Insights Tab -->
+        <div class="tab-pane fade" id="insights-tab">
+            <div class="row" id="aiInsightsContent">
+                <div class="col-12 text-center py-5">
+                    <div class="loading-spinner active">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading AI insights...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Global state
+let currentFilters = {};
+let selectedQuestions = new Set();
+let chartInstances = {};
+let questionCatalog = {};
+
+// Initialize dashboard
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Initializing OSN Dashboard...');
+    initializeDashboard();
+});
+
+async function initializeDashboard() {
+    try {
+        // Load initial data
+        await Promise.all([
+            loadOverviewCharts(),
+            loadQuestionCatalog(),
+            loadFilterOptions(),
+            loadAIInsights()
+        ]);
+        
+        // Set up event listeners
+        setupEventListeners();
+        
+        console.log('Dashboard initialized successfully');
+    } catch (error) {
+        console.error('Dashboard initialization failed:', error);
+        showError('Failed to initialize dashboard. Please refresh the page.');
+    }
+}
+
+async function loadOverviewCharts() {
+    try {
+        console.log('Loading overview charts...');
+        
+        // Load entertainment importance chart
+        const response = await fetch('/enhanced_api/dynamic-charts');
+        if (response.ok) {
+            const data = await response.json();
+            createOverviewCharts(data);
+        }
+    } catch (error) {
+        console.error('Error loading overview charts:', error);
+    }
+}
+
+function createOverviewCharts(data) {
+    // Entertainment Importance Chart
+    if (data.charts && data.charts.entertainment_importance_by_country) {
+        const chartData = data.charts.entertainment_importance_by_country;
+        const ctx = document.getElementById('entertainmentImportanceChart').getContext('2d');
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: chartData.data.countries || [],
+                datasets: (chartData.data.series || []).map(series => ({
+                    label: series.name,
+                    data: series.data,
+                    backgroundColor: series.backgroundColor
+                }))
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Entertainment Importance by Country'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage (%)'
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    // Payment Willingness Chart
+    if (data.charts && data.charts.payment_willingness_analysis) {
+        const chartData = data.charts.payment_willingness_analysis;
+        const ctx = document.getElementById('paymentWillingnessChart').getContext('2d');
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: chartData.data.categories || [],
+                datasets: (chartData.data.series || []).map(series => ({
+                    label: series.name,
+                    data: series.data,
+                    backgroundColor: series.backgroundColor
+                }))
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Payment Willingness by Visitor Type'
+                    }
+                },
+                scales: {
+                    x: { stacked: true },
+                    y: { 
+                        stacked: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage (%)'
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    // Content Preferences Chart
+    if (data.charts && data.charts.content_preferences_distribution) {
+        const chartData = data.charts.content_preferences_distribution;
+        const ctx = document.getElementById('contentPreferencesChart').getContext('2d');
+        
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: chartData.data.labels || [],
+                datasets: [{
+                    data: chartData.data.data || [],
+                    backgroundColor: chartData.data.colors || []
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Content Preferences'
+                    },
+                    legend: {
+                        position: 'right'
+                    }
+                }
+            }
+        });
+    }
+    
+    // Market Opportunity Matrix
+    if (data.charts && data.charts.market_opportunity_heatmap) {
+        displayMarketMatrix(data.charts.market_opportunity_heatmap.data);
+    }
+}
+
+function displayMarketMatrix(opportunities) {
+    const container = document.getElementById('marketOpportunityMatrix');
+    
+    if (!opportunities || opportunities.length === 0) {
+        container.innerHTML = '<p class="text-muted text-center">No market data available</p>';
+        return;
+    }
+    
+    let html = '<div class="table-responsive"><table class="table table-bordered">';
+    html += '<thead><tr><th>Country</th><th>Entertainment Demand (%)</th><th>Payment Willingness (%)</th><th>Opportunity Score</th></tr></thead>';
+    html += '<tbody>';
+    
+    opportunities.forEach(opp => {
+        const scoreColor = opp.opportunity_score >= 60 ? 'success' : (opp.opportunity_score >= 40 ? 'warning' : 'danger');
+        html += `<tr>
+            <td><strong>${opp.country}</strong></td>
+            <td>${opp.entertainment_demand}%</td>
+            <td>${opp.payment_willingness}%</td>
+            <td><span class="badge bg-${scoreColor}">${opp.opportunity_score}</span></td>
+        </tr>`;
+    });
+    
+    html += '</tbody></table></div>';
+    container.innerHTML = html;
+}
+
+async function loadQuestionCatalog() {
+    try {
+        console.log('Loading question catalog...');
+        
+        // Test basic API first
+        const testResponse = await fetch('/dynamic_questions/test');
+        if (!testResponse.ok) {
+            throw new Error('Dynamic questions API not available');
+        }
+        
+        const response = await fetch('/dynamic_questions/catalog');
+        
+        if (response.ok) {
+            questionCatalog = await response.json();
+            console.log('Question catalog loaded:', questionCatalog);
+            
+            if (questionCatalog.error) {
+                throw new Error(questionCatalog.error);
+            }
+            
+            displayQuestionCatalog();
+        } else {
+            const errorText = await response.text();
+            console.error('API Response:', errorText);
+            throw new Error(`HTTP ${response.status}: ${errorText}`);
+        }
+    } catch (error) {
+        console.error('Error loading question catalog:', error);
+        document.getElementById('questionSelectionGrid').innerHTML = `
+            <div class="col-12 text-center py-4">
+                <i class="fas fa-exclamation-triangle fa-2x text-warning mb-3"></i>
+                <p class="text-muted">Failed to load questions: ${error.message}</p>
+                <button class="btn btn-primary mt-2" onclick="loadQuestionCatalog()">Retry</button>
+            </div>
+        `;
+    }
+}
+
+function displayQuestionCatalog() {
+    const grid = document.getElementById('questionSelectionGrid');
+    
+    console.log('Displaying question catalog:', questionCatalog);
+    
+    if (!questionCatalog || !questionCatalog.categories || Object.keys(questionCatalog.categories).length === 0) {
+        grid.innerHTML = `
+            <div class="col-12 text-center py-4">
+                <i class="fas fa-search fa-2x text-muted mb-3"></i>
+                <p class="text-muted">No questions available</p>
+                ${questionCatalog && questionCatalog.debug ? 
+                    `<small class="text-muted">Debug: ${JSON.stringify(questionCatalog.debug)}</small>` : 
+                    ''
+                }
+            </div>
+        `;
+        return;
+    }
+    
+    let html = '';
+    let questionCount = 0;
+    
+    Object.entries(questionCatalog.categories).forEach(([categoryName, questions]) => {
+        if (!questions || questions.length === 0) return;
+        
+        html += `<div class="col-12 mb-3">
+            <h6 class="text-primary mb-3">
+                <i class="fas fa-folder me-2"></i>${categoryName} (${questions.length} questions)
+            </h6>
+        </div>`;
+        
+        questions.forEach(question => {
+            questionCount++;
+            const safeId = question.id.replace(/[^a-zA-Z0-9]/g, '_');
+            html += `
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <div class="question-card" data-question-id="${question.id}" onclick="toggleQuestionSelection('${question.id}')">
+                        <div class="d-flex align-items-start justify-content-between">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-2">${question.name || question.id}</h6>
+                                <small class="text-muted">
+                                    <i class="fas fa-chart-bar me-1"></i>
+                                    ${(question.charts || []).join(', ') || 'No charts'}
+                                </small>
+                                <br>
+                                <small class="text-muted">
+                                    <i class="fas fa-users me-1"></i>
+                                    ${question.responses || 0} responses
+                                </small>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" data-question-id="${question.id}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    });
+    
+    if (questionCount === 0) {
+        html = '<div class="col-12 text-center py-4"><p class="text-muted">No questions found in categories</p></div>';
+    }
+    
+    grid.innerHTML = html;
+    console.log(`Displayed ${questionCount} questions`);
+}
+
+function toggleQuestionSelection(questionId) {
+    const card = document.querySelector(`[data-question-id="${questionId}"]`);
+    const checkbox = card.querySelector('.form-check-input');
+    
+    if (selectedQuestions.has(questionId)) {
+        selectedQuestions.delete(questionId);
+        card.classList.remove('selected');
+        checkbox.checked = false;
+    } else {
+        selectedQuestions.add(questionId);
+        card.classList.add('selected');
+        checkbox.checked = true;
+    }
+    
+    console.log('Selected questions:', Array.from(selectedQuestions));
+}
+
+async function loadFilterOptions() {
+    try {
+        // Load visit purposes and nationalities from API
+        const response = await fetch('/enhanced_api/dynamic-charts');
+        if (response.ok) {
+            const data = await response.json();
+            populateFilterDropdowns(data.metadata);
+        }
+    } catch (error) {
+        console.error('Error loading filter options:', error);
+    }
+}
+
+function populateFilterDropdowns(metadata) {
+    // This would populate dropdowns with actual data
+    // For now, using static options
+    const purposeSelect = document.getElementById('purposeFilter');
+    const nationalitySelect = document.getElementById('nationalityFilter');
+    
+    // Add common options
+    const purposes = ['Business', 'Leisure', 'Family Vacation', 'Other'];
+    purposes.forEach(purpose => {
+        const option = document.createElement('option');
+        option.value = purpose;
+        option.textContent = purpose;
+        purposeSelect.appendChild(option);
+    });
+    
+    const nationalities = ['UAE National', 'Saudi National', 'European', 'American', 'Other'];
+    nationalities.forEach(nationality => {
+        const option = document.createElement('option');
+        option.value = nationality;
+        option.textContent = nationality;
+        nationalitySelect.appendChild(option);
+    });
+}
+
+async function loadAIInsights() {
+    try {
+        const response = await fetch('/dynamic_questions/insights-engine');
+        if (response.ok) {
+            const insights = await response.json();
+            displayAIInsights(insights);
+        }
+    } catch (error) {
+        console.error('Error loading AI insights:', error);
+        document.getElementById('aiInsightsContent').innerHTML = `
+            <div class="col-12 text-center py-4">
+                <i class="fas fa-exclamation-triangle fa-2x text-warning mb-3"></i>
+                <p class="text-muted">Failed to load AI insights. Please try again.</p>
+            </div>
+        `;
+    }
+}
+
+function displayAIInsights(insights) {
+    const container = document.getElementById('aiInsightsContent');
+    let html = '';
+    
+    // Key Findings
+    if (insights.key_findings && insights.key_findings.length > 0) {
+        html += '<div class="col-12 mb-4"><h5><i class="fas fa-lightbulb me-2 text-warning"></i>Key Findings</h5></div>';
+        
+        insights.key_findings.forEach(finding => {
+            html += `
+                <div class="col-md-6 mb-3">
+                    <div class="insight-card">
+                        <h6 class="mb-2">${finding.title}</h6>
+                        <p class="mb-2">${finding.finding}</p>
+                        <small class="text-muted">
+                            <strong>Data:</strong> ${finding.data_backing}
+                        </small>
+                        <div class="mt-2">
+                            <span class="badge bg-${finding.confidence === 'High' ? 'success' : 'warning'}">
+                                ${finding.confidence} Confidence
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
+    
+    // Strategic Recommendations
+    if (insights.strategic_recommendations && insights.strategic_recommendations.length > 0) {
+        html += '<div class="col-12 mb-4 mt-4"><h5><i class="fas fa-chess-king me-2 text-primary"></i>Strategic Recommendations</h5></div>';
+        
+        insights.strategic_recommendations.forEach(rec => {
+            html += `
+                <div class="col-md-6 mb-3">
+                    <div class="insight-card">
+                        <p class="mb-2">${rec.strategy || rec}</p>
+                        ${rec.rationale ? `<small class="text-muted">${rec.rationale}</small>` : ''}
+                    </div>
+                </div>
+            `;
+        });
+    }
+    
+    if (!html) {
+        html = '<div class="col-12 text-center py-4"><p class="text-muted">No insights available</p></div>';
+    }
+    
+    container.innerHTML = html;
+}
+
+function setupEventListeners() {
+    // Filter button
+    document.getElementById('applyFiltersBtn').addEventListener('click', applyFilters);
+    
+    // Question selection buttons
+    document.getElementById('selectAllQuestionsBtn').addEventListener('click', selectAllQuestions);
+    document.getElementById('clearQuestionsBtn').addEventListener('click', clearAllQuestions);
+    document.getElementById('generateMultiChartsBtn').addEventListener('click', generateMultiQuestionAnalysis);
+}
+
+function applyFilters() {
+    currentFilters = {
+        country: document.getElementById('countryFilter').value,
+        visit_purpose: document.getElementById('purposeFilter').value,
+        nationality: document.getElementById('nationalityFilter').value
+    };
+    
+    // Remove empty filters
+    Object.keys(currentFilters).forEach(key => {
+        if (!currentFilters[key]) delete currentFilters[key];
+    });
+    
+    console.log('Applied filters:', currentFilters);
+    
+    // Reload charts with filters
+    loadOverviewCharts();
+    
+    // Update metrics
+    updateMetrics();
+}
+
+function updateMetrics() {
+    // This would update the metric cards based on filtered data
+    // For now, just show filter status
+    const totalElement = document.getElementById('totalResponsesMetric');
+    if (Object.keys(currentFilters).length > 0) {
+        totalElement.textContent = 'Filtered';
+    } else {
+        totalElement.textContent = '400';
+    }
+}
+
+function selectAllQuestions() {
+    Object.values(questionCatalog.categories).forEach(questions => {
+        questions.forEach(question => {
+            selectedQuestions.add(question.id);
+            const card = document.querySelector(`[data-question-id="${question.id}"]`);
+            const checkbox = card.querySelector('.form-check-input');
+            if (card && checkbox) {
+                card.classList.add('selected');
+                checkbox.checked = true;
+            }
+        });
+    });
+    
+    console.log('Selected all questions:', Array.from(selectedQuestions));
+}
+
+function clearAllQuestions() {
+    selectedQuestions.clear();
+    
+    document.querySelectorAll('.question-card').forEach(card => {
+        card.classList.remove('selected');
+        const checkbox = card.querySelector('.form-check-input');
+        if (checkbox) checkbox.checked = false;
+    });
+    
+    console.log('Cleared all questions');
+}
+
+async function generateMultiQuestionAnalysis() {
+    if (selectedQuestions.size === 0) {
+        alert('Please select at least one question to analyze');
+        return;
+    }
+    
+    const comparisonMode = document.querySelector('input[name="comparisonMode"]:checked').value;
+    
+    try {
+        // Show loading
+        const chartsGrid = document.getElementById('dynamicChartsGrid');
+        chartsGrid.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Generating analysis...</span>
+                </div>
+                <p class="mt-3">Generating dynamic visualizations for ${selectedQuestions.size} questions...</p>
+            </div>
+        `;
+        
+        const questionIds = Array.from(selectedQuestions);
+        const params = new URLSearchParams({
+            question_ids: JSON.stringify(questionIds),
+            comparison_mode: comparisonMode,
+            ...currentFilters
+        });
+        
+        const response = await fetch(`/dynamic_questions/multi-question-dashboard?${params}`);
+        
+        if (response.ok) {
+            const dashboardData = await response.json();
+            displayDynamicCharts(dashboardData.charts);
+        } else {
+            throw new Error('Failed to generate analysis');
+        }
+        
+    } catch (error) {
+        console.error('Error generating multi-question analysis:', error);
+        document.getElementById('dynamicChartsGrid').innerHTML = `
+            <div class="col-12 text-center py-4">
+                <i class="fas fa-exclamation-triangle fa-2x text-danger mb-3"></i>
+                <p class="text-danger">Failed to generate analysis. Please try again.</p>
+            </div>
+        `;
+    }
+}
+
+function displayDynamicCharts(charts) {
+    const chartsGrid = document.getElementById('dynamicChartsGrid');
+    let html = '';
+    
+    Object.entries(charts).forEach(([questionId, chartData]) => {
+        if (chartData.error) {
+            console.error(`Chart error for ${questionId}:`, chartData.error);
+            return;
+        }
+        
+        html += `
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">${chartData.title || questionId}</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="dynamic-chart-${questionId.replace(/[^a-zA-Z0-9]/g, '')}"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    if (!html) {
+        html = '<div class="col-12 text-center py-4"><p class="text-muted">No charts generated</p></div>';
+    }
+    
+    chartsGrid.innerHTML = html;
+    
+    // Create the charts
+    Object.entries(charts).forEach(([questionId, chartData]) => {
+        if (!chartData.error) {
+            const canvasId = `dynamic-chart-${questionId.replace(/[^a-zA-Z0-9]/g, '')}`;
+            createDynamicChart(canvasId, chartData);
+        }
+    });
+}
+
+function createDynamicChart(canvasId, chartData) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) {
+        console.error(`Canvas not found: ${canvasId}`);
+        return;
+    }
+    
+    const ctx = canvas.getContext('2d');
+    
+    // Clear existing chart
+    if (chartInstances[canvasId]) {
+        chartInstances[canvasId].destroy();
+    }
+    
+    let chartConfig = {
+        type: chartData.type || 'bar',
+        data: chartData.data,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: chartData.title
+                },
+                legend: {
+                    display: true
+                }
+            }
+        }
+    };
+    
+    // Adjust based on chart type
+    if (chartData.type === 'pie' || chartData.type === 'doughnut') {
+        chartConfig.options.plugins.legend.position = 'bottom';
+    }
+    
+    if (chartData.type === 'grouped_bar' || chartData.type === 'stacked_bar') {
+        chartConfig.type = 'bar';
+        chartConfig.options.scales = {
+            x: { stacked: chartData.type === 'stacked_bar' },
+            y: { stacked: chartData.type === 'stacked_bar' }
+        };
+    }
+    
+    chartInstances[canvasId] = new Chart(ctx, chartConfig);
+}
+
+function showError(message) {
+    console.error(message);
+    // Could implement a proper toast/modal system here
+    alert(message);
+}
+
+// Tab change handlers
+document.addEventListener('shown.bs.tab', function(e) {
+    const targetTab = e.target.getAttribute('data-bs-target');
+    
+    if (targetTab === '#overview-tab') {
+        // Refresh overview charts when tab is shown
+        setTimeout(() => {
+            Object.values(chartInstances).forEach(chart => {
+                if (chart.resize) chart.resize();
+            });
+        }, 100);
+    }
+});
+</script>
+
+</body>
+</html>

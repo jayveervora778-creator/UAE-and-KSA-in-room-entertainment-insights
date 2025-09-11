@@ -21,6 +21,14 @@ bp = Blueprint('dynamic_questions', __name__)
 data_processor = None
 question_engine = None
 
+@bp.route('/test')
+def test_endpoint():
+    """Simple test endpoint"""
+    return jsonify({
+        'status': 'ok',
+        'message': 'Dynamic questions API is working'
+    })
+
 def get_engines():
     """Get or create data processor and question engine"""
     global data_processor, question_engine
@@ -49,12 +57,20 @@ def get_question_catalog():
             return jsonify({'error': 'Question engine not available'}), 500
         
         catalog = engine.get_question_catalog()
+        
+        # Add debug info
+        catalog['debug'] = {
+            'processor_available': processor is not None,
+            'engine_available': engine is not None,
+            'total_questions_found': len(engine.question_catalog) if engine else 0
+        }
+        
         return jsonify(catalog)
         
     except Exception as e:
         print(f"Error getting question catalog: {e}")
         traceback.print_exc()
-        return jsonify({'error': str(e)}), 500
+        return jsonify({'error': str(e), 'details': traceback.format_exc()}), 500
 
 @bp.route('/chart')
 @login_required 

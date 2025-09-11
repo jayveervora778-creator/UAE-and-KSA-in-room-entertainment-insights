@@ -15,9 +15,9 @@ def index():
 @bp.route('/dashboard')
 @login_required
 def dashboard():
-    """Redirect legacy dashboard to dynamic questions dashboard"""
+    """Redirect legacy dashboard to unified dashboard"""
     from flask import redirect, url_for
-    return redirect(url_for('main.dynamic_questions_dashboard'))
+    return redirect(url_for('main.unified_dashboard'))
 
 @bp.route('/osn-analytics')
 @login_required
@@ -30,6 +30,12 @@ def osn_enterprise_dashboard():
 def dynamic_questions_dashboard():
     """Dynamic Multi-Question Analytics Dashboard"""
     return render_template('dynamic_questions_dashboard.html', user=current_user.username)
+
+@bp.route('/unified-dashboard')
+@login_required
+def unified_dashboard():
+    """Unified OSN Analytics Dashboard - All Features in One Page"""
+    return render_template('unified_osn_dashboard.html', user=current_user.username)
 
 @bp.route('/health')
 def health():
