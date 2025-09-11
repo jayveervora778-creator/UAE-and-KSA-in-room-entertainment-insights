@@ -25,6 +25,12 @@ def osn_enterprise_dashboard():
     """OSN Enterprise Analytics Dashboard"""
     return render_template('osn_enterprise_dashboard.html', user=current_user.username)
 
+@bp.route('/dynamic-questions')
+@login_required
+def dynamic_questions_dashboard():
+    """Dynamic Multi-Question Analytics Dashboard"""
+    return render_template('dynamic_questions_dashboard.html', user=current_user.username)
+
 @bp.route('/health')
 def health():
     """Health check endpoint"""

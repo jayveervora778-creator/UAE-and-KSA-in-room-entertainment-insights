@@ -40,4 +40,7 @@ def create_app(config_class=Config):
     from .enhanced_api import bp as enhanced_api_bp
     app.register_blueprint(enhanced_api_bp, url_prefix='/enhanced_api')
     
+    from .dynamic_question_api import bp as dynamic_question_bp
+    app.register_blueprint(dynamic_question_bp, url_prefix='/dynamic_questions')
+    
     return app
