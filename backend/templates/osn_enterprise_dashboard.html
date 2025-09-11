@@ -785,11 +785,20 @@ function createEntertainmentCountryChart(data) {
         chartInstances.entertainmentCountryChart.destroy();
     }
     
+    // Transform series data to Chart.js dataset format
+    const datasets = (data.data.series || []).map(series => ({
+        label: series.name,  // Map 'name' to 'label' for Chart.js
+        data: series.data,
+        backgroundColor: series.backgroundColor,
+        borderColor: series.backgroundColor,
+        borderWidth: 1
+    }));
+    
     chartInstances.entertainmentCountryChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: data.data.countries || [],
-            datasets: data.data.series || []
+            datasets: datasets
         },
         options: {
             responsive: true,

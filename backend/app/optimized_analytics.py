@@ -198,125 +198,20 @@ class OptimizedOSNAnalytics:
         return self._convert_numpy_types(summary)
     
     def get_dynamic_charts_fast(self, filters_hash: str = None) -> Dict[str, Any]:
-        """Optimized chart data generation"""
+        """Optimized chart data generation with fixed legends"""
         
         df = self._apply_cached_filters(filters_hash) if filters_hash else self.combined_data
         
-        charts = {}
+        # Import the fixed chart generator
+        from .fixed_charts import get_fixed_dynamic_charts
         
-        # Entertainment importance by country (fast)
-        if self.entertainment_cols['importance']:
-            country_ent = df.groupby('Country')[self.entertainment_cols['importance']].value_counts(normalize=True).unstack(fill_value=0) * 100
-            
-            charts['entertainment_importance_by_country'] = {
-                'type': 'grouped_bar',
-                'title': 'Entertainment Importance by Market',
-                'data': {
-                    'countries': country_ent.index.tolist(),
-                    'series': [
-                        {
-                            'name': col,
-                            'data': [round(val, 1) for val in country_ent[col].tolist()]
-                        }
-                        for col in country_ent.columns if col in ['Very Important', 'Somewhat Important', 'Not Important']
-                    ]
-                }
-            }
+        # Generate charts with proper data handling - use ONLY the fixed version
+        charts = get_fixed_dynamic_charts(df)
         
-        # Content preferences (fast)
-        if self.entertainment_cols['content_preferences']:
-            content_data = df[self.entertainment_cols['content_preferences']].value_counts().head(8)
-            
-            charts['content_preferences_distribution'] = {
-                'type': 'pie',
-                'title': 'Guest Content Preferences',
-                'data': {
-                    'labels': content_data.index.tolist(),
-                    'data': [int(x) for x in content_data.values],
-                    'colors': ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F06292']
-                }
-            }
+        # Convert all numpy types to ensure JSON serialization works
+        charts = self._convert_numpy_types(charts)
         
-        # Payment analysis (fast)
-        if self.entertainment_cols['payment_willingness'] and self.entertainment_cols['visit_purpose']:
-            payment_by_purpose = df.groupby(self.entertainment_cols['visit_purpose'])[self.entertainment_cols['payment_willingness']].value_counts(normalize=True).unstack(fill_value=0) * 100
-            
-            charts['payment_willingness_analysis'] = {
-                'type': 'stacked_bar',
-                'title': 'Payment Willingness by Visitor Type',
-                'data': {
-                    'categories': payment_by_purpose.index.tolist(),
-                    'series': [
-                        {
-                            'name': 'Willing to Pay',
-                            'data': [round(val, 1) for val in payment_by_purpose.get('Yes', [0]*len(payment_by_purpose))]
-                        },
-                        {
-                            'name': 'Not Willing',
-                            'data': [round(val, 1) for val in payment_by_purpose.get('No', [0]*len(payment_by_purpose))]
-                        }
-                    ]
-                }
-            }
-        
-        # Revenue funnel (fast calculation)
-        total_respondents = len(df)
-        entertainment_users = total_respondents * 0.8  # Estimated
-        high_importance = 0
-        willing_to_pay = 0
-        streaming_preference = 0
-        
-        if self.entertainment_cols['importance']:
-            high_importance = int((df[self.entertainment_cols['importance']] == 'Very Important').sum())
-        
-        if self.entertainment_cols['payment_willingness']:
-            willing_to_pay = int((df[self.entertainment_cols['payment_willingness']] == 'Yes').sum())
-            
-        if self.entertainment_cols['streaming_preference']:
-            streaming_preference = int((df[self.entertainment_cols['streaming_preference']] == 'Yes').sum())
-        
-        charts['revenue_potential_funnel'] = {
-            'type': 'funnel',
-            'title': 'OSN Revenue Opportunity Funnel',
-            'data': {
-                'stages': [
-                    {'name': 'Total Survey Respondents', 'value': int(total_respondents), 'color': '#E3F2FD'},
-                    {'name': 'Entertainment System Users', 'value': int(entertainment_users), 'color': '#BBDEFB'},
-                    {'name': 'High Entertainment Importance', 'value': high_importance, 'color': '#90CAF9'},
-                    {'name': 'Willing to Pay for Premium', 'value': willing_to_pay, 'color': '#64B5F6'},
-                    {'name': 'Prefer Streaming Integration', 'value': streaming_preference, 'color': '#42A5F5'}
-                ]
-            }
-        }
-        
-        # Market heatmap (simplified for performance)
-        opportunities = []
-        for country in df['Country'].unique():
-            country_data = df[df['Country'] == country]
-            
-            ent_score = 50  # Default
-            pay_score = 50  # Default
-            
-            if self.entertainment_cols['importance']:
-                ent_score = (country_data[self.entertainment_cols['importance']] == 'Very Important').mean() * 100
-                
-            if self.entertainment_cols['payment_willingness']:
-                pay_score = (country_data[self.entertainment_cols['payment_willingness']] == 'Yes').mean() * 100
-            
-            opportunities.append({
-                'country': country,
-                'entertainment_demand': round(float(ent_score), 1),
-                'payment_willingness': round(float(pay_score), 1),
-                'opportunity_score': round((float(ent_score) + float(pay_score)) / 2, 1)
-            })
-        
-        charts['market_opportunity_heatmap'] = {
-            'type': 'matrix',
-            'title': 'Market Opportunity Matrix',
-            'data': opportunities
-        }
-        
-        return self._convert_numpy_types({'charts': charts})
+        return {'charts': charts}
     
     def get_ai_recommendations_fast(self, filters_hash: str = None) -> List[Dict[str, Any]]:
         """Fast AI-powered recommendations using simple ML"""

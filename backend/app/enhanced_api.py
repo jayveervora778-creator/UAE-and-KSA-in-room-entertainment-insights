@@ -265,6 +265,60 @@ def get_market_intelligence():
         traceback.print_exc()
         return jsonify({'error': str(e)}), 500
 
+@bp.route('/sentiment-analysis')
+@login_required
+def get_sentiment_analysis():
+    """Get NLP-powered sentiment analysis of text responses"""
+    try:
+        processor, analytics = get_processors()
+        if not processor or not analytics:
+            return jsonify({'error': 'Analytics engine not available'}), 500
+        
+        # Apply filters
+        filters = {}
+        for key in ['country', 'nationality', 'visit_purpose', 'hotel_frequency']:
+            if request.args.get(key):
+                filters[key] = request.args.get(key)
+        
+        # Get filtered data
+        filtered_df = processor.filter_data(filters) if filters else processor._get_combined_data()
+        
+        # Generate sentiment analysis
+        sentiment_results = get_nlp_sentiment_analysis(filtered_df)
+        
+        return jsonify(sentiment_results)
+    except Exception as e:
+        print(f"Error getting sentiment analysis: {e}")
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
+@bp.route('/text-insights')
+@login_required 
+def get_text_insights():
+    """Get advanced NLP text analysis and keyword extraction"""
+    try:
+        processor, analytics = get_processors()
+        if not processor or not analytics:
+            return jsonify({'error': 'Analytics engine not available'}), 500
+        
+        # Apply filters
+        filters = {}
+        for key in ['country', 'nationality', 'visit_purpose', 'hotel_frequency']:
+            if request.args.get(key):
+                filters[key] = request.args.get(key)
+        
+        # Get filtered data
+        filtered_df = processor.filter_data(filters) if filters else processor._get_combined_data()
+        
+        # Generate text insights
+        text_insights = get_advanced_text_analysis(filtered_df)
+        
+        return jsonify(text_insights)
+    except Exception as e:
+        print(f"Error getting text insights: {e}")
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
 # Helper functions for visualization data
 
 def get_entertainment_viz_data(df):
@@ -676,3 +730,230 @@ def get_osn_positioning_analysis(df):
         }
     
     return positioning
+
+def get_nlp_sentiment_analysis(df):
+    """Advanced NLP sentiment analysis using TextBlob"""
+    from textblob import TextBlob
+    
+    sentiment_results = {
+        'overview': {
+            'total_text_responses': 0,
+            'overall_sentiment': 'Neutral',
+            'sentiment_distribution': {},
+            'key_themes': []
+        },
+        'detailed_analysis': {}
+    }
+    
+    # Find text columns (usually open-ended feedback)
+    text_cols = []
+    for col in df.columns:
+        if df[col].dtype == 'object':
+            # Check if column contains substantial text (not just categories)
+            sample_values = df[col].dropna().head(10)
+            if any(isinstance(val, str) and len(val.split()) > 3 for val in sample_values):
+                text_cols.append(col)
+    
+    if not text_cols:
+        sentiment_results['message'] = 'No substantial text data found for sentiment analysis'
+        return sentiment_results
+    
+    all_sentiments = []
+    sentiment_by_country = {}
+    
+    for col in text_cols:
+        text_data = df[col].dropna()
+        if len(text_data) == 0:
+            continue
+            
+        col_sentiments = []
+        
+        for text in text_data:
+            if isinstance(text, str) and len(text.strip()) > 10:
+                blob = TextBlob(text)
+                polarity = blob.sentiment.polarity
+                
+                # Classify sentiment
+                if polarity > 0.1:
+                    sentiment = 'Positive'
+                elif polarity < -0.1:
+                    sentiment = 'Negative' 
+                else:
+                    sentiment = 'Neutral'
+                
+                col_sentiments.append({
+                    'text': text[:100] + '...' if len(text) > 100 else text,
+                    'polarity': round(polarity, 3),
+                    'sentiment': sentiment
+                })
+                all_sentiments.append(polarity)
+        
+        sentiment_results['detailed_analysis'][col] = {
+            'response_count': len(col_sentiments),
+            'average_polarity': round(np.mean([s['polarity'] for s in col_sentiments]), 3) if col_sentiments else 0,
+            'sentiment_breakdown': {
+                'Positive': len([s for s in col_sentiments if s['sentiment'] == 'Positive']),
+                'Negative': len([s for s in col_sentiments if s['sentiment'] == 'Negative']),
+                'Neutral': len([s for s in col_sentiments if s['sentiment'] == 'Neutral'])
+            },
+            'sample_responses': col_sentiments[:5]  # Top 5 examples
+        }
+    
+    # Overall analysis
+    if all_sentiments:
+        avg_sentiment = np.mean(all_sentiments)
+        sentiment_results['overview']['total_text_responses'] = len(all_sentiments)
+        sentiment_results['overview']['average_polarity'] = round(avg_sentiment, 3)
+        
+        if avg_sentiment > 0.1:
+            sentiment_results['overview']['overall_sentiment'] = 'Positive'
+        elif avg_sentiment < -0.1:
+            sentiment_results['overview']['overall_sentiment'] = 'Negative'
+        else:
+            sentiment_results['overview']['overall_sentiment'] = 'Neutral'
+        
+        # Sentiment distribution
+        sentiment_results['overview']['sentiment_distribution'] = {
+            'Positive': len([s for s in all_sentiments if s > 0.1]),
+            'Negative': len([s for s in all_sentiments if s < -0.1]),
+            'Neutral': len([s for s in all_sentiments if -0.1 <= s <= 0.1])
+        }
+    
+    return sentiment_results
+
+def get_advanced_text_analysis(df):
+    """Advanced text analysis with keyword extraction and topic modeling"""
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.cluster import KMeans
+    from textblob import TextBlob
+    
+    analysis_results = {
+        'keyword_analysis': {},
+        'topic_clusters': [],
+        'content_insights': {},
+        'recommendations': []
+    }
+    
+    # Find text columns
+    text_cols = []
+    all_texts = []
+    
+    for col in df.columns:
+        if df[col].dtype == 'object':
+            sample_values = df[col].dropna().head(10)
+            if any(isinstance(val, str) and len(val.split()) > 3 for val in sample_values):
+                text_cols.append(col)
+                col_texts = df[col].dropna().astype(str).tolist()
+                all_texts.extend(col_texts)
+    
+    if not all_texts:
+        analysis_results['message'] = 'No substantial text data found for analysis'
+        return analysis_results
+    
+    # Clean and prepare texts
+    clean_texts = []
+    for text in all_texts:
+        if isinstance(text, str) and len(text.strip()) > 10:
+            # Basic text cleaning
+            clean_text = ' '.join(text.lower().split())
+            clean_texts.append(clean_text)
+    
+    if len(clean_texts) < 5:
+        analysis_results['message'] = 'Insufficient text data for meaningful analysis'
+        return analysis_results
+    
+    # TF-IDF Analysis for keywords
+    try:
+        tfidf = TfidfVectorizer(
+            max_features=50,
+            stop_words='english',
+            ngram_range=(1, 2),
+            min_df=2
+        )
+        tfidf_matrix = tfidf.fit_transform(clean_texts)
+        
+        feature_names = tfidf.get_feature_names_out()
+        tfidf_scores = np.mean(tfidf_matrix.toarray(), axis=0)
+        
+        # Get top keywords
+        keyword_scores = list(zip(feature_names, tfidf_scores))
+        keyword_scores.sort(key=lambda x: x[1], reverse=True)
+        
+        analysis_results['keyword_analysis'] = {
+            'top_keywords': [{'keyword': kw, 'score': round(score, 4)} for kw, score in keyword_scores[:15]],
+            'total_unique_terms': len(feature_names),
+            'text_corpus_size': len(clean_texts)
+        }
+        
+        # Topic clustering
+        if len(clean_texts) >= 10:
+            n_clusters = min(5, len(clean_texts) // 3)
+            kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
+            cluster_labels = kmeans.fit_predict(tfidf_matrix)
+            
+            # Analyze each cluster
+            for i in range(n_clusters):
+                cluster_texts = [clean_texts[j] for j in range(len(clean_texts)) if cluster_labels[j] == i]
+                cluster_tfidf = tfidf_matrix[cluster_labels == i]
+                
+                if len(cluster_texts) > 0:
+                    # Get top terms for this cluster
+                    cluster_center = np.mean(cluster_tfidf.toarray(), axis=0)
+                    top_indices = cluster_center.argsort()[-5:][::-1]
+                    top_terms = [feature_names[idx] for idx in top_indices]
+                    
+                    analysis_results['topic_clusters'].append({
+                        'cluster_id': i,
+                        'size': len(cluster_texts),
+                        'top_terms': top_terms,
+                        'sample_text': cluster_texts[0][:150] + '...' if cluster_texts else ''
+                    })
+    
+    except Exception as e:
+        analysis_results['keyword_analysis'] = {'error': f'TF-IDF analysis failed: {str(e)}'}
+    
+    # Content insights by category
+    content_categories = {}
+    
+    # Analyze entertainment-related mentions
+    entertainment_keywords = ['entertainment', 'tv', 'movie', 'show', 'streaming', 'netflix', 'osn', 'content']
+    hospitality_keywords = ['hotel', 'room', 'service', 'staff', 'amenity', 'experience', 'stay']
+    
+    entertainment_mentions = 0
+    hospitality_mentions = 0
+    
+    for text in clean_texts:
+        text_lower = text.lower()
+        if any(kw in text_lower for kw in entertainment_keywords):
+            entertainment_mentions += 1
+        if any(kw in text_lower for kw in hospitality_keywords):
+            hospitality_mentions += 1
+    
+    analysis_results['content_insights'] = {
+        'entertainment_focus': {
+            'mention_count': entertainment_mentions,
+            'percentage': round((entertainment_mentions / len(clean_texts)) * 100, 1)
+        },
+        'hospitality_focus': {
+            'mention_count': hospitality_mentions,
+            'percentage': round((hospitality_mentions / len(clean_texts)) * 100, 1)
+        },
+        'total_analyzed_responses': len(clean_texts)
+    }
+    
+    # Generate AI recommendations based on text analysis
+    recommendations = [
+        'Develop targeted entertainment packages based on frequently mentioned content types',
+        'Enhance hotel-specific entertainment offerings mentioned in guest feedback',
+        'Create personalized content recommendations using identified preference patterns'
+    ]
+    
+    if entertainment_mentions > len(clean_texts) * 0.3:
+        recommendations.append('High entertainment focus detected - prioritize OSN+ integration in hotel partnerships')
+    
+    if 'arabic' in ' '.join(clean_texts).lower() or 'middle east' in ' '.join(clean_texts).lower():
+        recommendations.append('Regional content preferences identified - emphasize Arabic and Middle Eastern content library')
+    
+    analysis_results['recommendations'] = recommendations
+    
+    return analysis_results
