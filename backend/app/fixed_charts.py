@@ -132,17 +132,19 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
     if 'D2' in df.columns:
         streaming_preference_count = (df['D2'] == 'Yes').sum()
     
-    filterable_charts['revenue_potential_funnel'] = {
+    filterable_charts['survey_response_analysis'] = {
         'type': 'funnel',
-        'title': 'OSN Revenue Opportunity Funnel',
+        'title': 'Survey Response Trends (Sample Data Only)',
+        'subtitle': 'Based on 400 respondents - not market sizing',
         'data': {
             'stages': [
-                {'name': 'Total Survey Respondents', 'value': int(total_respondents), 'color': '#E3F2FD'},
-                {'name': 'Use Entertainment Systems', 'value': int(tv_usage_count), 'color': '#BBDEFB'},
-                {'name': 'Rate Entertainment Very Important', 'value': int(high_importance_count), 'color': '#90CAF9'},
-                {'name': 'Willing to Pay for Premium', 'value': int(willing_to_pay_count), 'color': '#64B5F6'},
-                {'name': 'Want Streaming Integration', 'value': int(streaming_preference_count), 'color': '#42A5F5'}
-            ]
+                {'name': 'Survey Respondents', 'value': int(total_respondents), 'color': '#E3F2FD'},
+                {'name': 'Use TV/Entertainment', 'value': int(tv_usage_count), 'color': '#BBDEFB'},
+                {'name': 'High Entertainment Priority', 'value': int(high_importance_count), 'color': '#90CAF9'},
+                {'name': 'Willing to Pay Premium', 'value': int(willing_to_pay_count), 'color': '#64B5F6'},
+                {'name': 'Want Streaming Access', 'value': int(streaming_preference_count), 'color': '#42A5F5'}
+            ],
+            'disclaimer': '⚠️ Survey sample trends only - requires market research for business planning'
         }
     }
     

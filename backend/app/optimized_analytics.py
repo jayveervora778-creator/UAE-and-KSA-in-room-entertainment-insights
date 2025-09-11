@@ -113,13 +113,14 @@ class OptimizedOSNAnalytics:
                 'streaming_demand': 67.8     # Based on D2 column analysis
             }
         
-        # Revenue insights
+        # Survey insights (not revenue projections)
         if self.entertainment_cols['payment_willingness']:
             willing_count = (df[self.entertainment_cols['payment_willingness']] == 'Yes').sum()
-            summary['revenue_insights'] = {
+            summary['survey_insights'] = {
                 'payment_willingness_rate': round((willing_count / len(df)) * 100, 1),
-                'estimated_market_size': int(len(df) * 0.4),  # Realistic market sizing
-                'target_segments': ['Business travelers', 'Family vacationers', 'Frequent guests']
+                'sample_size_note': f'Based on {len(df)} survey responses',
+                'key_segments': ['Business travelers', 'Family vacationers', 'Frequent guests'],
+                'disclaimer': 'Sample data only - market research required for projections'
             }
         
         return self._convert_numpy_types(summary)

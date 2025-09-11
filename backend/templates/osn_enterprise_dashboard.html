@@ -305,6 +305,18 @@
             </small>
         </div>
     </div>
+    
+    <!-- Data Disclaimer Banner -->
+    <div class="row mt-3">
+        <div class="col">
+            <div class="alert alert-warning alert-sm py-2">
+                <i class="fas fa-exclamation-triangle me-2"></i>
+                <strong>Data Disclaimer:</strong> Analysis based on 400 survey respondents from UAE & KSA hotels. 
+                Results show directional trends only and require comprehensive market research for business planning.
+                <strong>Not representative of total addressable market.</strong>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Executive KPIs -->
@@ -682,7 +694,7 @@ async function loadDynamicCharts() {
         // Create all charts
         createEntertainmentCountryChart(chartsData.charts?.entertainment_importance_by_country);
         createContentPreferencesChart(chartsData.charts?.content_preferences_distribution);
-        createRevenueFunnelChart(chartsData.charts?.revenue_potential_funnel);
+        createRevenueFunnelChart(chartsData.charts?.survey_response_analysis);
         createPaymentAnalysisChart(chartsData.charts?.payment_willingness_analysis);
         createCompetitiveChart(chartsData.charts?.competitive_landscape);
         
