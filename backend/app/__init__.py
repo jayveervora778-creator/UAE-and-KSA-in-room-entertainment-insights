@@ -33,8 +33,9 @@ def create_app(config_class=Config):
     from .main import bp as main_bp
     app.register_blueprint(main_bp)
     
-    from .api import bp as api_bp
-    app.register_blueprint(api_bp, url_prefix='/api')
+    # Legacy API removed - all functionality moved to enhanced_api
+    # from .api import bp as api_bp
+    # app.register_blueprint(api_bp, url_prefix='/api')
     
     from .enhanced_api import bp as enhanced_api_bp
     app.register_blueprint(enhanced_api_bp, url_prefix='/enhanced_api')
