@@ -369,6 +369,11 @@
             <i class="fas fa-trophy me-2"></i>Competitive Edge
         </button>
     </li>
+    <li class="nav-item">
+        <button class="nav-link" onclick="showAnalyticsSection('nlp-analysis')" id="nlp-tab">
+            <i class="fas fa-brain me-2"></i>Text Analysis
+        </button>
+    </li>
 </ul>
 
 <!-- Strategic Overview Section -->
@@ -542,6 +547,61 @@
                     OSN Competitive Advantages
                 </h5>
                 <div id="osnAdvantages"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- NLP Text Analysis Section -->
+<div id="nlp-analysis-section" class="analytics-section" style="display: none;">
+    <div class="row">
+        <!-- Sentiment Analysis -->
+        <div class="col-md-6">
+            <div class="chart-container">
+                <h5 class="mb-3">
+                    <i class="fas fa-comments me-2 text-primary"></i>
+                    Survey Sentiment Analysis
+                </h5>
+                <div id="sentimentAnalysis">
+                    <div class="text-center p-4">
+                        <div class="loading-spinner me-2"></div>
+                        Analyzing survey text responses...
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Keyword Analysis -->
+        <div class="col-md-6">
+            <div class="chart-container">
+                <h5 class="mb-3">
+                    <i class="fas fa-tags me-2 text-primary"></i>
+                    Key Topics & Terms
+                </h5>
+                <div id="keywordAnalysis">
+                    <div class="text-center p-4">
+                        <div class="loading-spinner me-2"></div>
+                        Extracting key themes...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <!-- Content Insights -->
+        <div class="col-12">
+            <div class="chart-container">
+                <h5 class="mb-3">
+                    <i class="fas fa-lightbulb me-2 text-primary"></i>
+                    AI-Generated Content Insights
+                </h5>
+                <div id="contentInsights">
+                    <div class="text-center p-4">
+                        <div class="loading-spinner me-2"></div>
+                        Generating strategic insights from text analysis...
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -757,6 +817,7 @@ function showAnalyticsSection(sectionName) {
         case 'market-intelligence': tabId = 'intelligence-tab'; break;
         case 'ai-insights': tabId = 'ai-tab'; break;
         case 'competitive-analysis': tabId = 'competitive-tab'; break;
+        case 'nlp-analysis': tabId = 'nlp-tab'; break;
         default: tabId = sectionName + '-tab'; break;
     }
     
@@ -786,6 +847,8 @@ function showAnalyticsSection(sectionName) {
             loadAIRecommendations();
         } else if (sectionName === 'market-intelligence') {
             loadMarketIntelligence();
+        } else if (sectionName === 'nlp-analysis') {
+            loadNLPAnalysis();
         }
     }
 }
@@ -1422,6 +1485,91 @@ function exportExecutiveReport() {
 function showError(message) {
     // Show error notification
     console.error(message);
+}
+
+// Load NLP Analysis data
+async function loadNLPAnalysis() {
+    try {
+        // Load sentiment analysis
+        document.getElementById('sentimentAnalysis').innerHTML = `
+            <div class="text-center p-4">
+                <div class="loading-spinner me-2"></div>
+                Analyzing sentiment in survey responses...
+            </div>
+        `;
+        
+        // Make parallel requests
+        const [sentimentResponse, insightsResponse] = await Promise.all([
+            axios.get('/enhanced_api/sentiment-analysis'),
+            axios.get('/enhanced_api/text-insights')
+        ]);
+        
+        // Display sentiment analysis
+        const sentiment = sentimentResponse.data;
+        let sentimentHtml = '<div class="nlp-results">';
+        
+        if (sentiment.overview) {
+            const sentimentClass = sentiment.overview.overall_sentiment === 'Positive' ? 'success' : 
+                                   sentiment.overview.overall_sentiment === 'Negative' ? 'danger' : 'secondary';
+            sentimentHtml += `
+                <div class="mb-3">
+                    <h6>Overall: <span class="badge bg-${sentimentClass}">${sentiment.overview.overall_sentiment}</span></h6>
+                    <p class="text-muted">${sentiment.overview.total_text_responses} text responses analyzed</p>
+                </div>
+            `;
+        }
+        sentimentHtml += '</div>';
+        document.getElementById('sentimentAnalysis').innerHTML = sentimentHtml;
+        
+        // Display keyword analysis  
+        const insights = insightsResponse.data;
+        let keywordHtml = '<div class="nlp-results">';
+        
+        if (insights.keyword_analysis && insights.keyword_analysis.top_keywords) {
+            keywordHtml += '<div class="mb-3"><h6>Top Keywords:</h6>';
+            insights.keyword_analysis.top_keywords.slice(0, 8).forEach(kw => {
+                keywordHtml += `<span class="badge bg-light text-dark me-1 mb-1">${kw.keyword}</span>`;
+            });
+            keywordHtml += '</div>';
+        }
+        keywordHtml += '</div>';
+        document.getElementById('keywordAnalysis').innerHTML = keywordHtml;
+        
+        // Display content insights
+        let insightsHtml = '<div class="nlp-results">';
+        
+        if (insights.content_insights) {
+            insightsHtml += `
+                <div class="row mb-3">
+                    <div class="col-6 text-center">
+                        <div class="h3 text-primary">${insights.content_insights.entertainment_focus.percentage}%</div>
+                        <small>Entertainment Focus</small>
+                    </div>
+                    <div class="col-6 text-center">
+                        <div class="h3 text-info">${insights.content_insights.hospitality_focus.percentage}%</div>
+                        <small>Service Focus</small>
+                    </div>
+                </div>
+            `;
+        }
+        
+        if (insights.recommendations) {
+            insightsHtml += '<div><h6>Key Insights:</h6><ul class="list-unstyled">';
+            insights.recommendations.slice(0, 3).forEach(rec => {
+                insightsHtml += `<li class="mb-1"><i class="fas fa-lightbulb me-2 text-warning"></i><small>${rec}</small></li>`;
+            });
+            insightsHtml += '</ul></div>';
+        }
+        
+        insightsHtml += '</div>';
+        document.getElementById('contentInsights').innerHTML = insightsHtml;
+        
+    } catch (error) {
+        console.error('Error loading NLP analysis:', error);
+        document.getElementById('sentimentAnalysis').innerHTML = '<div class="text-danger p-3">Error loading sentiment analysis</div>';
+        document.getElementById('keywordAnalysis').innerHTML = '<div class="text-danger p-3">Error loading keyword analysis</div>';
+        document.getElementById('contentInsights').innerHTML = '<div class="text-danger p-3">Error loading content insights</div>';
+    }
 }
 </script>
 {% endblock %}

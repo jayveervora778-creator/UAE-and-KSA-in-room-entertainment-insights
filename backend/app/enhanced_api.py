@@ -53,11 +53,11 @@ def get_executive_summary():
             if request.args.get(key):
                 filters[key] = request.args.get(key)
         
-        # Generate filter hash for caching
-        filters_hash = str(hash(frozenset(filters.items()))) if filters else None
+        # Apply filters to get filtered data
+        filtered_df = processor.filter_data(filters) if filters else processor._get_combined_data()
         
-        # Generate executive summary using optimized engine
-        summary = analytics.get_executive_summary_fast(filters_hash)
+        # Generate executive summary using filtered data
+        summary = analytics.get_executive_summary_with_data(filtered_df)
         
         # Add filter context
         summary['filter_context'] = {
@@ -217,11 +217,11 @@ def get_dynamic_charts():
             if request.args.get(key):
                 filters[key] = request.args.get(key)
         
-        # Generate filter hash for caching
-        filters_hash = str(hash(frozenset(filters.items()))) if filters else None
+        # Apply filters to get filtered data
+        filtered_df = processor.filter_data(filters) if filters else processor._get_combined_data()
         
-        # Generate optimized chart data
-        chart_data = analytics.get_dynamic_charts_fast(filters_hash)
+        # Generate chart data using filtered data
+        chart_data = analytics.get_dynamic_charts_with_data(filtered_df)
         
         # Add metadata
         filtered_df = processor.filter_data(filters) if filters else processor._get_combined_data()
