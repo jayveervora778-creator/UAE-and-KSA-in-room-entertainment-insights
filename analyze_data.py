@@ -68,9 +68,13 @@ def analyze_excel_file(filepath):
             categorical_columns = []
             for col in df.columns:
                 if df[col].dtype == 'object' and col not in text_columns:
-                    unique_count = df[col].nunique()
-                    if 1 < unique_count <= 50:  # Reasonable range for categories
-                        categorical_columns.append((col, unique_count))
+                    try:
+                        unique_count = df[col].nunique()
+                        if 1 < unique_count <= 50:  # Reasonable range for categories
+                            categorical_columns.append((col, unique_count))
+                    except Exception:
+                        # Skip columns that cause comparison errors
+                        continue
             
             if categorical_columns:
                 print("Potential categorical columns for filtering:")

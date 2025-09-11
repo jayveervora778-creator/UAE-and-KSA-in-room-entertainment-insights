@@ -7,3 +7,58 @@
  * Debugger is active!
  * Debugger PIN: 141-989-138
 10.12.22.182 - - [11/Sep/2025 20:05:22] "GET /health HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:06:49] "POST /login HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:06:53] "[35m[1mGET /api/summary HTTP/1.1[0m" 500 -
+ * Detected change in '/home/user/webapp/backend/app/data_processor.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/data_processor.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/data_processor.py', reloading
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+ * Detected change in '/home/user/webapp/backend/app/data_processor.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/data_processor.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/data_processor.py', reloading
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+10.12.22.182 - - [11/Sep/2025 20:07:40] "[35m[1mGET /api/summary HTTP/1.1[0m" 500 -
+ * Detected change in '/home/user/webapp/backend/app/data_processor.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/data_processor.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/data_processor.py', reloading
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+10.12.22.182 - - [11/Sep/2025 20:08:06] "[35m[1mGET /api/summary HTTP/1.1[0m" 500 -
+ * Detected change in '/home/user/webapp/backend/app/data_processor.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/data_processor.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/data_processor.py', reloading
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+10.12.22.182 - - [11/Sep/2025 20:08:29] "GET /api/summary HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:08:33] "GET /api/filters HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:08:37] "GET /api/text-columns HTTP/1.1" 200 -

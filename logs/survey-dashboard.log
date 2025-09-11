@@ -1,2 +1,17 @@
  * Serving Flask app 'app'
  * Debug mode: on
+Loaded Guests (UAE): (203, 45)
+Loaded Guests Online (KSA): (203, 45)
+Error getting summary: '<' not supported between instances of 'str' and 'int'
+ * Serving Flask app 'app'
+ * Debug mode: on
+Loaded Guests (UAE): (203, 45)
+Loaded Guests Online (KSA): (203, 45)
+Error getting summary: '<' not supported between instances of 'str' and 'int'
+ * Serving Flask app 'app'
+ * Debug mode: on
+Loaded Guests (UAE): (203, 45)
+Loaded Guests Online (KSA): (203, 45)
+Error getting summary: '<' not supported between instances of 'str' and 'int'
+ * Serving Flask app 'app'
+ * Debug mode: on

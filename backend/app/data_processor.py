@@ -119,14 +119,18 @@ class SurveyDataProcessor:
                 # Get non-null values
                 non_null_values = df[col].dropna()
                 if len(non_null_values) > 0:
-                    # Check if it's likely a text response column
-                    sample_values = non_null_values.head(10)
-                    string_values = sample_values.astype(str)
-                    avg_length = string_values.str.len().mean()
-                    
-                    # Consider it text if average length > 20 chars and has varied content
-                    if avg_length > 20 and len(string_values.unique()) > len(string_values) * 0.5:
-                        self.text_responses[sheet_name][col] = non_null_values.tolist()
+                    try:
+                        # Check if it's likely a text response column
+                        sample_values = non_null_values.head(10)
+                        string_values = sample_values.astype(str)
+                        avg_length = string_values.str.len().mean()
+                        
+                        # Consider it text if average length > 20 chars and has varied content
+                        if avg_length > 20 and len(string_values.unique()) > len(string_values) * 0.5:
+                            self.text_responses[sheet_name][col] = non_null_values.tolist()
+                    except Exception:
+                        # Skip columns that cause issues
+                        continue
     
     def get_countries(self) -> List[str]:
         """Get list of countries in the data"""
@@ -161,16 +165,29 @@ class SurveyDataProcessor:
         categorical_columns = []
         for sheet_name, df in self.processed_data.items():
             for col in df.columns:
-                if df[col].dtype == 'object' and df[col].nunique() <= 20:  # Reasonable category count
-                    if col not in ['Country'] and col not in categorical_columns:
-                        categorical_columns.append(col)
+                if df[col].dtype == 'object':
+                    try:
+                        unique_count = df[col].nunique()
+                        if unique_count <= 20:  # Reasonable category count
+                            if col not in ['Country'] and col not in categorical_columns:
+                                categorical_columns.append(col)
+                    except Exception:
+                        # Skip columns that cause comparison errors
+                        continue
         
         for col in categorical_columns[:10]:  # Limit to top 10 for performance
-            values = set()
-            for df in self.processed_data.values():
-                if col in df.columns:
-                    values.update(df[col].dropna().unique())
-            filters[col] = sorted(list(values))
+            try:
+                values = set()
+                for df in self.processed_data.values():
+                    if col in df.columns:
+                        unique_vals = df[col].dropna().unique()
+                        # Convert to string to avoid comparison issues
+                        str_vals = [str(v) for v in unique_vals if v is not None]
+                        values.update(str_vals)
+                filters[col] = sorted(list(values))
+            except Exception:
+                # Skip problematic columns
+                continue
         
         return filters
     
@@ -189,21 +206,47 @@ class SurveyDataProcessor:
     
     def get_summary_stats(self, filtered_df: Optional[pd.DataFrame] = None) -> Dict[str, Any]:
         """Get summary statistics"""
-        if filtered_df is None:
-            filtered_df = pd.concat([df for df in self.processed_data.values()], ignore_index=True)
-        
-        stats = {
-            'total_responses': len(filtered_df),
-            'countries': filtered_df['Country'].value_counts().to_dict() if 'Country' in filtered_df.columns else {},
-            'response_distribution': {}
-        }
-        
-        # Add response distributions for key questions
-        for col in filtered_df.columns:
-            if filtered_df[col].dtype == 'object' and filtered_df[col].nunique() <= 10:
-                stats['response_distribution'][col] = filtered_df[col].value_counts().to_dict()
-        
-        return stats
+        try:
+            if filtered_df is None:
+                filtered_df = pd.concat([df for df in self.processed_data.values()], ignore_index=True)
+            
+            stats = {
+                'total_responses': len(filtered_df),
+                'countries': {},
+                'response_distribution': {}
+            }
+            
+            # Safe country counting
+            if 'Country' in filtered_df.columns:
+                try:
+                    stats['countries'] = filtered_df['Country'].value_counts().to_dict()
+                except Exception as e:
+                    print(f"Error counting countries: {e}")
+                    stats['countries'] = {}
+            
+            # Add response distributions for key questions (limit to avoid errors)
+            for col in list(filtered_df.columns)[:10]:  # Limit columns for performance
+                if col != 'Country' and filtered_df[col].dtype == 'object':
+                    try:
+                        # Convert to string first to avoid type comparison issues
+                        col_series = filtered_df[col].dropna().astype(str)
+                        unique_count = col_series.nunique()
+                        if 1 < unique_count <= 10:
+                            stats['response_distribution'][col] = col_series.value_counts().head(10).to_dict()
+                    except Exception as e:
+                        print(f"Error processing column {col}: {e}")
+                        continue
+            
+            return stats
+            
+        except Exception as e:
+            print(f"Error in get_summary_stats: {e}")
+            return {
+                'total_responses': 0,
+                'countries': {},
+                'response_distribution': {},
+                'error': str(e)
+            }
     
     def analyze_text_responses(self, column: str, country: Optional[str] = None) -> Dict[str, Any]:
         """Analyze text responses using NLP"""
