@@ -1401,3 +1401,185 @@ Error getting raw data: 'EnhancedSurveyDataProcessor' object has no attribute 'g
  * Debug mode: on
  * Serving Flask app 'app'
  * Debug mode: on
+Login attempt - Username: 'admin', Password length: 14
+Login successful for user: admin
+Initializing Optimized Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (204, 45)
+Text column 'A1': 40 responses
+Text column 'A2-A': 6 responses
+Text column 'B2-B': 184 responses
+Text column 'C2-A-a': 10 responses
+Text column 'C2-B': 169 responses
+Text column 'C4-B': 175 responses
+Text column 'D5': 168 responses
+Final processed data for Guests (UAE): 200 responses
+Processed Guests (UAE): (200, 46) - 200 actual responses
+Loaded Guests Online (KSA): (204, 45)
+Text column 'A1': 85 responses
+Text column 'A2-A': 21 responses
+Text column 'B-A-a': 10 responses
+Text column 'B2-B': 173 responses
+Text column 'C2-A-a': 24 responses
+Text column 'C2-B': 173 responses
+Text column 'C4-B': 168 responses
+Text column 'D5': 174 responses
+Final processed data for Guests Online (KSA): 200 responses
+Processed Guests Online (KSA): (200, 46) - 200 actual responses
+Data processor initialized with 2 sheets
+Initializing Optimized Analytics Engine...
+Optimized analytics engine initialized successfully
+Initializing Corrected Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (204, 45)
+Text column 'A1': 40 responses
+Text column 'A2-A': 6 responses
+Text column 'B2-B': 184 responses
+Text column 'C2-A-a': 10 responses
+Text column 'C2-B': 169 responses
+Text column 'C4-B': 175 responses
+Text column 'D5': 168 responses
+Final processed data for Guests (UAE): 200 responses
+Processed Guests (UAE): (200, 46) - 200 actual responses
+Loaded Guests Online (KSA): (204, 45)
+Text column 'A1': 85 responses
+Text column 'A2-A': 21 responses
+Text column 'B-A-a': 10 responses
+Text column 'B2-B': 173 responses
+Text column 'C2-A-a': 24 responses
+Text column 'C2-B': 173 responses
+Text column 'C4-B': 168 responses
+Text column 'D5': 174 responses
+Final processed data for Guests Online (KSA): 200 responses
+Processed Guests Online (KSA): (200, 46) - 200 actual responses
+Data processor initialized successfully with 2 sheets
+Initializing Corrected Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (204, 45)
+Text column 'A1': 40 responses
+Text column 'A2-A': 6 responses
+Text column 'B2-B': 184 responses
+Text column 'C2-A-a': 10 responses
+Text column 'C2-B': 169 responses
+Text column 'C4-B': 175 responses
+Text column 'D5': 168 responses
+Final processed data for Guests (UAE): 200 responses
+Processed Guests (UAE): (200, 46) - 200 actual responses
+Loaded Guests Online (KSA): (204, 45)
+Text column 'A1': 85 responses
+Text column 'A2-A': 21 responses
+Text column 'B-A-a': 10 responses
+Text column 'B2-B': 173 responses
+Text column 'C2-A-a': 24 responses
+Text column 'C2-B': 173 responses
+Text column 'C4-B': 168 responses
+Text column 'D5': 174 responses
+Final processed data for Guests Online (KSA): 200 responses
+Processed Guests Online (KSA): (200, 46) - 200 actual responses
+Data processor initialized successfully with 2 sheets
+Login attempt - Username: 'admin', Password length: 14
+Login successful for user: admin
+Initializing Corrected Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (204, 45)
+Text column 'A1': 40 responses
+Text column 'A2-A': 6 responses
+Text column 'B2-B': 184 responses
+Text column 'C2-A-a': 10 responses
+Text column 'C2-B': 169 responses
+Text column 'C4-B': 175 responses
+Text column 'D5': 168 responses
+Final processed data for Guests (UAE): 200 responses
+Processed Guests (UAE): (200, 46) - 200 actual responses
+Loaded Guests Online (KSA): (204, 45)
+Text column 'A1': 85 responses
+Text column 'A2-A': 21 responses
+Text column 'B-A-a': 10 responses
+Text column 'B2-B': 173 responses
+Text column 'C2-A-a': 24 responses
+Text column 'C2-B': 173 responses
+Text column 'C4-B': 168 responses
+Text column 'D5': 174 responses
+Final processed data for Guests Online (KSA): 200 responses
+Processed Guests Online (KSA): (200, 46) - 200 actual responses
+Data processor initialized successfully with 2 sheets
+Initializing Optimized Data Processor...
+Initializing Optimized Data Processor...
+Initializing Optimized Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (204, 45)
+Text column 'A1': 40 responses
+Loaded Guests (UAE): (204, 45)
+Text column 'A2-A': 6 responses
+Text column 'A1': 40 responses
+Text column 'A2-A': 6 responses
+Loaded Guests (UAE): (204, 45)
+Text column 'B2-B': 184 responses
+Text column 'A1': 40 responses
+Text column 'A2-A': 6 responses
+Text column 'B2-B': 184 responses
+Text column 'C2-A-a': 10 responses
+Text column 'C2-B': 169 responses
+Text column 'C2-A-a': 10 responses
+Text column 'C2-B': 169 responses
+Text column 'B2-B': 184 responses
+Text column 'C4-B': 175 responses
+Text column 'C2-A-a': 10 responses
+Text column 'C2-B': 169 responses
+Text column 'C4-B': 175 responses
+Text column 'D5': 168 responses
+Text column 'C4-B': 175 responses
+Text column 'D5': 168 responses
+Text column 'D5': 168 responses
+Final processed data for Guests (UAE): 200 responses
+Processed Guests (UAE): (200, 46) - 200 actual responses
+Final processed data for Guests (UAE): 200 responses
+Processed Guests (UAE): (200, 46) - 200 actual responses
+Final processed data for Guests (UAE): 200 responses
+Processed Guests (UAE): (200, 46) - 200 actual responses
+Loaded Guests Online (KSA): (204, 45)
+Text column 'A1': 85 responses
+Text column 'A2-A': 21 responses
+Loaded Guests Online (KSA): (204, 45)
+Text column 'A1': 85 responses
+Text column 'A2-A': 21 responses
+Loaded Guests Online (KSA): (204, 45)
+Text column 'A1': 85 responses
+Text column 'A2-A': 21 responses
+Text column 'B-A-a': 10 responses
+Text column 'B2-B': 173 responses
+Text column 'B-A-a': 10 responses
+Text column 'B-A-a': 10 responses
+Text column 'B2-B': 173 responses
+Text column 'B2-B': 173 responses
+Text column 'C2-A-a': 24 responses
+Text column 'C2-B': 173 responses
+Text column 'C2-A-a': 24 responses
+Text column 'C2-B': 173 responses
+Text column 'C4-B': 168 responses
+Text column 'C4-B': 168 responses
+Text column 'C2-A-a': 24 responses
+Text column 'C2-B': 173 responses
+Text column 'D5': 174 responses
+Text column 'D5': 174 responses
+Text column 'C4-B': 168 responses
+Text column 'D5': 174 responses
+Final processed data for Guests Online (KSA): 200 responses
+Processed Guests Online (KSA): (200, 46) - 200 actual responses
+Data processor initialized with 2 sheets
+Initializing Optimized Analytics Engine...
+Final processed data for Guests Online (KSA): 200 responses
+Processed Guests Online (KSA): (200, 46) - 200 actual responses
+Data processor initialized with 2 sheets
+Initializing Optimized Analytics Engine...
+Optimized analytics engine initialized successfully
+Optimized analytics engine initialized successfully
+Final processed data for Guests Online (KSA): 200 responses
+Processed Guests Online (KSA): (200, 46) - 200 actual responses
+Data processor initialized with 2 sheets
+Initializing Optimized Analytics Engine...
+Optimized analytics engine initialized successfully
+ * Serving Flask app 'app'
+ * Debug mode: on

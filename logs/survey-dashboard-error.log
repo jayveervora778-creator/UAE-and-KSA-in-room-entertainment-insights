@@ -1277,3 +1277,133 @@ Port 5000 is in use by another program. Either identify and stop that program, o
 127.0.0.1 - - [11/Sep/2025 21:20:10] "GET /enhanced_api/ai-recommendations HTTP/1.1" 200 -
 127.0.0.1 - - [11/Sep/2025 21:20:10] "GET /enhanced_api/entertainment-metrics HTTP/1.1" 200 -
 127.0.0.1 - - [11/Sep/2025 21:20:10] "GET /enhanced_api/executive-summary?country=UAE HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:26:32] "GET / HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:26:35] "[32mGET /login HTTP/1.1[0m" 302 -
+10.12.22.182 - - [11/Sep/2025 21:26:35] "GET /osn-analytics HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:26:36] "GET /enhanced_api/executive-summary HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:26:36] "GET /enhanced_api/market-intelligence HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:26:36] "GET /enhanced_api/dynamic-charts HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:26:37] "GET /api/filters HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:27:31] "[32mGET /login HTTP/1.1[0m" 302 -
+10.12.22.182 - - [11/Sep/2025 21:27:31] "GET /osn-analytics HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:27:32] "GET /enhanced_api/executive-summary HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:27:32] "GET /enhanced_api/market-intelligence HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:27:32] "GET /enhanced_api/dynamic-charts HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:27:33] "GET /api/filters HTTP/1.1" 200 -
+127.0.0.1 - - [11/Sep/2025 21:28:43] "POST /login HTTP/1.1" 200 -
+127.0.0.1 - - [11/Sep/2025 21:28:43] "GET /enhanced_api/dynamic-charts HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:28:56] "[32mGET /login HTTP/1.1[0m" 302 -
+10.12.22.182 - - [11/Sep/2025 21:28:56] "GET /osn-analytics HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:28:57] "GET /enhanced_api/executive-summary HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:28:57] "GET /enhanced_api/market-intelligence HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:28:57] "GET /enhanced_api/dynamic-charts HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:28:59] "GET /api/filters HTTP/1.1" 200 -
+ * Detected change in '/home/user/webapp/backend/app/fixed_charts.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/fixed_charts.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/fixed_charts.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/fixed_charts.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/fixed_charts.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/fixed_charts.py', reloading
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+10.12.22.182 - - [11/Sep/2025 21:29:52] "GET /enhanced_api/executive-summary HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:29:52] "GET /enhanced_api/market-intelligence?country=KSA HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:29:52] "GET /enhanced_api/dynamic-charts?country=KSA HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:29:53] "GET /enhanced_api/market-intelligence?country=KSA&nationality=American HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:29:53] "GET /enhanced_api/executive-summary HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:29:53] "GET /enhanced_api/dynamic-charts?country=KSA&nationality=American HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:29:59] "GET /enhanced_api/executive-summary HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:29:59] "GET /enhanced_api/market-intelligence?country=KSA&nationality=American&visit_purpose=Business HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:29:59] "GET /enhanced_api/dynamic-charts?country=KSA&nationality=American&visit_purpose=Business HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:30:11] "GET /enhanced_api/executive-summary HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:30:11] "GET /enhanced_api/market-intelligence?country=KSA&nationality=American&visit_purpose=Business&hotel_frequency=More+than+5+times HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:30:11] "GET /enhanced_api/dynamic-charts?country=KSA&nationality=American&visit_purpose=Business&hotel_frequency=More+than+5+times HTTP/1.1" 200 -
+ * Detected change in '/home/user/webapp/backend/app/optimized_analytics.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/optimized_analytics.py', reloading
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+ * Detected change in '/home/user/webapp/backend/app/optimized_analytics.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/optimized_analytics.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/optimized_analytics.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/optimized_analytics.py', reloading
+ * Restarting with watchdog (inotify)
+Traceback (most recent call last):
+  File "/home/user/webapp/backend/app.py", line 7, in <module>
+    app = create_app()
+          ^^^^^^^^^^^^
+  File "/home/user/webapp/backend/app/__init__.py", line 39, in create_app
+    from .enhanced_api import bp as enhanced_api_bp
+  File "/home/user/webapp/backend/app/enhanced_api.py", line 8, in <module>
+    from .optimized_analytics import OptimizedOSNAnalytics
+  File "/home/user/webapp/backend/app/optimized_analytics.py", line 213
+    country_data = df[df['Country'] == country]
+IndentationError: unexpected indent
+Traceback (most recent call last):
+  File "/home/user/webapp/backend/app.py", line 7, in <module>
+    app = create_app()
+          ^^^^^^^^^^^^
+  File "/home/user/webapp/backend/app/__init__.py", line 39, in create_app
+    from .enhanced_api import bp as enhanced_api_bp
+  File "/home/user/webapp/backend/app/enhanced_api.py", line 8, in <module>
+    from .optimized_analytics import OptimizedOSNAnalytics
+  File "/home/user/webapp/backend/app/optimized_analytics.py", line 213
+    country_data = df[df['Country'] == country]
+IndentationError: unexpected indent
+Traceback (most recent call last):
+  File "/home/user/webapp/backend/app.py", line 7, in <module>
+    app = create_app()
+          ^^^^^^^^^^^^
+  File "/home/user/webapp/backend/app/__init__.py", line 39, in create_app
+    from .enhanced_api import bp as enhanced_api_bp
+  File "/home/user/webapp/backend/app/enhanced_api.py", line 8, in <module>
+    from .optimized_analytics import OptimizedOSNAnalytics
+  File "/home/user/webapp/backend/app/optimized_analytics.py", line 213
+    country_data = df[df['Country'] == country]
+IndentationError: unexpected indent
+Traceback (most recent call last):
+  File "/home/user/webapp/backend/app.py", line 7, in <module>
+    app = create_app()
+          ^^^^^^^^^^^^
+  File "/home/user/webapp/backend/app/__init__.py", line 39, in create_app
+    from .enhanced_api import bp as enhanced_api_bp
+  File "/home/user/webapp/backend/app/enhanced_api.py", line 8, in <module>
+    from .optimized_analytics import OptimizedOSNAnalytics
+  File "/home/user/webapp/backend/app/optimized_analytics.py", line 213
+    country_data = df[df['Country'] == country]
+IndentationError: unexpected indent
+Traceback (most recent call last):
+  File "/home/user/webapp/backend/app.py", line 7, in <module>
+    app = create_app()
+          ^^^^^^^^^^^^
+  File "/home/user/webapp/backend/app/__init__.py", line 39, in create_app
+    from .enhanced_api import bp as enhanced_api_bp
+  File "/home/user/webapp/backend/app/enhanced_api.py", line 8, in <module>
+    from .optimized_analytics import OptimizedOSNAnalytics
+  File "/home/user/webapp/backend/app/optimized_analytics.py", line 213
+    country_data = df[df['Country'] == country]
+IndentationError: unexpected indent
+Traceback (most recent call last):
+  File "/home/user/webapp/backend/app.py", line 7, in <module>
+    app = create_app()
+          ^^^^^^^^^^^^
+  File "/home/user/webapp/backend/app/__init__.py", line 39, in create_app
+    from .enhanced_api import bp as enhanced_api_bp
+  File "/home/user/webapp/backend/app/enhanced_api.py", line 8, in <module>
+    from .optimized_analytics import OptimizedOSNAnalytics
+  File "/home/user/webapp/backend/app/optimized_analytics.py", line 213
+    country_data = df[df['Country'] == country]
+IndentationError: unexpected indent
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+10.12.22.182 - - [11/Sep/2025 21:32:57] "GET /login HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:32:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.12.22.182 - - [11/Sep/2025 21:33:32] "GET /login HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 21:33:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

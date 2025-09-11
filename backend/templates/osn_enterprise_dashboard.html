@@ -749,7 +749,21 @@ function showAnalyticsSection(sectionName) {
     document.querySelectorAll('.nav-link').forEach(tab => {
         tab.classList.remove('active');
     });
-    document.getElementById(sectionName.replace('-', '-') + '-tab').classList.add('active');
+    
+    // Fix tab ID mapping
+    let tabId;
+    switch(sectionName) {
+        case 'strategic-overview': tabId = 'strategic-tab'; break;
+        case 'market-intelligence': tabId = 'intelligence-tab'; break;
+        case 'ai-insights': tabId = 'ai-tab'; break;
+        case 'competitive-analysis': tabId = 'competitive-tab'; break;
+        default: tabId = sectionName + '-tab'; break;
+    }
+    
+    const activeTab = document.getElementById(tabId);
+    if (activeTab) {
+        activeTab.classList.add('active');
+    }
     
     // Hide all sections
     document.querySelectorAll('.analytics-section').forEach(section => {
@@ -770,6 +784,8 @@ function showAnalyticsSection(sectionName) {
         // Load section-specific data
         if (sectionName === 'ai-insights') {
             loadAIRecommendations();
+        } else if (sectionName === 'market-intelligence') {
+            loadMarketIntelligence();
         }
     }
 }
@@ -936,11 +952,20 @@ function createPaymentAnalysisChart(data) {
         chartInstances.paymentAnalysisChart.destroy();
     }
     
+    // Transform series data to Chart.js dataset format
+    const datasets = (data.data.series || []).map(series => ({
+        label: series.name,  // Map 'name' to 'label' for Chart.js
+        data: series.data,
+        backgroundColor: series.backgroundColor,
+        borderColor: series.backgroundColor,
+        borderWidth: 1
+    }));
+    
     chartInstances.paymentAnalysisChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: data.data.categories || [],
-            datasets: data.data.series || []
+            datasets: datasets
         },
         options: {
             responsive: true,

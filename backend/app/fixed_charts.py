@@ -10,7 +10,9 @@ from typing import Dict, List, Any
 def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
     """Generate properly formatted chart data with no undefined values"""
     
-    charts = {}
+    # Separate static charts (don't change with filtering) from dynamic charts
+    static_charts = {}
+    filterable_charts = {}
     
     # 1. Entertainment Importance by Country (Fixed)
     ent_col = 'B2-A'
@@ -30,7 +32,7 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
             # Reorder columns
             country_ent = country_ent[expected_categories]
             
-            charts['entertainment_importance_by_country'] = {
+            filterable_charts['entertainment_importance_by_country'] = {
                 'type': 'grouped_bar',
                 'title': 'Entertainment Importance by Market',
                 'data': {
@@ -63,7 +65,7 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
         # Sort by count and take top 8
         sorted_content = sorted(content_preferences.items(), key=lambda x: x[1], reverse=True)[:8]
         
-        charts['content_preferences_distribution'] = {
+        static_charts['content_preferences_distribution'] = {
             'type': 'pie',
             'title': 'Guest Content Preferences',
             'data': {
@@ -90,7 +92,7 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
             if 'No' not in payment_by_purpose.columns:
                 payment_by_purpose['No'] = 0
             
-            charts['payment_willingness_analysis'] = {
+            filterable_charts['payment_willingness_analysis'] = {
                 'type': 'stacked_bar',
                 'title': 'Payment Willingness by Visitor Type',
                 'data': {
@@ -130,7 +132,7 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
     if 'D2' in df.columns:
         streaming_preference_count = (df['D2'] == 'Yes').sum()
     
-    charts['revenue_potential_funnel'] = {
+    filterable_charts['revenue_potential_funnel'] = {
         'type': 'funnel',
         'title': 'OSN Revenue Opportunity Funnel',
         'data': {
@@ -169,7 +171,7 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
             'opportunity_score': round(float(opportunity_score), 1)
         })
     
-    charts['market_opportunity_heatmap'] = {
+    filterable_charts['market_opportunity_heatmap'] = {
         'type': 'matrix',
         'title': 'Market Opportunity Matrix',
         'data': opportunities
@@ -182,7 +184,7 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
         if len(clean_df) > 0:
             crosstab = pd.crosstab(clean_df['A2'], clean_df['B2-A'], normalize='index') * 100
             
-            charts['purpose_entertainment_correlation'] = {
+            static_charts['purpose_entertainment_correlation'] = {
                 'type': 'heatmap',
                 'title': 'Visit Purpose vs Entertainment Importance',
                 'data': {
@@ -202,13 +204,27 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
             'colors': ['#28a745', '#dc3545', '#ffc107'][:len(streaming_counts)]
         }
         
-        charts['streaming_preferences'] = {
+        static_charts['streaming_preferences'] = {
             'type': 'doughnut',
             'title': 'Streaming Account Access Preference',
             'data': streaming_data
         }
     
-    return charts
+    # Combine charts with proper categorization
+    return {
+        'charts': {**static_charts, **filterable_charts},
+        'static_charts': static_charts,
+        'filterable_charts': filterable_charts,
+        'chart_metadata': {
+            'static_count': len(static_charts),
+            'filterable_count': len(filterable_charts),
+            'total_charts': len(static_charts) + len(filterable_charts),
+            'categories': {
+                'static': list(static_charts.keys()),
+                'filterable': list(filterable_charts.keys())
+            }
+        }
+    }
 
 def get_entertainment_viz_data_fixed(df: pd.DataFrame) -> Dict[str, Any]:
     """Fixed visualization data without undefined values"""
