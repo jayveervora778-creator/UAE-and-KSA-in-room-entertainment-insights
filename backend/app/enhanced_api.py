@@ -10,12 +10,30 @@ from .config import Config
 import traceback
 import pandas as pd
 import numpy as np
+import json
 
 bp = Blueprint('enhanced_api', __name__)
 
 # Global instances
 data_processor = None
 analytics_engine = None
+
+def convert_numpy_types(obj):
+    """Convert numpy types to Python native types for JSON serialization"""
+    if isinstance(obj, np.integer):
+        return int(obj)
+    elif isinstance(obj, np.floating):
+        return float(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, dict):
+        return {key: convert_numpy_types(value) for key, value in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_numpy_types(item) for item in obj]
+    elif hasattr(obj, 'item'):  # Handle pandas scalars
+        return obj.item()
+    else:
+        return obj
 
 def get_processors():
     """Get or create data processor and analytics engine"""
@@ -339,6 +357,9 @@ def get_survey_backed_insights():
         
         # Generate survey-backed insights
         insights = generate_survey_backed_insights(filtered_df, filters)
+        
+        # Convert numpy types to ensure JSON serialization
+        insights = convert_numpy_types(insights)
         
         return jsonify(insights)
     except Exception as e:
