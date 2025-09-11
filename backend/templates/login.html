@@ -39,10 +39,22 @@
                     </form>
                     
                     <div class="text-center mt-3">
-                        <small class="text-muted">
-                            Demo credentials: admin / surveydash2024
-                        </small>
+                        <div class="alert alert-info">
+                            <strong>Demo Login Credentials:</strong><br>
+                            Username: <code>admin</code><br>
+                            Password: <code>surveydash2024</code>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="fillCredentials()">
+                            <i class="fas fa-fill-drip"></i> Auto-fill Demo Credentials
+                        </button>
                     </div>
+                    
+                    <script>
+                    function fillCredentials() {
+                        document.getElementById('username').value = 'admin';
+                        document.getElementById('password').value = 'surveydash2024';
+                    }
+                    </script>
                 </div>
             </div>
         </div>

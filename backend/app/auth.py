@@ -5,6 +5,7 @@ Authentication blueprint
 from flask import Blueprint, request, jsonify, render_template, redirect, url_for, flash
 from flask_login import login_user, logout_user, login_required, current_user
 from .models import User
+from .config import Config
 
 bp = Blueprint('auth', __name__)
 
@@ -33,9 +34,13 @@ def login():
             username = request.form.get('username', '').strip()
             password = request.form.get('password', '')
         
+        # Debug logging
+        print(f"Login attempt - Username: '{username}', Password length: {len(password)}")
+        
         if User.verify_password(username, password):
             user = User(username)
             login_user(user, remember=True)
+            print(f"Login successful for user: {username}")
             
             if request.is_json:
                 return jsonify({
@@ -47,6 +52,7 @@ def login():
                 flash('Login successful!', 'success')
                 return redirect(url_for('main.dashboard'))
         else:
+            print(f"Login failed - Username: '{username}', Expected: '{Config.ADMIN_USERNAME}', Password match: {password == Config.ADMIN_PASSWORD}")
             if request.is_json:
                 return jsonify({
                     'success': False,
