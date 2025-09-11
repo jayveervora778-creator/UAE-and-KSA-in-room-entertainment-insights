@@ -2,7 +2,7 @@ module.exports = {
   apps: [{
     name: 'survey-dashboard',
     cwd: './backend',
-    script: 'app.py',
+    script: 'run.py',
     interpreter: 'python3',
     instances: 1,
     autorestart: true,

@@ -12,12 +12,15 @@ if __name__ == '__main__':
     os.environ.setdefault('FLASK_ENV', 'development')
     os.environ.setdefault('FLASK_DEBUG', '1')
     
+    # Get port from environment or default to 5000
+    port = int(os.environ.get('PORT', 5000))
+    
     print("Starting Survey Dashboard...")
-    print("Access the dashboard at: http://localhost:5001")
+    print(f"Access the dashboard at: http://localhost:{port}")
     print("Login credentials: admin / surveydash2024")
     
     app.run(
         host='0.0.0.0',
-        port=5001,
+        port=port,
         debug=True
     )
