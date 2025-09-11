@@ -16,7 +16,7 @@ def index():
 @login_required
 def dashboard():
     """Main dashboard page"""
-    return render_template('dashboard.html', user=current_user.username)
+    return render_template('enhanced_dashboard.html', user=current_user.username)
 
 @bp.route('/health')
 def health():

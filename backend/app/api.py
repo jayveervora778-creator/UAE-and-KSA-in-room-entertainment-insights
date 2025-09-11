@@ -4,7 +4,7 @@ API endpoints for the survey dashboard
 """
 from flask import Blueprint, request, jsonify, current_app
 from flask_login import login_required
-from .data_processor import SurveyDataProcessor
+from .enhanced_data_processor import EnhancedSurveyDataProcessor as SurveyDataProcessor
 from .config import Config
 import traceback
 
@@ -16,13 +16,16 @@ data_processor = None
 def get_data_processor():
     """Get or create data processor instance"""
     global data_processor
-    if data_processor is None:
-        try:
-            data_processor = SurveyDataProcessor(Config.SURVEY_DATA_FILE)
-        except Exception as e:
-            print(f"Error initializing data processor: {e}")
-            traceback.print_exc()
-    return data_processor
+    # Force refresh of data processor to ensure we're using the enhanced version
+    try:
+        print("Initializing Enhanced Data Processor...")
+        data_processor = SurveyDataProcessor(Config.SURVEY_DATA_FILE)
+        print(f"Data processor initialized successfully with {len(data_processor.processed_data)} sheets")
+        return data_processor
+    except Exception as e:
+        print(f"Error initializing data processor: {e}")
+        traceback.print_exc()
+        return None
 
 @bp.route('/filters')
 @login_required
