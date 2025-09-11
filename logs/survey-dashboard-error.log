@@ -252,3 +252,754 @@ jinja2.exceptions.TemplateNotFound: index.html
 10.12.22.182 - - [11/Sep/2025 20:22:21] "GET /api/filters HTTP/1.1" 200 -
 10.12.22.182 - - [11/Sep/2025 20:22:22] "GET /api/text-columns HTTP/1.1" 200 -
 10.12.22.182 - - [11/Sep/2025 20:22:28] "GET /api/text-analysis?column=What+would+have+improved+your+rating HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:26:15] "GET /health HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:26:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+10.12.22.182 - - [11/Sep/2025 20:26:21] "POST /login HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:26:22] "GET /api/summary HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:26:23] "GET /api/text-analysis?column=What+would+have+improved+your+rating HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:27:49] "GET / HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:27:51] "[32mGET /login HTTP/1.1[0m" 302 -
+10.12.22.182 - - [11/Sep/2025 20:27:52] "GET /dashboard HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:27:54] "GET /api/summary HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:27:54] "GET /api/text-columns HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:27:55] "GET /api/filters HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:28:33] "GET /api/data/filtered?country=KSA HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:28:36] "GET /api/data/filtered?country=KSA&nationality=American HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:29:13] "GET /api/text-analysis?column=Please+specify+other+purpose+of+your+vis HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:29:20] "GET /api/text-analysis?column=Please+specify+other+purpose+of+your+vis&country=KSA HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:30:04] "GET /api/data/filtered?country=KSA HTTP/1.1" 200 -
+10.12.22.182 - - [11/Sep/2025 20:30:33] "[35m[1mGET /api/raw-data?sheet=Guests%20(UAE) HTTP/1.1[0m" 500 -
+10.12.22.182 - - [11/Sep/2025 20:30:37] "[35m[1mGET /api/raw-data?sheet=Guests%20Online%20(KSA) HTTP/1.1[0m" 500 -
+ * Detected change in '/home/user/webapp/backend/app/corrected_data_processor.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/corrected_data_processor.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/corrected_data_processor.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/corrected_data_processor.py', reloading
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+ * Detected change in '/home/user/webapp/backend/app/api.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/api.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/api.py', reloading
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+ * Detected change in '/home/user/webapp/backend/app/api.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/api.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/api.py', reloading
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+ * Detected change in '/home/user/webapp/backend/app/api.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/api.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/api.py', reloading
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+ * Detected change in '/home/user/webapp/backend/app/api.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/api.py', reloading
+ * Detected change in '/home/user/webapp/backend/app/api.py', reloading
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with watchdog (inotify)
+ * Debugger is active!
+ * Debugger PIN: 141-989-138
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.

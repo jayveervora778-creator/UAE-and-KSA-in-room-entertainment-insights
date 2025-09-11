@@ -15,8 +15,14 @@ def index():
 @bp.route('/dashboard')
 @login_required
 def dashboard():
-    """Main dashboard page"""
+    """Legacy dashboard page"""
     return render_template('enhanced_dashboard.html', user=current_user.username)
+
+@bp.route('/osn-analytics')
+@login_required
+def osn_enterprise_dashboard():
+    """OSN Enterprise Analytics Dashboard"""
+    return render_template('osn_enterprise_dashboard.html', user=current_user.username)
 
 @bp.route('/health')
 def health():

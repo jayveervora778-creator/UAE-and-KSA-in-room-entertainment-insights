@@ -36,4 +36,7 @@ def create_app(config_class=Config):
     from .api import bp as api_bp
     app.register_blueprint(api_bp, url_prefix='/api')
     
+    from .enhanced_api import bp as enhanced_api_bp
+    app.register_blueprint(enhanced_api_bp, url_prefix='/enhanced_api')
+    
     return app

@@ -103,3 +103,1039 @@ Data processor initialized successfully with 2 sheets
 Error getting summary: '<' not supported between instances of 'str' and 'int'
  * Serving Flask app 'app'
  * Debug mode: on
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Login attempt - Username: 'admin', Password length: 14
+Login successful for user: admin
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Initializing Enhanced Data Processor...
+Initializing Enhanced Data Processor...
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Error getting raw data: 'EnhancedSurveyDataProcessor' object has no attribute 'get_raw_data_json'
+Initializing Enhanced Data Processor...
+Loading Excel file with sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+Loaded Guests (UAE): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 6 responses
+Identified text column 'Please specify other reason for choosing': 4 responses
+Identified text column 'Can you recall a hotel stay where entert': 173 responses
+Identified text column 'Please specify other type of content did': 10 responses
+Identified text column 'Was this content easily accessible or di': 161 responses
+Identified text column 'What would have improved your rating': 167 responses
+Identified text column 'Any suggestions to improve the in-room e': 161 responses
+Processed Guests (UAE): (194, 46) with 21 questions
+Loaded Guests Online (KSA): (203, 45)
+Identified text column 'Please specify other purpose of your vis': 18 responses
+Identified text column 'Please specify other reason for choosing': 8 responses
+Identified text column 'Can you recall a hotel stay where entert': 168 responses
+Identified text column 'Please specify other type of content did': 22 responses
+Identified text column 'Was this content easily accessible or di': 164 responses
+Identified text column 'What would have improved your rating': 163 responses
+Identified text column 'Any suggestions to improve the in-room e': 169 responses
+Processed Guests Online (KSA): (195, 46) with 21 questions
+Data processor initialized successfully with 2 sheets
+Error getting raw data: 'EnhancedSurveyDataProcessor' object has no attribute 'get_raw_data_json'
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Serving Flask app 'app'
+ * Debug mode: on

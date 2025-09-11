@@ -4,7 +4,7 @@ API endpoints for the survey dashboard
 """
 from flask import Blueprint, request, jsonify, current_app
 from flask_login import login_required
-from .enhanced_data_processor import EnhancedSurveyDataProcessor as SurveyDataProcessor
+from .corrected_data_processor import CorrectedSurveyDataProcessor as SurveyDataProcessor
 from .config import Config
 import traceback
 
@@ -18,7 +18,7 @@ def get_data_processor():
     global data_processor
     # Force refresh of data processor to ensure we're using the enhanced version
     try:
-        print("Initializing Enhanced Data Processor...")
+        print("Initializing Corrected Data Processor...")
         data_processor = SurveyDataProcessor(Config.SURVEY_DATA_FILE)
         print(f"Data processor initialized successfully with {len(data_processor.processed_data)} sheets")
         return data_processor
@@ -54,9 +54,13 @@ def get_summary():
         # Get filters from query parameters
         filters = {}
         if request.args.get('country'):
-            filters['Country'] = request.args.get('country')
+            filters['country'] = request.args.get('country')
         if request.args.get('nationality'):
             filters['nationality'] = request.args.get('nationality')
+        if request.args.get('visit_purpose'):
+            filters['visit_purpose'] = request.args.get('visit_purpose')
+        if request.args.get('hotel_frequency'):
+            filters['hotel_frequency'] = request.args.get('hotel_frequency')
         
         # Apply filters
         filtered_df = processor.filter_data(filters) if filters else None
@@ -98,7 +102,7 @@ def get_raw_data():
             return jsonify({'error': 'Data processor not available'}), 500
         
         sheet_name = request.args.get('sheet')
-        data = processor.get_raw_data_json(sheet_name)
+        data = processor.get_raw_data(sheet_name)
         
         return jsonify(data)
     except Exception as e:
@@ -128,10 +132,7 @@ def get_text_columns():
         if processor is None:
             return jsonify({'error': 'Data processor not available'}), 500
         
-        text_columns = {}
-        for sheet_name, columns in processor.text_responses.items():
-            text_columns[sheet_name] = list(columns.keys())
-        
+        text_columns = processor.get_text_columns()
         return jsonify(text_columns)
     except Exception as e:
         print(f"Error getting text columns: {e}")

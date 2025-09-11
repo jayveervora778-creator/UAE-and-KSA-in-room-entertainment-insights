@@ -40,3 +40,1049 @@
 2025-09-11 20:22:05,002 INFO stopped: survey-dashboard (exit status 0)
 2025-09-11 20:22:05,010 INFO spawned: 'survey-dashboard' with pid 6510
 2025-09-11 20:22:06,012 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:46:51,634 WARN exited: survey-dashboard (terminated by SIGKILL; not expected)
+2025-09-11 20:46:52,639 INFO spawned: 'survey-dashboard' with pid 9376
+2025-09-11 20:46:53,641 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:46:55,064 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:46:56,067 INFO spawned: 'survey-dashboard' with pid 9398
+2025-09-11 20:46:57,069 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:46:58,369 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:46:59,372 INFO spawned: 'survey-dashboard' with pid 9409
+2025-09-11 20:47:00,374 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:02,615 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:03,618 INFO spawned: 'survey-dashboard' with pid 9429
+2025-09-11 20:47:04,620 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:05,879 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:06,882 INFO spawned: 'survey-dashboard' with pid 9440
+2025-09-11 20:47:07,884 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:10,057 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:11,060 INFO spawned: 'survey-dashboard' with pid 9450
+2025-09-11 20:47:12,062 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:13,221 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:14,225 INFO spawned: 'survey-dashboard' with pid 9456
+2025-09-11 20:47:15,226 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:17,523 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:18,526 INFO spawned: 'survey-dashboard' with pid 9463
+2025-09-11 20:47:19,528 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:21,766 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:22,770 INFO spawned: 'survey-dashboard' with pid 9471
+2025-09-11 20:47:23,772 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:25,099 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:26,103 INFO spawned: 'survey-dashboard' with pid 9477
+2025-09-11 20:47:27,104 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:29,261 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:30,265 INFO spawned: 'survey-dashboard' with pid 9484
+2025-09-11 20:47:31,266 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:33,425 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:34,429 INFO spawned: 'survey-dashboard' with pid 9491
+2025-09-11 20:47:35,430 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:37,687 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:38,691 INFO spawned: 'survey-dashboard' with pid 9498
+2025-09-11 20:47:39,693 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:41,903 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:42,907 INFO spawned: 'survey-dashboard' with pid 9508
+2025-09-11 20:47:43,909 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:46,171 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:47,174 INFO spawned: 'survey-dashboard' with pid 9515
+2025-09-11 20:47:48,176 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:50,337 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:51,342 INFO spawned: 'survey-dashboard' with pid 9522
+2025-09-11 20:47:52,344 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:54,840 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:47:55,844 INFO spawned: 'survey-dashboard' with pid 9529
+2025-09-11 20:47:56,846 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:47:59,165 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:00,168 INFO spawned: 'survey-dashboard' with pid 9537
+2025-09-11 20:48:01,170 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:03,701 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:04,705 INFO spawned: 'survey-dashboard' with pid 9544
+2025-09-11 20:48:05,706 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:08,036 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:09,040 INFO spawned: 'survey-dashboard' with pid 9557
+2025-09-11 20:48:10,042 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:12,732 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:13,737 INFO spawned: 'survey-dashboard' with pid 9565
+2025-09-11 20:48:14,739 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:17,262 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:18,266 INFO spawned: 'survey-dashboard' with pid 9573
+2025-09-11 20:48:19,268 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:21,665 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:22,668 INFO spawned: 'survey-dashboard' with pid 9580
+2025-09-11 20:48:23,670 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:25,819 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:26,822 INFO spawned: 'survey-dashboard' with pid 9587
+2025-09-11 20:48:27,824 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:30,043 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:31,046 INFO spawned: 'survey-dashboard' with pid 9594
+2025-09-11 20:48:32,048 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:34,258 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:35,262 INFO spawned: 'survey-dashboard' with pid 9602
+2025-09-11 20:48:36,264 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:38,518 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:39,522 INFO spawned: 'survey-dashboard' with pid 9609
+2025-09-11 20:48:40,524 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:41,752 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:42,755 INFO spawned: 'survey-dashboard' with pid 9615
+2025-09-11 20:48:43,757 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:45,988 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:46,992 INFO spawned: 'survey-dashboard' with pid 9622
+2025-09-11 20:48:47,994 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:50,150 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:51,153 INFO spawned: 'survey-dashboard' with pid 9629
+2025-09-11 20:48:52,155 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:54,318 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:55,322 INFO spawned: 'survey-dashboard' with pid 9637
+2025-09-11 20:48:56,324 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:48:58,446 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:48:59,449 INFO spawned: 'survey-dashboard' with pid 9644
+2025-09-11 20:49:00,451 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:02,619 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:03,624 INFO spawned: 'survey-dashboard' with pid 9651
+2025-09-11 20:49:04,626 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:07,073 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:08,077 INFO spawned: 'survey-dashboard' with pid 9658
+2025-09-11 20:49:09,078 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:11,265 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:12,269 INFO spawned: 'survey-dashboard' with pid 9665
+2025-09-11 20:49:13,270 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:15,549 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:16,552 INFO spawned: 'survey-dashboard' with pid 9673
+2025-09-11 20:49:17,554 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:19,787 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:20,791 INFO spawned: 'survey-dashboard' with pid 9680
+2025-09-11 20:49:21,793 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:23,914 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:24,918 INFO spawned: 'survey-dashboard' with pid 9687
+2025-09-11 20:49:25,920 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:28,023 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:29,026 INFO spawned: 'survey-dashboard' with pid 9694
+2025-09-11 20:49:30,028 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:32,214 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:33,217 INFO spawned: 'survey-dashboard' with pid 9701
+2025-09-11 20:49:34,219 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:36,424 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:37,428 INFO spawned: 'survey-dashboard' with pid 9708
+2025-09-11 20:49:38,430 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:40,661 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:41,665 INFO spawned: 'survey-dashboard' with pid 9716
+2025-09-11 20:49:42,667 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:44,809 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:45,812 INFO spawned: 'survey-dashboard' with pid 9723
+2025-09-11 20:49:46,814 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:48,913 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:49,916 INFO spawned: 'survey-dashboard' with pid 9730
+2025-09-11 20:49:50,918 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:53,061 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:54,064 INFO spawned: 'survey-dashboard' with pid 9737
+2025-09-11 20:49:55,066 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:49:57,230 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:49:58,234 INFO spawned: 'survey-dashboard' with pid 9744
+2025-09-11 20:49:59,236 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:01,394 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:02,398 INFO spawned: 'survey-dashboard' with pid 9751
+2025-09-11 20:50:03,400 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:04,610 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:05,613 INFO spawned: 'survey-dashboard' with pid 9758
+2025-09-11 20:50:06,616 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:07,873 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:08,876 INFO spawned: 'survey-dashboard' with pid 9764
+2025-09-11 20:50:09,878 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:12,162 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:13,166 INFO spawned: 'survey-dashboard' with pid 9771
+2025-09-11 20:50:14,168 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:16,631 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:17,636 INFO spawned: 'survey-dashboard' with pid 9779
+2025-09-11 20:50:18,638 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:20,012 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:21,016 INFO spawned: 'survey-dashboard' with pid 9785
+2025-09-11 20:50:22,018 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:24,701 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:25,704 INFO spawned: 'survey-dashboard' with pid 9793
+2025-09-11 20:50:26,706 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:28,151 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:29,155 INFO spawned: 'survey-dashboard' with pid 9799
+2025-09-11 20:50:30,157 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:32,568 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:33,571 INFO spawned: 'survey-dashboard' with pid 9806
+2025-09-11 20:50:34,573 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:36,153 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:37,159 INFO spawned: 'survey-dashboard' with pid 9813
+2025-09-11 20:50:38,165 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:40,839 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:41,843 INFO spawned: 'survey-dashboard' with pid 9821
+2025-09-11 20:50:42,845 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:44,229 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:45,233 INFO spawned: 'survey-dashboard' with pid 9827
+2025-09-11 20:50:46,234 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:48,565 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:49,568 INFO spawned: 'survey-dashboard' with pid 9834
+2025-09-11 20:50:50,570 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:52,842 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:53,846 INFO spawned: 'survey-dashboard' with pid 9841
+2025-09-11 20:50:54,848 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:50:57,116 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:50:58,121 INFO spawned: 'survey-dashboard' with pid 9849
+2025-09-11 20:50:59,122 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:01,375 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:02,380 INFO spawned: 'survey-dashboard' with pid 9856
+2025-09-11 20:51:03,382 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:05,628 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:06,632 INFO spawned: 'survey-dashboard' with pid 9863
+2025-09-11 20:51:07,634 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:09,843 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:10,847 INFO spawned: 'survey-dashboard' with pid 9870
+2025-09-11 20:51:11,849 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:14,054 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:15,059 INFO spawned: 'survey-dashboard' with pid 9878
+2025-09-11 20:51:16,061 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:18,306 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:19,309 INFO spawned: 'survey-dashboard' with pid 9885
+2025-09-11 20:51:20,310 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:22,544 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:23,549 INFO spawned: 'survey-dashboard' with pid 9892
+2025-09-11 20:51:24,551 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:26,893 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:27,897 INFO spawned: 'survey-dashboard' with pid 9899
+2025-09-11 20:51:28,898 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:31,204 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:32,208 INFO spawned: 'survey-dashboard' with pid 9907
+2025-09-11 20:51:33,210 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:35,464 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:36,467 INFO spawned: 'survey-dashboard' with pid 9914
+2025-09-11 20:51:37,469 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:40,138 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:41,142 INFO spawned: 'survey-dashboard' with pid 9922
+2025-09-11 20:51:42,144 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:44,432 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:45,435 INFO spawned: 'survey-dashboard' with pid 9929
+2025-09-11 20:51:46,437 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:48,731 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:49,735 INFO spawned: 'survey-dashboard' with pid 9936
+2025-09-11 20:51:50,737 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:52,999 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:54,003 INFO spawned: 'survey-dashboard' with pid 9943
+2025-09-11 20:51:55,005 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:51:57,344 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:51:58,348 INFO spawned: 'survey-dashboard' with pid 9951
+2025-09-11 20:51:59,350 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:01,602 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:02,606 INFO spawned: 'survey-dashboard' with pid 9958
+2025-09-11 20:52:03,608 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:05,869 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:06,873 INFO spawned: 'survey-dashboard' with pid 9965
+2025-09-11 20:52:07,874 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:10,188 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:11,192 INFO spawned: 'survey-dashboard' with pid 9972
+2025-09-11 20:52:12,194 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:14,503 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:15,508 INFO spawned: 'survey-dashboard' with pid 9980
+2025-09-11 20:52:16,510 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:19,568 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:20,572 INFO spawned: 'survey-dashboard' with pid 9988
+2025-09-11 20:52:21,574 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:23,924 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:24,927 INFO spawned: 'survey-dashboard' with pid 9995
+2025-09-11 20:52:25,929 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:28,173 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:29,176 INFO spawned: 'survey-dashboard' with pid 10002
+2025-09-11 20:52:30,178 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:31,425 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:32,429 INFO spawned: 'survey-dashboard' with pid 10009
+2025-09-11 20:52:33,430 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:35,760 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:36,763 INFO spawned: 'survey-dashboard' with pid 10016
+2025-09-11 20:52:37,765 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:40,287 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:41,291 INFO spawned: 'survey-dashboard' with pid 10023
+2025-09-11 20:52:42,293 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:44,617 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:45,621 INFO spawned: 'survey-dashboard' with pid 10031
+2025-09-11 20:52:46,622 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:49,045 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:50,049 INFO spawned: 'survey-dashboard' with pid 10038
+2025-09-11 20:52:51,050 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:52,361 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:53,365 INFO spawned: 'survey-dashboard' with pid 10044
+2025-09-11 20:52:54,366 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:52:55,661 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:52:56,665 INFO spawned: 'survey-dashboard' with pid 10051
+2025-09-11 20:52:57,666 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:00,025 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:01,029 INFO spawned: 'survey-dashboard' with pid 10058
+2025-09-11 20:53:02,030 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:04,380 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:05,384 INFO spawned: 'survey-dashboard' with pid 10065
+2025-09-11 20:53:06,386 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:07,816 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:08,820 INFO spawned: 'survey-dashboard' with pid 10072
+2025-09-11 20:53:09,822 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:11,089 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:12,092 INFO spawned: 'survey-dashboard' with pid 10078
+2025-09-11 20:53:13,094 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:15,401 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:16,405 INFO spawned: 'survey-dashboard' with pid 10085
+2025-09-11 20:53:17,407 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:18,716 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:19,720 INFO spawned: 'survey-dashboard' with pid 10092
+2025-09-11 20:53:20,722 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:23,036 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:24,039 INFO spawned: 'survey-dashboard' with pid 10099
+2025-09-11 20:53:25,041 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:27,283 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:28,287 INFO spawned: 'survey-dashboard' with pid 10106
+2025-09-11 20:53:29,289 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:31,569 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:32,572 INFO spawned: 'survey-dashboard' with pid 10113
+2025-09-11 20:53:33,574 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:34,916 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:35,919 INFO spawned: 'survey-dashboard' with pid 10120
+2025-09-11 20:53:36,921 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:39,320 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:40,324 INFO spawned: 'survey-dashboard' with pid 10127
+2025-09-11 20:53:41,326 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:43,001 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:44,005 INFO spawned: 'survey-dashboard' with pid 10134
+2025-09-11 20:53:45,006 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:47,366 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:48,369 INFO spawned: 'survey-dashboard' with pid 10141
+2025-09-11 20:53:49,371 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:51,735 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:52,738 INFO spawned: 'survey-dashboard' with pid 10148
+2025-09-11 20:53:53,740 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:54,923 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:55,926 INFO spawned: 'survey-dashboard' with pid 10155
+2025-09-11 20:53:56,928 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:53:58,128 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:53:59,131 INFO spawned: 'survey-dashboard' with pid 10161
+2025-09-11 20:54:00,133 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:02,460 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:03,463 INFO spawned: 'survey-dashboard' with pid 10168
+2025-09-11 20:54:04,465 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:06,789 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:07,792 INFO spawned: 'survey-dashboard' with pid 10175
+2025-09-11 20:54:08,797 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:11,158 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:12,162 INFO spawned: 'survey-dashboard' with pid 10183
+2025-09-11 20:54:13,164 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:15,442 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:16,447 INFO spawned: 'survey-dashboard' with pid 10190
+2025-09-11 20:54:17,449 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:19,684 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:20,688 INFO spawned: 'survey-dashboard' with pid 10197
+2025-09-11 20:54:21,690 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:23,926 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:24,930 INFO spawned: 'survey-dashboard' with pid 10204
+2025-09-11 20:54:25,932 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:27,261 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:28,265 INFO spawned: 'survey-dashboard' with pid 10211
+2025-09-11 20:54:29,267 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:31,511 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:32,515 INFO spawned: 'survey-dashboard' with pid 10218
+2025-09-11 20:54:33,517 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:35,746 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:36,760 INFO spawned: 'survey-dashboard' with pid 10225
+2025-09-11 20:54:37,762 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:40,186 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:41,190 INFO spawned: 'survey-dashboard' with pid 10233
+2025-09-11 20:54:42,192 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:43,608 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:44,612 INFO spawned: 'survey-dashboard' with pid 10239
+2025-09-11 20:54:45,614 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:47,954 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:48,958 INFO spawned: 'survey-dashboard' with pid 10246
+2025-09-11 20:54:49,960 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:52,411 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:53,415 INFO spawned: 'survey-dashboard' with pid 10254
+2025-09-11 20:54:54,417 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:54:56,653 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:54:57,656 INFO spawned: 'survey-dashboard' with pid 10261
+2025-09-11 20:54:58,658 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:00,935 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:01,939 INFO spawned: 'survey-dashboard' with pid 10268
+2025-09-11 20:55:02,941 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:05,221 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:06,225 INFO spawned: 'survey-dashboard' with pid 10275
+2025-09-11 20:55:07,226 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:09,876 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:10,880 INFO spawned: 'survey-dashboard' with pid 10283
+2025-09-11 20:55:11,882 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:14,155 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:15,159 INFO spawned: 'survey-dashboard' with pid 10290
+2025-09-11 20:55:16,161 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:18,416 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:19,420 INFO spawned: 'survey-dashboard' with pid 10298
+2025-09-11 20:55:20,421 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:22,575 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:23,579 INFO spawned: 'survey-dashboard' with pid 10305
+2025-09-11 20:55:24,581 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:26,941 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:27,945 INFO spawned: 'survey-dashboard' with pid 10312
+2025-09-11 20:55:28,946 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:31,409 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:32,413 INFO spawned: 'survey-dashboard' with pid 10319
+2025-09-11 20:55:33,414 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:36,037 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:37,041 INFO spawned: 'survey-dashboard' with pid 10327
+2025-09-11 20:55:38,042 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:40,313 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:41,317 INFO spawned: 'survey-dashboard' with pid 10334
+2025-09-11 20:55:42,319 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:44,606 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:45,610 INFO spawned: 'survey-dashboard' with pid 10342
+2025-09-11 20:55:46,612 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:48,834 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:49,838 INFO spawned: 'survey-dashboard' with pid 10349
+2025-09-11 20:55:50,840 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:53,000 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:54,005 INFO spawned: 'survey-dashboard' with pid 10356
+2025-09-11 20:55:55,007 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:55:57,572 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:55:58,576 INFO spawned: 'survey-dashboard' with pid 10364
+2025-09-11 20:55:59,578 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:01,856 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:02,860 INFO spawned: 'survey-dashboard' with pid 10371
+2025-09-11 20:56:03,862 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:06,115 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:07,119 INFO spawned: 'survey-dashboard' with pid 10378
+2025-09-11 20:56:08,121 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:10,491 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:11,495 INFO spawned: 'survey-dashboard' with pid 10385
+2025-09-11 20:56:12,497 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:14,832 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:15,836 INFO spawned: 'survey-dashboard' with pid 10393
+2025-09-11 20:56:16,838 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:19,075 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:20,078 INFO spawned: 'survey-dashboard' with pid 10400
+2025-09-11 20:56:21,080 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:23,894 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:24,898 INFO spawned: 'survey-dashboard' with pid 10408
+2025-09-11 20:56:25,900 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:27,780 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:28,784 INFO spawned: 'survey-dashboard' with pid 10415
+2025-09-11 20:56:29,786 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:31,945 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:32,949 INFO spawned: 'survey-dashboard' with pid 10422
+2025-09-11 20:56:33,950 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:36,232 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:37,236 INFO spawned: 'survey-dashboard' with pid 10429
+2025-09-11 20:56:38,238 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:40,572 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:41,576 INFO spawned: 'survey-dashboard' with pid 10436
+2025-09-11 20:56:42,578 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:44,846 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:45,850 INFO spawned: 'survey-dashboard' with pid 10444
+2025-09-11 20:56:46,853 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:49,302 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:50,306 INFO spawned: 'survey-dashboard' with pid 10451
+2025-09-11 20:56:51,308 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:53,974 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:54,977 INFO spawned: 'survey-dashboard' with pid 10459
+2025-09-11 20:56:55,978 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:56:58,294 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:56:59,298 INFO spawned: 'survey-dashboard' with pid 10466
+2025-09-11 20:57:00,300 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:02,712 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:03,716 INFO spawned: 'survey-dashboard' with pid 10473
+2025-09-11 20:57:04,718 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:06,016 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:07,020 INFO spawned: 'survey-dashboard' with pid 10480
+2025-09-11 20:57:08,022 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:10,469 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:11,473 INFO spawned: 'survey-dashboard' with pid 10487
+2025-09-11 20:57:12,474 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:13,794 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:14,797 INFO spawned: 'survey-dashboard' with pid 10493
+2025-09-11 20:57:15,798 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:17,133 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:18,137 INFO spawned: 'survey-dashboard' with pid 10500
+2025-09-11 20:57:19,138 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:21,445 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:22,448 INFO spawned: 'survey-dashboard' with pid 10507
+2025-09-11 20:57:23,450 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:25,735 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:26,739 INFO spawned: 'survey-dashboard' with pid 10514
+2025-09-11 20:57:27,741 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:30,041 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:31,045 INFO spawned: 'survey-dashboard' with pid 10521
+2025-09-11 20:57:32,046 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:34,328 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:35,332 INFO spawned: 'survey-dashboard' with pid 10529
+2025-09-11 20:57:36,334 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:38,747 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:39,750 INFO spawned: 'survey-dashboard' with pid 10536
+2025-09-11 20:57:40,752 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:43,078 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:44,082 INFO spawned: 'survey-dashboard' with pid 10543
+2025-09-11 20:57:45,083 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:46,438 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:47,442 INFO spawned: 'survey-dashboard' with pid 10550
+2025-09-11 20:57:48,444 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:50,809 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:51,813 INFO spawned: 'survey-dashboard' with pid 10558
+2025-09-11 20:57:52,814 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:55,107 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:57:56,111 INFO spawned: 'survey-dashboard' with pid 10565
+2025-09-11 20:57:57,117 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:57:59,770 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:00,774 INFO spawned: 'survey-dashboard' with pid 10575
+2025-09-11 20:58:01,776 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:04,806 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:05,810 INFO spawned: 'survey-dashboard' with pid 10585
+2025-09-11 20:58:06,812 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:09,090 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:10,094 INFO spawned: 'survey-dashboard' with pid 10592
+2025-09-11 20:58:11,096 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:13,463 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:14,468 INFO spawned: 'survey-dashboard' with pid 10600
+2025-09-11 20:58:15,470 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:16,842 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:17,847 INFO spawned: 'survey-dashboard' with pid 10606
+2025-09-11 20:58:18,849 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:21,268 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:22,272 INFO spawned: 'survey-dashboard' with pid 10613
+2025-09-11 20:58:23,274 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:25,562 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:26,566 INFO spawned: 'survey-dashboard' with pid 10621
+2025-09-11 20:58:27,568 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:28,859 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:29,864 INFO spawned: 'survey-dashboard' with pid 10627
+2025-09-11 20:58:30,870 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:33,388 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:34,392 INFO spawned: 'survey-dashboard' with pid 10634
+2025-09-11 20:58:35,394 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:37,656 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:38,660 INFO spawned: 'survey-dashboard' with pid 10642
+2025-09-11 20:58:39,662 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:41,977 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:42,981 INFO spawned: 'survey-dashboard' with pid 10649
+2025-09-11 20:58:43,982 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:46,284 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:47,288 INFO spawned: 'survey-dashboard' with pid 10656
+2025-09-11 20:58:48,290 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:50,690 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:51,693 INFO spawned: 'survey-dashboard' with pid 10664
+2025-09-11 20:58:52,694 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:55,494 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:58:56,498 INFO spawned: 'survey-dashboard' with pid 10671
+2025-09-11 20:58:57,500 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:58:59,964 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:00,968 INFO spawned: 'survey-dashboard' with pid 10679
+2025-09-11 20:59:01,970 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:04,405 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:05,410 INFO spawned: 'survey-dashboard' with pid 10686
+2025-09-11 20:59:06,412 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:07,938 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:08,942 INFO spawned: 'survey-dashboard' with pid 10693
+2025-09-11 20:59:09,944 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:12,250 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:13,262 INFO spawned: 'survey-dashboard' with pid 10700
+2025-09-11 20:59:14,264 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:16,473 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:17,478 INFO spawned: 'survey-dashboard' with pid 10707
+2025-09-11 20:59:18,480 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:20,612 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:21,615 INFO spawned: 'survey-dashboard' with pid 10714
+2025-09-11 20:59:22,617 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:24,773 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:25,776 INFO spawned: 'survey-dashboard' with pid 10722
+2025-09-11 20:59:26,778 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:28,819 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:29,823 INFO spawned: 'survey-dashboard' with pid 10729
+2025-09-11 20:59:30,825 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:33,100 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:34,104 INFO spawned: 'survey-dashboard' with pid 10736
+2025-09-11 20:59:35,106 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:36,349 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:37,352 INFO spawned: 'survey-dashboard' with pid 10742
+2025-09-11 20:59:38,354 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:40,609 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:41,612 INFO spawned: 'survey-dashboard' with pid 10749
+2025-09-11 20:59:42,614 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:44,880 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:45,883 INFO spawned: 'survey-dashboard' with pid 10757
+2025-09-11 20:59:46,885 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:49,069 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:50,072 INFO spawned: 'survey-dashboard' with pid 10764
+2025-09-11 20:59:51,074 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:53,248 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:54,252 INFO spawned: 'survey-dashboard' with pid 10771
+2025-09-11 20:59:55,254 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 20:59:57,480 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 20:59:58,484 INFO spawned: 'survey-dashboard' with pid 10778
+2025-09-11 20:59:59,486 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:01,749 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:02,752 INFO spawned: 'survey-dashboard' with pid 10785
+2025-09-11 21:00:03,754 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:05,968 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:06,971 INFO spawned: 'survey-dashboard' with pid 10793
+2025-09-11 21:00:07,973 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:10,200 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:11,204 INFO spawned: 'survey-dashboard' with pid 10800
+2025-09-11 21:00:12,206 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:14,319 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:15,322 INFO spawned: 'survey-dashboard' with pid 10807
+2025-09-11 21:00:16,324 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:18,508 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:19,512 INFO spawned: 'survey-dashboard' with pid 10814
+2025-09-11 21:00:20,514 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:21,791 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:22,795 INFO spawned: 'survey-dashboard' with pid 10820
+2025-09-11 21:00:23,797 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:26,104 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:27,108 INFO spawned: 'survey-dashboard' with pid 10828
+2025-09-11 21:00:28,109 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:30,473 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:31,477 INFO spawned: 'survey-dashboard' with pid 10835
+2025-09-11 21:00:32,478 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:35,001 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:36,005 INFO spawned: 'survey-dashboard' with pid 10842
+2025-09-11 21:00:37,006 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:39,152 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:40,156 INFO spawned: 'survey-dashboard' with pid 10850
+2025-09-11 21:00:41,158 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:43,518 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:44,522 INFO spawned: 'survey-dashboard' with pid 10857
+2025-09-11 21:00:45,524 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:47,718 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:48,722 INFO spawned: 'survey-dashboard' with pid 10864
+2025-09-11 21:00:49,725 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:51,990 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:52,995 INFO spawned: 'survey-dashboard' with pid 10871
+2025-09-11 21:00:53,997 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:00:56,251 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:00:57,255 INFO spawned: 'survey-dashboard' with pid 10879
+2025-09-11 21:00:58,257 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:00,446 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:01,449 INFO spawned: 'survey-dashboard' with pid 10886
+2025-09-11 21:01:02,451 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:04,662 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:05,666 INFO spawned: 'survey-dashboard' with pid 10893
+2025-09-11 21:01:06,668 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:08,761 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:09,764 INFO spawned: 'survey-dashboard' with pid 10900
+2025-09-11 21:01:10,766 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:12,910 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:13,914 INFO spawned: 'survey-dashboard' with pid 10907
+2025-09-11 21:01:14,916 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:17,076 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:18,080 INFO spawned: 'survey-dashboard' with pid 10914
+2025-09-11 21:01:19,082 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:21,276 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:22,280 INFO spawned: 'survey-dashboard' with pid 10921
+2025-09-11 21:01:23,282 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:24,422 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:25,426 INFO spawned: 'survey-dashboard' with pid 10928
+2025-09-11 21:01:26,428 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:28,573 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:29,576 INFO spawned: 'survey-dashboard' with pid 10935
+2025-09-11 21:01:30,578 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:32,829 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:33,832 INFO spawned: 'survey-dashboard' with pid 10942
+2025-09-11 21:01:34,834 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:36,961 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:37,965 INFO spawned: 'survey-dashboard' with pid 10949
+2025-09-11 21:01:38,966 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:41,210 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:42,214 INFO spawned: 'survey-dashboard' with pid 10956
+2025-09-11 21:01:43,215 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:45,323 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:46,327 INFO spawned: 'survey-dashboard' with pid 10963
+2025-09-11 21:01:47,328 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:49,450 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:50,454 INFO spawned: 'survey-dashboard' with pid 10971
+2025-09-11 21:01:51,456 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:53,561 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:54,564 INFO spawned: 'survey-dashboard' with pid 10978
+2025-09-11 21:01:55,565 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:01:56,716 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:01:57,719 INFO spawned: 'survey-dashboard' with pid 10984
+2025-09-11 21:01:58,721 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:00,847 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:01,851 INFO spawned: 'survey-dashboard' with pid 10991
+2025-09-11 21:02:02,853 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:05,053 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:06,056 INFO spawned: 'survey-dashboard' with pid 10998
+2025-09-11 21:02:07,058 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:09,344 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:10,348 INFO spawned: 'survey-dashboard' with pid 11005
+2025-09-11 21:02:11,350 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:13,534 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:14,537 INFO spawned: 'survey-dashboard' with pid 11013
+2025-09-11 21:02:15,539 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:17,734 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:18,737 INFO spawned: 'survey-dashboard' with pid 11020
+2025-09-11 21:02:19,738 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:21,957 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:22,961 INFO spawned: 'survey-dashboard' with pid 11027
+2025-09-11 21:02:23,963 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:26,158 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:27,162 INFO spawned: 'survey-dashboard' with pid 11034
+2025-09-11 21:02:28,164 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:30,287 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:31,290 INFO spawned: 'survey-dashboard' with pid 11041
+2025-09-11 21:02:32,292 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:34,413 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:35,416 INFO spawned: 'survey-dashboard' with pid 11048
+2025-09-11 21:02:36,418 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:38,590 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:39,593 INFO spawned: 'survey-dashboard' with pid 11055
+2025-09-11 21:02:40,595 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:42,749 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:43,752 INFO spawned: 'survey-dashboard' with pid 11063
+2025-09-11 21:02:44,754 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:46,899 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:47,903 INFO spawned: 'survey-dashboard' with pid 11070
+2025-09-11 21:02:48,905 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:51,067 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:52,071 INFO spawned: 'survey-dashboard' with pid 11077
+2025-09-11 21:02:53,073 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:54,265 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:55,269 INFO spawned: 'survey-dashboard' with pid 11083
+2025-09-11 21:02:56,271 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:02:58,456 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:02:59,460 INFO spawned: 'survey-dashboard' with pid 11090
+2025-09-11 21:03:00,461 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:02,811 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:03,815 INFO spawned: 'survey-dashboard' with pid 11162
+2025-09-11 21:03:04,817 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:07,021 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:08,024 INFO spawned: 'survey-dashboard' with pid 11169
+2025-09-11 21:03:09,026 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:11,157 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:12,161 INFO spawned: 'survey-dashboard' with pid 11176
+2025-09-11 21:03:13,162 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:15,289 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:16,292 INFO spawned: 'survey-dashboard' with pid 11183
+2025-09-11 21:03:17,294 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:19,419 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:20,423 INFO spawned: 'survey-dashboard' with pid 11190
+2025-09-11 21:03:21,425 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:22,563 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:23,566 INFO spawned: 'survey-dashboard' with pid 11199
+2025-09-11 21:03:24,568 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:27,709 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:28,716 INFO spawned: 'survey-dashboard' with pid 11210
+2025-09-11 21:03:29,717 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:33,041 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:34,045 INFO spawned: 'survey-dashboard' with pid 11218
+2025-09-11 21:03:35,046 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:37,249 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:38,252 INFO spawned: 'survey-dashboard' with pid 11225
+2025-09-11 21:03:39,254 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:41,335 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:42,339 INFO spawned: 'survey-dashboard' with pid 11232
+2025-09-11 21:03:43,341 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:45,539 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:46,542 INFO spawned: 'survey-dashboard' with pid 11239
+2025-09-11 21:03:47,544 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:49,697 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:50,700 INFO spawned: 'survey-dashboard' with pid 11246
+2025-09-11 21:03:51,702 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:53,881 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:54,884 INFO spawned: 'survey-dashboard' with pid 11254
+2025-09-11 21:03:55,886 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:03:57,915 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:03:58,918 INFO spawned: 'survey-dashboard' with pid 11261
+2025-09-11 21:03:59,920 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:02,019 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:03,023 INFO spawned: 'survey-dashboard' with pid 11268
+2025-09-11 21:04:04,025 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:05,964 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:06,968 INFO spawned: 'survey-dashboard' with pid 11275
+2025-09-11 21:04:07,970 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:10,102 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:11,106 INFO spawned: 'survey-dashboard' with pid 11282
+2025-09-11 21:04:12,108 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:14,163 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:15,166 INFO spawned: 'survey-dashboard' with pid 11289
+2025-09-11 21:04:16,168 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:17,143 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:18,147 INFO spawned: 'survey-dashboard' with pid 11295
+2025-09-11 21:04:19,148 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:21,150 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:22,154 INFO spawned: 'survey-dashboard' with pid 11302
+2025-09-11 21:04:23,156 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:25,208 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:26,212 INFO spawned: 'survey-dashboard' with pid 11309
+2025-09-11 21:04:27,214 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:29,338 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:30,342 INFO spawned: 'survey-dashboard' with pid 11316
+2025-09-11 21:04:31,344 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:33,340 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:34,344 INFO spawned: 'survey-dashboard' with pid 11323
+2025-09-11 21:04:35,346 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:37,433 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:38,437 INFO spawned: 'survey-dashboard' with pid 11330
+2025-09-11 21:04:39,438 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:41,509 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:42,513 INFO spawned: 'survey-dashboard' with pid 11337
+2025-09-11 21:04:43,516 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:46,570 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:47,575 INFO spawned: 'survey-dashboard' with pid 11345
+2025-09-11 21:04:48,577 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:50,691 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:51,694 INFO spawned: 'survey-dashboard' with pid 11352
+2025-09-11 21:04:52,696 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:54,767 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:55,771 INFO spawned: 'survey-dashboard' with pid 11359
+2025-09-11 21:04:56,773 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:04:58,906 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:04:59,910 INFO spawned: 'survey-dashboard' with pid 11366
+2025-09-11 21:05:00,912 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:03,028 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:04,031 INFO spawned: 'survey-dashboard' with pid 11404
+2025-09-11 21:05:05,042 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:08,004 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:09,008 INFO spawned: 'survey-dashboard' with pid 11444
+2025-09-11 21:05:10,011 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:12,624 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:13,628 INFO spawned: 'survey-dashboard' with pid 11451
+2025-09-11 21:05:14,630 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:16,979 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:17,983 INFO spawned: 'survey-dashboard' with pid 11459
+2025-09-11 21:05:18,985 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:21,339 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:22,343 INFO spawned: 'survey-dashboard' with pid 11466
+2025-09-11 21:05:23,345 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:25,634 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:26,638 INFO spawned: 'survey-dashboard' with pid 11473
+2025-09-11 21:05:27,640 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:28,772 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:29,780 INFO spawned: 'survey-dashboard' with pid 11479
+2025-09-11 21:05:30,781 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:33,006 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:34,010 INFO spawned: 'survey-dashboard' with pid 11487
+2025-09-11 21:05:35,012 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:37,218 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:38,221 INFO spawned: 'survey-dashboard' with pid 11494
+2025-09-11 21:05:39,223 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:41,395 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:42,399 INFO spawned: 'survey-dashboard' with pid 11501
+2025-09-11 21:05:43,400 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:45,607 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:46,610 INFO spawned: 'survey-dashboard' with pid 11508
+2025-09-11 21:05:47,612 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:48,726 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:49,730 INFO spawned: 'survey-dashboard' with pid 11514
+2025-09-11 21:05:50,732 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:51,886 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:52,890 INFO spawned: 'survey-dashboard' with pid 11520
+2025-09-11 21:05:53,892 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:05:56,024 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:05:57,027 INFO spawned: 'survey-dashboard' with pid 11528
+2025-09-11 21:05:58,029 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:00,248 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:01,252 INFO spawned: 'survey-dashboard' with pid 11535
+2025-09-11 21:06:02,264 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:04,513 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:05,516 INFO spawned: 'survey-dashboard' with pid 11542
+2025-09-11 21:06:06,518 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:08,766 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:09,769 INFO spawned: 'survey-dashboard' with pid 11549
+2025-09-11 21:06:10,770 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:13,059 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:14,062 INFO spawned: 'survey-dashboard' with pid 11556
+2025-09-11 21:06:15,064 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:16,238 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:17,242 INFO spawned: 'survey-dashboard' with pid 11563
+2025-09-11 21:06:18,244 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:19,386 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:20,390 INFO spawned: 'survey-dashboard' with pid 11569
+2025-09-11 21:06:21,392 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:22,578 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:23,581 INFO spawned: 'survey-dashboard' with pid 11575
+2025-09-11 21:06:24,582 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:26,753 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:27,758 INFO spawned: 'survey-dashboard' with pid 11582
+2025-09-11 21:06:28,769 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:31,794 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:32,798 INFO spawned: 'survey-dashboard' with pid 11651
+2025-09-11 21:06:33,800 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:35,861 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:36,865 INFO spawned: 'survey-dashboard' with pid 11658
+2025-09-11 21:06:37,866 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:39,883 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:40,886 INFO spawned: 'survey-dashboard' with pid 11665
+2025-09-11 21:06:41,888 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:43,955 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:44,959 INFO spawned: 'survey-dashboard' with pid 11672
+2025-09-11 21:06:45,961 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:47,995 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:48,998 INFO spawned: 'survey-dashboard' with pid 11679
+2025-09-11 21:06:50,000 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:51,939 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:52,943 INFO spawned: 'survey-dashboard' with pid 11686
+2025-09-11 21:06:53,944 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:06:55,998 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:06:57,001 INFO spawned: 'survey-dashboard' with pid 11693
+2025-09-11 21:06:58,003 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:00,083 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:01,086 INFO spawned: 'survey-dashboard' with pid 11700
+2025-09-11 21:07:02,088 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:04,209 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:05,213 INFO spawned: 'survey-dashboard' with pid 11707
+2025-09-11 21:07:06,214 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:08,339 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:09,342 INFO spawned: 'survey-dashboard' with pid 11714
+2025-09-11 21:07:10,344 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:12,464 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:13,467 INFO spawned: 'survey-dashboard' with pid 11722
+2025-09-11 21:07:14,469 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:15,556 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:16,559 INFO spawned: 'survey-dashboard' with pid 11728
+2025-09-11 21:07:17,561 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:18,697 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:19,700 INFO spawned: 'survey-dashboard' with pid 11734
+2025-09-11 21:07:20,702 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:21,898 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:22,901 INFO spawned: 'survey-dashboard' with pid 11740
+2025-09-11 21:07:23,902 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:26,032 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:27,043 INFO spawned: 'survey-dashboard' with pid 11747
+2025-09-11 21:07:28,045 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:30,162 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:31,165 INFO spawned: 'survey-dashboard' with pid 11754
+2025-09-11 21:07:32,167 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:34,298 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:35,302 INFO spawned: 'survey-dashboard' with pid 11761
+2025-09-11 21:07:36,304 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:38,414 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:39,418 INFO spawned: 'survey-dashboard' with pid 11768
+2025-09-11 21:07:40,420 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:42,509 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:43,513 INFO spawned: 'survey-dashboard' with pid 11775
+2025-09-11 21:07:44,515 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:46,639 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:47,643 INFO spawned: 'survey-dashboard' with pid 11782
+2025-09-11 21:07:48,645 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:49,900 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:50,904 INFO spawned: 'survey-dashboard' with pid 11789
+2025-09-11 21:07:51,906 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:54,043 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:55,047 INFO spawned: 'survey-dashboard' with pid 11796
+2025-09-11 21:07:56,049 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:07:57,123 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:07:58,127 INFO spawned: 'survey-dashboard' with pid 11802
+2025-09-11 21:07:59,129 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:01,150 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:02,153 INFO spawned: 'survey-dashboard' with pid 11811
+2025-09-11 21:08:03,155 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:05,222 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:06,226 INFO spawned: 'survey-dashboard' with pid 11818
+2025-09-11 21:08:07,228 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:09,400 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:10,404 INFO spawned: 'survey-dashboard' with pid 11825
+2025-09-11 21:08:11,406 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:13,526 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:14,530 INFO spawned: 'survey-dashboard' with pid 11832
+2025-09-11 21:08:15,532 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:17,632 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:18,636 INFO spawned: 'survey-dashboard' with pid 11839
+2025-09-11 21:08:19,638 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:21,661 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:22,664 INFO spawned: 'survey-dashboard' with pid 11846
+2025-09-11 21:08:23,666 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:25,728 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:26,731 INFO spawned: 'survey-dashboard' with pid 11853
+2025-09-11 21:08:27,733 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:29,879 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:30,883 INFO spawned: 'survey-dashboard' with pid 11860
+2025-09-11 21:08:31,885 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:34,022 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:35,026 INFO spawned: 'survey-dashboard' with pid 11868
+2025-09-11 21:08:36,028 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:37,147 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:38,152 INFO spawned: 'survey-dashboard' with pid 11874
+2025-09-11 21:08:39,154 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:41,281 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:42,284 INFO spawned: 'survey-dashboard' with pid 11881
+2025-09-11 21:08:43,286 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:45,654 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:46,658 INFO spawned: 'survey-dashboard' with pid 11888
+2025-09-11 21:08:47,660 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:50,290 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:51,295 INFO spawned: 'survey-dashboard' with pid 11943
+2025-09-11 21:08:52,297 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:55,095 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:08:56,112 INFO spawned: 'survey-dashboard' with pid 11956
+2025-09-11 21:08:57,114 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:08:59,903 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:00,907 INFO spawned: 'survey-dashboard' with pid 12043
+2025-09-11 21:09:01,909 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:09:05,158 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:06,162 INFO spawned: 'survey-dashboard' with pid 12110
+2025-09-11 21:09:07,164 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:09:09,442 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:10,446 INFO spawned: 'survey-dashboard' with pid 12130
+2025-09-11 21:09:11,448 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:09:13,700 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:14,703 INFO spawned: 'survey-dashboard' with pid 12185
+2025-09-11 21:09:15,705 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:09:19,145 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:20,149 INFO spawned: 'survey-dashboard' with pid 12311
+2025-09-11 21:09:21,150 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:09:24,146 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:25,149 INFO spawned: 'survey-dashboard' with pid 12415
+2025-09-11 21:09:26,151 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:09:27,469 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:28,473 INFO spawned: 'survey-dashboard' with pid 12426
+2025-09-11 21:09:29,474 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:09:31,824 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:32,828 INFO spawned: 'survey-dashboard' with pid 12435
+2025-09-11 21:09:33,830 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:09:36,153 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:37,157 INFO spawned: 'survey-dashboard' with pid 12444
+2025-09-11 21:09:38,158 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:09:40,482 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:41,486 INFO spawned: 'survey-dashboard' with pid 12458
+2025-09-11 21:09:42,488 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:09:44,752 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:45,756 INFO spawned: 'survey-dashboard' with pid 12467
+2025-09-11 21:09:46,758 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:09:48,985 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:49,989 INFO spawned: 'survey-dashboard' with pid 12483
+2025-09-11 21:09:50,990 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:09:52,425 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:53,428 INFO spawned: 'survey-dashboard' with pid 12490
+2025-09-11 21:09:54,430 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:09:56,577 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:09:57,580 INFO spawned: 'survey-dashboard' with pid 12527
+2025-09-11 21:09:58,582 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:10:01,038 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:10:02,041 INFO spawned: 'survey-dashboard' with pid 12564
+2025-09-11 21:10:03,043 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:10:05,553 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:10:06,556 INFO spawned: 'survey-dashboard' with pid 12575
+2025-09-11 21:10:07,558 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:10:09,949 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:10:10,952 INFO spawned: 'survey-dashboard' with pid 12593
+2025-09-11 21:10:11,954 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:10:18,827 WARN exited: survey-dashboard (terminated by SIGKILL; not expected)
+2025-09-11 21:10:18,829 INFO spawned: 'survey-dashboard' with pid 12641
+2025-09-11 21:10:19,830 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:10:22,140 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:10:23,143 INFO spawned: 'survey-dashboard' with pid 12688
+2025-09-11 21:10:24,146 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:10:26,894 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:10:27,897 INFO spawned: 'survey-dashboard' with pid 12741
+2025-09-11 21:10:28,898 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:10:31,037 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:10:32,041 INFO spawned: 'survey-dashboard' with pid 12749
+2025-09-11 21:10:33,043 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:10:34,259 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:10:35,262 INFO spawned: 'survey-dashboard' with pid 12756
+2025-09-11 21:10:36,264 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:10:38,520 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:10:39,524 INFO spawned: 'survey-dashboard' with pid 12763
+2025-09-11 21:10:40,526 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:10:42,812 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:10:43,816 INFO spawned: 'survey-dashboard' with pid 12770
+2025-09-11 21:10:44,818 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:10:46,100 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:10:47,103 INFO spawned: 'survey-dashboard' with pid 12776
+2025-09-11 21:10:48,105 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:10:49,351 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:10:50,354 INFO spawned: 'survey-dashboard' with pid 12783
+2025-09-11 21:10:51,356 INFO success: survey-dashboard entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-11 21:10:53,526 WARN exited: survey-dashboard (exit status 1; not expected)
+2025-09-11 21:10:54,529 INFO spawned: 'survey-dashboard' with pid 12790
