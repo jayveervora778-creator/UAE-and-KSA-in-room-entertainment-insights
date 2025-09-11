@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSN Survey Analytics Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        .chart-container {
+            height: 400px;
+            margin-bottom: 2rem;
+        }
+        
+        .filter-panel {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .chart-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .insight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .implication-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .metric-badge {
+            background: #007bff;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<!-- Header -->
+<div class="container-fluid bg-primary text-white py-3">
+    <div class="row align-items-center">
+        <div class="col-md-8">
+            <h2><i class="fas fa-chart-bar me-2"></i>OSN UAE & KSA Guest Survey Analytics</h2>
+            <p class="mb-0">Complete survey analysis with filtering and AI-backed insights</p>
+        </div>
+        <div class="col-md-4 text-end">
+            <span class="me-3">Welcome, {{ user }}</span>
+            <a href="/logout" class="btn btn-outline-light btn-sm">
+                <i class="fas fa-sign-out-alt me-1"></i>Logout
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid my-4">
+    
+    <!-- Filter Panel -->
+    <div class="row">
+        <div class="col-12">
+            <div class="filter-panel">
+                <h5 class="mb-3"><i class="fas fa-filter me-2"></i>Survey Response Filters</h5>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="form-label">Country</label>
+                        <select id="countryFilter" class="form-select">
+                            <option value="">All Countries</option>
+                            <option value="UAE">UAE</option>
+                            <option value="KSA">KSA</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Visit Purpose</label>
+                        <select id="purposeFilter" class="form-select">
+                            <option value="">All Purposes</option>
+                            <!-- Will be populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Nationality</label>
+                        <select id="nationalityFilter" class="form-select">
+                            <option value="">All Nationalities</option>
+                            <!-- Will be populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-end">
+                        <button id="applyFiltersBtn" class="btn btn-light w-100">
+                            <i class="fas fa-search me-2"></i>Update Analysis
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Filter Status -->
+                <div class="mt-3">
+                    <span id="filterStatus" class="badge bg-light text-dark">
+                        Showing: <span id="responseCount">400</span> responses
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Survey Questions Analysis -->
+    <div class="row">
+        <div class="col-12">
+            <h4 class="mb-4">
+                <i class="fas fa-chart-line me-2"></i>
+                Complete Survey Analysis
+                <small class="text-muted">(All Questions with Current Filters)</small>
+            </h4>
+        </div>
+    </div>
+
+    <!-- Charts Grid -->
+    <div id="chartsContainer" class="row">
+        <div class="col-12 loading">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading survey analysis...</span>
+            </div>
+            <p class="mt-3">Loading complete survey analysis...</p>
+        </div>
+    </div>
+
+    <!-- AI Insights Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="chart-card">
+                <h5 class="mb-3">
+                    <i class="fas fa-brain me-2 text-primary"></i>
+                    AI Insights with Survey Data Rationale
+                </h5>
+                <div id="aiInsightsContainer" class="loading">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Generating AI insights...</span>
+                    </div>
+                    <p class="mt-3">Analyzing survey data for insights...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Global state
+let currentFilters = {};
+let allChartData = {};
+let chartInstances = {};
+
+// Initialize dashboard
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Initializing Survey Dashboard...');
+    
+    // Setup event listeners
+    document.getElementById('applyFiltersBtn').addEventListener('click', updateAnalysis);
+    
+    // Load initial data
+    loadCompleteAnalysis();
+});
+
+async function loadCompleteAnalysis() {
+    try {
+        console.log('Loading complete survey analysis...');
+        
+        // Load all survey charts with current filters
+        const response = await fetch('/enhanced_api/dynamic-charts?' + new URLSearchParams(currentFilters));
+        
+        if (response.ok) {
+            const data = await response.json();
+            allChartData = data;
+            
+            // Display all charts
+            displayAllSurveyCharts(data);
+            
+            // Update response count
+            if (data.metadata && data.metadata.total_responses) {
+                document.getElementById('responseCount').textContent = data.metadata.total_responses;
+            }
+            
+        } else {
+            throw new Error('Failed to load survey data');
+        }
+        
+        // Load AI insights
+        loadAIInsights();
+        
+        // Load filter options
+        loadFilterOptions();
+        
+    } catch (error) {
+        console.error('Error loading analysis:', error);
+        document.getElementById('chartsContainer').innerHTML = `
+            <div class="col-12">
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    Failed to load survey analysis: ${error.message}
+                </div>
+            </div>
+        `;
+    }
+}
+
+function displayAllSurveyCharts(data) {
+    const container = document.getElementById('chartsContainer');
+    let html = '';
+    
+    if (!data.charts || Object.keys(data.charts).length === 0) {
+        html = `
+            <div class="col-12">
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    No chart data available with current filters.
+                </div>
+            </div>
+        `;
+        container.innerHTML = html;
+        return;
+    }
+    
+    // Display each chart with insights and implications
+    Object.entries(data.charts).forEach(([chartKey, chartData]) => {
+        if (chartData.error) {
+            console.error(`Chart error for ${chartKey}:`, chartData.error);
+            return;
+        }
+        
+        const chartId = `chart_${chartKey}`;
+        const insights = generateChartInsights(chartKey, chartData);
+        
+        html += `
+            <div class="col-lg-6 mb-4">
+                <div class="chart-card">
+                    <h6 class="mb-3">
+                        <i class="fas fa-chart-bar me-2"></i>
+                        ${chartData.title || chartKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                    </h6>
+                    
+                    <div class="chart-container">
+                        <canvas id="${chartId}"></canvas>
+                    </div>
+                    
+                    <!-- Survey Response Insight -->
+                    <div class="insight-box">
+                        <h6><i class="fas fa-clipboard-list me-2"></i>Survey Response</h6>
+                        <p class="mb-0">${insights.response}</p>
+                    </div>
+                    
+                    <!-- Business Implication -->
+                    <div class="implication-box">
+                        <h6><i class="fas fa-lightbulb me-2"></i>Business Implication</h6>
+                        <p class="mb-0">${insights.implication}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
+    
+    // Create all charts
+    Object.entries(data.charts).forEach(([chartKey, chartData]) => {
+        if (!chartData.error) {
+            const chartId = `chart_${chartKey}`;
+            createChart(chartId, chartData);
+        }
+    });
+}
+
+function generateChartInsights(chartKey, chartData) {
+    // Generate data-backed insights for each chart type
+    const insights = {
+        response: '',
+        implication: ''
+    };
+    
+    switch(chartKey) {
+        case 'entertainment_importance_by_country':
+            if (chartData.data && chartData.data.countries) {
+                const countries = chartData.data.countries;
+                const veryImportantData = chartData.data.series?.find(s => s.name === 'Very Important');
+                
+                if (veryImportantData && countries.length > 0) {
+                    const maxIndex = veryImportantData.data.indexOf(Math.max(...veryImportantData.data));
+                    const maxCountry = countries[maxIndex];
+                    const maxValue = veryImportantData.data[maxIndex];
+                    
+                    insights.response = `${maxValue}% of ${maxCountry} guests rate entertainment as "Very Important" (highest among markets surveyed). This represents strong demand for premium entertainment services.`;
+                    insights.implication = `${maxCountry} market shows highest entertainment priority - recommend prioritizing OSN+ integration and premium content partnerships in ${maxCountry} hotels first.`;
+                }
+            }
+            break;
+            
+        case 'payment_willingness_analysis':
+            if (chartData.data && chartData.data.categories) {
+                const categories = chartData.data.categories;
+                const willingData = chartData.data.series?.find(s => s.name === 'Willing to Pay');
+                
+                if (willingData) {
+                    const avgWillingness = (willingData.data.reduce((a, b) => a + b, 0) / willingData.data.length).toFixed(1);
+                    insights.response = `Average ${avgWillingness}% of guests across visitor types are willing to pay premium for enhanced entertainment services.`;
+                    insights.implication = `Strong monetization opportunity exists - develop tiered entertainment packages targeting willing-to-pay segments with premium OSN+ content.`;
+                }
+            }
+            break;
+            
+        case 'content_preferences_distribution':
+            if (chartData.data && chartData.data.labels) {
+                const topContent = chartData.data.labels[0];
+                const topPercentage = ((chartData.data.data[0] / chartData.data.data.reduce((a, b) => a + b, 0)) * 100).toFixed(1);
+                
+                insights.response = `${topContent} is the most preferred content type, representing ${topPercentage}% of guest preferences in our survey.`;
+                insights.implication = `Focus OSN+ content strategy on ${topContent} to maximize guest engagement and satisfaction.`;
+            }
+            break;
+            
+        case 'survey_response_analysis':
+            if (chartData.data && chartData.data.stages) {
+                const stages = chartData.data.stages;
+                const conversionRate = ((stages[stages.length-1].value / stages[0].value) * 100).toFixed(1);
+                
+                insights.response = `${conversionRate}% conversion rate from initial survey respondents to high-value entertainment prospects (${stages[stages.length-1].value} out of ${stages[0].value} total).`;
+                insights.implication = `Focus on converting the ${stages[1].value - stages[stages.length-1].value} entertainment-interested guests who aren't yet ready to pay premium.`;
+            }
+            break;
+            
+        case 'market_opportunity_heatmap':
+            if (chartData.data && chartData.data.length > 0) {
+                const bestOpportunity = chartData.data.reduce((prev, current) => 
+                    (prev.opportunity_score > current.opportunity_score) ? prev : current
+                );
+                
+                insights.response = `${bestOpportunity.country} shows highest market opportunity with ${bestOpportunity.opportunity_score} composite score (${bestOpportunity.entertainment_demand}% entertainment demand, ${bestOpportunity.payment_willingness}% payment willingness).`;
+                insights.implication = `Prioritize ${bestOpportunity.country} for OSN+ rollout and partnership development based on optimal demand-payment alignment.`;
+            }
+            break;
+            
+        default:
+            insights.response = 'Survey data analysis provides insights into guest preferences and behavior patterns.';
+            insights.implication = 'Use these insights to optimize OSN entertainment offerings and partnership strategies.';
+    }
+    
+    return insights;
+}
+
+function createChart(canvasId, chartData) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) {
+        console.error(`Canvas not found: ${canvasId}`);
+        return;
+    }
+    
+    const ctx = canvas.getContext('2d');
+    
+    // Destroy existing chart if it exists
+    if (chartInstances[canvasId]) {
+        chartInstances[canvasId].destroy();
+    }
+    
+    let config = {
+        type: chartData.type === 'grouped_bar' ? 'bar' : (chartData.type === 'stacked_bar' ? 'bar' : chartData.type),
+        data: chartData.data,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: false
+                },
+                legend: {
+                    display: true,
+                    position: 'top'
+                }
+            }
+        }
+    };
+    
+    // Configure based on chart type
+    if (chartData.type === 'pie' || chartData.type === 'doughnut') {
+        config.options.plugins.legend.position = 'right';
+    }
+    
+    if (chartData.type === 'grouped_bar') {
+        config.options.scales = {
+            x: { stacked: false },
+            y: { 
+                stacked: false,
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Percentage (%)'
+                }
+            }
+        };
+    }
+    
+    if (chartData.type === 'stacked_bar') {
+        config.options.scales = {
+            x: { stacked: true },
+            y: { 
+                stacked: true,
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Percentage (%)'
+                }
+            }
+        };
+    }
+    
+    if (chartData.type === 'funnel') {
+        // Convert funnel to horizontal bar
+        config.type = 'bar';
+        config.options.indexAxis = 'y';
+        config.data = {
+            labels: chartData.data.stages.map(s => s.name),
+            datasets: [{
+                label: 'Count',
+                data: chartData.data.stages.map(s => s.value),
+                backgroundColor: chartData.data.stages.map(s => s.color)
+            }]
+        };
+    }
+    
+    chartInstances[canvasId] = new Chart(ctx, config);
+}
+
+async function loadAIInsights() {
+    try {
+        const params = new URLSearchParams(currentFilters);
+        const response = await fetch(`/enhanced_api/survey-insights?${params}`);
+        
+        if (response.ok) {
+            const insights = await response.json();
+            displayAIInsights(insights);
+        } else {
+            throw new Error('Failed to load survey insights');
+        }
+    } catch (error) {
+        console.error('Error loading AI insights:', error);
+        document.getElementById('aiInsightsContainer').innerHTML = `
+            <div class="alert alert-warning">
+                <i class="fas fa-exclamation-triangle me-2"></i>
+                Unable to load survey-backed insights. Please check data availability.
+            </div>
+        `;
+    }
+}
+
+function displayAIInsights(insights) {
+    const container = document.getElementById('aiInsightsContainer');
+    let html = '';
+    
+    // Display data summary
+    if (insights.data_summary) {
+        html += `
+            <div class="alert alert-info mb-3">
+                <strong>Analysis Based On:</strong> ${insights.data_summary.total_responses} survey responses
+                ${Object.keys(insights.data_summary.countries).length > 0 ? 
+                    ' | ' + Object.entries(insights.data_summary.countries).map(([country, count]) => `${country}: ${count}`).join(', ') 
+                    : ''
+                }
+            </div>
+        `;
+    }
+    
+    // Key Findings with Survey Data Backing
+    if (insights.key_findings && insights.key_findings.length > 0) {
+        html += `
+            <div class="row">
+                <div class="col-12">
+                    <h6><i class="fas fa-chart-line me-2 text-primary"></i>Survey Data Findings</h6>
+                </div>
+            </div>
+            <div class="row">
+        `;
+        
+        insights.key_findings.forEach(finding => {
+            html += `
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h6 class="card-title text-primary">${finding.title}</h6>
+                            <p class="card-text"><strong>${finding.finding}</strong></p>
+                            <small class="text-muted">
+                                <i class="fas fa-database me-1"></i>
+                                <strong>Data:</strong> ${finding.data_backing}
+                            </small>
+                            <div class="mt-2">
+                                <small class="text-success">
+                                    <i class="fas fa-lightbulb me-1"></i>
+                                    <strong>Rationale:</strong> ${finding.rationale}
+                                </small>
+                            </div>
+                            <div class="mt-1">
+                                <span class="badge bg-${finding.confidence === 'High' ? 'success' : 'warning'}">
+                                    ${finding.confidence} Confidence
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += '</div>';
+    }
+    
+    // Strategic Recommendations
+    if (insights.strategic_recommendations && insights.strategic_recommendations.length > 0) {
+        html += `
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h6><i class="fas fa-chess-king me-2 text-warning"></i>Strategic Recommendations</h6>
+                </div>
+            </div>
+            <div class="row">
+        `;
+        
+        insights.strategic_recommendations.forEach((rec, index) => {
+            html += `
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100 border-warning">
+                        <div class="card-body">
+                            <h6 class="card-title text-warning">${rec.title}</h6>
+                            <p class="card-text"><strong>${rec.recommendation}</strong></p>
+                            <small class="text-muted">
+                                <i class="fas fa-chart-bar me-1"></i>
+                                <strong>Survey Rationale:</strong> ${rec.rationale}
+                            </small>
+                            ${rec.action ? `
+                                <div class="mt-2">
+                                    <small class="text-primary">
+                                        <i class="fas fa-arrow-right me-1"></i>
+                                        <strong>Action:</strong> ${rec.action}
+                                    </small>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += '</div>';
+    }
+    
+    // Market Analysis if available
+    if (insights.market_analysis && Object.keys(insights.market_analysis).length > 0) {
+        html += `
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h6><i class="fas fa-globe me-2 text-info"></i>Market Analysis</h6>
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Market</th>
+                                    <th>High Priority Guests</th>
+                                    <th>Total Responses</th>
+                                    <th>Priority Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+        `;
+        
+        Object.entries(insights.market_analysis).forEach(([country, data]) => {
+            html += `
+                <tr>
+                    <td><strong>${country}</strong></td>
+                    <td>${data.very_important_count}</td>
+                    <td>${data.total_responses}</td>
+                    <td>
+                        <span class="badge bg-${data.percentage >= 50 ? 'success' : (data.percentage >= 30 ? 'warning' : 'secondary')}">
+                            ${data.percentage}%
+                        </span>
+                    </td>
+                </tr>
+            `;
+        });
+        
+        html += `
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    if (!html) {
+        html = `
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i>
+                No survey insights available with current filters.
+            </div>
+        `;
+    }
+    
+    container.innerHTML = html;
+}
+
+async function loadFilterOptions() {
+    try {
+        // This would typically load from an API, but for now using static options
+        const purposeSelect = document.getElementById('purposeFilter');
+        const nationalitySelect = document.getElementById('nationalityFilter');
+        
+        // Add visit purposes
+        const purposes = ['Business', 'Leisure', 'Family Vacation', 'Other'];
+        purposes.forEach(purpose => {
+            const option = document.createElement('option');
+            option.value = purpose;
+            option.textContent = purpose;
+            purposeSelect.appendChild(option);
+        });
+        
+        // Add nationalities  
+        const nationalities = ['UAE National', 'Saudi National', 'European', 'American', 'Indian', 'Other'];
+        nationalities.forEach(nationality => {
+            const option = document.createElement('option');
+            option.value = nationality;
+            option.textContent = nationality;
+            nationalitySelect.appendChild(option);
+        });
+        
+    } catch (error) {
+        console.error('Error loading filter options:', error);
+    }
+}
+
+function updateAnalysis() {
+    // Collect current filter values
+    currentFilters = {
+        country: document.getElementById('countryFilter').value,
+        visit_purpose: document.getElementById('purposeFilter').value,
+        nationality: document.getElementById('nationalityFilter').value
+    };
+    
+    // Remove empty filters
+    Object.keys(currentFilters).forEach(key => {
+        if (!currentFilters[key]) delete currentFilters[key];
+    });
+    
+    console.log('Updating analysis with filters:', currentFilters);
+    
+    // Update filter status
+    const filterCount = Object.keys(currentFilters).length;
+    const filterStatus = document.getElementById('filterStatus');
+    filterStatus.innerHTML = `
+        <i class="fas fa-filter me-1"></i>
+        ${filterCount > 0 ? `${filterCount} filters applied` : 'No filters'} - 
+        Analyzing: <span id="responseCount">Loading...</span> responses
+    `;
+    
+    // Reload analysis with new filters
+    loadCompleteAnalysis();
+}
+</script>
+
+</body>
+</html>

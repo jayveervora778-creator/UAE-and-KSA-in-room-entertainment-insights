@@ -33,15 +33,17 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
             country_ent = country_ent[expected_categories]
             
             filterable_charts['entertainment_importance_by_country'] = {
-                'type': 'grouped_bar',
+                'type': 'bar',
                 'title': 'Entertainment Importance by Market',
                 'data': {
-                    'countries': country_ent.index.tolist(),
-                    'series': [
+                    'labels': country_ent.index.tolist(),
+                    'datasets': [
                         {
-                            'name': cat,
+                            'label': cat,
                             'data': [round(float(val), 1) for val in country_ent[cat].tolist()],
-                            'backgroundColor': ['#28a745', '#ffc107', '#dc3545'][i]
+                            'backgroundColor': ['#28a745', '#ffc107', '#dc3545'][i],
+                            'borderColor': ['#28a745', '#ffc107', '#dc3545'][i],
+                            'borderWidth': 1
                         }
                         for i, cat in enumerate(expected_categories)
                     ]
@@ -70,8 +72,11 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
             'title': 'Guest Content Preferences',
             'data': {
                 'labels': [item[0] for item in sorted_content],
-                'data': [int(item[1]) for item in sorted_content],
-                'colors': ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F06292'][:len(sorted_content)]
+                'datasets': [{
+                    'data': [int(item[1]) for item in sorted_content],
+                    'backgroundColor': ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F06292'][:len(sorted_content)],
+                    'borderWidth': 1
+                }]
             }
         }
     
@@ -93,20 +98,24 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
                 payment_by_purpose['No'] = 0
             
             filterable_charts['payment_willingness_analysis'] = {
-                'type': 'stacked_bar',
+                'type': 'bar',
                 'title': 'Payment Willingness by Visitor Type',
                 'data': {
-                    'categories': payment_by_purpose.index.tolist(),
-                    'series': [
+                    'labels': payment_by_purpose.index.tolist(),
+                    'datasets': [
                         {
-                            'name': 'Willing to Pay',
+                            'label': 'Willing to Pay',
                             'data': [round(float(val), 1) for val in payment_by_purpose['Yes'].tolist()],
-                            'backgroundColor': '#28a745'
+                            'backgroundColor': '#28a745',
+                            'borderColor': '#28a745',
+                            'borderWidth': 1
                         },
                         {
-                            'name': 'Not Willing',
+                            'label': 'Not Willing',
                             'data': [round(float(val), 1) for val in payment_by_purpose['No'].tolist()],
-                            'backgroundColor': '#dc3545'
+                            'backgroundColor': '#dc3545',
+                            'borderColor': '#dc3545',
+                            'borderWidth': 1
                         }
                     ]
                 }
@@ -132,19 +141,30 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
     if 'D2' in df.columns:
         streaming_preference_count = (df['D2'] == 'Yes').sum()
     
+    # Convert funnel to horizontal bar chart for Chart.js
+    funnel_stages = [
+        {'name': 'Survey Respondents', 'value': int(total_respondents), 'color': '#E3F2FD'},
+        {'name': 'Use TV/Entertainment', 'value': int(tv_usage_count), 'color': '#BBDEFB'},
+        {'name': 'High Entertainment Priority', 'value': int(high_importance_count), 'color': '#90CAF9'},
+        {'name': 'Willing to Pay Premium', 'value': int(willing_to_pay_count), 'color': '#64B5F6'},
+        {'name': 'Want Streaming Access', 'value': int(streaming_preference_count), 'color': '#42A5F5'}
+    ]
+    
     filterable_charts['survey_response_analysis'] = {
-        'type': 'funnel',
+        'type': 'bar',
         'title': 'Survey Response Trends (Sample Data Only)',
         'subtitle': 'Based on 400 respondents - not market sizing',
+        'options': {
+            'indexAxis': 'y'
+        },
         'data': {
-            'stages': [
-                {'name': 'Survey Respondents', 'value': int(total_respondents), 'color': '#E3F2FD'},
-                {'name': 'Use TV/Entertainment', 'value': int(tv_usage_count), 'color': '#BBDEFB'},
-                {'name': 'High Entertainment Priority', 'value': int(high_importance_count), 'color': '#90CAF9'},
-                {'name': 'Willing to Pay Premium', 'value': int(willing_to_pay_count), 'color': '#64B5F6'},
-                {'name': 'Want Streaming Access', 'value': int(streaming_preference_count), 'color': '#42A5F5'}
-            ],
-            'disclaimer': '⚠️ Survey sample trends only - requires market research for business planning'
+            'labels': [stage['name'] for stage in funnel_stages],
+            'datasets': [{
+                'label': 'Count',
+                'data': [stage['value'] for stage in funnel_stages],
+                'backgroundColor': [stage['color'] for stage in funnel_stages],
+                'borderWidth': 1
+            }]
         }
     }
     
@@ -173,10 +193,25 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
             'opportunity_score': round(float(opportunity_score), 1)
         })
     
+    # Convert matrix to scatter plot for Chart.js
     filterable_charts['market_opportunity_heatmap'] = {
-        'type': 'matrix',
+        'type': 'scatter',
         'title': 'Market Opportunity Matrix',
-        'data': opportunities
+        'data': {
+            'datasets': [{
+                'label': 'Market Opportunities',
+                'data': [
+                    {
+                        'x': opp['entertainment_demand'],
+                        'y': opp['payment_willingness'],
+                        'label': opp['country']
+                    }
+                    for opp in opportunities
+                ],
+                'backgroundColor': ['#007bff', '#28a745', '#ffc107', '#dc3545'][:len(opportunities)],
+                'pointRadius': 8
+            }]
+        }
     }
     
     # 6. Visit Purpose vs Entertainment Correlation (New)
@@ -186,13 +221,22 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
         if len(clean_df) > 0:
             crosstab = pd.crosstab(clean_df['A2'], clean_df['B2-A'], normalize='index') * 100
             
+            # Convert heatmap to grouped bar chart for better Chart.js support
             static_charts['purpose_entertainment_correlation'] = {
-                'type': 'heatmap',
+                'type': 'bar',
                 'title': 'Visit Purpose vs Entertainment Importance',
                 'data': {
-                    'x_categories': crosstab.columns.tolist(),
-                    'y_categories': crosstab.index.tolist(),
-                    'values': [[round(float(val), 1) for val in row] for row in crosstab.values.tolist()]
+                    'labels': crosstab.index.tolist(),
+                    'datasets': [
+                        {
+                            'label': importance_level,
+                            'data': [round(float(val), 1) for val in crosstab[importance_level].values],
+                            'backgroundColor': ['#28a745', '#ffc107', '#dc3545'][i],
+                            'borderColor': ['#28a745', '#ffc107', '#dc3545'][i],
+                            'borderWidth': 1
+                        }
+                        for i, importance_level in enumerate(crosstab.columns)
+                    ]
                 }
             }
     
@@ -202,8 +246,11 @@ def get_fixed_dynamic_charts(df: pd.DataFrame) -> Dict[str, Any]:
         streaming_counts = df['D2'].value_counts()
         streaming_data = {
             'labels': streaming_counts.index.tolist(),
-            'data': [int(x) for x in streaming_counts.values],
-            'colors': ['#28a745', '#dc3545', '#ffc107'][:len(streaming_counts)]
+            'datasets': [{
+                'data': [int(x) for x in streaming_counts.values],
+                'backgroundColor': ['#28a745', '#dc3545', '#ffc107'][:len(streaming_counts)],
+                'borderWidth': 1
+            }]
         }
         
         static_charts['streaming_preferences'] = {

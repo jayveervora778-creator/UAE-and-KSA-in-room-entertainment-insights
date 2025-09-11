@@ -319,6 +319,33 @@ def get_text_insights():
         traceback.print_exc()
         return jsonify({'error': str(e)}), 500
 
+@bp.route('/survey-insights')
+@login_required
+def get_survey_backed_insights():
+    """Get insights backed by actual survey data with rationale"""
+    try:
+        processor, analytics = get_processors()
+        if not processor or not analytics:
+            return jsonify({'error': 'Analytics engine not available'}), 500
+        
+        # Apply filters
+        filters = {}
+        for key in ['country', 'nationality', 'visit_purpose', 'hotel_frequency']:
+            if request.args.get(key):
+                filters[key] = request.args.get(key)
+        
+        # Get filtered data
+        filtered_df = processor.filter_data(filters) if filters else processor._get_combined_data()
+        
+        # Generate survey-backed insights
+        insights = generate_survey_backed_insights(filtered_df, filters)
+        
+        return jsonify(insights)
+    except Exception as e:
+        print(f"Error getting survey insights: {e}")
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
 # Helper functions for visualization data
 
 def get_entertainment_viz_data(df):
@@ -957,3 +984,165 @@ def get_advanced_text_analysis(df):
     analysis_results['recommendations'] = recommendations
     
     return analysis_results
+
+def generate_survey_backed_insights(df: pd.DataFrame, filters: dict) -> dict:
+    """Generate insights backed by actual survey data with specific rationale"""
+    
+    insights = {
+        'key_findings': [],
+        'strategic_recommendations': [],
+        'market_analysis': {},
+        'filter_context': filters,
+        'data_summary': {
+            'total_responses': len(df),
+            'countries': df['Country'].value_counts().to_dict() if 'Country' in df.columns else {},
+        }
+    }
+    
+    try:
+        # Entertainment Importance Analysis
+        ent_cols = [col for col in df.columns if 'B2-A' in str(col)]
+        if ent_cols and len(df) > 0:
+            ent_col = ent_cols[0]
+            
+            # Overall entertainment priority
+            very_important_count = (df[ent_col] == 'Very Important').sum()
+            very_important_pct = (very_important_count / len(df)) * 100
+            
+            insights['key_findings'].append({
+                'title': 'Entertainment Priority Distribution',
+                'finding': f'{very_important_pct:.1f}% of surveyed guests rate entertainment as "Very Important"',
+                'data_backing': f'Based on {very_important_count} out of {len(df)} survey responses',
+                'rationale': f'This represents {very_important_count} potential high-value customers for OSN+ premium services',
+                'confidence': 'High' if len(df) >= 100 else 'Medium'
+            })
+            
+            # Country comparison if multiple countries
+            if 'Country' in df.columns and len(df['Country'].unique()) > 1:
+                country_analysis = {}
+                
+                for country in df['Country'].unique():
+                    country_data = df[df['Country'] == country]
+                    country_very_important = (country_data[ent_col] == 'Very Important').sum()
+                    country_total = len(country_data)
+                    country_pct = (country_very_important / country_total) * 100 if country_total > 0 else 0
+                    
+                    country_analysis[country] = {
+                        'very_important_count': country_very_important,
+                        'total_responses': country_total,
+                        'percentage': round(country_pct, 1)
+                    }
+                
+                # Find highest priority market
+                best_country = max(country_analysis.keys(), key=lambda x: country_analysis[x]['percentage'])
+                best_data = country_analysis[best_country]
+                
+                insights['key_findings'].append({
+                    'title': 'Market Prioritization',
+                    'finding': f'{best_country} shows highest entertainment priority at {best_data["percentage"]}%',
+                    'data_backing': f'{best_data["very_important_count"]} out of {best_data["total_responses"]} {best_country} respondents',
+                    'rationale': f'Focus OSN+ rollout in {best_country} first for maximum market penetration',
+                    'confidence': 'High' if best_data['total_responses'] >= 50 else 'Medium'
+                })
+                
+                insights['market_analysis'] = country_analysis
+        
+        # Payment Willingness Analysis
+        payment_cols = [col for col in df.columns if 'D3' in str(col)]
+        if payment_cols and ent_cols:
+            payment_col = payment_cols[0]
+            
+            # Overall payment willingness
+            willing_count = (df[payment_col] == 'Yes').sum()
+            willing_pct = (willing_count / len(df)) * 100
+            
+            insights['key_findings'].append({
+                'title': 'Payment Willingness',
+                'finding': f'{willing_pct:.1f}% of guests are willing to pay premium for entertainment',
+                'data_backing': f'{willing_count} out of {len(df)} survey responses',
+                'rationale': f'Revenue opportunity from {willing_count} confirmed willing-to-pay customers',
+                'confidence': 'High'
+            })
+            
+            # Correlation with entertainment importance
+            high_ent_users = df[df[ent_cols[0]] == 'Very Important']
+            if len(high_ent_users) > 0:
+                high_ent_willing = (high_ent_users[payment_col] == 'Yes').sum()
+                high_ent_total = len(high_ent_users)
+                conversion_rate = (high_ent_willing / high_ent_total) * 100
+                
+                insights['key_findings'].append({
+                    'title': 'High-Value Segment Conversion',
+                    'finding': f'{conversion_rate:.1f}% of entertainment-focused guests will pay premium',
+                    'data_backing': f'{high_ent_willing} willing to pay out of {high_ent_total} high-entertainment-priority guests',
+                    'rationale': f'Target these {high_ent_willing} guests for immediate OSN+ upselling opportunities',
+                    'confidence': 'High' if high_ent_total >= 20 else 'Medium'
+                })
+        
+        # Visit Purpose Analysis
+        purpose_cols = [col for col in df.columns if 'A2' in str(col) and 'A2-A' not in str(col)]
+        if purpose_cols and ent_cols:
+            purpose_col = purpose_cols[0]
+            
+            purpose_analysis = {}
+            for purpose in df[purpose_col].unique():
+                if str(purpose) in ['nan', 'None']:
+                    continue
+                    
+                purpose_data = df[df[purpose_col] == purpose]
+                if len(purpose_data) >= 10:  # Minimum sample size
+                    ent_priority = (purpose_data[ent_cols[0]] == 'Very Important').sum()
+                    total_purpose = len(purpose_data)
+                    purpose_pct = (ent_priority / total_purpose) * 100
+                    
+                    purpose_analysis[str(purpose)] = {
+                        'high_priority_count': ent_priority,
+                        'total_count': total_purpose,
+                        'percentage': round(purpose_pct, 1)
+                    }
+            
+            if purpose_analysis:
+                # Find best visitor segment
+                best_purpose = max(purpose_analysis.keys(), key=lambda x: purpose_analysis[x]['percentage'])
+                best_purpose_data = purpose_analysis[best_purpose]
+                
+                insights['strategic_recommendations'].append({
+                    'title': 'Visitor Segment Targeting',
+                    'recommendation': f'Prioritize {best_purpose} travelers for OSN+ marketing',
+                    'rationale': f'{best_purpose_data["percentage"]}% entertainment priority rate ({best_purpose_data["high_priority_count"]}/{best_purpose_data["total_count"]} responses)',
+                    'action': f'Develop targeted entertainment packages for {best_purpose} segment'
+                })
+        
+        # Content Preferences Analysis
+        content_cols = [col for col in df.columns if 'C2-A' in str(col) and 'C2-A-a' not in str(col)]
+        if content_cols:
+            content_col = content_cols[0]
+            content_data = df[content_col].dropna()
+            
+            if len(content_data) > 0:
+                top_content = content_data.value_counts().index[0]
+                top_count = content_data.value_counts().iloc[0]
+                total_content_responses = len(content_data)
+                top_pct = (top_count / total_content_responses) * 100
+                
+                insights['strategic_recommendations'].append({
+                    'title': 'Content Strategy Priority',
+                    'recommendation': f'Focus OSN+ library on {top_content}',
+                    'rationale': f'Most preferred content type: {top_pct:.1f}% of guests ({top_count}/{total_content_responses} responses)',
+                    'action': f'Expand {top_content} offerings in OSN+ to maximize guest satisfaction'
+                })
+        
+        # Generate overall strategic insights
+        if len(df) > 0:
+            insights['strategic_recommendations'].append({
+                'title': 'Market Entry Strategy',
+                'recommendation': 'Launch OSN+ pilot in highest-opportunity market first',
+                'rationale': f'Survey of {len(df)} guests across {len(df["Country"].unique()) if "Country" in df.columns else 1} markets provides clear prioritization data',
+                'action': 'Use survey findings to optimize hotel partnerships and content strategy'
+            })
+    
+    except Exception as e:
+        print(f"Error generating survey insights: {e}")
+        insights['error'] = f"Error analyzing survey data: {str(e)}"
+    
+    return insights
