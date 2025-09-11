@@ -8,62 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Load Chart.js with simple approach -->
-    <script>
-        function initializeDashboardWhenReady() {
-            // Wait for both DOM and Chart.js to be ready
-            if (document.readyState === 'loading' || typeof Chart === 'undefined') {
-                // Not ready yet, try again in 100ms
-                setTimeout(initializeDashboardWhenReady, 100);
-                return;
-            }
-            
-            console.log('Both DOM and Chart.js ready - initializing dashboard...');
-            
-            // Setup event listeners
-            document.getElementById('applyFiltersBtn').addEventListener('click', updateAnalysis);
-            
-            // Load initial data
-            loadCompleteAnalysis();
-        }
-        
-        function showChartJsError() {
-            if (document.getElementById('chartsContainer')) {
-                document.getElementById('chartsContainer').innerHTML = `
-                    <div class="col-12">
-                        <div class="alert alert-danger">
-                            <i class="fas fa-exclamation-triangle me-2"></i>
-                            Chart.js library failed to load. Please refresh the page.
-                        </div>
-                    </div>
-                `;
-            }
-            
-            // Still load filter options
-            if (typeof loadFilterOptions === 'function') {
-                loadFilterOptions();
-            }
-        }
-        
-        // Load Chart.js with error handling
-        function loadChartJS() {
-            const script = document.createElement('script');
-            script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js';
-            script.onload = function() {
-                console.log('Chart.js loaded successfully');
-                // Start initialization check
-                initializeDashboardWhenReady();
-            };
-            script.onerror = function() {
-                console.error('Failed to load Chart.js from CDN');
-                setTimeout(showChartJsError, 100); // Wait a bit for DOM
-            };
-            document.head.appendChild(script);
-        }
-        
-        // Start loading immediately
-        loadChartJS();
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
     
     <style>
         .chart-container {
@@ -226,17 +171,47 @@ let currentFilters = {};
 let allChartData = {};
 let chartInstances = {};
 
-// Dashboard initialization is now handled by initializeDashboardWhenReady()
+// Initialize dashboard immediately when DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM ready - initializing dashboard...');
+    
+    try {
+        // Setup event listeners immediately
+        const filterBtn = document.getElementById('applyFiltersBtn');
+        if (filterBtn) {
+            filterBtn.addEventListener('click', updateAnalysis);
+            console.log('Filter button event listener added');
+        } else {
+            console.error('Filter button not found');
+        }
+        
+        // Load filter options immediately (no Chart.js dependency)
+        console.log('Loading filter options...');
+        loadFilterOptions();
+        
+        // Load charts when ready
+        console.log('Loading charts...');
+        loadCompleteAnalysis();
+        
+    } catch (error) {
+        console.error('Error during dashboard initialization:', error);
+    }
+});
 
 async function loadCompleteAnalysis() {
     try {
         console.log('Loading complete survey analysis...');
         
         // Load all survey charts with current filters
-        const response = await fetch('/enhanced_api/dynamic-charts?' + new URLSearchParams(currentFilters));
+        const url = '/enhanced_api/dynamic-charts?' + new URLSearchParams(currentFilters);
+        console.log('Fetching:', url);
+        
+        const response = await fetch(url);
+        console.log('Response status:', response.status);
         
         if (response.ok) {
             const data = await response.json();
+            console.log('Charts data received:', data);
             allChartData = data;
             
             // Display all charts
@@ -244,29 +219,33 @@ async function loadCompleteAnalysis() {
             
             // Update response count
             if (data.metadata && data.metadata.total_responses) {
-                document.getElementById('responseCount').textContent = data.metadata.total_responses;
+                const responseCountElement = document.getElementById('responseCount');
+                if (responseCountElement) {
+                    responseCountElement.textContent = data.metadata.total_responses;
+                }
             }
             
         } else {
-            throw new Error('Failed to load survey data');
+            throw new Error(`HTTP ${response.status}: Failed to load survey data`);
         }
         
         // Load AI insights
+        console.log('Loading AI insights...');
         loadAIInsights();
-        
-        // Load filter options
-        loadFilterOptions();
         
     } catch (error) {
         console.error('Error loading analysis:', error);
-        document.getElementById('chartsContainer').innerHTML = `
-            <div class="col-12">
-                <div class="alert alert-danger">
-                    <i class="fas fa-exclamation-triangle me-2"></i>
-                    Failed to load survey analysis: ${error.message}
+        const chartsContainer = document.getElementById('chartsContainer');
+        if (chartsContainer) {
+            chartsContainer.innerHTML = `
+                <div class="col-12">
+                    <div class="alert alert-danger">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        Failed to load survey analysis: ${error.message}
+                    </div>
                 </div>
-            </div>
-        `;
+            `;
+        }
     }
 }
 
@@ -327,11 +306,21 @@ function displayAllSurveyCharts(data) {
     
     container.innerHTML = html;
     
-    // Create all charts
+    // Create all charts (only if Chart.js is available)
     Object.entries(data.charts).forEach(([chartKey, chartData]) => {
         if (!chartData.error) {
             const chartId = `chart_${chartKey}`;
-            createChart(chartId, chartData);
+            if (typeof Chart !== 'undefined') {
+                createChart(chartId, chartData);
+            } else {
+                console.log('Chart.js not ready yet for', chartId);
+                // Show placeholder
+                const canvas = document.getElementById(chartId);
+                if (canvas) {
+                    const parent = canvas.parentElement;
+                    parent.innerHTML = '<div class="alert alert-info">Chart.js loading...</div>';
+                }
+            }
         }
     });
 }
@@ -694,9 +683,22 @@ function displayAIInsights(insights) {
 
 async function loadFilterOptions() {
     try {
-        // This would typically load from an API, but for now using static options
+        console.log('loadFilterOptions() called');
+        
+        // Check if elements exist
         const purposeSelect = document.getElementById('purposeFilter');
         const nationalitySelect = document.getElementById('nationalityFilter');
+        
+        if (!purposeSelect) {
+            console.error('purposeFilter element not found');
+            return;
+        }
+        if (!nationalitySelect) {
+            console.error('nationalityFilter element not found');
+            return;
+        }
+        
+        console.log('Filter elements found, adding options...');
         
         // Add visit purposes
         const purposes = ['Business', 'Leisure', 'Family Vacation', 'Other'];
@@ -707,6 +709,8 @@ async function loadFilterOptions() {
             purposeSelect.appendChild(option);
         });
         
+        console.log(`Added ${purposes.length} purposes`);
+        
         // Add nationalities  
         const nationalities = ['UAE National', 'Saudi National', 'European', 'American', 'Indian', 'Other'];
         nationalities.forEach(nationality => {
@@ -715,6 +719,9 @@ async function loadFilterOptions() {
             option.textContent = nationality;
             nationalitySelect.appendChild(option);
         });
+        
+        console.log(`Added ${nationalities.length} nationalities`);
+        console.log('Filter options loaded successfully');
         
     } catch (error) {
         console.error('Error loading filter options:', error);
