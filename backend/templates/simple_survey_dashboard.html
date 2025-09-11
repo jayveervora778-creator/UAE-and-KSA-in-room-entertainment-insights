@@ -327,9 +327,12 @@ function generateChartInsights(chartKey, chartData) {
             break;
             
         case 'content_preferences_distribution':
-            if (chartData.data && chartData.data.labels) {
+            if (chartData.data && chartData.data.labels && chartData.data.datasets && chartData.data.datasets[0]) {
                 const topContent = chartData.data.labels[0];
-                const topPercentage = ((chartData.data.data[0] / chartData.data.data.reduce((a, b) => a + b, 0)) * 100).toFixed(1);
+                const dataValues = chartData.data.datasets[0].data;
+                const topValue = dataValues[0];
+                const totalValue = dataValues.reduce((a, b) => a + b, 0);
+                const topPercentage = ((topValue / totalValue) * 100).toFixed(1);
                 
                 insights.response = `${topContent} is the most preferred content type, representing ${topPercentage}% of guest preferences in our survey.`;
                 insights.implication = `Focus OSN+ content strategy on ${topContent} to maximize guest engagement and satisfaction.`;
@@ -337,23 +340,29 @@ function generateChartInsights(chartKey, chartData) {
             break;
             
         case 'survey_response_analysis':
-            if (chartData.data && chartData.data.stages) {
-                const stages = chartData.data.stages;
-                const conversionRate = ((stages[stages.length-1].value / stages[0].value) * 100).toFixed(1);
-                
-                insights.response = `${conversionRate}% conversion rate from initial survey respondents to high-value entertainment prospects (${stages[stages.length-1].value} out of ${stages[0].value} total).`;
-                insights.implication = `Focus on converting the ${stages[1].value - stages[stages.length-1].value} entertainment-interested guests who aren't yet ready to pay premium.`;
+            if (chartData.data && chartData.data.labels && chartData.data.datasets && chartData.data.datasets[0]) {
+                const labels = chartData.data.labels;
+                const values = chartData.data.datasets[0].data;
+                if (values.length > 0) {
+                    const totalResponses = values[0];
+                    const finalValue = values[values.length-1];
+                    const conversionRate = ((finalValue / totalResponses) * 100).toFixed(1);
+                    
+                    insights.response = `${conversionRate}% conversion rate from initial survey respondents to high-value entertainment prospects (${finalValue} out of ${totalResponses} total).`;
+                    insights.implication = `Focus on converting interested guests who aren't yet ready to pay premium.`;
+                }
             }
             break;
             
         case 'market_opportunity_heatmap':
-            if (chartData.data && chartData.data.length > 0) {
-                const bestOpportunity = chartData.data.reduce((prev, current) => 
-                    (prev.opportunity_score > current.opportunity_score) ? prev : current
+            if (chartData.data && chartData.data.datasets && chartData.data.datasets[0] && chartData.data.datasets[0].data.length > 0) {
+                const scatterData = chartData.data.datasets[0].data;
+                const bestOpportunity = scatterData.reduce((prev, current) => 
+                    ((prev.x + prev.y) > (current.x + current.y)) ? prev : current
                 );
                 
-                insights.response = `${bestOpportunity.country} shows highest market opportunity with ${bestOpportunity.opportunity_score} composite score (${bestOpportunity.entertainment_demand}% entertainment demand, ${bestOpportunity.payment_willingness}% payment willingness).`;
-                insights.implication = `Prioritize ${bestOpportunity.country} for OSN+ rollout and partnership development based on optimal demand-payment alignment.`;
+                insights.response = `${bestOpportunity.label} shows highest market opportunity with ${((bestOpportunity.x + bestOpportunity.y)/2).toFixed(1)} composite score (${bestOpportunity.x}% entertainment demand, ${bestOpportunity.y}% payment willingness).`;
+                insights.implication = `Prioritize ${bestOpportunity.label} for OSN+ rollout and partnership development based on optimal demand-payment alignment.`;
             }
             break;
             
@@ -430,17 +439,26 @@ function createChart(canvasId, chartData) {
         };
     }
     
-    if (chartData.type === 'funnel') {
-        // Convert funnel to horizontal bar
-        config.type = 'bar';
+    // Handle horizontal bar charts (converted funnels)
+    if (chartData.options && chartData.options.indexAxis === 'y') {
         config.options.indexAxis = 'y';
-        config.data = {
-            labels: chartData.data.stages.map(s => s.name),
-            datasets: [{
-                label: 'Count',
-                data: chartData.data.stages.map(s => s.value),
-                backgroundColor: chartData.data.stages.map(s => s.color)
-            }]
+    }
+    
+    // Handle scatter plots
+    if (chartData.type === 'scatter') {
+        config.options.scales = {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Entertainment Demand (%)'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Payment Willingness (%)'
+                }
+            }
         };
     }
     

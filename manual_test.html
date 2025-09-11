@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manual Dashboard Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .test-section { border: 1px solid #ddd; padding: 15px; margin: 10px 0; }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        .info { color: blue; }
+        .chart-test { width: 400px; height: 300px; border: 1px solid #ccc; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>OSN Survey Dashboard Manual Test</h1>
+    
+    <div class="test-section">
+        <h2>Step 1: Login Test</h2>
+        <button onclick="doLogin()">Login to Dashboard</button>
+        <div id="loginStatus"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Step 2: Load Charts</h2>
+        <button onclick="loadCharts()">Load All Charts</button>
+        <div id="chartsStatus"></div>
+        <canvas id="testCanvas" class="chart-test"></canvas>
+    </div>
+    
+    <div class="test-section">
+        <h2>Step 3: Test Filtering</h2>
+        <button onclick="testFilters()">Test UAE vs KSA Filter</button>
+        <div id="filterStatus"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Step 4: Test Insights</h2>
+        <button onclick="loadInsights()">Load Survey Insights</button>
+        <div id="insightsStatus"></div>
+    </div>
+
+    <script>
+        const BASE_URL = 'https://5000-irfwmnj83fl8g7sybafp1-6532622b.e2b.dev';
+        let session = null;
+        
+        async function doLogin() {
+            const status = document.getElementById('loginStatus');
+            status.innerHTML = '<div class="info">Logging in...</div>';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        username: 'admin',
+                        password: 'surveydash2024'
+                    })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.success) {
+                        status.innerHTML = '<div class="success">✅ Login successful!</div>';
+                        session = true;
+                    } else {
+                        status.innerHTML = `<div class="error">❌ Login failed: ${data.message}</div>`;
+                    }
+                } else {
+                    status.innerHTML = `<div class="error">❌ Login request failed: ${response.status}</div>`;
+                }
+            } catch (error) {
+                status.innerHTML = `<div class="error">❌ Login error: ${error.message}</div>`;
+            }
+        }
+        
+        async function loadCharts() {
+            const status = document.getElementById('chartsStatus');
+            
+            if (!session) {
+                status.innerHTML = '<div class="error">❌ Please login first</div>';
+                return;
+            }
+            
+            status.innerHTML = '<div class="info">Loading charts...</div>';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/enhanced_api/dynamic-charts`, {
+                    credentials: 'include'
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    if (data.charts && Object.keys(data.charts).length > 0) {
+                        const chartCount = Object.keys(data.charts).length;
+                        status.innerHTML = `<div class="success">✅ Loaded ${chartCount} charts successfully!</div>`;
+                        
+                        // Test creating one chart
+                        const firstChartKey = Object.keys(data.charts)[0];
+                        const chartConfig = data.charts[firstChartKey];
+                        
+                        // Create a test chart
+                        const canvas = document.getElementById('testCanvas');
+                        const ctx = canvas.getContext('2d');
+                        
+                        // Destroy existing chart
+                        if (window.testChart) {
+                            window.testChart.destroy();
+                        }
+                        
+                        console.log('Creating chart:', firstChartKey, chartConfig);
+                        
+                        window.testChart = new Chart(ctx, {
+                            type: chartConfig.type,
+                            data: chartConfig.data,
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: chartConfig.title || firstChartKey
+                                    }
+                                }
+                            }
+                        });
+                        
+                        status.innerHTML += `<div class="info">📊 Sample chart: ${chartConfig.title || firstChartKey}</div>`;
+                        
+                    } else {
+                        status.innerHTML = '<div class="error">❌ No charts in response</div>';
+                    }
+                } else {
+                    status.innerHTML = `<div class="error">❌ Charts request failed: ${response.status}</div>`;
+                }
+            } catch (error) {
+                status.innerHTML = `<div class="error">❌ Charts error: ${error.message}</div>`;
+                console.error('Charts error:', error);
+            }
+        }
+        
+        async function testFilters() {
+            const status = document.getElementById('filterStatus');
+            
+            if (!session) {
+                status.innerHTML = '<div class="error">❌ Please login first</div>';
+                return;
+            }
+            
+            status.innerHTML = '<div class="info">Testing filters...</div>';
+            
+            try {
+                // Test UAE filter
+                const uaeResponse = await fetch(`${BASE_URL}/enhanced_api/dynamic-charts?country=UAE`, {
+                    credentials: 'include'
+                });
+                
+                // Test KSA filter
+                const ksaResponse = await fetch(`${BASE_URL}/enhanced_api/dynamic-charts?country=KSA`, {
+                    credentials: 'include'
+                });
+                
+                if (uaeResponse.ok && ksaResponse.ok) {
+                    const uaeData = await uaeResponse.json();
+                    const ksaData = await ksaResponse.json();
+                    
+                    const uaeChart = uaeData.charts?.entertainment_importance_by_country;
+                    const ksaChart = ksaData.charts?.entertainment_importance_by_country;
+                    
+                    const uaeLabels = uaeChart?.data?.labels || [];
+                    const ksaLabels = ksaChart?.data?.labels || [];
+                    
+                    if (uaeLabels.includes('UAE') && ksaLabels.includes('KSA')) {
+                        status.innerHTML = `
+                            <div class="success">✅ Filtering works!</div>
+                            <div class="info">UAE filter shows: ${uaeLabels.join(', ')}</div>
+                            <div class="info">KSA filter shows: ${ksaLabels.join(', ')}</div>
+                        `;
+                    } else {
+                        status.innerHTML = `
+                            <div class="error">❌ Filtering not working properly</div>
+                            <div class="info">UAE: ${uaeLabels.join(', ')}</div>
+                            <div class="info">KSA: ${ksaLabels.join(', ')}</div>
+                        `;
+                    }
+                } else {
+                    status.innerHTML = '<div class="error">❌ Filter requests failed</div>';
+                }
+            } catch (error) {
+                status.innerHTML = `<div class="error">❌ Filter error: ${error.message}</div>`;
+            }
+        }
+        
+        async function loadInsights() {
+            const status = document.getElementById('insightsStatus');
+            
+            if (!session) {
+                status.innerHTML = '<div class="error">❌ Please login first</div>';
+                return;
+            }
+            
+            status.innerHTML = '<div class="info">Loading insights...</div>';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/enhanced_api/survey-insights`, {
+                    credentials: 'include'
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    if (data.key_findings && data.key_findings.length > 0) {
+                        status.innerHTML = `
+                            <div class="success">✅ Insights loaded: ${data.key_findings.length} findings</div>
+                            <div class="info">Sample: ${data.key_findings[0].title}</div>
+                            <div class="info">Total responses: ${data.data_summary?.total_responses || 'N/A'}</div>
+                        `;
+                    } else {
+                        status.innerHTML = '<div class="error">❌ No insights found</div>';
+                    }
+                } else {
+                    status.innerHTML = `<div class="error">❌ Insights request failed: ${response.status}</div>`;
+                }
+            } catch (error) {
+                status.innerHTML = `<div class="error">❌ Insights error: ${error.message}</div>`;
+            }
+        }
+    </script>
+</body>
+</html>
