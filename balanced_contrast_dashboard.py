@@ -713,25 +713,59 @@ def main():
     with tab2:
         st.markdown("### 📈 Cross-Analysis")
         
-        available_questions = [q for q in stats['available_questions'] if 'Unnamed' not in str(q)]
+        # Build proper human-readable question options from the actual survey questions
+        response_options = stats.get('response_options', {})
+        question_mapping_dict = processor.question_mapping if hasattr(processor, 'question_mapping') else {}
         
-        if len(available_questions) >= 2:
+        # Create dropdown options using actual survey questions, not column names
+        proper_questions = []
+        question_lookup = {}  # Maps display name back to column name
+        
+        # Add the main survey questions with response options
+        question_definitions = {
+            'A1': ('Nationality', 'Nationality'),
+            'A2': ('What was the primary purpose of your visit?', 'Visit Purpose'),
+            'A3': ('How many times have you stayed in a hotel over the past year?', 'Hotel Stays Per Year'),
+            'B1-A': ('What were your top 3 reasons for choosing this hotel?', 'Hotel Choice Reason 1'),
+            'B1-B': ('Would you prioritize entertainment more if traveling with children?', 'Entertainment Priority with Family'),
+            'B2-A': ('How important is in-room entertainment in shaping your hotel experience?', 'Entertainment Importance Rating'),
+            'C1': ('Did you use the in-room TV or entertainment system during your stay?', 'Used In-Room Entertainment'),
+            'C2-A': ('What type of content did you watch?', 'C2-A/1'),  # Use first sub-column
+            'D1': ('Do you currently subscribe to any streaming platforms?', 'D1/1'),  # Use first sub-column
+            'D2': ('Would you prefer access to your own streaming accounts in hotel?', 'Streaming Account Preference'),
+            'D3': ('Would you be willing to pay for enhanced in-room entertainment?', 'Willingness to Pay for Enhancement'),
+            'D4': ('What price range per day would be acceptable?', 'Acceptable Price Range')
+        }
+        
+        # Build the dropdown options from questions that have response options
+        for code, options in response_options.items():
+            if code in question_definitions:
+                question_text, column_name = question_definitions[code]
+                # Show available response options in the dropdown
+                option_preview = f" ({', '.join(options[:2])}{'...' if len(options) > 2 else ''})"
+                display_name = f"📋 {question_text}{option_preview}"
+                proper_questions.append(display_name)
+                question_lookup[display_name] = column_name
+        
+        if len(proper_questions) >= 2:
             col1, col2 = st.columns(2)
             
             with col1:
-                question1 = st.selectbox(
-                    "📋 First Question",
-                    options=available_questions,
+                question1_display = st.selectbox(
+                    "🎯 Select First Question",
+                    options=proper_questions,
                     key="crosstab_q1"
                 )
+                question1 = question_lookup.get(question1_display, question1_display)
             
             with col2:
-                available_q2 = [q for q in available_questions if q != question1]
-                question2 = st.selectbox(
-                    "📋 Second Question", 
+                available_q2 = [q for q in proper_questions if q != question1_display]
+                question2_display = st.selectbox(
+                    "🎯 Select Second Question", 
                     options=available_q2,
                     key="crosstab_q2"
                 )
+                question2 = question_lookup.get(question2_display, question2_display)
             
             if st.button("🔍 Generate Analysis", type="primary"):
                 with st.spinner("Analyzing..."):
@@ -748,12 +782,16 @@ def main():
                     if result and result['combinations']:
                         st.success(f"✅ Analysis completed: {result['total_responses']} responses")
                         
+                        # Display the actual question text, not column names
+                        q1_text = question1_display.replace("📋 ", "").split(" (")[0]
+                        q2_text = question2_display.replace("📋 ", "").split(" (")[0]
+                        
                         st.markdown(f"""
                         <div class="metric-card">
-                            <h4>📊 Results</h4>
-                            <p><strong>Q1:</strong> {question1}</p>
-                            <p><strong>Q2:</strong> {question2}</p>
-                            <p><strong>Sample:</strong> {result['total_responses']} responses</p>
+                            <h4>📊 Cross-Analysis Results</h4>
+                            <p><strong>Question 1:</strong> {q1_text}</p>
+                            <p><strong>Question 2:</strong> {q2_text}</p>
+                            <p><strong>Sample Size:</strong> {result['total_responses']} responses</p>
                         </div>
                         """, unsafe_allow_html=True)
                         
@@ -768,6 +806,21 @@ def main():
                                 <p><strong>Answer 2:</strong> {combo['question2_value']}</p>
                             </div>
                             """, unsafe_allow_html=True)
+        
+        else:
+            st.warning("⚠️ Need at least 2 questions with response options for cross-analysis")
+            
+        # Show available survey questions for reference
+        if response_options:
+            with st.expander("📋 View All Survey Questions & Response Options", expanded=False):
+                st.markdown("### Survey Questions Available for Analysis")
+                for code, options in response_options.items():
+                    if code in question_definitions:
+                        question_text = question_definitions[code][0]
+                        st.markdown(f"**{question_text}** ({code})")
+                        for i, option in enumerate(options, 1):
+                            st.write(f"   {i}. {option}")
+                        st.markdown("---")
     
     with tab3:
         st.markdown("### 🔤 Word Cloud Analysis")
