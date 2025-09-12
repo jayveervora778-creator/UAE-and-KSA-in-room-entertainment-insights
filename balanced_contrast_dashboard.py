@@ -814,24 +814,55 @@ def main():
                         if len(text_responses) > 3:
                             st.write(f"... and {len(text_responses) - 3} more responses")
                         
-                        wordcloud_data = wordcloud_analyzer.generate_wordcloud_data(
+                        wordcloud_results = wordcloud_analyzer.generate_wordcloud_data(
                             text_responses,
                             max_words=50,
                             osn_focus=True
                         )
                         
-                        wordcloud_fig = create_wordcloud_visualization(
-                            wordcloud_data,
-                            title=f"Word Cloud: {selected_text_question[:30]}..."
-                        )
-                        
-                        if wordcloud_fig:
-                            st.markdown("""
-                            <div class="wordcloud-container">
-                                <h4>🎨 Word Cloud Visualization</h4>
-                            </div>
-                            """, unsafe_allow_html=True)
-                            st.plotly_chart(wordcloud_fig, use_container_width=True)
+                        if wordcloud_results and wordcloud_results['word_frequency']:
+                            # Create word cloud visualization using word frequency data
+                            wordcloud_fig = create_wordcloud_visualization(
+                                list(wordcloud_results['word_frequency'].items()),
+                                title=f"Word Cloud: {selected_text_question[:30]}..."
+                            )
+                            
+                            if wordcloud_fig:
+                                st.markdown("""
+                                <div class="wordcloud-container">
+                                    <h4>🎨 Word Cloud Visualization</h4>
+                                </div>
+                                """, unsafe_allow_html=True)
+                                st.plotly_chart(wordcloud_fig, use_container_width=True)
+                                
+                                # Show categorized insights
+                                if wordcloud_results['categorized']:
+                                    st.markdown("#### 📊 Word Categories")
+                                    col1, col2 = st.columns(2)
+                                    
+                                    categories = wordcloud_results['categorized']
+                                    cat_items = list(categories.items())
+                                    
+                                    with col1:
+                                        for i, (theme, words) in enumerate(cat_items[:len(cat_items)//2]):
+                                            if words:
+                                                st.markdown(f"**🎯 {theme.title()}**")
+                                                for word, freq in list(words.items())[:3]:
+                                                    st.write(f"   • {word} ({freq})")
+                                    
+                                    with col2:
+                                        for i, (theme, words) in enumerate(cat_items[len(cat_items)//2:]):
+                                            if words:
+                                                st.markdown(f"**🎯 {theme.title()}**")
+                                                for word, freq in list(words.items())[:3]:
+                                                    st.write(f"   • {word} ({freq})")
+                                
+                                # Show OSN insights
+                                if wordcloud_results['osn_insights']:
+                                    st.markdown("#### 💡 OSN Strategic Insights")
+                                    st.markdown(wordcloud_results['osn_insights'])
+                        else:
+                            st.warning("No significant words found for visualization")
     
     with tab4:
         st.markdown("### 🧠 Advanced Text Insights")

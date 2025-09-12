@@ -334,6 +334,42 @@ class EnhancedOSNProcessor:
             
             self.data['Hotel Stays Per Year'] = self.data['Hotel Stays Per Year'].apply(convert_hotel_frequency)
         
+        # Convert hotel choice reason codes to meaningful text
+        hotel_choice_columns = [col for col in self.data.columns if 'Hotel Choice Reason' in col]
+        if hotel_choice_columns:
+            print("🧹 Converting hotel choice reason codes...")
+            
+            def convert_hotel_choice_reason(value):
+                if pd.isna(value):
+                    return 'Not Specified'
+                
+                val_str = str(value).strip()
+                
+                # Map based on B1-A response options from Excel
+                choice_mapping = {
+                    '1': 'Location',
+                    '1.0': 'Location',
+                    '2': 'Price', 
+                    '2.0': 'Price',
+                    '3': 'Brand Reputation',
+                    '3.0': 'Brand Reputation',
+                    '4': 'Amenities (gym, pool, etc.)',
+                    '4.0': 'Amenities (gym, pool, etc.)',
+                    '5': 'In-room Entertainment',
+                    '5.0': 'In-room Entertainment',
+                    '6': 'Family-friendly Features',
+                    '6.0': 'Family-friendly Features',
+                    '7': 'Guest Reviews',
+                    '7.0': 'Guest Reviews',
+                    '99': 'Other',
+                    '99.0': 'Other'
+                }
+                
+                return choice_mapping.get(val_str, val_str if val_str else 'Not Specified')
+            
+            for col in hotel_choice_columns:
+                self.data[col] = self.data[col].apply(convert_hotel_choice_reason)
+        
         print(f"✅ ENHANCED: Data cleaned, still have exactly {len(self.data)} responses")
     
     def _setup_enhanced_filters(self):
