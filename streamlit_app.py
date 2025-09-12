@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-OSN Survey Analytics Dashboard - Enhanced Streamlit Version
-Comprehensive survey analytics with rich filtering and AI insights
+OSN Survey Analytics Dashboard - Corrected Architecture
+Proper slice-and-dice: Hotel Facts (filters) → Guest Opinions (visualizations)
 """
 
 import streamlit as st
@@ -40,7 +40,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for professional styling matching original design
+# Custom CSS for professional styling
 st.markdown("""
 <style>
     /* Main header styling */
@@ -109,6 +109,15 @@ st.markdown("""
         margin: 0.5rem 0;
     }
     
+    /* Section headers */
+    .section-header {
+        background: #f8f9fa;
+        padding: 1rem;
+        border-radius: 8px;
+        border-left: 4px solid #667eea;
+        margin: 1rem 0;
+    }
+    
     /* Hide default streamlit styling */
     .stDeployButton {display: none;}
     #MainMenu {visibility: hidden;}
@@ -137,332 +146,331 @@ def load_survey_data():
         st.error(f"Error loading survey data: {e}")
         return None, None
 
-def get_filter_options(df: pd.DataFrame) -> Dict[str, List[str]]:
-    """Extract unique values for filter dropdowns"""
-    filter_options = {}
+def get_hotel_facts_options(df: pd.DataFrame) -> Dict[str, List[str]]:
+    """Extract options for hotel demographic filters"""
+    options = {}
     
-    # Country options
+    # Country (Market)
     if 'Country' in df.columns:
-        filter_options['countries'] = sorted(df['Country'].unique().tolist())
+        options['countries'] = sorted(df['Country'].dropna().unique().tolist())
     
-    # Visit purpose options (A2 column)
+    # Nationality (A1)
+    if 'A1' in df.columns:
+        nationalities = df['A1'].dropna().unique().tolist()
+        # Clean up nationalities and sort
+        clean_nationalities = []
+        for nat in nationalities:
+            cleaned = str(nat).strip().replace('\xa0', ' ')  # Remove non-breaking spaces
+            if cleaned and cleaned != 'nan':
+                clean_nationalities.append(cleaned)
+        options['nationalities'] = sorted(list(set(clean_nationalities)))
+    
+    # Visit Purpose (A2)
     if 'A2' in df.columns:
         purposes = df['A2'].dropna().unique().tolist()
-        filter_options['purposes'] = sorted([p for p in purposes if str(p) != 'nan'])
+        options['purposes'] = sorted([str(p) for p in purposes if str(p) != 'nan'])
     
-    # Nationality options (A3 column if exists)
+    # Visit Frequency (A3)
     if 'A3' in df.columns:
-        nationalities = df['A3'].dropna().unique().tolist()
-        filter_options['nationalities'] = sorted([n for n in nationalities if str(n) != 'nan'])
+        frequencies = df['A3'].dropna().unique().tolist()
+        options['frequencies'] = sorted([str(f) for f in frequencies if str(f) != 'nan'])
     
-    return filter_options
+    return options
 
-def filter_data(df: pd.DataFrame, country: str, purpose: str, nationality: str) -> pd.DataFrame:
-    """Apply filters to the dataframe"""
+def apply_hotel_facts_filter(df: pd.DataFrame, country: str, nationality: str, purpose: str, frequency: str) -> pd.DataFrame:
+    """Apply hotel demographic filters to isolate guest segments"""
     filtered_df = df.copy()
     
+    # Country filter
     if country and country != "All Countries":
         filtered_df = filtered_df[filtered_df['Country'] == country]
     
+    # Nationality filter (A1)
+    if nationality and nationality != "All Nationalities" and 'A1' in df.columns:
+        # Handle the non-breaking space issue
+        mask = filtered_df['A1'].str.replace('\xa0', ' ').str.strip() == nationality
+        filtered_df = filtered_df[mask]
+    
+    # Visit Purpose filter (A2) 
     if purpose and purpose != "All Purposes" and 'A2' in df.columns:
         filtered_df = filtered_df[filtered_df['A2'] == purpose]
     
-    if nationality and nationality != "All Nationalities" and 'A3' in df.columns:
-        filtered_df = filtered_df[filtered_df['A3'] == nationality]
+    # Visit Frequency filter (A3)
+    if frequency and frequency != "All Frequencies" and 'A3' in df.columns:
+        filtered_df = filtered_df[filtered_df['A3'] == frequency]
     
     return filtered_df
 
 def create_entertainment_importance_chart(df: pd.DataFrame):
-    """Create entertainment importance by country chart"""
-    if 'B2-A' not in df.columns or 'Country' not in df.columns:
+    """B2-A: How important is entertainment to you during hotel stays?"""
+    if 'B2-A' not in df.columns:
         return None
     
-    clean_df = df[['B2-A', 'Country']].dropna()
+    clean_df = df[['B2-A']].dropna()
     if clean_df.empty:
         return None
     
-    # Calculate percentages by country
-    country_ent = clean_df.groupby('Country')['B2-A'].value_counts(normalize=True).unstack(fill_value=0) * 100
+    # Count responses
+    importance_counts = clean_df['B2-A'].value_counts()
     
-    fig = go.Figure()
-    
-    colors = {'Very Important': '#28a745', 'Somewhat Important': '#ffc107', 'Not Important': '#dc3545'}
-    
-    for importance in ['Very Important', 'Somewhat Important', 'Not Important']:
-        if importance in country_ent.columns:
-            fig.add_trace(go.Bar(
-                name=importance,
-                x=country_ent.index,
-                y=country_ent[importance],
-                marker_color=colors.get(importance, '#007bff'),
-                text=[f"{val:.1f}%" for val in country_ent[importance]],
-                textposition='inside'
-            ))
+    fig = go.Figure(data=[go.Bar(
+        x=importance_counts.index,
+        y=importance_counts.values,
+        text=[f"{count}<br>({count/len(clean_df)*100:.1f}%)" for count in importance_counts.values],
+        textposition='auto',
+        marker_color=['#28a745', '#ffc107', '#dc3545', '#6c757d'][:len(importance_counts)]
+    )])
     
     fig.update_layout(
-        title="Entertainment Importance by Market",
-        xaxis_title="Country",
-        yaxis_title="Percentage (%)",
-        barmode='group',
+        title="Entertainment Importance During Hotel Stays",
+        xaxis_title="Importance Level",
+        yaxis_title="Number of Responses",
         height=400,
-        showlegend=True
+        showlegend=False
     )
     
     return fig
 
-def create_payment_willingness_chart(df: pd.DataFrame):
-    """Create payment willingness analysis chart"""
-    payment_cols = [col for col in df.columns if 'payment' in col.lower() or 'willing' in col.lower()]
+def create_booking_factors_chart(df: pd.DataFrame):
+    """B1-A series: What factors influence your hotel booking decisions?"""
+    booking_cols = [col for col in df.columns if col.startswith('B1-A/')]
     
-    if not payment_cols and 'C2-A' in df.columns:
-        payment_cols = ['C2-A']
-    
-    if not payment_cols:
+    if not booking_cols:
         return None
     
-    col = payment_cols[0]
-    clean_df = df[[col, 'Country']].dropna()
+    # Count mentions across all booking factor columns
+    factor_counts = {}
+    for col in booking_cols:
+        factors = df[col].dropna()
+        for factor in factors:
+            if factor and str(factor) != 'nan':
+                factor_counts[factor] = factor_counts.get(factor, 0) + 1
     
-    if clean_df.empty:
+    if not factor_counts:
         return None
     
-    # Calculate payment willingness by country
-    payment_analysis = clean_df.groupby('Country')[col].value_counts(normalize=True).unstack(fill_value=0) * 100
+    # Sort by count
+    sorted_factors = dict(sorted(factor_counts.items(), key=lambda x: x[1], reverse=True))
     
-    fig = go.Figure()
-    
-    colors = ['#28a745', '#17a2b8', '#ffc107', '#dc3545', '#6f42c1']
-    
-    for i, response in enumerate(payment_analysis.columns):
-        fig.add_trace(go.Bar(
-            name=str(response),
-            x=payment_analysis.index,
-            y=payment_analysis[response],
-            marker_color=colors[i % len(colors)],
-            text=[f"{val:.1f}%" for val in payment_analysis[response]],
-            textposition='inside'
-        ))
+    fig = go.Figure(data=[go.Bar(
+        x=list(sorted_factors.values()),
+        y=list(sorted_factors.keys()),
+        orientation='h',
+        text=[f"{count} mentions" for count in sorted_factors.values()],
+        textposition='auto',
+        marker_color='#667eea'
+    )])
     
     fig.update_layout(
-        title="Payment Willingness by Market",
-        xaxis_title="Country",
-        yaxis_title="Percentage (%)",
-        barmode='group',
+        title="Hotel Booking Decision Factors",
+        xaxis_title="Number of Mentions",
+        yaxis_title="Booking Factors",
         height=400,
-        showlegend=True
-    )
-    
-    return fig
-
-def create_satisfaction_analysis_chart(df: pd.DataFrame):
-    """Create satisfaction analysis chart"""
-    satisfaction_cols = [col for col in df.columns if 'satisfaction' in col.lower() or 'satisfied' in col.lower()]
-    
-    if not satisfaction_cols and 'D1' in df.columns:
-        satisfaction_cols = ['D1']
-    
-    if not satisfaction_cols:
-        return None
-    
-    col = satisfaction_cols[0]
-    clean_df = df[[col, 'Country']].dropna()
-    
-    if clean_df.empty:
-        return None
-    
-    # Calculate satisfaction by country
-    satisfaction_analysis = clean_df.groupby('Country')[col].value_counts(normalize=True).unstack(fill_value=0) * 100
-    
-    fig = go.Figure()
-    
-    colors = {'Very Satisfied': '#28a745', 'Satisfied': '#17a2b8', 'Neutral': '#ffc107', 'Dissatisfied': '#fd7e14', 'Very Dissatisfied': '#dc3545'}
-    
-    for response in satisfaction_analysis.columns:
-        color = colors.get(str(response), '#007bff')
-        fig.add_trace(go.Bar(
-            name=str(response),
-            x=satisfaction_analysis.index,
-            y=satisfaction_analysis[response],
-            marker_color=color,
-            text=[f"{val:.1f}%" for val in satisfaction_analysis[response]],
-            textposition='inside'
-        ))
-    
-    fig.update_layout(
-        title="Current Satisfaction Levels by Market",
-        xaxis_title="Country",
-        yaxis_title="Percentage (%)",
-        barmode='group',
-        height=400,
-        showlegend=True
+        showlegend=False
     )
     
     return fig
 
 def create_content_preferences_chart(df: pd.DataFrame):
-    """Create content preferences distribution chart"""
-    content_cols = [col for col in df.columns if 'content' in col.lower() or 'prefer' in col.lower()]
-    
-    if not content_cols and 'B1-A/1' in df.columns:
-        # Use entertainment preferences columns
-        content_cols = [col for col in df.columns if col.startswith('B1-A/')]
+    """C2-A series: Content/service preferences"""
+    content_cols = [col for col in df.columns if col.startswith('C2-A/')]
     
     if not content_cols:
         return None
     
-    # Aggregate content preferences
-    preferences = {}
+    # Count preferences
+    pref_counts = {}
     for col in content_cols:
-        col_name = col.replace('B1-A/', '').replace('/', ' ')
-        if col_name.isdigit():
-            col_name = f"Content Type {col_name}"
-        
-        clean_data = df[col].dropna()
-        if not clean_data.empty:
-            preferences[col_name] = len(clean_data)
+        prefs = df[col].dropna()
+        for pref in prefs:
+            if pref and str(pref) != 'nan':
+                pref_counts[pref] = pref_counts.get(pref, 0) + 1
     
-    if not preferences:
+    if not pref_counts:
         return None
     
     fig = go.Figure(data=[go.Pie(
-        labels=list(preferences.keys()),
-        values=list(preferences.values()),
+        labels=list(pref_counts.keys()),
+        values=list(pref_counts.values()),
         hole=0.4,
         marker_colors=px.colors.qualitative.Set3
     )])
     
     fig.update_layout(
-        title="Content Preferences Distribution",
+        title="Guest Content/Service Preferences",
         height=400,
         showlegend=True
     )
     
     return fig
 
-def create_market_opportunity_heatmap(df: pd.DataFrame):
-    """Create market opportunity analysis heatmap"""
-    if 'Country' not in df.columns:
+def create_satisfaction_ratings_chart(df: pd.DataFrame):
+    """D1 series: Satisfaction ratings across different aspects"""
+    satisfaction_cols = [col for col in df.columns if col.startswith('D1/')]
+    
+    if not satisfaction_cols:
         return None
     
-    countries = df['Country'].unique()
+    # Create satisfaction heatmap
+    satisfaction_data = []
+    for col in satisfaction_cols:
+        ratings = df[col].dropna()
+        if not ratings.empty:
+            # Assuming numeric ratings or convert text to numeric
+            try:
+                numeric_ratings = pd.to_numeric(ratings, errors='coerce').dropna()
+                if not numeric_ratings.empty:
+                    avg_rating = numeric_ratings.mean()
+                    satisfaction_data.append({
+                        'Aspect': col.replace('D1/', 'Aspect '),
+                        'Average_Rating': avg_rating,
+                        'Response_Count': len(numeric_ratings)
+                    })
+            except:
+                # Handle text ratings
+                rating_counts = ratings.value_counts()
+                if not rating_counts.empty:
+                    satisfaction_data.append({
+                        'Aspect': col.replace('D1/', 'Aspect '),
+                        'Top_Rating': rating_counts.index[0],
+                        'Response_Count': len(ratings)
+                    })
     
-    # Calculate entertainment importance and payment willingness for each country
-    opportunity_data = []
-    
-    for country in countries:
-        country_df = df[df['Country'] == country]
-        
-        # Entertainment importance (B2-A)
-        ent_score = 0
-        if 'B2-A' in df.columns:
-            ent_data = country_df['B2-A'].dropna()
-            if not ent_data.empty:
-                ent_score = (ent_data == 'Very Important').sum() / len(ent_data) * 100
-        
-        # Payment willingness (C2-A)
-        pay_score = 0
-        if 'C2-A' in df.columns:
-            pay_data = country_df['C2-A'].dropna()
-            if not pay_data.empty:
-                # Assuming positive responses indicate willingness
-                positive_responses = ['Yes', 'Definitely', 'Very Likely', 'Likely']
-                pay_score = sum(pay_data.isin(positive_responses)) / len(pay_data) * 100
-        
-        opportunity_data.append({
-            'Country': country,
-            'Entertainment_Demand': ent_score,
-            'Payment_Willingness': pay_score,
-            'Opportunity_Score': (ent_score + pay_score) / 2
-        })
-    
-    if not opportunity_data:
+    if not satisfaction_data:
         return None
     
-    opp_df = pd.DataFrame(opportunity_data)
+    sat_df = pd.DataFrame(satisfaction_data)
     
-    fig = go.Figure(data=go.Scatter(
-        x=opp_df['Entertainment_Demand'],
-        y=opp_df['Payment_Willingness'], 
-        mode='markers+text',
-        text=opp_df['Country'],
-        textposition='top center',
-        marker=dict(
-            size=opp_df['Opportunity_Score'],
-            sizemode='diameter',
-            sizeref=2.*max(opp_df['Opportunity_Score'])/(40.**2),
-            color=opp_df['Opportunity_Score'],
-            colorscale='Viridis',
-            showscale=True,
-            colorbar=dict(title="Opportunity Score")
+    if 'Average_Rating' in sat_df.columns:
+        fig = go.Figure(data=[go.Bar(
+            x=sat_df['Aspect'],
+            y=sat_df['Average_Rating'],
+            text=[f"{rating:.1f}<br>({count} responses)" for rating, count in zip(sat_df['Average_Rating'], sat_df['Response_Count'])],
+            textposition='auto',
+            marker_color='#28a745'
+        )])
+        
+        fig.update_layout(
+            title="Average Satisfaction Ratings by Aspect",
+            xaxis_title="Service Aspects", 
+            yaxis_title="Average Rating",
+            height=400,
+            showlegend=False
         )
-    ))
+    else:
+        fig = go.Figure(data=[go.Bar(
+            x=sat_df['Aspect'],
+            y=sat_df['Response_Count'],
+            text=[f"{count} responses" for count in sat_df['Response_Count']],
+            textposition='auto',
+            marker_color='#17a2b8'
+        )])
+        
+        fig.update_layout(
+            title="Satisfaction Response Counts by Aspect",
+            xaxis_title="Service Aspects",
+            yaxis_title="Number of Responses", 
+            height=400,
+            showlegend=False
+        )
+    
+    return fig
+
+def create_willingness_to_pay_chart(df: pd.DataFrame):
+    """C2-B: Willingness to pay for enhanced services"""
+    if 'C2-B' not in df.columns:
+        return None
+    
+    clean_df = df[['C2-B']].dropna()
+    if clean_df.empty:
+        return None
+    
+    willingness_counts = clean_df['C2-B'].value_counts()
+    
+    fig = go.Figure(data=[go.Bar(
+        x=willingness_counts.index,
+        y=willingness_counts.values,
+        text=[f"{count}<br>({count/len(clean_df)*100:.1f}%)" for count in willingness_counts.values],
+        textposition='auto',
+        marker_color=['#28a745', '#ffc107', '#dc3545'][:len(willingness_counts)]
+    )])
     
     fig.update_layout(
-        title="Market Opportunity Analysis",
-        xaxis_title="Entertainment Demand (%)",
-        yaxis_title="Payment Willingness (%)",
-        height=400
+        title="Willingness to Pay for Enhanced Entertainment Services",
+        xaxis_title="Response",
+        yaxis_title="Number of Guests",
+        height=400,
+        showlegend=False
     )
     
     return fig
 
-def generate_chart_insights(chart_type: str, df: pd.DataFrame, filters: Dict[str, str]) -> Dict[str, str]:
-    """Generate AI insights for each chart with survey-backed rationale"""
+def generate_segment_insights(df: pd.DataFrame, filters: Dict[str, str]) -> List[Dict[str, str]]:
+    """Generate insights for the filtered guest segment"""
     
-    insights = {
-        'finding': '',
-        'implication': '',
-        'data_backing': ''
-    }
+    insights = []
     
-    filter_desc = []
+    # Create segment description
+    segment_parts = []
     if filters.get('country') and filters['country'] != 'All Countries':
-        filter_desc.append(f"Country: {filters['country']}")
-    if filters.get('purpose') and filters['purpose'] != 'All Purposes':
-        filter_desc.append(f"Purpose: {filters['purpose']}")
+        segment_parts.append(f"{filters['country']} market")
     if filters.get('nationality') and filters['nationality'] != 'All Nationalities':
-        filter_desc.append(f"Nationality: {filters['nationality']}")
+        segment_parts.append(f"{filters['nationality']} guests")
+    if filters.get('purpose') and filters['purpose'] != 'All Purposes':
+        segment_parts.append(f"{filters['purpose'].lower()} travelers")
+    if filters.get('frequency') and filters['frequency'] != 'All Frequencies':
+        segment_parts.append(f"visiting {filters['frequency'].lower()}")
     
-    filter_text = " | ".join(filter_desc) if filter_desc else "All responses"
+    segment_desc = " | ".join(segment_parts) if segment_parts else "All guests"
     
-    if chart_type == 'entertainment_importance':
-        if 'B2-A' in df.columns and 'Country' in df.columns:
-            clean_df = df[['B2-A', 'Country']].dropna()
-            if not clean_df.empty:
-                very_important = clean_df[clean_df['B2-A'] == 'Very Important']
-                country_stats = very_important.groupby('Country').size()
-                
-                if not country_stats.empty:
-                    top_country = country_stats.idxmax()
-                    top_percentage = (country_stats.max() / clean_df.groupby('Country').size()[top_country]) * 100
-                    
-                    insights['finding'] = f"{top_percentage:.1f}% of {top_country} guests rate entertainment as 'Very Important' (highest among surveyed markets)"
-                    insights['implication'] = f"Prioritize OSN+ integration in {top_country} hotels - strong entertainment demand indicates high adoption potential"
-                    insights['data_backing'] = f"Based on {len(clean_df)} responses | Filters: {filter_text}"
+    # Entertainment importance insight
+    if 'B2-A' in df.columns:
+        ent_data = df['B2-A'].dropna()
+        if not ent_data.empty:
+            very_important = (ent_data == 'Very Important').sum()
+            percentage = (very_important / len(ent_data)) * 100
+            
+            insights.append({
+                'title': '🎬 Entertainment Priority Analysis',
+                'finding': f'{percentage:.1f}% of this guest segment ({very_important}/{len(ent_data)}) rate entertainment as "Very Important"',
+                'implication': f'{"High" if percentage > 50 else "Moderate" if percentage > 30 else "Low"} entertainment demand in this segment - {"prioritize" if percentage > 50 else "consider" if percentage > 30 else "lower priority for"} OSN+ integration',
+                'data_backing': f'Based on {len(ent_data)} responses from: {segment_desc}'
+            })
     
-    elif chart_type == 'payment_willingness':
-        if 'C2-A' in df.columns:
-            payment_data = df['C2-A'].dropna()
-            if not payment_data.empty:
-                positive_responses = ['Yes', 'Definitely', 'Very Likely', 'Likely']
-                willing_count = sum(payment_data.isin(positive_responses))
-                percentage = (willing_count / len(payment_data)) * 100
-                
-                insights['finding'] = f"{percentage:.1f}% of guests express willingness to pay premium for enhanced entertainment services"
-                insights['implication'] = "Strong monetization opportunity - develop tiered entertainment packages for willing-to-pay segments"
-                insights['data_backing'] = f"Based on {len(payment_data)} payment preference responses | Filters: {filter_text}"
+    # Payment willingness insight
+    if 'C2-B' in df.columns:
+        pay_data = df['C2-B'].dropna()
+        if not pay_data.empty:
+            positive_responses = pay_data[pay_data.isin(['Yes', 'Definitely', 'Very Likely', 'Likely'])].count()
+            percentage = (positive_responses / len(pay_data)) * 100
+            
+            insights.append({
+                'title': '💰 Monetization Potential',
+                'finding': f'{percentage:.1f}% of this segment ({positive_responses}/{len(pay_data)}) show willingness to pay for enhanced services',
+                'implication': f'{"Strong" if percentage > 60 else "Moderate" if percentage > 40 else "Limited"} revenue opportunity - {"develop premium packages" if percentage > 60 else "test pricing models" if percentage > 40 else "focus on basic offerings"}',
+                'data_backing': f'Based on {len(pay_data)} payment preference responses from: {segment_desc}'
+            })
     
-    elif chart_type == 'market_opportunity':
-        countries = df['Country'].unique() if 'Country' in df.columns else []
-        if len(countries) > 0:
-            insights['finding'] = f"Market analysis across {len(countries)} markets reveals varying entertainment demand and payment willingness levels"
-            insights['implication'] = "Focus expansion on upper-right quadrant markets for optimal ROI on OSN+ investments"
-            insights['data_backing'] = f"Combined analysis of entertainment importance + payment willingness | Filters: {filter_text}"
-    
-    else:
-        insights['finding'] = "Survey data analysis provides valuable insights into guest preferences and market opportunities"
-        insights['implication'] = "Use data-driven insights to optimize OSN entertainment strategy and partnership development"
-        insights['data_backing'] = f"Survey analysis | Filters: {filter_text}"
+    # Booking factors insight
+    booking_cols = [col for col in df.columns if col.startswith('B1-A/')]
+    if booking_cols:
+        factor_mentions = 0
+        entertainment_mentions = 0
+        
+        for col in booking_cols:
+            factors = df[col].dropna()
+            factor_mentions += len(factors)
+            entertainment_mentions += factors.str.contains('Entertainment', case=False, na=False).sum()
+        
+        if factor_mentions > 0:
+            ent_factor_percentage = (entertainment_mentions / factor_mentions) * 100
+            
+            insights.append({
+                'title': '🏨 Booking Decision Influence',
+                'finding': f'Entertainment appears in {ent_factor_percentage:.1f}% of booking decision factors ({entertainment_mentions}/{factor_mentions} mentions)',
+                'implication': f'Entertainment is {"highly influential" if ent_factor_percentage > 20 else "moderately influential" if ent_factor_percentage > 10 else "less influential"} in booking decisions for this segment',
+                'data_backing': f'Based on {factor_mentions} booking factor mentions from: {segment_desc}'
+            })
     
     return insights
 
@@ -471,7 +479,7 @@ def main():
     st.markdown("""
     <div class="main-header">
         <h1>📊 OSN UAE & KSA Guest Survey Analytics</h1>
-        <p>Complete survey analysis with filtering and AI-backed insights</p>
+        <p>Slice & Dice: Hotel Guest Facts → Survey Opinion Analysis</p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -493,50 +501,56 @@ def main():
         st.stop()
     
     # Get filter options
-    filter_options = get_filter_options(df)
+    hotel_facts_options = get_hotel_facts_options(df)
     
-    # Sidebar filters
+    # Sidebar - Hotel Facts Filters
     st.sidebar.markdown("""
     <div class="filter-panel">
-        <h4>🔍 Survey Response Filters</h4>
-        <p>Select filters to analyze specific segments</p>
+        <h4>🏨 Hotel Guest Facts</h4>
+        <p>Filter by what the hotel knows about guests</p>
     </div>
     """, unsafe_allow_html=True)
     
-    # Country filter
-    countries = ['All Countries'] + filter_options.get('countries', [])
-    selected_country = st.sidebar.selectbox("Country", countries, key='country_filter')
+    # Country (Market) filter
+    countries = ['All Countries'] + hotel_facts_options.get('countries', [])
+    selected_country = st.sidebar.selectbox("📍 Market", countries, key='country_filter')
     
-    # Visit purpose filter
-    purposes = ['All Purposes'] + filter_options.get('purposes', [])
-    selected_purpose = st.sidebar.selectbox("Visit Purpose", purposes, key='purpose_filter')
+    # Nationality filter (A1) - CORRECTED
+    nationalities = ['All Nationalities'] + hotel_facts_options.get('nationalities', [])
+    selected_nationality = st.sidebar.selectbox("🌍 Guest Nationality", nationalities, key='nationality_filter')
     
-    # Nationality filter
-    nationalities = ['All Nationalities'] + filter_options.get('nationalities', [])
-    selected_nationality = st.sidebar.selectbox("Nationality", nationalities, key='nationality_filter')
+    # Visit Purpose filter (A2)
+    purposes = ['All Purposes'] + hotel_facts_options.get('purposes', [])
+    selected_purpose = st.sidebar.selectbox("🎯 Visit Purpose", purposes, key='purpose_filter')
     
-    # Apply filters
-    filtered_df = filter_data(df, selected_country, selected_purpose, selected_nationality)
+    # Visit Frequency filter (A3)
+    frequencies = ['All Frequencies'] + hotel_facts_options.get('frequencies', [])
+    selected_frequency = st.sidebar.selectbox("📅 Visit Frequency", frequencies, key='frequency_filter')
     
-    # Filter status
+    # Apply hotel facts filters
+    filtered_df = apply_hotel_facts_filter(df, selected_country, selected_nationality, selected_purpose, selected_frequency)
+    
+    # Filter status display
     filter_parts = []
     if selected_country != "All Countries":
-        filter_parts.append(f"Country: {selected_country}")
-    if selected_purpose != "All Purposes":
-        filter_parts.append(f"Purpose: {selected_purpose}")
+        filter_parts.append(f"Market: {selected_country}")
     if selected_nationality != "All Nationalities":
         filter_parts.append(f"Nationality: {selected_nationality}")
+    if selected_purpose != "All Purposes":
+        filter_parts.append(f"Purpose: {selected_purpose}")
+    if selected_frequency != "All Frequencies":
+        filter_parts.append(f"Frequency: {selected_frequency}")
     
-    filter_text = " | ".join(filter_parts) if filter_parts else "All responses"
+    filter_text = " | ".join(filter_parts) if filter_parts else "All guests"
     
     st.markdown(f"""
     <div class="filter-status">
-        📊 Showing: {len(filtered_df)} responses | Filters: {filter_text}
+        👥 Guest Segment: {len(filtered_df)} responses | {filter_text}
     </div>
     """, unsafe_allow_html=True)
     
     if filtered_df.empty:
-        st.warning("No data matches the selected filters. Please adjust your selection.")
+        st.warning("No guests match the selected demographic criteria. Please adjust your filters.")
         return
     
     # Main dashboard metrics
@@ -546,42 +560,42 @@ def main():
         st.markdown(f"""
         <div class="metric-card">
             <h3>{len(filtered_df)}</h3>
-            <p>Total Responses</p>
+            <p>Guest Responses</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col2:
-        countries_count = len(filtered_df['Country'].unique()) if 'Country' in filtered_df.columns else 0
+        nationalities_count = len(filtered_df['A1'].dropna().unique()) if 'A1' in filtered_df.columns else 0
         st.markdown(f"""
         <div class="metric-card">
-            <h3>{countries_count}</h3>
-            <p>Markets</p>
+            <h3>{nationalities_count}</h3>
+            <p>Nationalities</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col3:
-        # Calculate entertainment demand
-        ent_demand = 0
+        # Entertainment importance percentage
+        ent_importance = 0
         if 'B2-A' in filtered_df.columns:
             ent_data = filtered_df['B2-A'].dropna()
             if not ent_data.empty:
-                ent_demand = (ent_data == 'Very Important').sum() / len(ent_data) * 100
+                ent_importance = (ent_data == 'Very Important').sum() / len(ent_data) * 100
         
         st.markdown(f"""
         <div class="metric-card">
-            <h3>{ent_demand:.1f}%</h3>
-            <p>High Entertainment Demand</p>
+            <h3>{ent_importance:.1f}%</h3>
+            <p>High Entertainment Priority</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col4:
-        # Calculate payment willingness
+        # Willingness to pay percentage
         pay_willing = 0
-        if 'C2-A' in filtered_df.columns:
-            pay_data = filtered_df['C2-A'].dropna()
+        if 'C2-B' in filtered_df.columns:
+            pay_data = filtered_df['C2-B'].dropna()
             if not pay_data.empty:
-                positive_responses = ['Yes', 'Definitely', 'Very Likely', 'Likely']
-                pay_willing = sum(pay_data.isin(positive_responses)) / len(pay_data) * 100
+                positive = pay_data[pay_data.isin(['Yes', 'Definitely', 'Very Likely', 'Likely'])].count()
+                pay_willing = (positive / len(pay_data)) * 100
         
         st.markdown(f"""
         <div class="metric-card">
@@ -590,145 +604,83 @@ def main():
         </div>
         """, unsafe_allow_html=True)
     
-    # Chart sections
-    st.markdown("## 📈 Complete Survey Analysis")
-    st.markdown("*All survey questions visualized with current filters applied*")
+    # Guest Opinion Analysis Section
+    st.markdown("""
+    <div class="section-header">
+        <h2>📊 Guest Opinion Analysis</h2>
+        <p>Survey responses from the selected guest segment</p>
+    </div>
+    """, unsafe_allow_html=True)
     
-    # Entertainment Importance Chart
-    st.markdown("### Entertainment Importance by Market")
-    ent_chart = create_entertainment_importance_chart(filtered_df)
-    if ent_chart:
-        st.plotly_chart(ent_chart, use_container_width=True)
-        
-        # Chart insights
-        insights = generate_chart_insights('entertainment_importance', filtered_df, {
-            'country': selected_country,
-            'purpose': selected_purpose, 
-            'nationality': selected_nationality
-        })
-        
-        st.markdown(f"""
-        <div class="insight-box">
-            <strong>📊 Survey Response:</strong> {insights['finding']}
-        </div>
-        <div class="implication-box">
-            <strong>💡 Business Implication:</strong> {insights['implication']}
-            <br><small><strong>Data Source:</strong> {insights['data_backing']}</small>
-        </div>
-        """, unsafe_allow_html=True)
-    else:
-        st.info("Entertainment importance data not available with current filters")
+    # Chart sections - Guest Opinions
+    col_left, col_right = st.columns(2)
     
-    # Payment Willingness Chart
-    st.markdown("### Payment Willingness Analysis")
-    payment_chart = create_payment_willingness_chart(filtered_df)
-    if payment_chart:
-        st.plotly_chart(payment_chart, use_container_width=True)
+    with col_left:
+        # Entertainment Importance
+        st.markdown("### 🎬 Entertainment Importance")
+        ent_chart = create_entertainment_importance_chart(filtered_df)
+        if ent_chart:
+            st.plotly_chart(ent_chart, use_container_width=True)
+        else:
+            st.info("No entertainment importance data for this segment")
         
-        insights = generate_chart_insights('payment_willingness', filtered_df, {
-            'country': selected_country,
-            'purpose': selected_purpose,
-            'nationality': selected_nationality
-        })
-        
-        st.markdown(f"""
-        <div class="insight-box">
-            <strong>📊 Survey Response:</strong> {insights['finding']}
-        </div>
-        <div class="implication-box">
-            <strong>💡 Business Implication:</strong> {insights['implication']}
-            <br><small><strong>Data Source:</strong> {insights['data_backing']}</small>
-        </div>
-        """, unsafe_allow_html=True)
-    else:
-        st.info("Payment willingness data not available with current filters")
+        # Content Preferences
+        st.markdown("### 🎵 Content Preferences")
+        content_chart = create_content_preferences_chart(filtered_df)
+        if content_chart:
+            st.plotly_chart(content_chart, use_container_width=True)
+        else:
+            st.info("No content preference data for this segment")
     
-    # Content Preferences Chart
-    st.markdown("### Content Preferences Distribution")
-    content_chart = create_content_preferences_chart(filtered_df)
-    if content_chart:
-        st.plotly_chart(content_chart, use_container_width=True)
-        st.markdown("""
-        <div class="insight-box">
-            <strong>📊 Survey Response:</strong> Content preference analysis reveals guest entertainment priorities
-        </div>
-        <div class="implication-box">
-            <strong>💡 Business Implication:</strong> Focus OSN+ content strategy on highest-demand categories for maximum engagement
-        </div>
-        """, unsafe_allow_html=True)
-    else:
-        st.info("Content preferences data not available with current filters")
+    with col_right:
+        # Booking Factors
+        st.markdown("### 🏨 Hotel Booking Factors")
+        booking_chart = create_booking_factors_chart(filtered_df)
+        if booking_chart:
+            st.plotly_chart(booking_chart, use_container_width=True)
+        else:
+            st.info("No booking factor data for this segment")
+        
+        # Willingness to Pay
+        st.markdown("### 💰 Payment Willingness")
+        payment_chart = create_willingness_to_pay_chart(filtered_df)
+        if payment_chart:
+            st.plotly_chart(payment_chart, use_container_width=True)
+        else:
+            st.info("No payment willingness data for this segment")
     
-    # Market Opportunity Heatmap
-    st.markdown("### Market Opportunity Analysis")
-    opportunity_chart = create_market_opportunity_heatmap(filtered_df)
-    if opportunity_chart:
-        st.plotly_chart(opportunity_chart, use_container_width=True)
-        
-        insights = generate_chart_insights('market_opportunity', filtered_df, {
-            'country': selected_country,
-            'purpose': selected_purpose,
-            'nationality': selected_nationality
-        })
-        
-        st.markdown(f"""
-        <div class="insight-box">
-            <strong>📊 Survey Response:</strong> {insights['finding']}
-        </div>
-        <div class="implication-box">
-            <strong>💡 Business Implication:</strong> {insights['implication']}
-            <br><small><strong>Data Source:</strong> {insights['data_backing']}</small>
-        </div>
-        """, unsafe_allow_html=True)
+    # Satisfaction Ratings (full width)
+    st.markdown("### ⭐ Satisfaction Ratings")
+    satisfaction_chart = create_satisfaction_ratings_chart(filtered_df)
+    if satisfaction_chart:
+        st.plotly_chart(satisfaction_chart, use_container_width=True)
     else:
-        st.info("Market opportunity data not available with current filters")
+        st.info("No satisfaction rating data for this segment")
     
     # AI Insights Section
-    st.markdown("## 🧠 AI Insights with Survey Data Rationale")
+    st.markdown("""
+    <div class="section-header">
+        <h2>🧠 Guest Segment Insights</h2>
+        <p>AI analysis of the selected guest demographic and their survey responses</p>
+    </div>
+    """, unsafe_allow_html=True)
     
-    # Generate comprehensive insights
-    all_insights = []
-    
-    if 'B2-A' in filtered_df.columns:
-        ent_insights = generate_chart_insights('entertainment_importance', filtered_df, {
-            'country': selected_country, 'purpose': selected_purpose, 'nationality': selected_nationality
-        })
-        all_insights.append({
-            'title': '🎬 Entertainment Demand Analysis',
-            'finding': ent_insights['finding'],
-            'implication': ent_insights['implication'],
-            'data_backing': ent_insights['data_backing']
-        })
-    
-    if 'C2-A' in filtered_df.columns:
-        pay_insights = generate_chart_insights('payment_willingness', filtered_df, {
-            'country': selected_country, 'purpose': selected_purpose, 'nationality': selected_nationality
-        })
-        all_insights.append({
-            'title': '💰 Monetization Opportunity',
-            'finding': pay_insights['finding'], 
-            'implication': pay_insights['implication'],
-            'data_backing': pay_insights['data_backing']
-        })
-    
-    mkt_insights = generate_chart_insights('market_opportunity', filtered_df, {
-        'country': selected_country, 'purpose': selected_purpose, 'nationality': selected_nationality
-    })
-    all_insights.append({
-        'title': '📊 Market Prioritization Strategy',
-        'finding': mkt_insights['finding'],
-        'implication': mkt_insights['implication'], 
-        'data_backing': mkt_insights['data_backing']
+    # Generate insights
+    segment_insights = generate_segment_insights(filtered_df, {
+        'country': selected_country,
+        'nationality': selected_nationality,
+        'purpose': selected_purpose,
+        'frequency': selected_frequency
     })
     
     # Display insights
-    for insight in all_insights:
+    for insight in segment_insights:
         with st.expander(insight['title'], expanded=True):
             col_finding, col_data = st.columns([2, 1])
             
             with col_finding:
                 st.markdown(f"**Finding:** {insight['finding']}")
-                st.markdown(f"**Implication:** {insight['implication']}")
+                st.markdown(f"**Business Implication:** {insight['implication']}")
             
             with col_data:
                 st.info(f"**Data Source:** {insight['data_backing']}")
@@ -737,10 +689,10 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.markdown(f"""
     **Data Summary:**
-    - Total responses: {len(df)}
-    - Filtered responses: {len(filtered_df)}
-    - Countries: {len(df['Country'].unique()) if 'Country' in df.columns else 0}
-    - Survey questions: {len(df.columns)}
+    - Total guests: {len(df)}
+    - Filtered segment: {len(filtered_df)}
+    - Available nationalities: {len(hotel_facts_options.get('nationalities', []))}
+    - Survey questions: {len([col for col in df.columns if col.startswith(('B', 'C', 'D'))])}
     """)
 
 if __name__ == "__main__":
