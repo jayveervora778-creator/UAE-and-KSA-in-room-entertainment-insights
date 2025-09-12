@@ -2,7 +2,7 @@ module.exports = {
   apps: [{
     name: 'osn-enhanced-dashboard',
     script: 'python3',
-    args: '-m streamlit run enhanced_dashboard_with_wordcloud.py --server.port 8502 --server.address 0.0.0.0 --server.headless true --theme.base light',
+    args: '-m streamlit run high_contrast_dashboard_with_insights.py --server.port 8502 --server.address 0.0.0.0 --server.headless true --theme.base light',
     cwd: '/home/user/webapp',
     instances: 1,
     exec_mode: 'fork',
