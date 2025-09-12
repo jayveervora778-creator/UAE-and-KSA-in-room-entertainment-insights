@@ -326,6 +326,27 @@ st.markdown("""
         background-color: #ffffff !important;
         font-weight: 600;
     }
+    
+    /* FORCE ALL CHART LEGENDS TO BE DARK */
+    .js-plotly-plot .legend text {
+        fill: #2c3e50 !important;
+        color: #2c3e50 !important;
+    }
+    
+    .js-plotly-plot .legend {
+        background: white !important;
+    }
+    
+    /* Chart axis labels and ticks */
+    .js-plotly-plot .xtick text, .js-plotly-plot .ytick text {
+        fill: #2c3e50 !important;
+        color: #2c3e50 !important;
+    }
+    
+    .js-plotly-plot .axis-title text {
+        fill: #2c3e50 !important;
+        color: #2c3e50 !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -376,13 +397,32 @@ def create_wordcloud_visualization(word_data, title="Word Cloud"):
         showlegend=False
     ))
     
-    # Simple chart layout
+    # Chart layout with dark legends
     fig.update_layout(
         title=dict(text=title, x=0.5, font=dict(size=16, color='#2c3e50')),
-        xaxis=dict(showgrid=False, showticklabels=False, zeroline=False),
-        yaxis=dict(showgrid=False, showticklabels=False, zeroline=False),
+        xaxis=dict(
+            showgrid=False, 
+            showticklabels=False, 
+            zeroline=False,
+            title_font=dict(color='#2c3e50'),
+            tickfont=dict(color='#2c3e50')
+        ),
+        yaxis=dict(
+            showgrid=False, 
+            showticklabels=False, 
+            zeroline=False,
+            title_font=dict(color='#2c3e50'),
+            tickfont=dict(color='#2c3e50')
+        ),
         plot_bgcolor='white',
         paper_bgcolor='white',
+        font=dict(color='#2c3e50'),
+        legend=dict(
+            font=dict(color='#2c3e50', size=12),
+            bgcolor='white',
+            bordercolor='#2c3e50',
+            borderwidth=1
+        ),
         height=400
     )
     
@@ -564,12 +604,18 @@ def main():
                     title="Market Distribution",
                     color_discrete_map={'UAE': '#27ae60', 'KSA': '#3498db'}
                 )
-                # Ensure labels are dark and visible
+                # Ensure ALL text including legends are dark and visible
                 fig_country.update_layout(
                     plot_bgcolor='white',
                     paper_bgcolor='white',
                     font=dict(color='#2c3e50', size=12),
-                    title_font=dict(color='#2c3e50', size=16)
+                    title_font=dict(color='#2c3e50', size=16),
+                    legend=dict(
+                        font=dict(color='#2c3e50', size=12),
+                        bgcolor='white',
+                        bordercolor='#2c3e50',
+                        borderwidth=1
+                    )
                 )
                 fig_country.update_traces(
                     textfont=dict(color='#2c3e50', size=12),
@@ -591,7 +637,13 @@ def main():
                     plot_bgcolor='white',
                     paper_bgcolor='white',
                     font=dict(color='#2c3e50', size=12),
-                    title_font=dict(color='#2c3e50', size=16)
+                    title_font=dict(color='#2c3e50', size=16),
+                    legend=dict(
+                        font=dict(color='#2c3e50', size=12),
+                        bgcolor='white',
+                        bordercolor='#2c3e50',
+                        borderwidth=1
+                    )
                 )
                 fig_nat.update_traces(
                     textfont=dict(color='#2c3e50', size=12)
@@ -617,7 +669,13 @@ def main():
                     plot_bgcolor='white',
                     paper_bgcolor='white',
                     font=dict(color='#2c3e50', size=12),
-                    title_font=dict(color='#2c3e50', size=16)
+                    title_font=dict(color='#2c3e50', size=16),
+                    legend=dict(
+                        font=dict(color='#2c3e50', size=12),
+                        bgcolor='white',
+                        bordercolor='#2c3e50',
+                        borderwidth=1
+                    )
                 )
                 fig_purpose.update_traces(
                     textfont=dict(color='#2c3e50', size=12)
@@ -637,7 +695,13 @@ def main():
                             plot_bgcolor='white',
                             paper_bgcolor='white',
                             font=dict(color='#2c3e50', size=12),
-                            title_font=dict(color='#2c3e50', size=16)
+                            title_font=dict(color='#2c3e50', size=16),
+                            legend=dict(
+                                font=dict(color='#2c3e50', size=12),
+                                bgcolor='white',
+                                bordercolor='#2c3e50',
+                                borderwidth=1
+                            )
                         )
                         fig_cross.update_traces(
                             textfont=dict(color='#2c3e50', size=12)
@@ -816,7 +880,13 @@ def main():
                     plot_bgcolor='white',
                     paper_bgcolor='white',
                     font=dict(color='#2c3e50', size=12),
-                    title_font=dict(color='#2c3e50', size=16)
+                    title_font=dict(color='#2c3e50', size=16),
+                    legend=dict(
+                        font=dict(color='#2c3e50', size=12),
+                        bgcolor='white',
+                        bordercolor='#2c3e50',
+                        borderwidth=1
+                    )
                 )
                 fig_ratings.update_traces(
                     textfont=dict(color='#2c3e50', size=12)
