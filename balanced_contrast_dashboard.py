@@ -71,15 +71,22 @@ st.markdown("""
         font-weight: 600;
     }
     
-    /* ALL TEXT - DARK ON WHITE */
+    /* MAIN TEXT - DARK ON WHITE (BUT NOT CHART DATA) */
     h1, h2, h3, h4, h5, h6 {
         color: #2c3e50 !important;
         font-weight: 700 !important;
         background-color: #ffffff !important;
     }
     
-    p, span, div, label {
+    /* Main text elements - but NOT chart data labels */
+    .stMarkdown p, .stMarkdown span, .stMarkdown div {
         color: #34495e !important;
+        background-color: #ffffff !important;
+    }
+    
+    /* Sidebar text */
+    .stSidebar p, .stSidebar span, .stSidebar label {
+        color: #2c3e50 !important;
         background-color: #ffffff !important;
     }
     
@@ -286,17 +293,24 @@ st.markdown("""
         color: #2c3e50 !important;
     }
     
-    /* Buttons - white backgrounds, dark text */
+    /* Buttons - functional styling */
     .stButton > button {
-        background-color: #ffffff !important;
-        color: #2c3e50 !important;
-        border: 1px solid #bdc3c7 !important;
-        font-weight: 600;
+        background-color: #3498db !important;
+        color: #ffffff !important;
+        border: none !important;
+        font-weight: 600 !important;
+        padding: 0.5rem 1rem !important;
+        border-radius: 5px !important;
     }
     
     .stButton > button:hover {
-        background-color: #f8f9fa !important;
-        color: #2c3e50 !important;
+        background-color: #2980b9 !important;
+        color: #ffffff !important;
+    }
+    
+    .stButton > button:active {
+        background-color: #21618c !important;
+        color: #ffffff !important;
     }
     
     /* Metrics - white backgrounds */
@@ -550,10 +564,16 @@ def main():
                     title="Market Distribution",
                     color_discrete_map={'UAE': '#27ae60', 'KSA': '#3498db'}
                 )
-                # Simple clean layout
+                # Ensure labels are dark and visible
                 fig_country.update_layout(
                     plot_bgcolor='white',
-                    paper_bgcolor='white'
+                    paper_bgcolor='white',
+                    font=dict(color='#2c3e50', size=12),
+                    title_font=dict(color='#2c3e50', size=16)
+                )
+                fig_country.update_traces(
+                    textfont=dict(color='#2c3e50', size=12),
+                    textinfo='label+percent'
                 )
                 st.plotly_chart(fig_country, use_container_width=True)
         
@@ -569,7 +589,12 @@ def main():
                 )
                 fig_nat.update_layout(
                     plot_bgcolor='white',
-                    paper_bgcolor='white'
+                    paper_bgcolor='white',
+                    font=dict(color='#2c3e50', size=12),
+                    title_font=dict(color='#2c3e50', size=16)
+                )
+                fig_nat.update_traces(
+                    textfont=dict(color='#2c3e50', size=12)
                 )
                 st.plotly_chart(fig_nat, use_container_width=True)
         
@@ -590,7 +615,12 @@ def main():
                 )
                 fig_purpose.update_layout(
                     plot_bgcolor='white',
-                    paper_bgcolor='white'
+                    paper_bgcolor='white',
+                    font=dict(color='#2c3e50', size=12),
+                    title_font=dict(color='#2c3e50', size=16)
+                )
+                fig_purpose.update_traces(
+                    textfont=dict(color='#2c3e50', size=12)
                 )
                 st.plotly_chart(fig_purpose, use_container_width=True)
             
@@ -605,7 +635,12 @@ def main():
                         )
                         fig_cross.update_layout(
                             plot_bgcolor='white',
-                            paper_bgcolor='white'
+                            paper_bgcolor='white',
+                            font=dict(color='#2c3e50', size=12),
+                            title_font=dict(color='#2c3e50', size=16)
+                        )
+                        fig_cross.update_traces(
+                            textfont=dict(color='#2c3e50', size=12)
                         )
                         st.plotly_chart(fig_cross, use_container_width=True)
                     except:
@@ -779,7 +814,12 @@ def main():
                 )
                 fig_ratings.update_layout(
                     plot_bgcolor='white',
-                    paper_bgcolor='white'
+                    paper_bgcolor='white',
+                    font=dict(color='#2c3e50', size=12),
+                    title_font=dict(color='#2c3e50', size=16)
+                )
+                fig_ratings.update_traces(
+                    textfont=dict(color='#2c3e50', size=12)
                 )
                 st.plotly_chart(fig_ratings, use_container_width=True)
 
