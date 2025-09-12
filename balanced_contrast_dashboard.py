@@ -805,6 +805,15 @@ def main():
                     if text_responses:
                         st.success(f"✅ Analyzing {len(text_responses)} responses")
                         
+                        # Show sample responses for context
+                        st.markdown("#### 📝 Sample Responses")
+                        sample_responses = text_responses[:3]
+                        for i, response in enumerate(sample_responses, 1):
+                            st.write(f"{i}. _{response[:100]}{'...' if len(response) > 100 else ''}_")
+                        
+                        if len(text_responses) > 3:
+                            st.write(f"... and {len(text_responses) - 3} more responses")
+                        
                         wordcloud_data = wordcloud_analyzer.generate_wordcloud_data(
                             text_responses,
                             max_words=50,
