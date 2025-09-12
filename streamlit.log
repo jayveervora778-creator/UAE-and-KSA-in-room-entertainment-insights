@@ -4056,3 +4056,192 @@ docs[1m][0m[1m([0m[4;94mhttps://docs.streamlit.io/develop/concepts/architec
 
   URL: http://0.0.0.0:8501
 
+🔄 Loading survey data (ENHANCED - Better Questions + Word Cloud Support)...
+📋 Loaded 22 question mappings
+📝 Loaded 12 response option sets
+📋 Guests (UAE): 200 responses loaded
+📋 Guests Online (KSA): 200 responses loaded
+📝 ENHANCED: Mapped to 43 columns (no more 'Unnamed')
+📋 Available questions: ['Nationality', 'Visit Purpose', 'Visit Purpose (Other)', 'Hotel Stays Per Year', 'Hotel Choice Reason 1']...
+🧹 Normalizing nationality data (keeping all responses)...
+🧹 Converting visit purpose codes...
+🧹 Converting hotel frequency codes...
+🧹 Converting hotel choice reason codes...
+✅ ENHANCED: Data cleaned, still have exactly 400 responses
+🔤 Identified 6 text analysis questions:
+   - Visit Purpose (Other)
+   - Please specify other reason for choosing the hotel?
+   - Entertainment Experience Story
+   - Please specify other type of content did you watch?
+   - Entertainment Improvement Suggestions
+   - General Entertainment Suggestions
+🎯 ENHANCED Filter options:
+   Nationalities (55): ALL INCLUDED
+   Visit Purposes: ['Business', 'Family Vacation', 'Leisure', 'Other']
+   Hotel Frequency: ['1-2 times', '3-5 times', '5.0', 'More than 5 times']
+   Text Analysis Questions: 6
+✅ ENHANCED: Successfully loaded exactly 400 responses
+   UAE: 200
+   KSA: 200
+   Text Analysis Questions: 6
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+[31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+[31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:1064 in <module>                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m1061 [0m[2m│   │   │   │   [0mst.plotly_chart(fig_ratings, use_container_width=[94mTrue[0m)        [31m [0m
+[31m [0m   [2m1062 [0m                                                                              [31m [0m
+[31m [0m   [2m1063 [0m[94mif[0m [91m__name__[0m == [33m"[0m[33m__main__[0m[33m"[0m:                                                    [31m [0m
+[31m [0m [31m❱ [0m1064 [2m│   [0m[1;4mmain()[0m                                                                    [31m [0m
+[31m [0m   [2m1065 [0m                                                                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:917 in main                         [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 914 [0m[2m│   │   │   │   │   │   [0m                                                      [31m [0m
+[31m [0m   [2m 915 [0m[2m│   │   │   │   │   │   [0m[94mif[0m wordcloud_results [95mand[0m wordcloud_results[[33m'[0m[33mword_freq[0m [31m [0m
+[31m [0m   [2m 916 [0m[2m│   │   │   │   │   │   │   [0m[2m# Create word cloud visualization using word freq[0m [31m [0m
+[31m [0m [31m❱ [0m 917 [2m│   │   │   │   │   │   │   [0mwordcloud_fig = [1;4mcreate_wordcloud_visualization([0m   [31m [0m
+[31m [0m   [2m 918 [0m[2m│   │   │   │   │   │   │   │   [0m[1;4;96mlist[0m[1;4m(wordcloud_results[[0m[1;4;33m'[0m[1;4;33mword_frequency[0m[1;4;33m'[0m[1;4m].item[0m [31m [0m
+[31m [0m   [2m 919 [0m[2m│   │   │   │   │   │   │   │   [0m[1;4mtitle=[0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mWord Cloud: [0m[1;4;33m{[0m[1;4mselected_text_question[:[0m [31m [0m
+[31m [0m   [2m 920 [0m[2m│   │   │   │   │   │   │   [0m[1;4m)[0m                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:364 in                              [31m [0m
+[31m [0m create_wordcloud_visualization                                                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 361 [0m                                                                              [31m [0m
+[31m [0m   [2m 362 [0m[94mdef[0m[90m [0m[92mcreate_wordcloud_visualization[0m(word_data, title=[33m"[0m[33mWord Cloud[0m[33m"[0m):            [31m [0m
+[31m [0m   [2m 363 [0m[2;90m│   [0m[33m"""Create word cloud visualization - SIMPLE VERSION"""[0m                    [31m [0m
+[31m [0m [31m❱ [0m 364 [2m│   [0m[94mif[0m [95mnot[0m word_data [95mor[0m [95mnot[0m [1;4mword_data[[0m[1;4;33m'[0m[1;4;33mword_frequency[0m[1;4;33m'[0m[1;4m][0m:                      [31m [0m
+[31m [0m   [2m 365 [0m[2m│   │   [0m[94mreturn[0m [94mNone[0m                                                           [31m [0m
+[31m [0m   [2m 366 [0m[2m│   [0m                                                                          [31m [0m
+[31m [0m   [2m 367 [0m[2m│   [0mwords = [96mlist[0m(word_data[[33m'[0m[33mword_frequency[0m[33m'[0m].keys())[:[94m30[0m]                     [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mTypeError: [0mlist indices must be integers or slices, not str
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+[31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+[31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:17 in <module>                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m  14 [0m[94mfrom[0m[90m [0m[4;96mplotly[0m[4;96m.[0m[4;96msubplots[0m[90m [0m[94mimport[0m make_subplots                                     [31m [0m
+[31m [0m   [2m  15 [0m[94mimport[0m[90m [0m[4;96mnumpy[0m[90m [0m[94mas[0m[90m [0m[4;96mnp[0m                                                            [31m [0m
+[31m [0m   [2m  16 [0m[94mfrom[0m[90m [0m[4;96menhanced_osn_processor[0m[90m [0m[94mimport[0m EnhancedOSNProcessor                       [31m [0m
+[31m [0m [31m❱ [0m  17 [1;4;94mfrom[0m[1;4;90m [0m[1;4;96mosn_wordcloud_analyzer[0m[1;4;90m [0m[1;4;94mimport[0m[1;4m OSNWordCloudAnalyzer[0m                       [31m [0m
+[31m [0m   [2m  18 [0m[94mfrom[0m[90m [0m[4;96madvanced_text_insights_analyzer[0m[90m [0m[94mimport[0m AdvancedTextInsightsAnalyzer      [31m [0m
+[31m [0m   [2m  19 [0m                                                                              [31m [0m
+[31m [0m   [2m  20 [0m[2m# Configure Streamlit[0m                                                         [31m [0m
+[31m [0m in _find_and_load:1360                                                               [31m [0m
+[31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+[31m [0m in _load_unlocked:946                                                                [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mKeyError: [0m[32m'osn_wordcloud_analyzer'[0m
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+[31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+[31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:16 in <module>                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m  13 [0m[94mimport[0m[90m [0m[4;96mplotly[0m[4;96m.[0m[4;96mgraph_objects[0m[90m [0m[94mas[0m[90m [0m[4;96mgo[0m                                             [31m [0m
+[31m [0m   [2m  14 [0m[94mfrom[0m[90m [0m[4;96mplotly[0m[4;96m.[0m[4;96msubplots[0m[90m [0m[94mimport[0m make_subplots                                     [31m [0m
+[31m [0m   [2m  15 [0m[94mimport[0m[90m [0m[4;96mnumpy[0m[90m [0m[94mas[0m[90m [0m[4;96mnp[0m                                                            [31m [0m
+[31m [0m [31m❱ [0m  16 [1;4;94mfrom[0m[1;4;90m [0m[1;4;96menhanced_osn_processor[0m[1;4;90m [0m[1;4;94mimport[0m[1;4m EnhancedOSNProcessor[0m                       [31m [0m
+[31m [0m   [2m  17 [0m[94mfrom[0m[90m [0m[4;96mosn_wordcloud_analyzer[0m[90m [0m[94mimport[0m OSNWordCloudAnalyzer                       [31m [0m
+[31m [0m   [2m  18 [0m[94mfrom[0m[90m [0m[4;96madvanced_text_insights_analyzer[0m[90m [0m[94mimport[0m AdvancedTextInsightsAnalyzer      [31m [0m
+[31m [0m   [2m  19 [0m                                                                              [31m [0m
+[31m [0m in _find_and_load:1360                                                               [31m [0m
+[31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+[31m [0m in _load_unlocked:946                                                                [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mKeyError: [0m[32m'enhanced_osn_processor'[0m
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+[31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+[31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:16 in <module>                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m  13 [0m[94mimport[0m[90m [0m[4;96mplotly[0m[4;96m.[0m[4;96mgraph_objects[0m[90m [0m[94mas[0m[90m [0m[4;96mgo[0m                                             [31m [0m
+[31m [0m   [2m  14 [0m[94mfrom[0m[90m [0m[4;96mplotly[0m[4;96m.[0m[4;96msubplots[0m[90m [0m[94mimport[0m make_subplots                                     [31m [0m
+[31m [0m   [2m  15 [0m[94mimport[0m[90m [0m[4;96mnumpy[0m[90m [0m[94mas[0m[90m [0m[4;96mnp[0m                                                            [31m [0m
+[31m [0m [31m❱ [0m  16 [1;4;94mfrom[0m[1;4;90m [0m[1;4;96menhanced_osn_processor[0m[1;4;90m [0m[1;4;94mimport[0m[1;4m EnhancedOSNProcessor[0m                       [31m [0m
+[31m [0m   [2m  17 [0m[94mfrom[0m[90m [0m[4;96mosn_wordcloud_analyzer[0m[90m [0m[94mimport[0m OSNWordCloudAnalyzer                       [31m [0m
+[31m [0m   [2m  18 [0m[94mfrom[0m[90m [0m[4;96madvanced_text_insights_analyzer[0m[90m [0m[94mimport[0m AdvancedTextInsightsAnalyzer      [31m [0m
+[31m [0m   [2m  19 [0m                                                                              [31m [0m
+[31m [0m in _find_and_load:1360                                                               [31m [0m
+[31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+[31m [0m in _load_unlocked:946                                                                [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mKeyError: [0m[32m'enhanced_osn_processor'[0m
+[31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+[31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+[31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+[31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:17 in <module>                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m  14 [0m[94mfrom[0m[90m [0m[4;96mplotly[0m[4;96m.[0m[4;96msubplots[0m[90m [0m[94mimport[0m make_subplots                                     [31m [0m
+[31m [0m   [2m  15 [0m[94mimport[0m[90m [0m[4;96mnumpy[0m[90m [0m[94mas[0m[90m [0m[4;96mnp[0m                                                            [31m [0m
+[31m [0m   [2m  16 [0m[94mfrom[0m[90m [0m[4;96menhanced_osn_processor[0m[90m [0m[94mimport[0m EnhancedOSNProcessor                       [31m [0m
+[31m [0m [31m❱ [0m  17 [1;4;94mfrom[0m[1;4;90m [0m[1;4;96mosn_wordcloud_analyzer[0m[1;4;90m [0m[1;4;94mimport[0m[1;4m OSNWordCloudAnalyzer[0m                       [31m [0m
+[31m [0m   [2m  18 [0m[94mfrom[0m[90m [0m[4;96madvanced_text_insights_analyzer[0m[90m [0m[94mimport[0m AdvancedTextInsightsAnalyzer      [31m [0m
+[31m [0m   [2m  19 [0m                                                                              [31m [0m
+[31m [0m   [2m  20 [0m[2m# Configure Streamlit[0m                                                         [31m [0m
+[31m [0m in _find_and_load:1360                                                               [31m [0m
+[31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+[31m [0m in _load_unlocked:946                                                                [31m [0m
+[31m────────────────────────────────────────────────────────────────────────────────────────[0m
+[1;91mKeyError: [0m[32m'osn_wordcloud_analyzer'[0m
+  Stopping...
+
+  You can now view your Streamlit app in your browser.
+
+  URL: http://0.0.0.0:8501
+
+🔄 Loading survey data (ENHANCED - Better Questions + Word Cloud Support)...
+📋 Loaded 22 question mappings
+📝 Loaded 12 response option sets
+📋 Guests (UAE): 200 responses loaded
+📋 Guests Online (KSA): 200 responses loaded
+📝 ENHANCED: Mapped to 43 columns (no more 'Unnamed')
+📋 Available questions: ['Nationality', 'Visit Purpose', 'Visit Purpose (Other)', 'Hotel Stays Per Year', 'Hotel Choice Reason 1']...
+🧹 Normalizing nationality data (keeping all responses)...
+🧹 Converting visit purpose codes...
+🧹 Converting hotel frequency codes...
+🧹 Converting hotel choice reason codes...
+✅ ENHANCED: Data cleaned, still have exactly 400 responses
+🔤 Identified 6 text analysis questions:
+   - Visit Purpose (Other)
+   - Please specify other reason for choosing the hotel?
+   - Entertainment Experience Story
+   - Please specify other type of content did you watch?
+   - Entertainment Improvement Suggestions
+   - General Entertainment Suggestions
+🎯 ENHANCED Filter options:
+   Nationalities (55): ALL INCLUDED
+   Visit Purposes: ['Business', 'Family Vacation', 'Leisure', 'Other']
+   Hotel Frequency: ['1-2 times', '3-5 times', '5.0', 'More than 5 times']
+   Text Analysis Questions: 6
+✅ ENHANCED: Successfully loaded exactly 400 responses
+   UAE: 200
+   KSA: 200
+   Text Analysis Questions: 6
+  Stopping...
+
+  You can now view your Streamlit app in your browser.
+
+  URL: http://0.0.0.0:8501
+

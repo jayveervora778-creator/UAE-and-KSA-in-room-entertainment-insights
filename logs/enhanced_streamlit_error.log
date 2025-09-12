@@ -5045,3 +5045,57 @@
 2025-09-12T22:26:12:                  ^^^^^^^^
 2025-09-12T22:26:12:   File "<frozen codecs>", line 322, in decode
 2025-09-12T22:26:12: UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 25-26: invalid continuation byte
+2025-09-12T22:30:50: Exception in callback AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519
+2025-09-12T22:30:50: handle: <Handle AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519>
+2025-09-12T22:30:50: Traceback (most recent call last):
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+2025-09-12T22:30:50:     self._context.run(self._callback, *self._args)
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 519, in <lambda>
+2025-09-12T22:30:50:     lambda: self._handle_scriptrunner_event_on_event_loop(
+2025-09-12T22:30:50:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 616, in _handle_scriptrunner_event_on_event_loop
+2025-09-12T22:30:50:     msg = self._create_new_session_message(
+2025-09-12T22:30:50:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 750, in _create_new_session_message
+2025-09-12T22:30:50:     _populate_user_info_msg(imsg.user_info)
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 1154, in _populate_user_info_msg
+2025-09-12T22:30:50:     inst = Installation.instance()
+2025-09-12T22:30:50:            ^^^^^^^^^^^^^^^^^^^^^^^
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 228, in instance
+2025-09-12T22:30:50:     cls._instance = Installation()
+2025-09-12T22:30:50:                     ^^^^^^^^^^^^^^
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 233, in __init__
+2025-09-12T22:30:50:     uuid.uuid5(uuid.NAMESPACE_DNS, _get_machine_id_v3())
+2025-09-12T22:30:50:                                    ^^^^^^^^^^^^^^^^^^^^
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 173, in _get_machine_id_v3
+2025-09-12T22:30:50:     machine_id = f.read()
+2025-09-12T22:30:50:                  ^^^^^^^^
+2025-09-12T22:30:50:   File "<frozen codecs>", line 322, in decode
+2025-09-12T22:30:50: UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 25-26: invalid continuation byte
+2025-09-12T22:30:50: Exception in callback AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519
+2025-09-12T22:30:50: handle: <Handle AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519>
+2025-09-12T22:30:50: Traceback (most recent call last):
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+2025-09-12T22:30:50:     self._context.run(self._callback, *self._args)
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 519, in <lambda>
+2025-09-12T22:30:50:     lambda: self._handle_scriptrunner_event_on_event_loop(
+2025-09-12T22:30:50:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 616, in _handle_scriptrunner_event_on_event_loop
+2025-09-12T22:30:50:     msg = self._create_new_session_message(
+2025-09-12T22:30:50:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 750, in _create_new_session_message
+2025-09-12T22:30:50:     _populate_user_info_msg(imsg.user_info)
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 1154, in _populate_user_info_msg
+2025-09-12T22:30:50:     inst = Installation.instance()
+2025-09-12T22:30:50:            ^^^^^^^^^^^^^^^^^^^^^^^
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 228, in instance
+2025-09-12T22:30:50:     cls._instance = Installation()
+2025-09-12T22:30:50:                     ^^^^^^^^^^^^^^
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 233, in __init__
+2025-09-12T22:30:50:     uuid.uuid5(uuid.NAMESPACE_DNS, _get_machine_id_v3())
+2025-09-12T22:30:50:                                    ^^^^^^^^^^^^^^^^^^^^
+2025-09-12T22:30:50:   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 173, in _get_machine_id_v3
+2025-09-12T22:30:50:     machine_id = f.read()
+2025-09-12T22:30:50:                  ^^^^^^^^
+2025-09-12T22:30:50:   File "<frozen codecs>", line 322, in decode
+2025-09-12T22:30:50: UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 25-26: invalid continuation byte

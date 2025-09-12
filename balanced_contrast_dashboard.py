@@ -915,7 +915,7 @@ def main():
                         if wordcloud_results and wordcloud_results['word_frequency']:
                             # Create word cloud visualization using word frequency data
                             wordcloud_fig = create_wordcloud_visualization(
-                                list(wordcloud_results['word_frequency'].items()),
+                                wordcloud_results,
                                 title=f"Word Cloud: {selected_text_question[:30]}..."
                             )
                             
