@@ -1,0 +1,414 @@
+2025-09-12T19:18:06: 
+2025-09-12T19:18:06:   You can now view your Streamlit app in your browser.
+2025-09-12T19:18:06: 
+2025-09-12T19:18:06:   URL: 
+2025-09-12T19:18:06: http://0.0.0.0:8502
+2025-09-12T19:18:06: 
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11:   Stopping...
+2025-09-12T19:23:14: 
+2025-09-12T19:23:14:   You can now view your Streamlit app in your browser.
+2025-09-12T19:23:14: 
+2025-09-12T19:23:14:   URL: 
+2025-09-12T19:23:14: http://0.0.0.0:8502
+2025-09-12T19:23:14: 
+2025-09-12T19:24:24: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:24:24: ✅ Imported refined theme modules
+2025-09-12T19:24:24: ✅ Applied refined light theme
+2025-09-12T19:24:24: ✅ Applied refined black killer
+2025-09-12T19:24:24: 🔄 Loading comprehensive survey data...
+2025-09-12T19:24:24: 📊 Found sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+2025-09-12T19:24:24: 📋 Processing sheet: Guests (UAE)
+2025-09-12T19:24:24: ❌ Error processing sheet Guests (UAE): 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:24:24: ❌ Error in data processing: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:24:24: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:24:24: ✅ Imported refined theme modules
+2025-09-12T19:24:24: ✅ Applied refined light theme
+2025-09-12T19:24:24: ✅ Applied refined black killer
+2025-09-12T19:24:24: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:24:24: ✅ Imported refined theme modules
+2025-09-12T19:24:24: ✅ Applied refined light theme
+2025-09-12T19:24:24: ✅ Applied refined black killer
+2025-09-12T19:24:24:   Stopping...
+2025-09-12T19:24:26: 
+2025-09-12T19:24:26:   You can now view your Streamlit app in your browser.
+2025-09-12T19:24:26: 
+2025-09-12T19:24:26:   URL: http://0.0.0.0:8502
+2025-09-12T19:24:26: 
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: 🔄 Loading comprehensive survey data...
+2025-09-12T19:27:28: 📊 Found sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+2025-09-12T19:27:28: 📋 Processing sheet: Guests (UAE)
+2025-09-12T19:27:28: Warning: Could not process column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 1: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 1: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 1: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 1: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: 📋 Processing sheet: Guests Online (KSA)
+2025-09-12T19:27:28: Warning: Could not process column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: ❌ Error in data processing: Reindexing only valid with uniquely valued Index objects
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28:   Stopping...
+2025-09-12T19:27:30: 
+2025-09-12T19:27:30:   You can now view your Streamlit app in your browser.
+2025-09-12T19:27:30: 
+2025-09-12T19:27:30:   URL: http://0.0.0.0:8502
+2025-09-12T19:27:30: 
+2025-09-12T19:30:47: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:30:47: ✅ Imported refined theme modules
+2025-09-12T19:30:47: ✅ Applied refined light theme
+2025-09-12T19:30:47: ✅ Applied refined black killer
+2025-09-12T19:30:47: 🔄 Loading comprehensive survey data...
+2025-09-12T19:30:47: 📊 Found sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+2025-09-12T19:30:47: 📋 Processing sheet: Guests (UAE)
+2025-09-12T19:30:47: 📋 Processing sheet: Guests Online (KSA)
+2025-09-12T19:30:47: ✅ Combined data: 394 total responses
+2025-09-12T19:30:47: ✅ Comprehensive data processing complete! Processed 2 sheets.
+2025-09-12T19:30:47: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:30:47: ✅ Imported refined theme modules
+2025-09-12T19:30:47: ✅ Applied refined light theme
+2025-09-12T19:30:47: ✅ Applied refined black killer
+2025-09-12T19:30:47: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:30:47: ✅ Imported refined theme modules
+2025-09-12T19:30:47: ✅ Applied refined light theme
+2025-09-12T19:30:47: ✅ Applied refined black killer
+2025-09-12T19:30:47: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:30:47: ✅ Imported refined theme modules
+2025-09-12T19:30:47: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:30:47: ✅ Imported refined theme modules
+2025-09-12T19:30:47: ✅ Applied refined light theme
+2025-09-12T19:30:47: ✅ Applied refined black killer
+2025-09-12T19:30:47: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:30:47: ✅ Imported refined theme modules
+2025-09-12T19:30:47: ✅ Applied refined light theme
+2025-09-12T19:30:47: ✅ Applied refined black killer
+2025-09-12T19:30:47: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T19:30:47: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T19:30:47: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T19:30:47: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:30:47: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T19:30:47: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T19:30:47: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:30:47: [31m [0m [2m/home/user/webapp/[0m[1menhanced_streamlit_app.py[0m:29 in <module>                           [31m [0m
+2025-09-12T19:30:47: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:30:47: [31m [0m   [2m 26 [0m                                                                               [31m [0m
+2025-09-12T19:30:47: [31m [0m   [2m 27 [0m[2m# Import enhanced data processor[0m                                               [31m [0m
+2025-09-12T19:30:47: [31m [0m   [2m 28 [0m[94mtry[0m:                                                                           [31m [0m
+2025-09-12T19:30:47: [31m [0m [31m❱ [0m 29 [2m│   [0m[94mfrom[0m[90m [0m[4;96mcomprehensive_data_processor[0m[90m [0m[94mimport[0m ComprehensiveOSNProcessor         [31m [0m
+2025-09-12T19:30:47: [31m [0m   [2m 30 [0m[2m│   [0m[96mprint[0m([33m"[0m[33m✅ Imported ComprehensiveOSNProcessor[0m[33m"[0m)                             [31m [0m
+2025-09-12T19:30:47: [31m [0m   [2m 31 [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mImportError[0m[1;4m [0m[1;4;94mas[0m[1;4m e:[0m                                                       [31m [0m
+2025-09-12T19:30:47: [31m [0m   [2m 32 [0m[2m│   [0m[1;4mst.error([0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mCould not import ComprehensiveOSNProcessor: [0m[1;4;33m{[0m[1;4me[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m)[0m               [31m [0m
+2025-09-12T19:30:47: [31m [0m in _find_and_load:1360                                                               [31m [0m
+2025-09-12T19:30:47: [31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+2025-09-12T19:30:47: [31m [0m in _load_unlocked:946                                                                [31m [0m
+2025-09-12T19:30:47: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T19:30:47: [1;91mKeyError: [0m[32m'comprehensive_data_processor'[0m
+2025-09-12T19:31:03: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T19:31:03: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T19:31:03: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T19:31:03: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:03: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T19:31:03: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T19:31:03: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:03: [31m [0m [2m/home/user/webapp/[0m[1menhanced_streamlit_app.py[0m:29 in <module>                           [31m [0m
+2025-09-12T19:31:03: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:03: [31m [0m   [2m 26 [0m                                                                               [31m [0m
+2025-09-12T19:31:03: [31m [0m   [2m 27 [0m[2m# Import enhanced data processor[0m                                               [31m [0m
+2025-09-12T19:31:03: [31m [0m   [2m 28 [0m[94mtry[0m:                                                                           [31m [0m
+2025-09-12T19:31:03: [31m [0m [31m❱ [0m 29 [2m│   [0m[94mfrom[0m[90m [0m[4;96mcomprehensive_data_processor[0m[90m [0m[94mimport[0m ComprehensiveOSNProcessor         [31m [0m
+2025-09-12T19:31:03: [31m [0m   [2m 30 [0m[2m│   [0m[96mprint[0m([33m"[0m[33m✅ Imported ComprehensiveOSNProcessor[0m[33m"[0m)                             [31m [0m
+2025-09-12T19:31:03: [31m [0m   [2m 31 [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mImportError[0m[1;4m [0m[1;4;94mas[0m[1;4m e:[0m                                                       [31m [0m
+2025-09-12T19:31:03: [31m [0m   [2m 32 [0m[2m│   [0m[1;4mst.error([0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mCould not import ComprehensiveOSNProcessor: [0m[1;4;33m{[0m[1;4me[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m)[0m               [31m [0m
+2025-09-12T19:31:03: [31m [0m in _find_and_load:1360                                                               [31m [0m
+2025-09-12T19:31:03: [31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+2025-09-12T19:31:03: [31m [0m in _load_unlocked:946                                                                [31m [0m
+2025-09-12T19:31:03: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T19:31:03: [1;91mKeyError: [0m[32m'comprehensive_data_processor'[0m
+2025-09-12T19:31:25: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:25: ✅ Imported refined theme modules
+2025-09-12T19:31:25: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:25: ✅ Imported refined theme modules
+2025-09-12T19:31:25: ✅ Applied refined light theme
+2025-09-12T19:31:25: ✅ Applied refined black killer
+2025-09-12T19:31:25: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:25: ✅ Imported refined theme modules
+2025-09-12T19:31:25: ✅ Applied refined light theme
+2025-09-12T19:31:25: ✅ Applied refined black killer
+2025-09-12T19:31:25: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T19:31:25: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T19:31:25: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T19:31:25: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:25: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T19:31:25: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T19:31:25: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:25: [31m [0m [2m/home/user/webapp/[0m[1menhanced_streamlit_app.py[0m:29 in <module>                           [31m [0m
+2025-09-12T19:31:25: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:25: [31m [0m   [2m 26 [0m                                                                               [31m [0m
+2025-09-12T19:31:25: [31m [0m   [2m 27 [0m[2m# Import enhanced data processor[0m                                               [31m [0m
+2025-09-12T19:31:25: [31m [0m   [2m 28 [0m[94mtry[0m:                                                                           [31m [0m
+2025-09-12T19:31:25: [31m [0m [31m❱ [0m 29 [2m│   [0m[94mfrom[0m[90m [0m[4;96mcomprehensive_data_processor[0m[90m [0m[94mimport[0m ComprehensiveOSNProcessor         [31m [0m
+2025-09-12T19:31:25: [31m [0m   [2m 30 [0m[2m│   [0m[96mprint[0m([33m"[0m[33m✅ Imported ComprehensiveOSNProcessor[0m[33m"[0m)                             [31m [0m
+2025-09-12T19:31:25: [31m [0m   [2m 31 [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mImportError[0m[1;4m [0m[1;4;94mas[0m[1;4m e:[0m                                                       [31m [0m
+2025-09-12T19:31:25: [31m [0m   [2m 32 [0m[2m│   [0m[1;4mst.error([0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mCould not import ComprehensiveOSNProcessor: [0m[1;4;33m{[0m[1;4me[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m)[0m               [31m [0m
+2025-09-12T19:31:25: [31m [0m in _find_and_load:1360                                                               [31m [0m
+2025-09-12T19:31:25: [31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+2025-09-12T19:31:25: [31m [0m in _load_unlocked:946                                                                [31m [0m
+2025-09-12T19:31:25: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T19:31:25: [1;91mKeyError: [0m[32m'comprehensive_data_processor'[0m
+2025-09-12T19:31:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:34: ✅ Imported refined theme modules
+2025-09-12T19:31:34: ✅ Applied refined light theme
+2025-09-12T19:31:34: ✅ Applied refined black killer
+2025-09-12T19:31:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:34: ✅ Imported refined theme modules
+2025-09-12T19:31:34: ✅ Imported refined theme modules
+2025-09-12T19:31:34: ✅ Applied refined light theme
+2025-09-12T19:31:34: ✅ Applied refined black killer
+2025-09-12T19:31:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:34: ✅ Imported refined theme modules
+2025-09-12T19:31:34: ✅ Applied refined light theme
+2025-09-12T19:31:34: ✅ Applied refined black killer
+2025-09-12T19:31:34: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T19:31:34: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T19:31:34: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T19:31:34: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:34: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T19:31:34: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T19:31:34: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:34: [31m [0m [2m/home/user/webapp/[0m[1menhanced_streamlit_app.py[0m:29 in <module>                           [31m [0m
+2025-09-12T19:31:34: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:34: [31m [0m   [2m 26 [0m                                                                               [31m [0m
+2025-09-12T19:31:34: [31m [0m   [2m 27 [0m[2m# Import enhanced data processor[0m                                               [31m [0m
+2025-09-12T19:31:34: [31m [0m   [2m 28 [0m[94mtry[0m:                                                                           [31m [0m
+2025-09-12T19:31:34: [31m [0m [31m❱ [0m 29 [2m│   [0m[94mfrom[0m[90m [0m[4;96mcomprehensive_data_processor[0m[90m [0m[94mimport[0m ComprehensiveOSNProcessor         [31m [0m
+2025-09-12T19:31:34: [31m [0m   [2m 30 [0m[2m│   [0m[96mprint[0m([33m"[0m[33m✅ Imported ComprehensiveOSNProcessor[0m[33m"[0m)                             [31m [0m
+2025-09-12T19:31:34: [31m [0m   [2m 31 [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mImportError[0m[1;4m [0m[1;4;94mas[0m[1;4m e:[0m                                                       [31m [0m
+2025-09-12T19:31:34: [31m [0m   [2m 32 [0m[2m│   [0m[1;4mst.error([0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mCould not import ComprehensiveOSNProcessor: [0m[1;4;33m{[0m[1;4me[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m)[0m               [31m [0m
+2025-09-12T19:31:34: [31m [0m in _find_and_load:1360                                                               [31m [0m
+2025-09-12T19:31:34: [31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+2025-09-12T19:31:34: [31m [0m in _load_unlocked:946                                                                [31m [0m
+2025-09-12T19:31:34: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T19:31:34: [1;91mKeyError: [0m[32m'comprehensive_data_processor'[0m
+2025-09-12T19:31:44: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:44: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:44: ✅ Imported refined theme modules
+2025-09-12T19:31:44: ✅ Imported refined theme modules
+2025-09-12T19:31:44: ✅ Applied refined light theme
+2025-09-12T19:31:44: ✅ Applied refined black killer
+2025-09-12T19:31:44: ✅ Applied refined light theme
+2025-09-12T19:31:44: ✅ Applied refined black killer
+2025-09-12T19:31:44: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:44: ✅ Imported refined theme modules
+2025-09-12T19:31:44: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T19:31:44: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T19:31:44: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T19:31:44: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:44: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T19:31:44: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T19:31:44: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:44: [31m [0m [2m/home/user/webapp/[0m[1menhanced_streamlit_app.py[0m:29 in <module>                           [31m [0m
+2025-09-12T19:31:44: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:44: [31m [0m   [2m 26 [0m                                                                               [31m [0m
+2025-09-12T19:31:44: [31m [0m   [2m 27 [0m[2m# Import enhanced data processor[0m                                               [31m [0m
+2025-09-12T19:31:44: [31m [0m   [2m 28 [0m[94mtry[0m:                                                                           [31m [0m
+2025-09-12T19:31:44: [31m [0m [31m❱ [0m 29 [2m│   [0m[94mfrom[0m[90m [0m[4;96mcomprehensive_data_processor[0m[90m [0m[94mimport[0m ComprehensiveOSNProcessor         [31m [0m
+2025-09-12T19:31:44: [31m [0m   [2m 30 [0m[2m│   [0m[96mprint[0m([33m"[0m[33m✅ Imported ComprehensiveOSNProcessor[0m[33m"[0m)                             [31m [0m
+2025-09-12T19:31:44: [31m [0m   [2m 31 [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mImportError[0m[1;4m [0m[1;4;94mas[0m[1;4m e:[0m                                                       [31m [0m
+2025-09-12T19:31:44: [31m [0m   [2m 32 [0m[2m│   [0m[1;4mst.error([0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mCould not import ComprehensiveOSNProcessor: [0m[1;4;33m{[0m[1;4me[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m)[0m               [31m [0m
+2025-09-12T19:31:44: [31m [0m in _find_and_load:1360                                                               [31m [0m
+2025-09-12T19:31:44: [31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+2025-09-12T19:31:44: [31m [0m in _load_unlocked:946                                                                [31m [0m
+2025-09-12T19:31:44: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T19:31:44: [1;91mKeyError: [0m[32m'comprehensive_data_processor'[0m
+2025-09-12T19:32:09: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:32:09: ✅ Imported refined theme modules
+2025-09-12T19:32:09: ✅ Applied refined light theme
+2025-09-12T19:32:09: ✅ Applied refined black killer
+2025-09-12T19:32:09: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:32:09: ✅ Imported refined theme modules
+2025-09-12T19:32:09: ✅ Applied refined light theme
+2025-09-12T19:32:09: ✅ Applied refined black killer
+2025-09-12T19:32:09: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:32:09: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:32:09: ✅ Imported refined theme modules
+2025-09-12T19:32:09: ✅ Imported refined theme modules
+2025-09-12T19:32:09: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:32:09: ✅ Imported refined theme modules
+2025-09-12T19:32:09: ✅ Applied refined light theme
+2025-09-12T19:32:09: ✅ Applied refined black killer
+2025-09-12T19:32:09: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:32:09: ✅ Imported refined theme modules
+2025-09-12T19:32:09: ✅ Applied refined light theme
+2025-09-12T19:32:09: ✅ Applied refined black killer
+2025-09-12T19:32:09:   Stopping...
+2025-09-12T19:32:10: 
+2025-09-12T19:32:10:   You can now view your Streamlit app in your browser.
+2025-09-12T19:32:10: 
+2025-09-12T19:32:10:   URL: http://0.0.0.0:8502
+2025-09-12T19:32:10: 
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Applied refined light theme
+2025-09-12T19:35:34: ✅ Applied refined black killer
+2025-09-12T19:35:34: 🔄 Loading comprehensive survey data...
+2025-09-12T19:35:34: 📊 Found sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+2025-09-12T19:35:34: 📋 Processing sheet: Guests (UAE)
+2025-09-12T19:35:34: 🔍 Original data shape: (197, 45)
+2025-09-12T19:35:34: 🔍 After removing empty columns: (197, 44)
+2025-09-12T19:35:34: 🔍 After removing completely empty rows: (197, 44)
+2025-09-12T19:35:34: ⚠️ Warning: Only 197 rows available, expected 200
+2025-09-12T19:35:34: ✅ Final cleaned data shape: (197, 44)
+2025-09-12T19:35:34: ✅ UAE data: 197 responses (target: 200)
+2025-09-12T19:35:34: 📋 Processing sheet: Guests Online (KSA)
+2025-09-12T19:35:34: 🔍 Original data shape: (197, 45)
+2025-09-12T19:35:34: 🔍 After removing empty columns: (197, 45)
+2025-09-12T19:35:34: 🔍 After removing completely empty rows: (197, 45)
+2025-09-12T19:35:34: ⚠️ Warning: Only 197 rows available, expected 200
+2025-09-12T19:35:34: ✅ Final cleaned data shape: (197, 45)
+2025-09-12T19:35:34: ✅ KSA data: 197 responses (target: 200)
+2025-09-12T19:35:34: ⚠️ UAE data has 197 rows, adjusting to 200...
+2025-09-12T19:35:34: ⚠️ KSA data has 197 rows, adjusting to 200...
+2025-09-12T19:35:34: ✅ Combined data: EXACTLY 400 total responses (UAE: 200, KSA: 200)
+2025-09-12T19:35:34: ❌ Error in data processing: Can only use .str accessor with string values!
+2025-09-12T19:35:34: Creating sample data for demonstration...
+2025-09-12T19:35:34: 📝 Creating sample survey data with EXACTLY 400 responses...
+2025-09-12T19:35:34: ✅ UAE data: 200 responses
+2025-09-12T19:35:34: ✅ KSA data: 200 responses
+2025-09-12T19:35:34: ✅ Combined data: 400 responses
+2025-09-12T19:35:34: ✅ Sample data created successfully with EXACTLY 400 responses!
+2025-09-12T19:35:34: ✅ Applied refined light theme
+2025-09-12T19:35:34: ✅ Applied refined black killer
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Applied refined light theme
+2025-09-12T19:35:34: ✅ Applied refined black killer
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Applied refined light theme
+2025-09-12T19:35:34: ✅ Applied refined black killer
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Applied refined light theme
+2025-09-12T19:35:34: ✅ Applied refined black killer
+2025-09-12T19:35:34:   Stopping...
+2025-09-12T19:35:36: 
+2025-09-12T19:35:36:   You can now view your Streamlit app in your browser.
+2025-09-12T19:35:36: 
+2025-09-12T19:35:36:   URL: http://0.0.0.0:8502
+2025-09-12T19:35:36: 

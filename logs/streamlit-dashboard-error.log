@@ -188,3 +188,12 @@ Traceback (most recent call last):
                  ^^^^^^^^
   File "<frozen codecs>", line 322, in decode
 UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 25-26: invalid continuation byte
+2025-09-12 02:46:22.917 Port 8501 is already in use
+2025-09-12 02:46:24.671 Port 8501 is already in use
+2025-09-12 02:46:27.478 Port 8501 is already in use
+2025-09-12 02:46:31.222 Port 8501 is already in use
+2025-09-12 02:46:49.451 Port 8501 is already in use
+2025-09-12 02:46:51.180 Port 8501 is already in use
+2025-09-12 02:46:52.915 Port 8501 is already in use
+2025-09-12 02:46:55.665 Port 8501 is already in use
+2025-09-12 02:46:59.404 Port 8501 is already in use

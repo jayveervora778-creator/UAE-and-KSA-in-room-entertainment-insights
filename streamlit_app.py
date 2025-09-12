@@ -17,6 +17,19 @@ from typing import Dict, List, Any, Optional, Tuple
 from collections import Counter
 import re
 
+# Configure Plotly to use light theme globally
+import plotly.io as pio
+pio.templates.default = "plotly_white"
+
+# Import light chart configuration
+try:
+    from light_chart_config import configure_light_charts, apply_light_theme_to_figure
+    configure_light_charts()
+    print("✅ Configured Plotly for light theme")
+except ImportError as e:
+    print(f"Warning: Could not import light chart config: {e}")
+    apply_light_theme_to_figure = None
+
 
 # Import processors
 try:
@@ -25,6 +38,16 @@ try:
 except ImportError as e:
     st.error(f"Could not import FixedMultiResponseProcessor: {e}")
     st.stop()
+
+# Import refined light theme
+try:
+    from refined_light_theme import apply_refined_light_theme
+    from refined_black_killer import apply_refined_black_killer
+    print("✅ Imported refined light theme module")
+except ImportError as e:
+    print(f"Warning: Could not import refined theme: {e}")
+    apply_refined_light_theme = None
+    apply_refined_black_killer = None
 
 # Import optional analytics (can work without them)
 OptimizedOSNAnalytics = None
@@ -54,9 +77,291 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS
+# Apply refined light theme immediately
+if apply_refined_light_theme:
+    apply_refined_light_theme()
+
+# Apply black element killer for remaining dark areas
+if apply_refined_black_killer:
+    apply_refined_black_killer()
+
+# Enhanced CSS - Force Light Mode with Dropdown Boundaries
 st.markdown("""
 <style>
+    /* === GLOBAL LIGHT MODE ENFORCEMENT === */
+    .stApp {
+        background-color: #FFFFFF !important;
+        color: #262730 !important;
+    }
+    
+    .stApp > div {
+        background-color: #FFFFFF !important;
+    }
+    
+    .main .block-container {
+        background-color: #FFFFFF !important;
+        color: #262730 !important;
+    }
+    
+    /* === SIDEBAR STYLING === */
+    .stSidebar {
+        background-color: #f0f2f6 !important;
+        color: #262730 !important;
+        border-right: 1px solid #e1e5e9 !important;
+    }
+    
+    /* === ENHANCED DROPDOWN STYLING === */
+    /* Main dropdown containers */
+    .stSelectbox {
+        background-color: #FFFFFF !important;
+    }
+    
+    .stSelectbox > div {
+        background-color: #FFFFFF !important;
+    }
+    
+    /* Dropdown input box - with clear boundaries */
+    .stSelectbox > div > div {
+        background-color: #FFFFFF !important;
+        border: 2px solid #d1d5db !important;
+        border-radius: 6px !important;
+        padding: 8px 12px !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Dropdown arrow and input text */
+    .stSelectbox > div > div > div {
+        background-color: #FFFFFF !important;
+        color: #262730 !important;
+        border: none !important;
+    }
+    
+    /* Dropdown text content */
+    .stSelectbox > div > div > div > div {
+        background-color: #FFFFFF !important;
+        color: #262730 !important;
+        font-weight: 500 !important;
+    }
+    
+    /* Dropdown options list */
+    .stSelectbox ul {
+        background-color: #FFFFFF !important;
+        border: 2px solid #d1d5db !important;
+        border-radius: 6px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    /* Individual dropdown options */
+    .stSelectbox li {
+        background-color: #FFFFFF !important;
+        color: #262730 !important;
+        padding: 10px 15px !important;
+        border-bottom: 1px solid #f3f4f6 !important;
+    }
+    
+    /* Dropdown option hover state */
+    .stSelectbox li:hover {
+        background-color: #f8fafc !important;
+        color: #1f2937 !important;
+    }
+    
+    /* Selected dropdown option */
+    .stSelectbox li[aria-selected="true"] {
+        background-color: #667eea !important;
+        color: #FFFFFF !important;
+    }
+    
+    /* === SIDEBAR DROPDOWNS === */
+    .stSidebar .stSelectbox > div > div {
+        background-color: #FFFFFF !important;
+        border: 2px solid #d1d5db !important;
+        border-radius: 6px !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .stSidebar .stSelectbox > div > div > div {
+        background-color: #FFFFFF !important;
+        color: #262730 !important;
+    }
+    
+    /* === TEXT INPUTS WITH BOUNDARIES === */
+    .stTextInput > div > div > input {
+        background-color: #FFFFFF !important;
+        color: #262730 !important;
+        border: 2px solid #d1d5db !important;
+        border-radius: 6px !important;
+        padding: 8px 12px !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .stTextInput > div > div {
+        background-color: #FFFFFF !important;
+    }
+    
+    /* === ENHANCED BUTTONS === */
+    .stButton > button {
+        background-color: #667eea !important;
+        color: #FFFFFF !important;
+        border: none !important;
+        border-radius: 6px !important;
+        padding: 10px 20px !important;
+        font-weight: 600 !important;
+        box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2) !important;
+    }
+    
+    .stButton > button:hover {
+        background-color: #5a67d8 !important;
+        box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3) !important;
+    }
+    
+    /* === DATA DISPLAYS === */
+    .stDataFrame {
+        background-color: #FFFFFF !important;
+        color: #262730 !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 8px !important;
+    }
+    
+    /* === WIDGET LABELS === */
+    .stSelectbox label,
+    .stTextInput label,
+    .widget-label {
+        color: #374151 !important;
+        font-weight: 600 !important;
+        margin-bottom: 5px !important;
+    }
+    
+    /* === EXPANDERS WITH CLEAR BORDERS === */
+    .stExpander {
+        background-color: #FFFFFF !important;
+        border: 2px solid #e5e7eb !important;
+        border-radius: 8px !important;
+        margin: 10px 0 !important;
+    }
+    
+    .stExpander > div:first-child {
+        background-color: #f9fafb !important;
+        border-bottom: 1px solid #e5e7eb !important;
+        color: #374151 !important;
+        font-weight: 600 !important;
+    }
+    
+    /* === METRICS WITH BORDERS === */
+    .stMetric {
+        background-color: #FFFFFF !important;
+        color: #262730 !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 8px !important;
+        padding: 15px !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* === ALERT BOXES === */
+    .stAlert {
+        background-color: #f8f9fa !important;
+        color: #262730 !important;
+        border: 2px solid #dee2e6 !important;
+        border-radius: 8px !important;
+    }
+    
+    /* === COMPREHENSIVE DARK MODE PREVENTION === */
+    [data-testid="stAppViewContainer"] {
+        background-color: #FFFFFF !important;
+    }
+    
+    [data-testid="stHeader"] {
+        background-color: #FFFFFF !important;
+        border-bottom: 1px solid #e5e7eb !important;
+    }
+    
+    [data-testid="stSidebar"] {
+        background-color: #f9fafb !important;
+        border-right: 2px solid #e5e7eb !important;
+    }
+    
+    [data-testid="stToolbar"] {
+        background-color: #FFFFFF !important;
+    }
+    
+    /* === FORCE LIGHT BACKGROUNDS === */
+    div[role="main"] {
+        background-color: #FFFFFF !important;
+        color: #262730 !important;
+    }
+    
+    .element-container {
+        background-color: #FFFFFF !important;
+    }
+    
+    /* === HEADERS AND TEXT === */
+    h1, h2, h3, h4, h5, h6 {
+        color: #1f2937 !important;
+        font-weight: 700 !important;
+    }
+    
+    p, div, span {
+        color: #374151 !important;
+    }
+    
+    /* === CHARTS AND PLOTS === */
+    .stPlotlyChart {
+        background-color: #FFFFFF !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 8px !important;
+        padding: 10px !important;
+    }
+    
+    /* === MARKDOWN CONTENT === */
+    .stMarkdown {
+        color: #374151 !important;
+    }
+    
+    /* === CODE AND JSON === */
+    .stCode {
+        background-color: #f3f4f6 !important;
+        color: #1f2937 !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 6px !important;
+    }
+    
+    .stJson {
+        background-color: #f3f4f6 !important;
+        color: #1f2937 !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 6px !important;
+    }
+    
+    /* === MULTISELECT ENHANCEMENTS === */
+    .stMultiSelect > div > div {
+        background-color: #FFFFFF !important;
+        border: 2px solid #d1d5db !important;
+        border-radius: 6px !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* === SLIDER ENHANCEMENTS === */
+    .stSlider > div {
+        background-color: #FFFFFF !important;
+    }
+    
+    /* === TAB ENHANCEMENTS === */
+    .stTabs [data-baseweb="tab-list"] {
+        background-color: #f9fafb !important;
+        border-bottom: 2px solid #e5e7eb !important;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        background-color: #FFFFFF !important;
+        color: #6b7280 !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 6px 6px 0 0 !important;
+    }
+    
+    .stTabs [aria-selected="true"] {
+        background-color: #667eea !important;
+        color: #FFFFFF !important;
+    }
+    
     .main-header {
         background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
         padding: 1.5rem;
@@ -120,6 +425,8 @@ st.markdown("""
     header {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
+
+# Refined light theme already applied above
 
 # Survey Question Mapping (Complete)
 SURVEY_QUESTIONS = {
@@ -343,7 +650,7 @@ def create_universal_chart(df: pd.DataFrame, question_col: str, question_title: 
     return fig
 
 def create_cross_tabulation(df: pd.DataFrame, question1: str, question2: str):
-    """Create cross-tabulation analysis between two questions"""
+    """Create reliable cross-tabulation frequency analysis between two questions"""
     if question1 not in df.columns or question2 not in df.columns:
         return None
     
@@ -351,27 +658,141 @@ def create_cross_tabulation(df: pd.DataFrame, question1: str, question2: str):
     if clean_df.empty:
         return None
     
-    # Create cross-tabulation
-    crosstab = pd.crosstab(clean_df[question1], clean_df[question2], normalize='index') * 100
+    # Create frequency cross-tabulation (raw counts)
+    crosstab_counts = pd.crosstab(clean_df[question1], clean_df[question2])
+    
+    # Create percentage cross-tabulation for better readability
+    crosstab_pct = pd.crosstab(clean_df[question1], clean_df[question2], normalize='index') * 100
+    
+    # Create interactive heatmap with both counts and percentages
+    hover_text = []
+    for i, row_name in enumerate(crosstab_counts.index):
+        hover_row = []
+        for j, col_name in enumerate(crosstab_counts.columns):
+            count = crosstab_counts.iloc[i, j]
+            pct = crosstab_pct.iloc[i, j]
+            hover_text_cell = f"<b>{row_name}</b> + <b>{col_name}</b><br>Count: {count}<br>Percentage: {pct:.1f}%"
+            hover_row.append(hover_text_cell)
+        hover_text.append(hover_row)
     
     fig = go.Figure(data=go.Heatmap(
-        z=crosstab.values,
-        x=crosstab.columns,
-        y=crosstab.index,
+        z=crosstab_pct.values,
+        x=crosstab_pct.columns,
+        y=crosstab_pct.index,
         colorscale='Blues',
-        text=[[f"{val:.1f}%" for val in row] for row in crosstab.values],
+        text=[[f"{count}<br>({pct:.1f}%)" for count, pct in zip(count_row, pct_row)] 
+              for count_row, pct_row in zip(crosstab_counts.values, crosstab_pct.values)],
         texttemplate="%{text}",
-        showscale=True
+        textfont={"size": 10},
+        hovertemplate="%{text}<extra></extra>",
+        showscale=True,
+        colorbar=dict(title="Percentage (%)")
     ))
     
     fig.update_layout(
-        title=f"Cross Analysis: {SURVEY_QUESTIONS.get(question1, question1)} vs {SURVEY_QUESTIONS.get(question2, question2)}",
+        title=f"Frequency Cross-Analysis: {SURVEY_QUESTIONS.get(question1, question1)} vs {SURVEY_QUESTIONS.get(question2, question2)}",
         xaxis_title=SURVEY_QUESTIONS.get(question2, question2),
         yaxis_title=SURVEY_QUESTIONS.get(question1, question1),
-        height=500
+        height=600,
+        width=800,
+        font=dict(size=11)
     )
     
     return fig
+
+def analyze_cross_tabulation_insights(df: pd.DataFrame, question1: str, question2: str, filters: Dict[str, str]) -> List[Dict[str, str]]:
+    """Generate business insights from cross-tabulation frequency analysis"""
+    insights = []
+    
+    if question1 not in df.columns or question2 not in df.columns:
+        return insights
+    
+    clean_df = df[[question1, question2]].dropna()
+    if clean_df.empty:
+        return insights
+    
+    # Create market segment description
+    segment_parts = []
+    if filters.get('country') and filters['country'] != 'All Countries':
+        segment_parts.append(f"{filters['country']} market")
+    if filters.get('nationality') and filters['nationality'] != 'All Nationalities':
+        segment_parts.append(f"{filters['nationality']} travelers")
+    if filters.get('purpose') and filters['purpose'] != 'All Purposes':
+        segment_parts.append(f"{filters['purpose'].lower()} segment")
+    if filters.get('frequency') and filters['frequency'] != 'All Frequencies':
+        segment_parts.append(f"{filters['frequency'].lower()} hotel users")
+    
+    market_segment = " | ".join(segment_parts) if segment_parts else "Overall market"
+    
+    # Get question titles
+    q1_title = SURVEY_QUESTIONS.get(question1, question1)
+    q2_title = SURVEY_QUESTIONS.get(question2, question2)
+    
+    # Create frequency cross-tabulation
+    crosstab_counts = pd.crosstab(clean_df[question1], clean_df[question2])
+    crosstab_pct = pd.crosstab(clean_df[question1], clean_df[question2], normalize='index') * 100
+    total_sample = len(clean_df)
+    
+    # Find the strongest combinations (highest frequencies)
+    max_combination = crosstab_counts.stack().idxmax()
+    max_count = crosstab_counts.stack().max()
+    max_percentage = crosstab_pct.loc[max_combination]
+    
+    # Primary combination insight
+    insights.append({
+        'title': '🎯 STRONGEST Market Combination',
+        'finding': f'**{max_combination[0]}** + **{max_combination[1]}** represents the dominant pattern with {max_count} guests ({max_percentage:.1f}%)',
+        'business_action': f'OSN should prioritize this {max_combination[0].lower()} + {max_combination[1].lower()} segment for targeted marketing and service offerings',
+        'confidence': 'high'
+    })
+    
+    # Find interesting patterns by looking at high-percentage combinations
+    interesting_combinations = []
+    for i in crosstab_pct.index:
+        for j in crosstab_pct.columns:
+            pct = crosstab_pct.loc[i, j]
+            count = crosstab_counts.loc[i, j]
+            if pct >= 20 and count >= 5:  # Significant patterns
+                interesting_combinations.append((i, j, pct, count))
+    
+    # Sort by percentage and take top combinations
+    interesting_combinations.sort(key=lambda x: x[2], reverse=True)
+    
+    if len(interesting_combinations) >= 2:
+        second_combo = interesting_combinations[1] if len(interesting_combinations) > 1 else interesting_combinations[0]
+        insights.append({
+            'title': '📊 SECONDARY Pattern Discovery',
+            'finding': f'**{second_combo[0]}** guests show {second_combo[2]:.1f}% preference for **{second_combo[1]}** ({second_combo[3]} responses)',
+            'business_action': f'Secondary target: customize OSN+ offerings for {second_combo[0].lower()} segment with emphasis on {second_combo[1].lower()} preferences',
+            'confidence': 'medium'
+        })
+    
+    # Entertainment-specific insights
+    entertainment_keywords = ['entertainment', 'streaming', 'content', 'netflix', 'osn', 'tv', 'movie']
+    has_entertainment = any(keyword in q1_title.lower() or keyword in q2_title.lower() for keyword in entertainment_keywords)
+    
+    if has_entertainment:
+        # Find entertainment-related high-frequency combinations
+        total_sample = len(clean_df)
+        for combo in interesting_combinations[:3]:
+            if any(keyword in str(combo[0]).lower() or keyword in str(combo[1]).lower() for keyword in entertainment_keywords):
+                insights.append({
+                    'title': '🎬 ENTERTAINMENT Market Opportunity',
+                    'finding': f'**{combo[3]} guests ({combo[2]:.1f}%)** in the {combo[0]} + {combo[1]} combination represent direct OSN+ market potential',
+                    'business_action': f'Immediate opportunity: target this {combo[3]}-guest segment with tailored OSN+ packages combining their {combo[0].lower()} profile with {combo[1].lower()} preferences',
+                    'confidence': 'high'
+                })
+                break
+    
+    # Market size and reliability insight
+    insights.append({
+        'title': '📈 Cross-Analysis Market Intelligence',
+        'finding': f'Analysis covers **{total_sample} guest responses** across {len(crosstab_counts.index)} {q1_title.lower()} categories and {len(crosstab_counts.columns)} {q2_title.lower()} options',
+        'business_action': f'Sample provides {"statistically significant" if total_sample >= 100 else "directional"} insights for OSN strategic planning across {market_segment}',
+        'confidence': 'high' if total_sample >= 100 else 'medium'
+    })
+    
+    return insights
 
 def analyze_distribution_patterns(data: pd.Series) -> Dict[str, Any]:
     """Analyze distribution patterns beyond just top response"""
@@ -785,7 +1206,7 @@ def main():
     # Apply filters
     filtered_df = apply_demographic_filters(df, selected_country, selected_nationality, selected_purpose, selected_frequency)
     
-    # Filter status
+    # Simple Filter status (revert to working version)
     filter_parts = []
     if selected_country != "All Countries":
         filter_parts.append(f"Market: {selected_country}")
@@ -875,52 +1296,54 @@ def main():
     
     # Check if this is a multi-response question
     if question_info.get('data_type') == 'multi_response':
-        # Handle multi-response questions
+        # Handle multi-response questions - CHART FIRST
         chart = create_multiresponse_chart(processor, selected_question_code, question_title)
         if chart:
             st.plotly_chart(chart, use_container_width=True)
             
-        # Multi-response specific insights
-        display_multiresponse_insights(processor, selected_question_code, {
-            'country': selected_country,
-            'nationality': selected_nationality,
-            'purpose': selected_purpose,
-            'frequency': selected_frequency
-        })
+            # Generate insights ONLY AFTER chart is displayed successfully
+            display_multiresponse_insights(processor, selected_question_code, {
+                'country': selected_country,
+                'nationality': selected_nationality,
+                'purpose': selected_purpose,
+                'frequency': selected_frequency
+            })
+        else:
+            st.warning("No data available to generate chart for this multi-response question with current filters")
         
     elif selected_question_code in filtered_df.columns:
-        # Handle regular single-response questions
+        # Handle regular single-response questions - CHART FIRST
         chart = create_universal_chart(filtered_df, selected_question_code, question_title, chart_type)
         if chart:
             st.plotly_chart(chart, use_container_width=True)
             
-        # Pattern detection and insights for single-response questions
-        insights = detect_patterns_and_insights(filtered_df, selected_question_code, {
-            'country': selected_country,
-            'nationality': selected_nationality,
-            'purpose': selected_purpose,
-            'frequency': selected_frequency
-        })
-        
-        if insights:
-            st.markdown("### 🧠 Pattern Detection & Insights")
-            for insight in insights:
-                confidence_color = "#28a745" if insight['confidence'] == 'high' else "#ffc107" if insight['confidence'] == 'medium' else "#dc3545"
-                
-                # Handle both old and new insight formats
-                implication = insight.get('implication') or insight.get('business_action', 'No business action specified')
-                data_confidence = insight.get('data_backing', f"Confidence: {insight.get('confidence', 'medium')}")
-                
-                st.markdown(f"""
-                <div style="background: {confidence_color}15; border-left: 4px solid {confidence_color}; padding: 1rem; margin: 1rem 0; border-radius: 5px;">
-                    <strong>{insight['title']}</strong><br>
-                    <strong>Finding:</strong> {insight['finding']}<br>
-                    <strong>Business Action:</strong> {implication}<br>
-                    <small><strong>Data Confidence:</strong> {data_confidence}</small>
-                </div>
-                """, unsafe_allow_html=True)
+            # Generate insights ONLY AFTER chart is displayed successfully
+            insights = detect_patterns_and_insights(filtered_df, selected_question_code, {
+                'country': selected_country,
+                'nationality': selected_nationality,
+                'purpose': selected_purpose,
+                'frequency': selected_frequency
+            })
+            
+            if insights:
+                st.markdown("### 🧠 Pattern Detection & Insights")
+                for insight in insights:
+                    confidence_color = "#28a745" if insight['confidence'] == 'high' else "#ffc107" if insight['confidence'] == 'medium' else "#dc3545"
+                    
+                    # Handle both old and new insight formats
+                    implication = insight.get('implication') or insight.get('business_action', 'No business action specified')
+                    data_confidence = insight.get('data_backing', f"Confidence: {insight.get('confidence', 'medium')}")
+                    
+                    st.markdown(f"""
+                    <div style="background: {confidence_color}15; border-left: 4px solid {confidence_color}; padding: 1rem; margin: 1rem 0; border-radius: 5px;">
+                        <strong>{insight['title']}</strong><br>
+                        <strong>Finding:</strong> {insight['finding']}<br>
+                        <strong>Business Action:</strong> {implication}<br>
+                        <small><strong>Data Confidence:</strong> {data_confidence}</small>
+                    </div>
+                    """, unsafe_allow_html=True)
         else:
-            st.info("No data available for this question with current filters")
+            st.warning("No data available to generate chart for this question with current filters")
     
     # CROSS-ANALYSIS SECTION
     st.markdown("""
@@ -951,50 +1374,59 @@ def main():
     
     if st.button("Generate Cross-Analysis", key='cross_analysis_btn'):
         if question1_code != question2_code:
+            # Generate cross-tabulation chart FIRST
             cross_chart = create_cross_tabulation(filtered_df, question1_code, question2_code)
             if cross_chart:
                 st.plotly_chart(cross_chart, use_container_width=True)
                 
-                # Cross-analysis insights for OSN strategy
-                st.markdown("### 🎯 Cross-Analysis Market Intelligence")
+                # Generate business insights AFTER chart is displayed
+                cross_insights = analyze_cross_tabulation_insights(filtered_df, question1_code, question2_code, {
+                    'country': selected_country,
+                    'nationality': selected_nationality,
+                    'purpose': selected_purpose,
+                    'frequency': selected_frequency
+                })
                 
-                # Generate strategic insights based on correlation
-                cross_data = filtered_df[(filtered_df[question1_code].notna()) & (filtered_df[question2_code].notna())]
-                sample_size = len(cross_data)
-                
-                # Create market segment description
-                segment_parts = []
-                if selected_country != "All Countries":
-                    segment_parts.append(f"{selected_country} market")
-                if selected_nationality != "All Nationalities":
-                    segment_parts.append(f"{selected_nationality} travelers")
-                if selected_purpose != "All Purposes":
-                    segment_parts.append(f"{selected_purpose.lower()} segment")
-                if selected_frequency != "All Frequencies":
-                    segment_parts.append(f"{selected_frequency.lower()} hotel users")
-                
-                market_segment = " | ".join(segment_parts) if segment_parts else "Overall market"
-                
-                st.markdown(f"""
-                <div class="insight-box">
-                    <strong>Market Intelligence:</strong> Cross-correlation analysis reveals strategic insights for OSN:<br><br>
+                if cross_insights:
+                    st.markdown("### 🎯 Frequency Analysis Business Insights")
                     
-                    <strong>Questions Analyzed:</strong><br>
-                    • {SURVEY_QUESTIONS.get(question1_code, question1_code)}<br>
-                    • {SURVEY_QUESTIONS.get(question2_code, question2_code)}<br><br>
+                    for insight in cross_insights:
+                        confidence_color = "#28a745" if insight['confidence'] == 'high' else "#ffc107" if insight['confidence'] == 'medium' else "#dc3545"
+                        
+                        st.markdown(f"""
+                        <div style="background: {confidence_color}15; border-left: 4px solid {confidence_color}; padding: 1rem; margin: 1rem 0; border-radius: 5px;">
+                            <strong>{insight['title']}</strong><br>
+                            <strong>Finding:</strong> {insight['finding']}<br>
+                            <strong>Business Action:</strong> {insight['business_action']}<br>
+                            <small><strong>Confidence:</strong> {insight['confidence']}</small>
+                        </div>
+                        """, unsafe_allow_html=True)
+                        
+                    # Additional frequency analysis summary
+                    cross_data = filtered_df[(filtered_df[question1_code].notna()) & (filtered_df[question2_code].notna())]
+                    sample_size = len(cross_data)
                     
-                    <strong>OSN Strategic Value:</strong><br>
-                    • <strong>Market Segmentation:</strong> Identify which guest types correlate with high entertainment value<br>
-                    • <strong>Partnership Strategy:</strong> Understand content preferences vs. payment willingness by segment<br>
-                    • <strong>Product Development:</strong> Design hotel entertainment solutions based on correlated preferences<br>
-                    • <strong>Revenue Optimization:</strong> Target high-value segments with premium offerings<br><br>
-                    
-                    <strong>Market Sample:</strong> {sample_size} responses from {market_segment}<br>
-                    <strong>Confidence Level:</strong> {"High" if sample_size > 50 else "Medium" if sample_size > 20 else "Low"} - {"Statistically significant for market decisions" if sample_size > 50 else "Directional insights for strategy development" if sample_size > 20 else "Exploratory findings requiring additional validation"}
-                </div>
-                """, unsafe_allow_html=True)
+                    st.markdown(f"""
+                    <div class="insight-box">
+                        <strong>📊 Frequency Analysis Summary:</strong><br><br>
+                        
+                        <strong>Questions Analyzed:</strong><br>
+                        • <strong>Primary:</strong> {SURVEY_QUESTIONS.get(question1_code, question1_code)}<br>
+                        • <strong>Secondary:</strong> {SURVEY_QUESTIONS.get(question2_code, question2_code)}<br><br>
+                        
+                        <strong>OSN Strategic Applications:</strong><br>
+                        • <strong>Market Combination Targeting:</strong> Identify highest-frequency guest combinations for focused campaigns<br>
+                        • <strong>Product Bundle Design:</strong> Create OSN+ packages based on most common preference patterns<br>
+                        • <strong>Hotel Partnership Strategy:</strong> Target hotels with guest profiles matching strongest combinations<br>
+                        • <strong>Content Localization:</strong> Prioritize content development for dominant frequency patterns<br><br>
+                        
+                        <strong>Analysis Scope:</strong> {sample_size} complete guest responses<br>
+                        <strong>Methodology:</strong> Pure frequency analysis - no statistical correlations computed<br>
+                        <strong>Reliability:</strong> {"High" if sample_size >= 100 else "Medium" if sample_size >= 50 else "Directional"} - suitable for {"strategic decisions" if sample_size >= 100 else "tactical planning" if sample_size >= 50 else "exploratory insights"}
+                    </div>
+                    """, unsafe_allow_html=True)
             else:
-                st.info("No data available for cross-analysis with current filters")
+                st.warning("Insufficient data for cross-analysis with current filters")
         else:
             st.warning("Please select different questions for cross-analysis")
     
