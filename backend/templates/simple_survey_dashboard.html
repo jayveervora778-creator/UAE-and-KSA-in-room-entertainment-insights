@@ -8,7 +8,80 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+    <!-- Chart.js with multiple CDN fallbacks and load detection -->
+    <script>
+        window.chartJsLoadAttempts = 0;
+        window.maxChartJsAttempts = 3;
+        
+        function tryLoadChartJS() {
+            const cdnUrls = [
+                'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js',
+                'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js',
+                'https://unpkg.com/chart.js@4.4.0/dist/chart.min.js'
+            ];
+            
+            if (window.chartJsLoadAttempts >= window.maxChartJsAttempts) {
+                console.error('Failed to load Chart.js from all CDN sources');
+                // Show error in charts
+                if (window.pendingCharts && window.pendingCharts.length > 0) {
+                    window.pendingCharts.forEach(({chartId}) => {
+                        const canvas = document.getElementById(chartId);
+                        if (canvas) {
+                            const parent = canvas.parentElement;
+                            parent.innerHTML = `
+                                <div class="alert alert-danger text-center">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    Chart.js failed to load. Please refresh the page.
+                                </div>
+                            `;
+                        }
+                    });
+                }
+                return;
+            }
+            
+            const currentUrl = cdnUrls[window.chartJsLoadAttempts];
+            console.log(`Attempting Chart.js load ${window.chartJsLoadAttempts + 1}/${window.maxChartJsAttempts}: ${currentUrl}`);
+            
+            const script = document.createElement('script');
+            script.src = currentUrl;
+            
+            // Add timeout for slow connections
+            const timeout = setTimeout(() => {
+                console.warn('Chart.js load timeout from:', currentUrl);
+                script.onerror(); // Trigger error handler
+            }, 10000); // 10 second timeout
+            
+            script.onload = function() {
+                clearTimeout(timeout);
+                console.log('Chart.js loaded successfully from:', currentUrl);
+                window.chartJsReady = true;
+                
+                // Trigger chart creation for any waiting charts
+                if (window.pendingCharts && window.pendingCharts.length > 0) {
+                    console.log(`Creating ${window.pendingCharts.length} pending charts...`);
+                    window.pendingCharts.forEach(({chartId, chartData}) => {
+                        createChart(chartId, chartData);
+                    });
+                    window.pendingCharts = [];
+                }
+            };
+            
+            script.onerror = function() {
+                clearTimeout(timeout);
+                console.warn('Failed to load Chart.js from:', currentUrl);
+                window.chartJsLoadAttempts++;
+                setTimeout(tryLoadChartJS, 2000); // Try next CDN after 2 seconds
+            };
+            
+            document.head.appendChild(script);
+        }
+        
+        // Start loading Chart.js immediately
+        window.chartJsReady = false;
+        window.pendingCharts = [];
+        tryLoadChartJS();
+    </script>
     
     <style>
         .chart-container {
@@ -284,7 +357,7 @@ function displayAllSurveyCharts(data) {
                         ${chartData.title || chartKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
                     </h6>
                     
-                    <div class="chart-container">
+                    <div class="chart-container" data-chart="${chartId}">
                         <canvas id="${chartId}"></canvas>
                     </div>
                     
@@ -306,19 +379,29 @@ function displayAllSurveyCharts(data) {
     
     container.innerHTML = html;
     
-    // Create all charts (only if Chart.js is available)
+    // Create all charts (with Chart.js loading support)
     Object.entries(data.charts).forEach(([chartKey, chartData]) => {
         if (!chartData.error) {
             const chartId = `chart_${chartKey}`;
-            if (typeof Chart !== 'undefined') {
+            
+            if (window.chartJsReady && typeof Chart !== 'undefined') {
+                // Chart.js is ready, create chart immediately
                 createChart(chartId, chartData);
             } else {
-                console.log('Chart.js not ready yet for', chartId);
-                // Show placeholder
+                // Chart.js not ready yet, add to pending queue
+                console.log('Chart.js not ready yet, queuing chart:', chartId);
+                window.pendingCharts.push({chartId, chartData});
+                
+                // Show loading placeholder
                 const canvas = document.getElementById(chartId);
                 if (canvas) {
                     const parent = canvas.parentElement;
-                    parent.innerHTML = '<div class="alert alert-info">Chart.js loading...</div>';
+                    parent.innerHTML = `
+                        <div class="alert alert-info text-center">
+                            <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+                            Loading Chart.js library...
+                        </div>
+                    `;
                 }
             }
         }
@@ -411,15 +494,32 @@ function generateChartInsights(chartKey, chartData) {
 }
 
 function createChart(canvasId, chartData) {
-    if (typeof Chart === 'undefined') {
+    if (!window.chartJsReady || typeof Chart === 'undefined') {
         console.error('Chart.js not available for chart creation');
+        // Add to pending queue if not already there
+        const existing = window.pendingCharts.find(item => item.chartId === canvasId);
+        if (!existing) {
+            window.pendingCharts.push({chartId: canvasId, chartData});
+        }
         return;
     }
     
-    const canvas = document.getElementById(canvasId);
+    console.log('Creating chart:', canvasId);
+    
+    // Find the canvas element
+    let canvas = document.getElementById(canvasId);
     if (!canvas) {
         console.error(`Canvas not found: ${canvasId}`);
-        return;
+        
+        // Try to create the canvas if the container exists
+        const container = document.querySelector(`[data-chart="${canvasId}"]`);
+        if (container) {
+            canvas = document.createElement('canvas');
+            canvas.id = canvasId;
+            container.appendChild(canvas);
+        } else {
+            return;
+        }
     }
     
     const ctx = canvas.getContext('2d');
