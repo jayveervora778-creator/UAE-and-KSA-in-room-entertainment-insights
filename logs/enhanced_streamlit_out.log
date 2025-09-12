@@ -672,3 +672,195 @@
 2025-09-12T21:17:38: 
 2025-09-12T21:17:38:   URL: http://0.0.0.0:8502
 2025-09-12T21:17:38: 
+2025-09-12T22:24:50: 🔄 Loading survey data (ENHANCED - Better Questions + Word Cloud Support)...
+2025-09-12T22:24:50: 📋 Loaded 22 question mappings
+2025-09-12T22:24:50: 📋 Guests (UAE): 200 responses loaded
+2025-09-12T22:24:50: 📋 Guests Online (KSA): 200 responses loaded
+2025-09-12T22:24:50: 📝 ENHANCED: Mapped to 43 columns (no more 'Unnamed')
+2025-09-12T22:24:50: 📋 Available questions: ['Nationality', 'Visit Purpose', 'Visit Purpose (Other)', 'Hotel Stays Per Year', 'Hotel Choice Reason 1']...
+2025-09-12T22:24:50: 🧹 Normalizing nationality data (keeping all responses)...
+2025-09-12T22:24:50: 🧹 Converting visit purpose codes...
+2025-09-12T22:24:50: 🧹 Converting hotel frequency codes...
+2025-09-12T22:24:50: ✅ ENHANCED: Data cleaned, still have exactly 400 responses
+2025-09-12T22:24:50: 🔤 Identified 6 text analysis questions:
+2025-09-12T22:24:50:    - Visit Purpose (Other)
+2025-09-12T22:24:50:    - Please specify other reason for choosing the hotel?
+2025-09-12T22:24:50:    - Entertainment Experience Story
+2025-09-12T22:24:50:    - Please specify other type of content did you watch?
+2025-09-12T22:24:50:    - Entertainment Improvement Suggestions
+2025-09-12T22:24:50:    - General Entertainment Suggestions
+2025-09-12T22:24:50: 🎯 ENHANCED Filter options:
+2025-09-12T22:24:50:    Nationalities (55): ALL INCLUDED
+2025-09-12T22:24:50:    Visit Purposes: ['Business', 'Family Vacation', 'Leisure', 'Other']
+2025-09-12T22:24:50:    Hotel Frequency: ['1-2 times', '3-5 times', '5.0', 'More than 5 times']
+2025-09-12T22:24:50:    Text Analysis Questions: 6
+2025-09-12T22:24:50: ✅ ENHANCED: Successfully loaded exactly 400 responses
+2025-09-12T22:24:50:    UAE: 200
+2025-09-12T22:24:50:    KSA: 200
+2025-09-12T22:24:50:    Text Analysis Questions: 6
+2025-09-12T22:24:50: 🔄 Loading survey data (ENHANCED - Better Questions + Word Cloud Support)...
+2025-09-12T22:24:50: 📋 Loaded 22 question mappings
+2025-09-12T22:24:50: 📋 Guests (UAE): 200 responses loaded
+2025-09-12T22:24:50: 📋 Guests Online (KSA): 200 responses loaded
+2025-09-12T22:24:50: 📝 ENHANCED: Mapped to 43 columns (no more 'Unnamed')
+2025-09-12T22:24:50: 📋 Available questions: ['Nationality', 'Visit Purpose', 'Visit Purpose (Other)', 'Hotel Stays Per Year', 'Hotel Choice Reason 1']...
+2025-09-12T22:24:50: 🧹 Normalizing nationality data (keeping all responses)...
+2025-09-12T22:24:50: 🧹 Converting visit purpose codes...
+2025-09-12T22:24:50: 🧹 Converting hotel frequency codes...
+2025-09-12T22:24:50: ✅ ENHANCED: Data cleaned, still have exactly 400 responses
+2025-09-12T22:24:50: 🔤 Identified 6 text analysis questions:
+2025-09-12T22:24:50:    - Visit Purpose (Other)
+2025-09-12T22:24:50:    - Please specify other reason for choosing the hotel?
+2025-09-12T22:24:50:    - Entertainment Experience Story
+2025-09-12T22:24:50:    - Please specify other type of content did you watch?
+2025-09-12T22:24:50:    - Entertainment Improvement Suggestions
+2025-09-12T22:24:50:    - General Entertainment Suggestions
+2025-09-12T22:24:50: 🎯 ENHANCED Filter options:
+2025-09-12T22:24:50:    Nationalities (55): ALL INCLUDED
+2025-09-12T22:24:50:    Visit Purposes: ['Business', 'Family Vacation', 'Leisure', 'Other']
+2025-09-12T22:24:50:    Hotel Frequency: ['1-2 times', '3-5 times', '5.0', 'More than 5 times']
+2025-09-12T22:24:50:    Text Analysis Questions: 6
+2025-09-12T22:24:50: ✅ ENHANCED: Successfully loaded exactly 400 responses
+2025-09-12T22:24:50:    UAE: 200
+2025-09-12T22:24:50:    KSA: 200
+2025-09-12T22:24:50:    Text Analysis Questions: 6
+2025-09-12T22:24:50: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T22:24:50: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T22:24:50: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T22:24:50: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:24:50: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T22:24:50: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T22:24:50: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:24:50: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:1063 in <module>                    [31m [0m
+2025-09-12T22:24:50: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m1060 [0m[2m│   │   │   │   [0mst.plotly_chart(fig_ratings, use_container_width=[94mTrue[0m)        [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m1061 [0m                                                                              [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m1062 [0m[94mif[0m [91m__name__[0m == [33m"[0m[33m__main__[0m[33m"[0m:                                                    [31m [0m
+2025-09-12T22:24:50: [31m [0m [31m❱ [0m1063 [2m│   [0m[1;4mmain()[0m                                                                    [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m1064 [0m                                                                              [31m [0m
+2025-09-12T22:24:50: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:24:50: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:862 in main                         [31m [0m
+2025-09-12T22:24:50: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m 859 [0m[2m│   │   │   │   [0m                                                              [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m 860 [0m[2m│   │   │   │   [0m[2m# Extract the actual question name from the display[0m           [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m 861 [0m[2m│   │   │   │   [0mselected_text_question = selected_text_question_display.split [31m [0m
+2025-09-12T22:24:50: [31m [0m [31m❱ [0m 862 [2m│   │   │   │   [0mresponse_count = [1;4mquestion_data_counts[selected_text_question][0m [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m 863 [0m[2m│   │   │   │   [0m                                                              [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m 864 [0m[2m│   │   │   │   [0mst.info([33mf[0m[33m"[0m[33m💡 **Selected:** [0m[33m{[0mselected_text_question[33m}[0m[33m - [0m[33m{[0mrespon [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m 865 [0m[2m│   │   │   [0m[94melse[0m:                                                             [31m [0m
+2025-09-12T22:24:50: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T22:24:50: [1;91mKeyError: [0m[32m'Visit Purpose'[0m
+2025-09-12T22:25:29: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T22:25:29: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T22:25:29: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T22:25:29: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:1063 in <module>                    [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m1060 [0m[2m│   │   │   │   [0mst.plotly_chart(fig_ratings, use_container_width=[94mTrue[0m)        [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m1061 [0m                                                                              [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m1062 [0m[94mif[0m [91m__name__[0m == [33m"[0m[33m__main__[0m[33m"[0m:                                                    [31m [0m
+2025-09-12T22:25:29: [31m [0m [31m❱ [0m1063 [2m│   [0m[1;4mmain()[0m                                                                    [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m1064 [0m                                                                              [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:511 in main                         [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m 508 [0m[2m│   │   [0m[94mreturn[0m                                                                [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m 509 [0m[2m│   [0m                                                                          [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m 510 [0m[2m│   [0m[2m# Get summary statistics[0m                                                  [31m [0m
+2025-09-12T22:25:29: [31m [0m [31m❱ [0m 511 [2m│   [0mstats = [1;4mprocessor.get_summary_stats()[0m                                     [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m 512 [0m[2m│   [0m                                                                          [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m 513 [0m[2m│   [0m[2m# Simple success message[0m                                                  [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m 514 [0m[2m│   [0m[94mif[0m stats[[33m'[0m[33mtotal_responses[0m[33m'[0m] == [94m400[0m [95mand[0m stats[[33m'[0m[33muae_responses[0m[33m'[0m] == [94m200[0m [95mand[0m  [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m [2m/home/user/webapp/[0m[1menhanced_osn_processor.py[0m:455 in get_summary_stats                 [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m452 [0m[2m│   │   │   [0m[33m'[0m[33mavailable_questions[0m[33m'[0m: meaningful_questions,                       [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m453 [0m[2m│   │   │   [0m[33m'[0m[33mtext_questions[0m[33m'[0m: [96mself[0m.text_questions,                             [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m454 [0m[2m│   │   │   [0m[33m'[0m[33mfilter_options[0m[33m'[0m: [96mself[0m.filters,                                    [31m [0m
+2025-09-12T22:25:29: [31m [0m [31m❱ [0m455 [2m│   │   │   [0m[33m'[0m[33mresponse_options[0m[33m'[0m: [1;4;96mself[0m[1;4m.response_options[0m                          [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m456 [0m[2m│   │   [0m}                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m457 [0m[2m│   [0m                                                                           [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m458 [0m[2m│   [0m[94mdef[0m[90m [0m[92mget_text_responses_for_wordcloud[0m([96mself[0m, question, filters=[94mNone[0m):        [31m [0m
+2025-09-12T22:25:29: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T22:25:29: [1;91mAttributeError: [0m[32m'EnhancedOSNProcessor'[0m object has no attribute [32m'response_options'[0m
+2025-09-12T22:25:38: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T22:25:38: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T22:25:38: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T22:25:38: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:1064 in <module>                    [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m1061 [0m[2m│   │   │   │   [0mst.plotly_chart(fig_ratings, use_container_width=[94mTrue[0m)        [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m1062 [0m                                                                              [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m1063 [0m[94mif[0m [91m__name__[0m == [33m"[0m[33m__main__[0m[33m"[0m:                                                    [31m [0m
+2025-09-12T22:25:38: [31m [0m [31m❱ [0m1064 [2m│   [0m[1;4mmain()[0m                                                                    [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m1065 [0m                                                                              [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:511 in main                         [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m 508 [0m[2m│   │   [0m[94mreturn[0m                                                                [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m 509 [0m[2m│   [0m                                                                          [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m 510 [0m[2m│   [0m[2m# Get summary statistics[0m                                                  [31m [0m
+2025-09-12T22:25:38: [31m [0m [31m❱ [0m 511 [2m│   [0mstats = [1;4mprocessor.get_summary_stats()[0m                                     [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m 512 [0m[2m│   [0m                                                                          [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m 513 [0m[2m│   [0m[2m# Simple success message[0m                                                  [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m 514 [0m[2m│   [0m[94mif[0m stats[[33m'[0m[33mtotal_responses[0m[33m'[0m] == [94m400[0m [95mand[0m stats[[33m'[0m[33muae_responses[0m[33m'[0m] == [94m200[0m [95mand[0m  [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m [2m/home/user/webapp/[0m[1menhanced_osn_processor.py[0m:455 in get_summary_stats                 [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m452 [0m[2m│   │   │   [0m[33m'[0m[33mavailable_questions[0m[33m'[0m: meaningful_questions,                       [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m453 [0m[2m│   │   │   [0m[33m'[0m[33mtext_questions[0m[33m'[0m: [96mself[0m.text_questions,                             [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m454 [0m[2m│   │   │   [0m[33m'[0m[33mfilter_options[0m[33m'[0m: [96mself[0m.filters,                                    [31m [0m
+2025-09-12T22:25:38: [31m [0m [31m❱ [0m455 [2m│   │   │   [0m[33m'[0m[33mresponse_options[0m[33m'[0m: [1;4;96mself[0m[1;4m.response_options[0m                          [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m456 [0m[2m│   │   [0m}                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m457 [0m[2m│   [0m                                                                           [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m458 [0m[2m│   [0m[94mdef[0m[90m [0m[92mget_text_responses_for_wordcloud[0m([96mself[0m, question, filters=[94mNone[0m):        [31m [0m
+2025-09-12T22:25:38: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T22:25:38: [1;91mAttributeError: [0m[32m'EnhancedOSNProcessor'[0m object has no attribute [32m'response_options'[0m
+2025-09-12T22:25:42: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T22:25:42: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T22:25:42: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T22:25:42: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:1064 in <module>                    [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m1061 [0m[2m│   │   │   │   [0mst.plotly_chart(fig_ratings, use_container_width=[94mTrue[0m)        [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m1062 [0m                                                                              [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m1063 [0m[94mif[0m [91m__name__[0m == [33m"[0m[33m__main__[0m[33m"[0m:                                                    [31m [0m
+2025-09-12T22:25:42: [31m [0m [31m❱ [0m1064 [2m│   [0m[1;4mmain()[0m                                                                    [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m1065 [0m                                                                              [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:511 in main                         [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m 508 [0m[2m│   │   [0m[94mreturn[0m                                                                [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m 509 [0m[2m│   [0m                                                                          [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m 510 [0m[2m│   [0m[2m# Get summary statistics[0m                                                  [31m [0m
+2025-09-12T22:25:42: [31m [0m [31m❱ [0m 511 [2m│   [0mstats = [1;4mprocessor.get_summary_stats()[0m                                     [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m 512 [0m[2m│   [0m                                                                          [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m 513 [0m[2m│   [0m[2m# Simple success message[0m                                                  [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m 514 [0m[2m│   [0m[94mif[0m stats[[33m'[0m[33mtotal_responses[0m[33m'[0m] == [94m400[0m [95mand[0m stats[[33m'[0m[33muae_responses[0m[33m'[0m] == [94m200[0m [95mand[0m  [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m [2m/home/user/webapp/[0m[1menhanced_osn_processor.py[0m:455 in get_summary_stats                 [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m452 [0m[2m│   │   │   [0m[33m'[0m[33mavailable_questions[0m[33m'[0m: meaningful_questions,                       [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m453 [0m[2m│   │   │   [0m[33m'[0m[33mtext_questions[0m[33m'[0m: [96mself[0m.text_questions,                             [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m454 [0m[2m│   │   │   [0m[33m'[0m[33mfilter_options[0m[33m'[0m: [96mself[0m.filters,                                    [31m [0m
+2025-09-12T22:25:42: [31m [0m [31m❱ [0m455 [2m│   │   │   [0m[33m'[0m[33mresponse_options[0m[33m'[0m: [1;4;96mself[0m[1;4m.response_options[0m                          [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m456 [0m[2m│   │   [0m}                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m457 [0m[2m│   [0m                                                                           [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m458 [0m[2m│   [0m[94mdef[0m[90m [0m[92mget_text_responses_for_wordcloud[0m([96mself[0m, question, filters=[94mNone[0m):        [31m [0m
+2025-09-12T22:25:42: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T22:25:42: [1;91mAttributeError: [0m[32m'EnhancedOSNProcessor'[0m object has no attribute [32m'response_options'[0m
+2025-09-12T22:26:09:   Stopping...
+2025-09-12T22:26:11: 
+2025-09-12T22:26:11:   You can now view your Streamlit app in your browser.
+2025-09-12T22:26:11: 
+2025-09-12T22:26:11:   URL: http://0.0.0.0:8502
+2025-09-12T22:26:11: 

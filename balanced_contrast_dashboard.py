@@ -859,7 +859,7 @@ def main():
                 
                 # Extract the actual question name from the display
                 selected_text_question = selected_text_question_display.split(" (")[0]
-                response_count = question_data_counts[selected_text_question]
+                response_count = question_data_counts.get(selected_text_question, 0)
                 
                 st.info(f"💡 **Selected:** {selected_text_question} - {response_count} text responses available with current filters")
             else:
@@ -876,9 +876,10 @@ def main():
                     count = len(all_responses) if all_responses else 0
                     st.write(f"   • {question}: {count} total responses")
                 
-                return  # Exit early if no data
+                # Continue to show the rest of the UI even if no word cloud data available
+                selected_text_question = None
             
-            if st.button("🚀 Generate Word Cloud", type="primary"):
+            if selected_text_question and st.button("🚀 Generate Word Cloud", type="primary"):
                 with st.spinner("Analyzing text..."):
                     
                     text_filters = {
