@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Debug Dashboard Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+</head>
+<body class="bg-light">
+    <div class="container my-4">
+        <h2>Dashboard Debug Test</h2>
+        
+        <div class="alert alert-info">
+            <h5>Step 1: Login Test</h5>
+            <button id="loginBtn" class="btn btn-primary">Test Login</button>
+            <div id="loginResult"></div>
+        </div>
+        
+        <div class="alert alert-warning">
+            <h5>Step 2: Chart Test</h5>
+            <button id="chartBtn" class="btn btn-success">Load Charts</button>
+            <div id="chartResult"></div>
+            <canvas id="testChart" width="400" height="200" style="border: 1px solid #ccc; margin-top: 10px;"></canvas>
+        </div>
+        
+        <div class="alert alert-secondary">
+            <h5>Step 3: Dashboard Direct Access</h5>
+            <a href="https://5000-irfwmnj83fl8g7sybafp1-6532622b.e2b.dev/simple-dashboard" target="_blank" class="btn btn-info">Open Dashboard</a>
+        </div>
+    </div>
+
+    <script>
+        const BASE_URL = 'https://5000-irfwmnj83fl8g7sybafp1-6532622b.e2b.dev';
+        
+        document.getElementById('loginBtn').addEventListener('click', async function() {
+            const result = document.getElementById('loginResult');
+            result.innerHTML = '<p>Logging in...</p>';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        username: 'admin',
+                        password: 'surveydash2024'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    result.innerHTML = '<p class="text-success">✅ Login successful!</p>';
+                    window.isLoggedIn = true;
+                } else {
+                    result.innerHTML = `<p class="text-danger">❌ Login failed: ${data.message}</p>`;
+                }
+            } catch (error) {
+                result.innerHTML = `<p class="text-danger">❌ Error: ${error.message}</p>`;
+            }
+        });
+        
+        document.getElementById('chartBtn').addEventListener('click', async function() {
+            const result = document.getElementById('chartResult');
+            
+            if (!window.isLoggedIn) {
+                result.innerHTML = '<p class="text-warning">Please login first!</p>';
+                return;
+            }
+            
+            result.innerHTML = '<p>Loading charts...</p>';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/enhanced_api/dynamic-charts`, {
+                    credentials: 'include'
+                });
+                
+                const data = await response.json();
+                
+                if (data.charts && Object.keys(data.charts).length > 0) {
+                    result.innerHTML = `<p class="text-success">✅ Loaded ${Object.keys(data.charts).length} charts</p>`;
+                    
+                    // Test creating a chart
+                    const firstChartKey = Object.keys(data.charts)[0];
+                    const chartConfig = data.charts[firstChartKey];
+                    
+                    console.log('Chart config:', chartConfig);
+                    
+                    // Check if Chart.js is available
+                    if (typeof Chart === 'undefined') {
+                        result.innerHTML += '<p class="text-danger">❌ Chart.js not loaded!</p>';
+                        return;
+                    }
+                    
+                    result.innerHTML += '<p class="text-info">📊 Creating test chart...</p>';
+                    
+                    const canvas = document.getElementById('testChart');
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Destroy existing chart
+                    if (window.testChart) {
+                        window.testChart.destroy();
+                    }
+                    
+                    window.testChart = new Chart(ctx, {
+                        type: chartConfig.type,
+                        data: chartConfig.data,
+                        options: {
+                            responsive: false,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: chartConfig.title
+                                }
+                            }
+                        }
+                    });
+                    
+                    result.innerHTML += '<p class="text-success">✅ Chart created successfully!</p>';
+                    
+                } else {
+                    result.innerHTML = '<p class="text-danger">❌ No charts received</p>';
+                }
+            } catch (error) {
+                result.innerHTML = `<p class="text-danger">❌ Error: ${error.message}</p>`;
+                console.error('Chart error:', error);
+            }
+        });
+        
+        // Check if Chart.js loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const chartResult = document.getElementById('chartResult');
+            if (typeof Chart !== 'undefined') {
+                chartResult.innerHTML = '<p class="text-success">✅ Chart.js loaded successfully</p>';
+            } else {
+                chartResult.innerHTML = '<p class="text-danger">❌ Chart.js not loaded</p>';
+            }
+        });
+    </script>
+</body>
+</html>

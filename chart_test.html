@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chart.js Loading Test</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .warning { background: #fff3cd; color: #856404; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h2>Chart.js Multi-CDN Loading Test</h2>
+    <div id="status" class="status info">Initializing...</div>
+    <canvas id="testChart" width="400" height="200" style="border: 1px solid #ccc;"></canvas>
+    
+    <script>
+        window.chartJsLoadAttempts = 0;
+        window.maxChartJsAttempts = 3;
+        
+        function updateStatus(message, type = 'info') {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            console.log(message);
+        }
+        
+        function tryLoadChartJS() {
+            const cdnUrls = [
+                'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js',
+                'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js',
+                'https://unpkg.com/chart.js@4.4.0/dist/chart.min.js'
+            ];
+            
+            if (window.chartJsLoadAttempts >= window.maxChartJsAttempts) {
+                updateStatus('Failed to load Chart.js from all CDN sources', 'error');
+                return;
+            }
+            
+            const currentUrl = cdnUrls[window.chartJsLoadAttempts];
+            updateStatus(`Attempting to load Chart.js from CDN ${window.chartJsLoadAttempts + 1}: ${currentUrl}`, 'warning');
+            
+            const script = document.createElement('script');
+            script.src = currentUrl;
+            
+            script.onload = function() {
+                updateStatus(`Chart.js loaded successfully from: ${currentUrl}`, 'success');
+                window.chartJsReady = true;
+                createTestChart();
+            };
+            
+            script.onerror = function() {
+                updateStatus(`Failed to load Chart.js from: ${currentUrl}`, 'error');
+                window.chartJsLoadAttempts++;
+                setTimeout(tryLoadChartJS, 2000); // Try next CDN after 2 seconds
+            };
+            
+            document.head.appendChild(script);
+        }
+        
+        function createTestChart() {
+            if (typeof Chart === 'undefined') {
+                updateStatus('Chart.js loaded but Chart object not available', 'error');
+                return;
+            }
+            
+            updateStatus('Creating test chart...', 'info');
+            
+            const canvas = document.getElementById('testChart');
+            const ctx = canvas.getContext('2d');
+            
+            try {
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Test 1', 'Test 2', 'Test 3'],
+                        datasets: [{
+                            label: 'Test Data',
+                            data: [12, 19, 3],
+                            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                        }]
+                    },
+                    options: {
+                        responsive: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Chart.js Working Successfully!'
+                            }
+                        }
+                    }
+                });
+                
+                updateStatus('Chart created successfully! Chart.js is working.', 'success');
+                
+            } catch (error) {
+                updateStatus(`Error creating chart: ${error.message}`, 'error');
+            }
+        }
+        
+        // Start the test
+        updateStatus('Starting Chart.js loading test...', 'info');
+        tryLoadChartJS();
+    </script>
+</body>
+</html>

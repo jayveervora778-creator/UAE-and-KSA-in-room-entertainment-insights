@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Survey Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { border: 1px solid #ccc; padding: 20px; margin: 10px 0; }
+        .chart-container { width: 400px; height: 300px; margin: 10px 0; }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+    </style>
+</head>
+<body>
+    <h1>Survey Dashboard Test Page</h1>
+    
+    <div class="test-section">
+        <h2>1. Login Test</h2>
+        <button onclick="testLogin()">Test Login</button>
+        <div id="loginResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. API Test</h2>
+        <button onclick="testAPI()">Test Dynamic Charts API</button>
+        <div id="apiResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. Chart Test</h2>
+        <button onclick="testCharts()">Load and Display Charts</button>
+        <div id="chartResult"></div>
+        <div class="chart-container">
+            <canvas id="testChart"></canvas>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>4. Survey Insights Test</h2>
+        <button onclick="testInsights()">Test Survey Insights</button>
+        <div id="insightsResult"></div>
+    </div>
+
+    <script>
+        const BASE_URL = 'https://5000-irfwmnj83fl8g7sybafp1-6532622b.e2b.dev';
+        
+        async function testLogin() {
+            const resultDiv = document.getElementById('loginResult');
+            resultDiv.innerHTML = '<div class="info">Testing login...</div>';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        username: 'admin',
+                        password: 'surveydash2024'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    resultDiv.innerHTML = '<div class="success">✅ Login successful!</div>';
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ Login failed: ${data.message}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ Login error: ${error.message}</div>`;
+            }
+        }
+        
+        async function testAPI() {
+            const resultDiv = document.getElementById('apiResult');
+            resultDiv.innerHTML = '<div class="info">Testing API...</div>';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/enhanced_api/dynamic-charts`, {
+                    credentials: 'include'
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    if (data.charts && Object.keys(data.charts).length > 0) {
+                        resultDiv.innerHTML = `
+                            <div class="success">✅ API working! Found ${Object.keys(data.charts).length} charts</div>
+                            <div class="info">Charts: ${Object.keys(data.charts).join(', ')}</div>
+                            <div class="info">Total responses: ${data.metadata?.total_responses || 'N/A'}</div>
+                        `;
+                        window.chartData = data.charts;
+                    } else {
+                        resultDiv.innerHTML = '<div class="error">❌ API returned no charts</div>';
+                    }
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ API failed: ${response.status} ${response.statusText}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ API error: ${error.message}</div>`;
+            }
+        }
+        
+        async function testCharts() {
+            const resultDiv = document.getElementById('chartResult');
+            
+            if (!window.chartData) {
+                resultDiv.innerHTML = '<div class="error">❌ No chart data. Run API test first.</div>';
+                return;
+            }
+            
+            resultDiv.innerHTML = '<div class="info">Creating charts...</div>';
+            
+            try {
+                // Test creating one chart
+                const chartKey = Object.keys(window.chartData)[0];
+                const chartConfig = window.chartData[chartKey];
+                
+                console.log('Chart config:', chartConfig);
+                
+                const ctx = document.getElementById('testChart').getContext('2d');
+                
+                // Clear any existing chart
+                if (window.testChartInstance) {
+                    window.testChartInstance.destroy();
+                }
+                
+                window.testChartInstance = new Chart(ctx, {
+                    type: chartConfig.type,
+                    data: chartConfig.data,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: chartConfig.title
+                            }
+                        }
+                    }
+                });
+                
+                resultDiv.innerHTML = `
+                    <div class="success">✅ Chart created successfully!</div>
+                    <div class="info">Chart: ${chartConfig.title}</div>
+                    <div class="info">Type: ${chartConfig.type}</div>
+                `;
+                
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ Chart error: ${error.message}</div>`;
+                console.error('Chart error:', error);
+            }
+        }
+        
+        async function testInsights() {
+            const resultDiv = document.getElementById('insightsResult');
+            resultDiv.innerHTML = '<div class="info">Testing insights...</div>';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/enhanced_api/survey-insights`, {
+                    credentials: 'include'
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    if (data.key_findings && data.key_findings.length > 0) {
+                        resultDiv.innerHTML = `
+                            <div class="success">✅ Insights working!</div>
+                            <div class="info">Found ${data.key_findings.length} key findings</div>
+                            <div class="info">Sample finding: ${data.key_findings[0].title}</div>
+                        `;
+                    } else {
+                        resultDiv.innerHTML = '<div class="error">❌ No insights found</div>';
+                    }
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ Insights API failed: ${response.status}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ Insights error: ${error.message}</div>`;
+            }
+        }
+    </script>
+</body>
+</html>

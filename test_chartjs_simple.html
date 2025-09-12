@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chart.js Loading Test</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        .info { color: blue; }
+    </style>
+</head>
+<body>
+    <h2>Chart.js Loading Test</h2>
+    
+    <div id="status">Loading Chart.js...</div>
+    <canvas id="testChart" width="400" height="200" style="border: 1px solid #ccc; margin-top: 20px;"></canvas>
+    
+    <script>
+        let chartJsLoaded = false;
+        let domReady = false;
+        
+        function loadChartJS() {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js';
+            script.onload = function() {
+                console.log('Chart.js loaded successfully');
+                chartJsLoaded = true;
+                updateStatus('Chart.js loaded successfully', 'success');
+                if (domReady) {
+                    createTestChart();
+                }
+            };
+            script.onerror = function() {
+                console.error('Failed to load Chart.js');
+                updateStatus('Failed to load Chart.js', 'error');
+            };
+            document.head.appendChild(script);
+        }
+        
+        function updateStatus(message, type = 'info') {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = type;
+        }
+        
+        function createTestChart() {
+            if (!chartJsLoaded || typeof Chart === 'undefined') {
+                updateStatus('Cannot create chart - Chart.js not available', 'error');
+                return;
+            }
+            
+            updateStatus('Creating test chart...', 'info');
+            
+            const canvas = document.getElementById('testChart');
+            const ctx = canvas.getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Test 1', 'Test 2', 'Test 3'],
+                    datasets: [{
+                        label: 'Test Data',
+                        data: [12, 19, 3],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Test Chart - Chart.js Working!'
+                        }
+                    }
+                }
+            });
+            
+            updateStatus('Chart created successfully!', 'success');
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM ready');
+            domReady = true;
+            
+            if (chartJsLoaded && typeof Chart !== 'undefined') {
+                createTestChart();
+            }
+        });
+        
+        // Start loading Chart.js immediately
+        loadChartJS();
+    </script>
+</body>
+</html>
