@@ -829,16 +829,54 @@ def main():
         text_questions = stats['text_questions']
         
         if text_questions:
-            st.markdown(f"📝 **{len(text_questions)} Text Questions Available:**")
+            # Check which text questions have data for current filters
+            text_filters = {
+                'countries': selected_countries,
+                'nationalities': selected_nationalities,
+                'purposes': selected_purposes,
+                'frequency': selected_frequencies
+            }
+            
+            # Build list of questions with available data
+            questions_with_data = []
+            question_data_counts = {}
             
             for question in text_questions:
-                st.markdown(f'<span class="theme-tag">{question[:50]}{"..." if len(question) > 50 else ""}</span>', unsafe_allow_html=True)
+                responses = processor.get_text_responses_for_wordcloud(question, text_filters)
+                response_count = len(responses) if responses else 0
+                question_data_counts[question] = response_count
+                if response_count > 0:
+                    questions_with_data.append(f"{question} ({response_count} responses)")
             
-            selected_text_question = st.selectbox(
-                "🎯 Select Question",
-                options=text_questions,
-                key="wordcloud_question"
-            )
+            if questions_with_data:
+                st.markdown(f"📝 **{len(questions_with_data)} Text Questions with Current Filter Data:**")
+                
+                selected_text_question_display = st.selectbox(
+                    "🎯 Select Question for Word Cloud Analysis",
+                    options=questions_with_data,
+                    key="wordcloud_question"
+                )
+                
+                # Extract the actual question name from the display
+                selected_text_question = selected_text_question_display.split(" (")[0]
+                response_count = question_data_counts[selected_text_question]
+                
+                st.info(f"💡 **Selected:** {selected_text_question} - {response_count} text responses available with current filters")
+            else:
+                st.warning("⚠️ No text responses available with current filter selection")
+                st.markdown("**💡 Suggestions:**")
+                st.write("• Try removing some filters to see more data")
+                st.write("• Business travelers may have fewer text responses than leisure travelers")
+                st.write("• Some questions like 'Entertainment Experience Story' typically have more responses")
+                
+                # Show all questions with their data counts
+                st.markdown("**📊 Data availability by question (all filters):**")
+                for question in text_questions:
+                    all_responses = processor.get_text_responses_for_wordcloud(question, None)
+                    count = len(all_responses) if all_responses else 0
+                    st.write(f"   • {question}: {count} total responses")
+                
+                return  # Exit early if no data
             
             if st.button("🚀 Generate Word Cloud", type="primary"):
                 with st.spinner("Analyzing text..."):
@@ -923,10 +961,33 @@ def main():
         insights_analyzer = AdvancedTextInsightsAnalyzer()
         text_questions = stats['text_questions']
         
+        # Show current filter status
+        filter_info = []
+        if selected_countries:
+            filter_info.append(f"Countries: {', '.join(selected_countries)}")
+        if selected_nationalities:
+            filter_info.append(f"Nationalities: {', '.join(selected_nationalities[:3])}{'...' if len(selected_nationalities) > 3 else ''}")
+        if selected_purposes:
+            filter_info.append(f"Purposes: {', '.join(selected_purposes)}")
+        if selected_frequencies:
+            filter_info.append(f"Hotel Frequency: {', '.join(selected_frequencies)}")
+        
+        if filter_info:
+            st.markdown(f"**🔍 Current Analysis Scope:** {' | '.join(filter_info)}")
+            st.markdown(f"**📊 Filtered Dataset:** {len(filtered_data)} responses (from 400 total)")
+        else:
+            st.markdown(f"**📊 Analysis Scope:** All 400 responses (no filters applied)")
+        
         if text_questions and len(filtered_data) > 10:
             
-            if st.button("🔍 Generate Advanced Insights", type="primary"):
-                with st.spinner("Analyzing guest response meanings..."):
+            # Show what will be analyzed
+            st.markdown(f"**🔤 Text Questions to Analyze:** {len(text_questions)} questions")
+            with st.expander("📋 View Text Questions", expanded=False):
+                for i, q in enumerate(text_questions, 1):
+                    st.write(f"{i}. {q}")
+            
+            if st.button("🔍 Generate Dynamic Advanced Insights", type="primary"):
+                with st.spinner("Analyzing guest response meanings based on your filters..."):
                     
                     insights_report = insights_analyzer.generate_comprehensive_insights_report(
                         filtered_data, 
@@ -934,15 +995,27 @@ def main():
                     )
                     
                     if insights_report and 'error' not in insights_report:
-                        st.success(f"✅ Analysis complete: {insights_report.get('total_responses_analyzed', 0)} responses")
+                        st.success(f"✅ Dynamic Analysis Complete!")
+                        st.markdown(f"""
+                        <div class="metric-card">
+                            <h4>📊 Analysis Summary</h4>
+                            <p><strong>Responses Analyzed:</strong> {insights_report.get('total_responses_analyzed', 0)}</p>
+                            <p><strong>Filter Impact:</strong> Analysis customized to your selected criteria</p>
+                            <p><strong>Insight Scope:</strong> {len(text_questions)} text question categories</p>
+                        </div>
+                        """, unsafe_allow_html=True)
                         
                         display_advanced_insights(insights_report)
                         
                     else:
-                        st.warning("⚠️ Could not generate insights. Adjust filters or check data.")
+                        st.warning("⚠️ Could not generate insights. Try adjusting filters or check data availability.")
         
         else:
-            st.info("💡 Need at least 10 responses for advanced insights analysis.")
+            if len(filtered_data) <= 10:
+                st.info(f"💡 Need at least 10 responses for advanced insights analysis. Current filters result in {len(filtered_data)} responses.")
+                st.markdown("**💡 Try:** Removing some filters to increase the sample size")
+            else:
+                st.info("💡 No text questions available for advanced analysis.")
     
     with tab5:
         st.markdown("### 💼 Business Intelligence")
