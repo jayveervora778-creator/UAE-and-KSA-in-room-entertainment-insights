@@ -1,0 +1,190 @@
+Exception in callback AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519
+handle: <Handle AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 519, in <lambda>
+    lambda: self._handle_scriptrunner_event_on_event_loop(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 616, in _handle_scriptrunner_event_on_event_loop
+    msg = self._create_new_session_message(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 750, in _create_new_session_message
+    _populate_user_info_msg(imsg.user_info)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 1154, in _populate_user_info_msg
+    inst = Installation.instance()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 228, in instance
+    cls._instance = Installation()
+                    ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 233, in __init__
+    uuid.uuid5(uuid.NAMESPACE_DNS, _get_machine_id_v3())
+                                   ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 173, in _get_machine_id_v3
+    machine_id = f.read()
+                 ^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 25-26: invalid continuation byte
+Exception in callback AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519
+handle: <Handle AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 519, in <lambda>
+    lambda: self._handle_scriptrunner_event_on_event_loop(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 616, in _handle_scriptrunner_event_on_event_loop
+    msg = self._create_new_session_message(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 750, in _create_new_session_message
+    _populate_user_info_msg(imsg.user_info)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 1154, in _populate_user_info_msg
+    inst = Installation.instance()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 228, in instance
+    cls._instance = Installation()
+                    ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 233, in __init__
+    uuid.uuid5(uuid.NAMESPACE_DNS, _get_machine_id_v3())
+                                   ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 173, in _get_machine_id_v3
+    machine_id = f.read()
+                 ^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 25-26: invalid continuation byte
+Exception in callback AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519
+handle: <Handle AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 519, in <lambda>
+    lambda: self._handle_scriptrunner_event_on_event_loop(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 616, in _handle_scriptrunner_event_on_event_loop
+    msg = self._create_new_session_message(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 750, in _create_new_session_message
+    _populate_user_info_msg(imsg.user_info)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 1154, in _populate_user_info_msg
+    inst = Installation.instance()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 228, in instance
+    cls._instance = Installation()
+                    ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 233, in __init__
+    uuid.uuid5(uuid.NAMESPACE_DNS, _get_machine_id_v3())
+                                   ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 173, in _get_machine_id_v3
+    machine_id = f.read()
+                 ^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 25-26: invalid continuation byte
+Exception in callback AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519
+handle: <Handle AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 519, in <lambda>
+    lambda: self._handle_scriptrunner_event_on_event_loop(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 616, in _handle_scriptrunner_event_on_event_loop
+    msg = self._create_new_session_message(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 750, in _create_new_session_message
+    _populate_user_info_msg(imsg.user_info)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 1154, in _populate_user_info_msg
+    inst = Installation.instance()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 228, in instance
+    cls._instance = Installation()
+                    ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 233, in __init__
+    uuid.uuid5(uuid.NAMESPACE_DNS, _get_machine_id_v3())
+                                   ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 173, in _get_machine_id_v3
+    machine_id = f.read()
+                 ^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 25-26: invalid continuation byte
+Exception in callback AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519
+handle: <Handle AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 519, in <lambda>
+    lambda: self._handle_scriptrunner_event_on_event_loop(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 616, in _handle_scriptrunner_event_on_event_loop
+    msg = self._create_new_session_message(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 750, in _create_new_session_message
+    _populate_user_info_msg(imsg.user_info)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 1154, in _populate_user_info_msg
+    inst = Installation.instance()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 228, in instance
+    cls._instance = Installation()
+                    ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 233, in __init__
+    uuid.uuid5(uuid.NAMESPACE_DNS, _get_machine_id_v3())
+                                   ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 173, in _get_machine_id_v3
+    machine_id = f.read()
+                 ^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 25-26: invalid continuation byte
+Exception in callback AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519
+handle: <Handle AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 519, in <lambda>
+    lambda: self._handle_scriptrunner_event_on_event_loop(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 616, in _handle_scriptrunner_event_on_event_loop
+    msg = self._create_new_session_message(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 750, in _create_new_session_message
+    _populate_user_info_msg(imsg.user_info)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 1154, in _populate_user_info_msg
+    inst = Installation.instance()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 228, in instance
+    cls._instance = Installation()
+                    ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 233, in __init__
+    uuid.uuid5(uuid.NAMESPACE_DNS, _get_machine_id_v3())
+                                   ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 173, in _get_machine_id_v3
+    machine_id = f.read()
+                 ^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 25-26: invalid continuation byte
+2025-09-12 00:11:05.050 An update to the [server] config option section was detected. To have these changes be reflected, please restart streamlit.
+Exception in callback AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519
+handle: <Handle AppSession._on_scriptrunner_event.<locals>.<lambda>() at /usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py:519>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 519, in <lambda>
+    lambda: self._handle_scriptrunner_event_on_event_loop(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 616, in _handle_scriptrunner_event_on_event_loop
+    msg = self._create_new_session_message(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 750, in _create_new_session_message
+    _populate_user_info_msg(imsg.user_info)
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/app_session.py", line 1154, in _populate_user_info_msg
+    inst = Installation.instance()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 228, in instance
+    cls._instance = Installation()
+                    ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 233, in __init__
+    uuid.uuid5(uuid.NAMESPACE_DNS, _get_machine_id_v3())
+                                   ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/metrics_util.py", line 173, in _get_machine_id_v3
+    machine_id = f.read()
+                 ^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 25-26: invalid continuation byte

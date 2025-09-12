@@ -21,7 +21,7 @@ This repository contains a comprehensive OSN guest survey analytics dashboard fo
 2. Sign in with your GitHub account
 3. Click **"New app"**
 4. Select your repository and branch (usually `main`)
-5. Set **Main file path**: `streamlit_dashboard.py`
+5. Set **Main file path**: `streamlit_app.py` (or leave default)
 6. Click **"Deploy!"**
 
 ### Step 3: Access Your Dashboard
@@ -32,7 +32,7 @@ This repository contains a comprehensive OSN guest survey analytics dashboard fo
 
 ```
 /
-├── streamlit_dashboard.py          # Main Streamlit application
+├── streamlit_app.py               # Main Streamlit application (required naming)
 ├── requirements.txt                # Dependencies for Streamlit Cloud
 ├── .streamlit/config.toml         # Streamlit configuration
 ├── data/survey_data.xlsx          # Survey dataset (400 responses)
