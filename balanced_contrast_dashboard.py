@@ -767,7 +767,7 @@ def main():
                 )
                 question2 = question_lookup.get(question2_display, question2_display)
             
-            if st.button("🔍 Generate Analysis", type="primary"):
+            if st.button("🔍 Generate Analysis", type="primary", key="generate_cross_analysis"):
                 with st.spinner("Analyzing..."):
                     
                     crosstab_filters = {
@@ -879,7 +879,7 @@ def main():
                 # Continue to show the rest of the UI even if no word cloud data available
                 selected_text_question = None
             
-            if selected_text_question and st.button("🚀 Generate Word Cloud", type="primary"):
+            if selected_text_question and st.button("🚀 Generate Word Cloud", type="primary", key="generate_word_cloud"):
                 with st.spinner("Analyzing text..."):
                     
                     text_filters = {
@@ -987,7 +987,7 @@ def main():
                 for i, q in enumerate(text_questions, 1):
                     st.write(f"{i}. {q}")
             
-            if st.button("🔍 Generate Dynamic Advanced Insights", type="primary"):
+            if st.button("🔍 Generate Dynamic Advanced Insights", type="primary", key="generate_advanced_insights"):
                 with st.spinner("Analyzing guest response meanings based on your filters..."):
                     
                     insights_report = insights_analyzer.generate_comprehensive_insights_report(
