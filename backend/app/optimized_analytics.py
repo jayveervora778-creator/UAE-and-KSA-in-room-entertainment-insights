@@ -11,7 +11,14 @@ import json
 import time
 from functools import lru_cache
 import hashlib
-from .corrected_data_processor import CorrectedSurveyDataProcessor
+try:
+    from .corrected_data_processor import CorrectedSurveyDataProcessor
+except ImportError:
+    try:
+        from corrected_data_processor import CorrectedSurveyDataProcessor
+    except ImportError:
+        # Skip this import if not available
+        CorrectedSurveyDataProcessor = None
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score

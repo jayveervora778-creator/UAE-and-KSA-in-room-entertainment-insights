@@ -1,0 +1,866 @@
+2025-09-12T19:18:06: 
+2025-09-12T19:18:06:   You can now view your Streamlit app in your browser.
+2025-09-12T19:18:06: 
+2025-09-12T19:18:06:   URL: 
+2025-09-12T19:18:06: http://0.0.0.0:8502
+2025-09-12T19:18:06: 
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:23:11: ✅ Imported refined theme modules
+2025-09-12T19:23:11: ✅ Applied refined light theme
+2025-09-12T19:23:11: ✅ Applied refined black killer
+2025-09-12T19:23:11:   Stopping...
+2025-09-12T19:23:14: 
+2025-09-12T19:23:14:   You can now view your Streamlit app in your browser.
+2025-09-12T19:23:14: 
+2025-09-12T19:23:14:   URL: 
+2025-09-12T19:23:14: http://0.0.0.0:8502
+2025-09-12T19:23:14: 
+2025-09-12T19:24:24: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:24:24: ✅ Imported refined theme modules
+2025-09-12T19:24:24: ✅ Applied refined light theme
+2025-09-12T19:24:24: ✅ Applied refined black killer
+2025-09-12T19:24:24: 🔄 Loading comprehensive survey data...
+2025-09-12T19:24:24: 📊 Found sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+2025-09-12T19:24:24: 📋 Processing sheet: Guests (UAE)
+2025-09-12T19:24:24: ❌ Error processing sheet Guests (UAE): 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:24:24: ❌ Error in data processing: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:24:24: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:24:24: ✅ Imported refined theme modules
+2025-09-12T19:24:24: ✅ Applied refined light theme
+2025-09-12T19:24:24: ✅ Applied refined black killer
+2025-09-12T19:24:24: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:24:24: ✅ Imported refined theme modules
+2025-09-12T19:24:24: ✅ Applied refined light theme
+2025-09-12T19:24:24: ✅ Applied refined black killer
+2025-09-12T19:24:24:   Stopping...
+2025-09-12T19:24:26: 
+2025-09-12T19:24:26:   You can now view your Streamlit app in your browser.
+2025-09-12T19:24:26: 
+2025-09-12T19:24:26:   URL: http://0.0.0.0:8502
+2025-09-12T19:24:26: 
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: 🔄 Loading comprehensive survey data...
+2025-09-12T19:27:28: 📊 Found sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+2025-09-12T19:27:28: 📋 Processing sheet: Guests (UAE)
+2025-09-12T19:27:28: Warning: Could not process column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 1: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 1: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 1: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 1: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: 📋 Processing sheet: Guests Online (KSA)
+2025-09-12T19:27:28: Warning: Could not process column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not process column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 3: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: Warning: Could not handle missing values for column 2: 'DataFrame' object has no attribute 'dtype'
+2025-09-12T19:27:28: ❌ Error in data processing: Reindexing only valid with uniquely valued Index objects
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:27:28: ✅ Imported refined theme modules
+2025-09-12T19:27:28: ✅ Applied refined light theme
+2025-09-12T19:27:28: ✅ Applied refined black killer
+2025-09-12T19:27:28:   Stopping...
+2025-09-12T19:27:30: 
+2025-09-12T19:27:30:   You can now view your Streamlit app in your browser.
+2025-09-12T19:27:30: 
+2025-09-12T19:27:30:   URL: http://0.0.0.0:8502
+2025-09-12T19:27:30: 
+2025-09-12T19:30:47: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:30:47: ✅ Imported refined theme modules
+2025-09-12T19:30:47: ✅ Applied refined light theme
+2025-09-12T19:30:47: ✅ Applied refined black killer
+2025-09-12T19:30:47: 🔄 Loading comprehensive survey data...
+2025-09-12T19:30:47: 📊 Found sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+2025-09-12T19:30:47: 📋 Processing sheet: Guests (UAE)
+2025-09-12T19:30:47: 📋 Processing sheet: Guests Online (KSA)
+2025-09-12T19:30:47: ✅ Combined data: 394 total responses
+2025-09-12T19:30:47: ✅ Comprehensive data processing complete! Processed 2 sheets.
+2025-09-12T19:30:47: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:30:47: ✅ Imported refined theme modules
+2025-09-12T19:30:47: ✅ Applied refined light theme
+2025-09-12T19:30:47: ✅ Applied refined black killer
+2025-09-12T19:30:47: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:30:47: ✅ Imported refined theme modules
+2025-09-12T19:30:47: ✅ Applied refined light theme
+2025-09-12T19:30:47: ✅ Applied refined black killer
+2025-09-12T19:30:47: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:30:47: ✅ Imported refined theme modules
+2025-09-12T19:30:47: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:30:47: ✅ Imported refined theme modules
+2025-09-12T19:30:47: ✅ Applied refined light theme
+2025-09-12T19:30:47: ✅ Applied refined black killer
+2025-09-12T19:30:47: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:30:47: ✅ Imported refined theme modules
+2025-09-12T19:30:47: ✅ Applied refined light theme
+2025-09-12T19:30:47: ✅ Applied refined black killer
+2025-09-12T19:30:47: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T19:30:47: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T19:30:47: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T19:30:47: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:30:47: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T19:30:47: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T19:30:47: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:30:47: [31m [0m [2m/home/user/webapp/[0m[1menhanced_streamlit_app.py[0m:29 in <module>                           [31m [0m
+2025-09-12T19:30:47: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:30:47: [31m [0m   [2m 26 [0m                                                                               [31m [0m
+2025-09-12T19:30:47: [31m [0m   [2m 27 [0m[2m# Import enhanced data processor[0m                                               [31m [0m
+2025-09-12T19:30:47: [31m [0m   [2m 28 [0m[94mtry[0m:                                                                           [31m [0m
+2025-09-12T19:30:47: [31m [0m [31m❱ [0m 29 [2m│   [0m[94mfrom[0m[90m [0m[4;96mcomprehensive_data_processor[0m[90m [0m[94mimport[0m ComprehensiveOSNProcessor         [31m [0m
+2025-09-12T19:30:47: [31m [0m   [2m 30 [0m[2m│   [0m[96mprint[0m([33m"[0m[33m✅ Imported ComprehensiveOSNProcessor[0m[33m"[0m)                             [31m [0m
+2025-09-12T19:30:47: [31m [0m   [2m 31 [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mImportError[0m[1;4m [0m[1;4;94mas[0m[1;4m e:[0m                                                       [31m [0m
+2025-09-12T19:30:47: [31m [0m   [2m 32 [0m[2m│   [0m[1;4mst.error([0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mCould not import ComprehensiveOSNProcessor: [0m[1;4;33m{[0m[1;4me[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m)[0m               [31m [0m
+2025-09-12T19:30:47: [31m [0m in _find_and_load:1360                                                               [31m [0m
+2025-09-12T19:30:47: [31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+2025-09-12T19:30:47: [31m [0m in _load_unlocked:946                                                                [31m [0m
+2025-09-12T19:30:47: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T19:30:47: [1;91mKeyError: [0m[32m'comprehensive_data_processor'[0m
+2025-09-12T19:31:03: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T19:31:03: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T19:31:03: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T19:31:03: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:03: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T19:31:03: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T19:31:03: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:03: [31m [0m [2m/home/user/webapp/[0m[1menhanced_streamlit_app.py[0m:29 in <module>                           [31m [0m
+2025-09-12T19:31:03: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:03: [31m [0m   [2m 26 [0m                                                                               [31m [0m
+2025-09-12T19:31:03: [31m [0m   [2m 27 [0m[2m# Import enhanced data processor[0m                                               [31m [0m
+2025-09-12T19:31:03: [31m [0m   [2m 28 [0m[94mtry[0m:                                                                           [31m [0m
+2025-09-12T19:31:03: [31m [0m [31m❱ [0m 29 [2m│   [0m[94mfrom[0m[90m [0m[4;96mcomprehensive_data_processor[0m[90m [0m[94mimport[0m ComprehensiveOSNProcessor         [31m [0m
+2025-09-12T19:31:03: [31m [0m   [2m 30 [0m[2m│   [0m[96mprint[0m([33m"[0m[33m✅ Imported ComprehensiveOSNProcessor[0m[33m"[0m)                             [31m [0m
+2025-09-12T19:31:03: [31m [0m   [2m 31 [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mImportError[0m[1;4m [0m[1;4;94mas[0m[1;4m e:[0m                                                       [31m [0m
+2025-09-12T19:31:03: [31m [0m   [2m 32 [0m[2m│   [0m[1;4mst.error([0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mCould not import ComprehensiveOSNProcessor: [0m[1;4;33m{[0m[1;4me[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m)[0m               [31m [0m
+2025-09-12T19:31:03: [31m [0m in _find_and_load:1360                                                               [31m [0m
+2025-09-12T19:31:03: [31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+2025-09-12T19:31:03: [31m [0m in _load_unlocked:946                                                                [31m [0m
+2025-09-12T19:31:03: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T19:31:03: [1;91mKeyError: [0m[32m'comprehensive_data_processor'[0m
+2025-09-12T19:31:25: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:25: ✅ Imported refined theme modules
+2025-09-12T19:31:25: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:25: ✅ Imported refined theme modules
+2025-09-12T19:31:25: ✅ Applied refined light theme
+2025-09-12T19:31:25: ✅ Applied refined black killer
+2025-09-12T19:31:25: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:25: ✅ Imported refined theme modules
+2025-09-12T19:31:25: ✅ Applied refined light theme
+2025-09-12T19:31:25: ✅ Applied refined black killer
+2025-09-12T19:31:25: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T19:31:25: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T19:31:25: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T19:31:25: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:25: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T19:31:25: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T19:31:25: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:25: [31m [0m [2m/home/user/webapp/[0m[1menhanced_streamlit_app.py[0m:29 in <module>                           [31m [0m
+2025-09-12T19:31:25: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:25: [31m [0m   [2m 26 [0m                                                                               [31m [0m
+2025-09-12T19:31:25: [31m [0m   [2m 27 [0m[2m# Import enhanced data processor[0m                                               [31m [0m
+2025-09-12T19:31:25: [31m [0m   [2m 28 [0m[94mtry[0m:                                                                           [31m [0m
+2025-09-12T19:31:25: [31m [0m [31m❱ [0m 29 [2m│   [0m[94mfrom[0m[90m [0m[4;96mcomprehensive_data_processor[0m[90m [0m[94mimport[0m ComprehensiveOSNProcessor         [31m [0m
+2025-09-12T19:31:25: [31m [0m   [2m 30 [0m[2m│   [0m[96mprint[0m([33m"[0m[33m✅ Imported ComprehensiveOSNProcessor[0m[33m"[0m)                             [31m [0m
+2025-09-12T19:31:25: [31m [0m   [2m 31 [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mImportError[0m[1;4m [0m[1;4;94mas[0m[1;4m e:[0m                                                       [31m [0m
+2025-09-12T19:31:25: [31m [0m   [2m 32 [0m[2m│   [0m[1;4mst.error([0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mCould not import ComprehensiveOSNProcessor: [0m[1;4;33m{[0m[1;4me[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m)[0m               [31m [0m
+2025-09-12T19:31:25: [31m [0m in _find_and_load:1360                                                               [31m [0m
+2025-09-12T19:31:25: [31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+2025-09-12T19:31:25: [31m [0m in _load_unlocked:946                                                                [31m [0m
+2025-09-12T19:31:25: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T19:31:25: [1;91mKeyError: [0m[32m'comprehensive_data_processor'[0m
+2025-09-12T19:31:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:34: ✅ Imported refined theme modules
+2025-09-12T19:31:34: ✅ Applied refined light theme
+2025-09-12T19:31:34: ✅ Applied refined black killer
+2025-09-12T19:31:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:34: ✅ Imported refined theme modules
+2025-09-12T19:31:34: ✅ Imported refined theme modules
+2025-09-12T19:31:34: ✅ Applied refined light theme
+2025-09-12T19:31:34: ✅ Applied refined black killer
+2025-09-12T19:31:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:34: ✅ Imported refined theme modules
+2025-09-12T19:31:34: ✅ Applied refined light theme
+2025-09-12T19:31:34: ✅ Applied refined black killer
+2025-09-12T19:31:34: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T19:31:34: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T19:31:34: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T19:31:34: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:34: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T19:31:34: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T19:31:34: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:34: [31m [0m [2m/home/user/webapp/[0m[1menhanced_streamlit_app.py[0m:29 in <module>                           [31m [0m
+2025-09-12T19:31:34: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:34: [31m [0m   [2m 26 [0m                                                                               [31m [0m
+2025-09-12T19:31:34: [31m [0m   [2m 27 [0m[2m# Import enhanced data processor[0m                                               [31m [0m
+2025-09-12T19:31:34: [31m [0m   [2m 28 [0m[94mtry[0m:                                                                           [31m [0m
+2025-09-12T19:31:34: [31m [0m [31m❱ [0m 29 [2m│   [0m[94mfrom[0m[90m [0m[4;96mcomprehensive_data_processor[0m[90m [0m[94mimport[0m ComprehensiveOSNProcessor         [31m [0m
+2025-09-12T19:31:34: [31m [0m   [2m 30 [0m[2m│   [0m[96mprint[0m([33m"[0m[33m✅ Imported ComprehensiveOSNProcessor[0m[33m"[0m)                             [31m [0m
+2025-09-12T19:31:34: [31m [0m   [2m 31 [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mImportError[0m[1;4m [0m[1;4;94mas[0m[1;4m e:[0m                                                       [31m [0m
+2025-09-12T19:31:34: [31m [0m   [2m 32 [0m[2m│   [0m[1;4mst.error([0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mCould not import ComprehensiveOSNProcessor: [0m[1;4;33m{[0m[1;4me[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m)[0m               [31m [0m
+2025-09-12T19:31:34: [31m [0m in _find_and_load:1360                                                               [31m [0m
+2025-09-12T19:31:34: [31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+2025-09-12T19:31:34: [31m [0m in _load_unlocked:946                                                                [31m [0m
+2025-09-12T19:31:34: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T19:31:34: [1;91mKeyError: [0m[32m'comprehensive_data_processor'[0m
+2025-09-12T19:31:44: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:44: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:44: ✅ Imported refined theme modules
+2025-09-12T19:31:44: ✅ Imported refined theme modules
+2025-09-12T19:31:44: ✅ Applied refined light theme
+2025-09-12T19:31:44: ✅ Applied refined black killer
+2025-09-12T19:31:44: ✅ Applied refined light theme
+2025-09-12T19:31:44: ✅ Applied refined black killer
+2025-09-12T19:31:44: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:31:44: ✅ Imported refined theme modules
+2025-09-12T19:31:44: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T19:31:44: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T19:31:44: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T19:31:44: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:44: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T19:31:44: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T19:31:44: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:44: [31m [0m [2m/home/user/webapp/[0m[1menhanced_streamlit_app.py[0m:29 in <module>                           [31m [0m
+2025-09-12T19:31:44: [31m [0m                                                                                      [31m [0m
+2025-09-12T19:31:44: [31m [0m   [2m 26 [0m                                                                               [31m [0m
+2025-09-12T19:31:44: [31m [0m   [2m 27 [0m[2m# Import enhanced data processor[0m                                               [31m [0m
+2025-09-12T19:31:44: [31m [0m   [2m 28 [0m[94mtry[0m:                                                                           [31m [0m
+2025-09-12T19:31:44: [31m [0m [31m❱ [0m 29 [2m│   [0m[94mfrom[0m[90m [0m[4;96mcomprehensive_data_processor[0m[90m [0m[94mimport[0m ComprehensiveOSNProcessor         [31m [0m
+2025-09-12T19:31:44: [31m [0m   [2m 30 [0m[2m│   [0m[96mprint[0m([33m"[0m[33m✅ Imported ComprehensiveOSNProcessor[0m[33m"[0m)                             [31m [0m
+2025-09-12T19:31:44: [31m [0m   [2m 31 [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mImportError[0m[1;4m [0m[1;4;94mas[0m[1;4m e:[0m                                                       [31m [0m
+2025-09-12T19:31:44: [31m [0m   [2m 32 [0m[2m│   [0m[1;4mst.error([0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mCould not import ComprehensiveOSNProcessor: [0m[1;4;33m{[0m[1;4me[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m)[0m               [31m [0m
+2025-09-12T19:31:44: [31m [0m in _find_and_load:1360                                                               [31m [0m
+2025-09-12T19:31:44: [31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+2025-09-12T19:31:44: [31m [0m in _load_unlocked:946                                                                [31m [0m
+2025-09-12T19:31:44: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T19:31:44: [1;91mKeyError: [0m[32m'comprehensive_data_processor'[0m
+2025-09-12T19:32:09: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:32:09: ✅ Imported refined theme modules
+2025-09-12T19:32:09: ✅ Applied refined light theme
+2025-09-12T19:32:09: ✅ Applied refined black killer
+2025-09-12T19:32:09: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:32:09: ✅ Imported refined theme modules
+2025-09-12T19:32:09: ✅ Applied refined light theme
+2025-09-12T19:32:09: ✅ Applied refined black killer
+2025-09-12T19:32:09: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:32:09: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:32:09: ✅ Imported refined theme modules
+2025-09-12T19:32:09: ✅ Imported refined theme modules
+2025-09-12T19:32:09: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:32:09: ✅ Imported refined theme modules
+2025-09-12T19:32:09: ✅ Applied refined light theme
+2025-09-12T19:32:09: ✅ Applied refined black killer
+2025-09-12T19:32:09: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:32:09: ✅ Imported refined theme modules
+2025-09-12T19:32:09: ✅ Applied refined light theme
+2025-09-12T19:32:09: ✅ Applied refined black killer
+2025-09-12T19:32:09:   Stopping...
+2025-09-12T19:32:10: 
+2025-09-12T19:32:10:   You can now view your Streamlit app in your browser.
+2025-09-12T19:32:10: 
+2025-09-12T19:32:10:   URL: http://0.0.0.0:8502
+2025-09-12T19:32:10: 
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Applied refined light theme
+2025-09-12T19:35:34: ✅ Applied refined black killer
+2025-09-12T19:35:34: 🔄 Loading comprehensive survey data...
+2025-09-12T19:35:34: 📊 Found sheets: ['Guests (UAE)', 'Guests Online (KSA)']
+2025-09-12T19:35:34: 📋 Processing sheet: Guests (UAE)
+2025-09-12T19:35:34: 🔍 Original data shape: (197, 45)
+2025-09-12T19:35:34: 🔍 After removing empty columns: (197, 44)
+2025-09-12T19:35:34: 🔍 After removing completely empty rows: (197, 44)
+2025-09-12T19:35:34: ⚠️ Warning: Only 197 rows available, expected 200
+2025-09-12T19:35:34: ✅ Final cleaned data shape: (197, 44)
+2025-09-12T19:35:34: ✅ UAE data: 197 responses (target: 200)
+2025-09-12T19:35:34: 📋 Processing sheet: Guests Online (KSA)
+2025-09-12T19:35:34: 🔍 Original data shape: (197, 45)
+2025-09-12T19:35:34: 🔍 After removing empty columns: (197, 45)
+2025-09-12T19:35:34: 🔍 After removing completely empty rows: (197, 45)
+2025-09-12T19:35:34: ⚠️ Warning: Only 197 rows available, expected 200
+2025-09-12T19:35:34: ✅ Final cleaned data shape: (197, 45)
+2025-09-12T19:35:34: ✅ KSA data: 197 responses (target: 200)
+2025-09-12T19:35:34: ⚠️ UAE data has 197 rows, adjusting to 200...
+2025-09-12T19:35:34: ⚠️ KSA data has 197 rows, adjusting to 200...
+2025-09-12T19:35:34: ✅ Combined data: EXACTLY 400 total responses (UAE: 200, KSA: 200)
+2025-09-12T19:35:34: ❌ Error in data processing: Can only use .str accessor with string values!
+2025-09-12T19:35:34: Creating sample data for demonstration...
+2025-09-12T19:35:34: 📝 Creating sample survey data with EXACTLY 400 responses...
+2025-09-12T19:35:34: ✅ UAE data: 200 responses
+2025-09-12T19:35:34: ✅ KSA data: 200 responses
+2025-09-12T19:35:34: ✅ Combined data: 400 responses
+2025-09-12T19:35:34: ✅ Sample data created successfully with EXACTLY 400 responses!
+2025-09-12T19:35:34: ✅ Applied refined light theme
+2025-09-12T19:35:34: ✅ Applied refined black killer
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Applied refined light theme
+2025-09-12T19:35:34: ✅ Applied refined black killer
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Applied refined light theme
+2025-09-12T19:35:34: ✅ Applied refined black killer
+2025-09-12T19:35:34: ✅ Imported ComprehensiveOSNProcessor
+2025-09-12T19:35:34: ✅ Imported refined theme modules
+2025-09-12T19:35:34: ✅ Applied refined light theme
+2025-09-12T19:35:34: ✅ Applied refined black killer
+2025-09-12T19:35:34:   Stopping...
+2025-09-12T19:35:36: 
+2025-09-12T19:35:36:   You can now view your Streamlit app in your browser.
+2025-09-12T19:35:36: 
+2025-09-12T19:35:36:   URL: http://0.0.0.0:8502
+2025-09-12T19:35:36: 
+2025-09-12T21:03:38: 
+2025-09-12T21:03:38:   You can now view your Streamlit app in your browser.
+2025-09-12T21:03:38: 
+2025-09-12T21:03:38:   URL: http://0.0.0.0:8502
+2025-09-12T21:03:38: 
+2025-09-12T21:03:58: 🔄 Loading survey data (ENHANCED - Better Questions + Word Cloud Support)...
+2025-09-12T21:03:58: 📋 Loaded 22 question mappings
+2025-09-12T21:03:58: 📋 Guests (UAE): 200 responses loaded
+2025-09-12T21:03:58: 📋 Guests Online (KSA): 200 responses loaded
+2025-09-12T21:03:58: 📝 ENHANCED: Mapped to 43 columns (no more 'Unnamed')
+2025-09-12T21:03:58: 📋 Available questions: ['Nationality', 'Visit Purpose', 'Visit Purpose (Other)', 'Hotel Stays Per Year', 'Hotel Choice Reason 1']...
+2025-09-12T21:03:58: 🧹 Normalizing nationality data (keeping all responses)...
+2025-09-12T21:03:58: 🧹 Converting visit purpose codes...
+2025-09-12T21:03:58: 🧹 Converting hotel frequency codes...
+2025-09-12T21:03:58: ✅ ENHANCED: Data cleaned, still have exactly 400 responses
+2025-09-12T21:03:58: 🔤 Identified 6 text analysis questions:
+2025-09-12T21:03:58:    - Visit Purpose (Other)
+2025-09-12T21:03:58:    - Please specify other reason for choosing the hotel?
+2025-09-12T21:03:58:    - Entertainment Experience Story
+2025-09-12T21:03:58:    - Please specify other type of content did you watch?
+2025-09-12T21:03:58:    - Entertainment Improvement Suggestions
+2025-09-12T21:03:58:    - General Entertainment Suggestions
+2025-09-12T21:03:58: 🎯 ENHANCED Filter options:
+2025-09-12T21:03:58:    Nationalities (55): ALL INCLUDED
+2025-09-12T21:03:58:    Visit Purposes: ['Business', 'Family Vacation', 'Leisure', 'Other']
+2025-09-12T21:03:58:    Hotel Frequency: ['1-2 times', '3-5 times', '5.0', 'More than 5 times']
+2025-09-12T21:03:58:    Text Analysis Questions: 6
+2025-09-12T21:03:58: ✅ ENHANCED: Successfully loaded exactly 400 responses
+2025-09-12T21:03:58:    UAE: 200
+2025-09-12T21:03:58:    KSA: 200
+2025-09-12T21:03:58:    Text Analysis Questions: 6
+2025-09-12T21:03:58:   Stopping...
+2025-09-12T21:04:00: 
+2025-09-12T21:04:00:   You can now view your Streamlit app in your browser.
+2025-09-12T21:04:00: 
+2025-09-12T21:04:00:   URL: http://0.0.0.0:8502
+2025-09-12T21:04:00: 
+2025-09-12T21:08:48: 🔄 Loading survey data (ENHANCED - Better Questions + Word Cloud Support)...
+2025-09-12T21:08:48: 📋 Loaded 22 question mappings
+2025-09-12T21:08:48: 📋 Guests (UAE): 200 responses loaded
+2025-09-12T21:08:48: 📋 Guests Online (KSA): 200 responses loaded
+2025-09-12T21:08:48: 📝 ENHANCED: Mapped to 43 columns (no more 'Unnamed')
+2025-09-12T21:08:48: 📋 Available questions: ['Nationality', 'Visit Purpose', 'Visit Purpose (Other)', 'Hotel Stays Per Year', 'Hotel Choice Reason 1']...
+2025-09-12T21:08:48: 🧹 Normalizing nationality data (keeping all responses)...
+2025-09-12T21:08:48: 🧹 Converting visit purpose codes...
+2025-09-12T21:08:48: 🧹 Converting hotel frequency codes...
+2025-09-12T21:08:48: ✅ ENHANCED: Data cleaned, still have exactly 400 responses
+2025-09-12T21:08:48: 🔤 Identified 6 text analysis questions:
+2025-09-12T21:08:48:    - Visit Purpose (Other)
+2025-09-12T21:08:48:    - Please specify other reason for choosing the hotel?
+2025-09-12T21:08:48:    - Entertainment Experience Story
+2025-09-12T21:08:48:    - Please specify other type of content did you watch?
+2025-09-12T21:08:48:    - Entertainment Improvement Suggestions
+2025-09-12T21:08:48:    - General Entertainment Suggestions
+2025-09-12T21:08:48: 🎯 ENHANCED Filter options:
+2025-09-12T21:08:48:    Nationalities (55): ALL INCLUDED
+2025-09-12T21:08:48:    Visit Purposes: ['Business', 'Family Vacation', 'Leisure', 'Other']
+2025-09-12T21:08:48:    Hotel Frequency: ['1-2 times', '3-5 times', '5.0', 'More than 5 times']
+2025-09-12T21:08:48:    Text Analysis Questions: 6
+2025-09-12T21:08:48: ✅ ENHANCED: Successfully loaded exactly 400 responses
+2025-09-12T21:08:48:    UAE: 200
+2025-09-12T21:08:48:    KSA: 200
+2025-09-12T21:08:48:    Text Analysis Questions: 6
+2025-09-12T21:08:48:   Stopping...
+2025-09-12T21:08:50: 
+2025-09-12T21:08:50:   You can now view your Streamlit app in your browser.
+2025-09-12T21:08:50: 
+2025-09-12T21:08:50:   URL: http://0.0.0.0:8502
+2025-09-12T21:08:50: 
+2025-09-12T21:09:57: 🔄 Loading survey data (ENHANCED - Better Questions + Word Cloud Support)...
+2025-09-12T21:09:57: 📋 Loaded 22 question mappings
+2025-09-12T21:09:57: 📋 Guests (UAE): 200 responses loaded
+2025-09-12T21:09:57: 📋 Guests Online (KSA): 200 responses loaded
+2025-09-12T21:09:57: 📝 ENHANCED: Mapped to 43 columns (no more 'Unnamed')
+2025-09-12T21:09:57: 📋 Available questions: ['Nationality', 'Visit Purpose', 'Visit Purpose (Other)', 'Hotel Stays Per Year', 'Hotel Choice Reason 1']...
+2025-09-12T21:09:57: 🧹 Normalizing nationality data (keeping all responses)...
+2025-09-12T21:09:57: 🧹 Converting visit purpose codes...
+2025-09-12T21:09:57: 🧹 Converting hotel frequency codes...
+2025-09-12T21:09:57: ✅ ENHANCED: Data cleaned, still have exactly 400 responses
+2025-09-12T21:09:57: 🔤 Identified 6 text analysis questions:
+2025-09-12T21:09:57:    - Visit Purpose (Other)
+2025-09-12T21:09:57:    - Please specify other reason for choosing the hotel?
+2025-09-12T21:09:57:    - Entertainment Experience Story
+2025-09-12T21:09:57:    - Please specify other type of content did you watch?
+2025-09-12T21:09:57:    - Entertainment Improvement Suggestions
+2025-09-12T21:09:57:    - General Entertainment Suggestions
+2025-09-12T21:09:57: 🎯 ENHANCED Filter options:
+2025-09-12T21:09:57:    Nationalities (55): ALL INCLUDED
+2025-09-12T21:09:57:    Visit Purposes: ['Business', 'Family Vacation', 'Leisure', 'Other']
+2025-09-12T21:09:57:    Hotel Frequency: ['1-2 times', '3-5 times', '5.0', 'More than 5 times']
+2025-09-12T21:09:57:    Text Analysis Questions: 6
+2025-09-12T21:09:57: ✅ ENHANCED: Successfully loaded exactly 400 responses
+2025-09-12T21:09:57:    UAE: 200
+2025-09-12T21:09:57:    KSA: 200
+2025-09-12T21:09:57:    Text Analysis Questions: 6
+2025-09-12T21:09:57:   Stopping...
+2025-09-12T21:09:59: 
+2025-09-12T21:09:59:   You can now view your Streamlit app in your browser.
+2025-09-12T21:09:59: 
+2025-09-12T21:09:59:   URL: http://0.0.0.0:8502
+2025-09-12T21:09:59: 
+2025-09-12T21:10:55: 🔄 Loading survey data (ENHANCED - Better Questions + Word Cloud Support)...
+2025-09-12T21:10:55: 📋 Loaded 22 question mappings
+2025-09-12T21:10:55: 📋 Guests (UAE): 200 responses loaded
+2025-09-12T21:10:55: 📋 Guests Online (KSA): 200 responses loaded
+2025-09-12T21:10:55: 📝 ENHANCED: Mapped to 43 columns (no more 'Unnamed')
+2025-09-12T21:10:55: 📋 Available questions: ['Nationality', 'Visit Purpose', 'Visit Purpose (Other)', 'Hotel Stays Per Year', 'Hotel Choice Reason 1']...
+2025-09-12T21:10:55: 🧹 Normalizing nationality data (keeping all responses)...
+2025-09-12T21:10:56: 🧹 Converting visit purpose codes...
+2025-09-12T21:10:56: 🧹 Converting hotel frequency codes...
+2025-09-12T21:10:56: ✅ ENHANCED: Data cleaned, still have exactly 400 responses
+2025-09-12T21:10:56: 🔤 Identified 6 text analysis questions:
+2025-09-12T21:10:56:    - Visit Purpose (Other)
+2025-09-12T21:10:56:    - Please specify other reason for choosing the hotel?
+2025-09-12T21:10:56:    - Entertainment Experience Story
+2025-09-12T21:10:56:    - Please specify other type of content did you watch?
+2025-09-12T21:10:56:    - Entertainment Improvement Suggestions
+2025-09-12T21:10:56:    - General Entertainment Suggestions
+2025-09-12T21:10:56: 🎯 ENHANCED Filter options:
+2025-09-12T21:10:56:    Nationalities (55): ALL INCLUDED
+2025-09-12T21:10:56:    Visit Purposes: ['Business', 'Family Vacation', 'Leisure', 'Other']
+2025-09-12T21:10:56:    Hotel Frequency: ['1-2 times', '3-5 times', '5.0', 'More than 5 times']
+2025-09-12T21:10:56:    Text Analysis Questions: 6
+2025-09-12T21:10:56: ✅ ENHANCED: Successfully loaded exactly 400 responses
+2025-09-12T21:10:56:    UAE: 200
+2025-09-12T21:10:56:    KSA: 200
+2025-09-12T21:10:56:    Text Analysis Questions: 6
+2025-09-12T21:10:56:   Stopping...
+2025-09-12T21:10:57: 
+2025-09-12T21:10:57:   You can now view your Streamlit app in your browser.
+2025-09-12T21:10:57: 
+2025-09-12T21:10:57:   URL: http://0.0.0.0:8502
+2025-09-12T21:10:57: 
+2025-09-12T21:14:52: 🔄 Loading survey data (ENHANCED - Better Questions + Word Cloud Support)...
+2025-09-12T21:14:52: 📋 Loaded 22 question mappings
+2025-09-12T21:14:52: 📋 Guests (UAE): 200 responses loaded
+2025-09-12T21:14:52: 📋 Guests Online (KSA): 200 responses loaded
+2025-09-12T21:14:52: 📝 ENHANCED: Mapped to 43 columns (no more 'Unnamed')
+2025-09-12T21:14:52: 📋 Available questions: ['Nationality', 'Visit Purpose', 'Visit Purpose (Other)', 'Hotel Stays Per Year', 'Hotel Choice Reason 1']...
+2025-09-12T21:14:52: 🧹 Normalizing nationality data (keeping all responses)...
+2025-09-12T21:14:52: 🧹 Converting visit purpose codes...
+2025-09-12T21:14:52: 🧹 Converting hotel frequency codes...
+2025-09-12T21:14:52: ✅ ENHANCED: Data cleaned, still have exactly 400 responses
+2025-09-12T21:14:52: 🔤 Identified 6 text analysis questions:
+2025-09-12T21:14:52:    - Visit Purpose (Other)
+2025-09-12T21:14:52:    - Please specify other reason for choosing the hotel?
+2025-09-12T21:14:52:    - Entertainment Experience Story
+2025-09-12T21:14:52:    - Please specify other type of content did you watch?
+2025-09-12T21:14:52:    - Entertainment Improvement Suggestions
+2025-09-12T21:14:52:    - General Entertainment Suggestions
+2025-09-12T21:14:52: 🎯 ENHANCED Filter options:
+2025-09-12T21:14:52:    Nationalities (55): ALL INCLUDED
+2025-09-12T21:14:52:    Visit Purposes: ['Business', 'Family Vacation', 'Leisure', 'Other']
+2025-09-12T21:14:52:    Hotel Frequency: ['1-2 times', '3-5 times', '5.0', 'More than 5 times']
+2025-09-12T21:14:52:    Text Analysis Questions: 6
+2025-09-12T21:14:52: ✅ ENHANCED: Successfully loaded exactly 400 responses
+2025-09-12T21:14:52:    UAE: 200
+2025-09-12T21:14:52:    KSA: 200
+2025-09-12T21:14:52:    Text Analysis Questions: 6
+2025-09-12T21:14:52:   Stopping...
+2025-09-12T21:14:54: 
+2025-09-12T21:14:54:   You can now view your Streamlit app in your browser.
+2025-09-12T21:14:54: 
+2025-09-12T21:14:54:   URL: http://0.0.0.0:8502
+2025-09-12T21:14:54: 
+2025-09-12T21:16:58: 🔄 Loading survey data (ENHANCED - Better Questions + Word Cloud Support)...
+2025-09-12T21:16:58: 📋 Loaded 22 question mappings
+2025-09-12T21:16:58: 📋 Guests (UAE): 200 responses loaded
+2025-09-12T21:16:58: 📋 Guests Online (KSA): 200 responses loaded
+2025-09-12T21:16:58: 📝 ENHANCED: Mapped to 43 columns (no more 'Unnamed')
+2025-09-12T21:16:58: 📋 Available questions: ['Nationality', 'Visit Purpose', 'Visit Purpose (Other)', 'Hotel Stays Per Year', 'Hotel Choice Reason 1']...
+2025-09-12T21:16:58: 🧹 Normalizing nationality data (keeping all responses)...
+2025-09-12T21:16:58: 🧹 Converting visit purpose codes...
+2025-09-12T21:16:58: 🧹 Converting hotel frequency codes...
+2025-09-12T21:16:58: ✅ ENHANCED: Data cleaned, still have exactly 400 responses
+2025-09-12T21:16:58: 🔤 Identified 6 text analysis questions:
+2025-09-12T21:16:58:    - Visit Purpose (Other)
+2025-09-12T21:16:58:    - Please specify other reason for choosing the hotel?
+2025-09-12T21:16:58:    - Entertainment Experience Story
+2025-09-12T21:16:58:    - Please specify other type of content did you watch?
+2025-09-12T21:16:58:    - Entertainment Improvement Suggestions
+2025-09-12T21:16:58:    - General Entertainment Suggestions
+2025-09-12T21:16:58: 🎯 ENHANCED Filter options:
+2025-09-12T21:16:58:    Nationalities (55): ALL INCLUDED
+2025-09-12T21:16:58:    Visit Purposes: ['Business', 'Family Vacation', 'Leisure', 'Other']
+2025-09-12T21:16:58:    Hotel Frequency: ['1-2 times', '3-5 times', '5.0', 'More than 5 times']
+2025-09-12T21:16:58:    Text Analysis Questions: 6
+2025-09-12T21:16:58: ✅ ENHANCED: Successfully loaded exactly 400 responses
+2025-09-12T21:16:58:    UAE: 200
+2025-09-12T21:16:58:    KSA: 200
+2025-09-12T21:16:58:    Text Analysis Questions: 6
+2025-09-12T21:16:58: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T21:16:58: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T21:16:58: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T21:16:58: [31m [0m                                                                                      [31m [0m
+2025-09-12T21:16:58: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T21:16:58: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T21:16:58: [31m [0m                                                                                      [31m [0m
+2025-09-12T21:16:58: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:16 in <module>                      [31m [0m
+2025-09-12T21:16:58: [31m [0m                                                                                      [31m [0m
+2025-09-12T21:16:58: [31m [0m   [2m 13 [0m[94mimport[0m[90m [0m[4;96mplotly[0m[4;96m.[0m[4;96mgraph_objects[0m[90m [0m[94mas[0m[90m [0m[4;96mgo[0m                                              [31m [0m
+2025-09-12T21:16:58: [31m [0m   [2m 14 [0m[94mfrom[0m[90m [0m[4;96mplotly[0m[4;96m.[0m[4;96msubplots[0m[90m [0m[94mimport[0m make_subplots                                      [31m [0m
+2025-09-12T21:16:58: [31m [0m   [2m 15 [0m[94mimport[0m[90m [0m[4;96mnumpy[0m[90m [0m[94mas[0m[90m [0m[4;96mnp[0m                                                             [31m [0m
+2025-09-12T21:16:58: [31m [0m [31m❱ [0m 16 [1;4;94mfrom[0m[1;4;90m [0m[1;4;96menhanced_osn_processor[0m[1;4;90m [0m[1;4;94mimport[0m[1;4m EnhancedOSNProcessor[0m                        [31m [0m
+2025-09-12T21:16:58: [31m [0m   [2m 17 [0m[94mfrom[0m[90m [0m[4;96mosn_wordcloud_analyzer[0m[90m [0m[94mimport[0m OSNWordCloudAnalyzer                        [31m [0m
+2025-09-12T21:16:58: [31m [0m   [2m 18 [0m[94mfrom[0m[90m [0m[4;96madvanced_text_insights_analyzer[0m[90m [0m[94mimport[0m AdvancedTextInsightsAnalyzer       [31m [0m
+2025-09-12T21:16:58: [31m [0m   [2m 19 [0m                                                                               [31m [0m
+2025-09-12T21:16:58: [31m [0m in _find_and_load:1360                                                               [31m [0m
+2025-09-12T21:16:58: [31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+2025-09-12T21:16:58: [31m [0m in _load_unlocked:946                                                                [31m [0m
+2025-09-12T21:16:58: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T21:16:58: [1;91mKeyError: [0m[32m'enhanced_osn_processor'[0m
+2025-09-12T21:17:23: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T21:17:23: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T21:17:23: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T21:17:23: [31m [0m                                                                                      [31m [0m
+2025-09-12T21:17:23: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T21:17:23: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T21:17:23: [31m [0m                                                                                      [31m [0m
+2025-09-12T21:17:23: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:17 in <module>                      [31m [0m
+2025-09-12T21:17:23: [31m [0m                                                                                      [31m [0m
+2025-09-12T21:17:23: [31m [0m   [2m 14 [0m[94mfrom[0m[90m [0m[4;96mplotly[0m[4;96m.[0m[4;96msubplots[0m[90m [0m[94mimport[0m make_subplots                                      [31m [0m
+2025-09-12T21:17:23: [31m [0m   [2m 15 [0m[94mimport[0m[90m [0m[4;96mnumpy[0m[90m [0m[94mas[0m[90m [0m[4;96mnp[0m                                                             [31m [0m
+2025-09-12T21:17:23: [31m [0m   [2m 16 [0m[94mfrom[0m[90m [0m[4;96menhanced_osn_processor[0m[90m [0m[94mimport[0m EnhancedOSNProcessor                        [31m [0m
+2025-09-12T21:17:23: [31m [0m [31m❱ [0m 17 [1;4;94mfrom[0m[1;4;90m [0m[1;4;96mosn_wordcloud_analyzer[0m[1;4;90m [0m[1;4;94mimport[0m[1;4m OSNWordCloudAnalyzer[0m                        [31m [0m
+2025-09-12T21:17:23: [31m [0m   [2m 18 [0m[94mfrom[0m[90m [0m[4;96madvanced_text_insights_analyzer[0m[90m [0m[94mimport[0m AdvancedTextInsightsAnalyzer       [31m [0m
+2025-09-12T21:17:23: [31m [0m   [2m 19 [0m                                                                               [31m [0m
+2025-09-12T21:17:23: [31m [0m   [2m 20 [0m[2m# Configure Streamlit[0m                                                          [31m [0m
+2025-09-12T21:17:23: [31m [0m in _find_and_load:1360                                                               [31m [0m
+2025-09-12T21:17:23: [31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+2025-09-12T21:17:23: [31m [0m in _load_unlocked:946                                                                [31m [0m
+2025-09-12T21:17:23: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T21:17:23: [1;91mKeyError: [0m[32m'osn_wordcloud_analyzer'[0m
+2025-09-12T21:17:23: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T21:17:23: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T21:17:23: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T21:17:23: [31m [0m                                                                                      [31m [0m
+2025-09-12T21:17:23: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T21:17:23: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T21:17:23: [31m [0m                                                                                      [31m [0m
+2025-09-12T21:17:23: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:18 in <module>                      [31m [0m
+2025-09-12T21:17:23: [31m [0m                                                                                      [31m [0m
+2025-09-12T21:17:23: [31m [0m   [2m 15 [0m[94mimport[0m[90m [0m[4;96mnumpy[0m[90m [0m[94mas[0m[90m [0m[4;96mnp[0m                                                             [31m [0m
+2025-09-12T21:17:23: [31m [0m   [2m 16 [0m[94mfrom[0m[90m [0m[4;96menhanced_osn_processor[0m[90m [0m[94mimport[0m EnhancedOSNProcessor                        [31m [0m
+2025-09-12T21:17:23: [31m [0m   [2m 17 [0m[94mfrom[0m[90m [0m[4;96mosn_wordcloud_analyzer[0m[90m [0m[94mimport[0m OSNWordCloudAnalyzer                        [31m [0m
+2025-09-12T21:17:23: [31m [0m [31m❱ [0m 18 [1;4;94mfrom[0m[1;4;90m [0m[1;4;96madvanced_text_insights_analyzer[0m[1;4;90m [0m[1;4;94mimport[0m[1;4m AdvancedTextInsightsAnalyzer[0m       [31m [0m
+2025-09-12T21:17:23: [31m [0m   [2m 19 [0m                                                                               [31m [0m
+2025-09-12T21:17:23: [31m [0m   [2m 20 [0m[2m# Configure Streamlit[0m                                                          [31m [0m
+2025-09-12T21:17:23: [31m [0m   [2m 21 [0mst.set_page_config(                                                            [31m [0m
+2025-09-12T21:17:23: [31m [0m in _find_and_load:1360                                                               [31m [0m
+2025-09-12T21:17:23: [31m [0m in _find_and_load_unlocked:1331                                                      [31m [0m
+2025-09-12T21:17:23: [31m [0m in _load_unlocked:946                                                                [31m [0m
+2025-09-12T21:17:23: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T21:17:23: [1;91mKeyError: [0m[32m'advanced_text_insights_analyzer'[0m
+2025-09-12T21:17:36:   Stopping...
+2025-09-12T21:17:38: 
+2025-09-12T21:17:38:   You can now view your Streamlit app in your browser.
+2025-09-12T21:17:38: 
+2025-09-12T21:17:38:   URL: http://0.0.0.0:8502
+2025-09-12T21:17:38: 
+2025-09-12T22:24:50: 🔄 Loading survey data (ENHANCED - Better Questions + Word Cloud Support)...
+2025-09-12T22:24:50: 📋 Loaded 22 question mappings
+2025-09-12T22:24:50: 📋 Guests (UAE): 200 responses loaded
+2025-09-12T22:24:50: 📋 Guests Online (KSA): 200 responses loaded
+2025-09-12T22:24:50: 📝 ENHANCED: Mapped to 43 columns (no more 'Unnamed')
+2025-09-12T22:24:50: 📋 Available questions: ['Nationality', 'Visit Purpose', 'Visit Purpose (Other)', 'Hotel Stays Per Year', 'Hotel Choice Reason 1']...
+2025-09-12T22:24:50: 🧹 Normalizing nationality data (keeping all responses)...
+2025-09-12T22:24:50: 🧹 Converting visit purpose codes...
+2025-09-12T22:24:50: 🧹 Converting hotel frequency codes...
+2025-09-12T22:24:50: ✅ ENHANCED: Data cleaned, still have exactly 400 responses
+2025-09-12T22:24:50: 🔤 Identified 6 text analysis questions:
+2025-09-12T22:24:50:    - Visit Purpose (Other)
+2025-09-12T22:24:50:    - Please specify other reason for choosing the hotel?
+2025-09-12T22:24:50:    - Entertainment Experience Story
+2025-09-12T22:24:50:    - Please specify other type of content did you watch?
+2025-09-12T22:24:50:    - Entertainment Improvement Suggestions
+2025-09-12T22:24:50:    - General Entertainment Suggestions
+2025-09-12T22:24:50: 🎯 ENHANCED Filter options:
+2025-09-12T22:24:50:    Nationalities (55): ALL INCLUDED
+2025-09-12T22:24:50:    Visit Purposes: ['Business', 'Family Vacation', 'Leisure', 'Other']
+2025-09-12T22:24:50:    Hotel Frequency: ['1-2 times', '3-5 times', '5.0', 'More than 5 times']
+2025-09-12T22:24:50:    Text Analysis Questions: 6
+2025-09-12T22:24:50: ✅ ENHANCED: Successfully loaded exactly 400 responses
+2025-09-12T22:24:50:    UAE: 200
+2025-09-12T22:24:50:    KSA: 200
+2025-09-12T22:24:50:    Text Analysis Questions: 6
+2025-09-12T22:24:50: 🔄 Loading survey data (ENHANCED - Better Questions + Word Cloud Support)...
+2025-09-12T22:24:50: 📋 Loaded 22 question mappings
+2025-09-12T22:24:50: 📋 Guests (UAE): 200 responses loaded
+2025-09-12T22:24:50: 📋 Guests Online (KSA): 200 responses loaded
+2025-09-12T22:24:50: 📝 ENHANCED: Mapped to 43 columns (no more 'Unnamed')
+2025-09-12T22:24:50: 📋 Available questions: ['Nationality', 'Visit Purpose', 'Visit Purpose (Other)', 'Hotel Stays Per Year', 'Hotel Choice Reason 1']...
+2025-09-12T22:24:50: 🧹 Normalizing nationality data (keeping all responses)...
+2025-09-12T22:24:50: 🧹 Converting visit purpose codes...
+2025-09-12T22:24:50: 🧹 Converting hotel frequency codes...
+2025-09-12T22:24:50: ✅ ENHANCED: Data cleaned, still have exactly 400 responses
+2025-09-12T22:24:50: 🔤 Identified 6 text analysis questions:
+2025-09-12T22:24:50:    - Visit Purpose (Other)
+2025-09-12T22:24:50:    - Please specify other reason for choosing the hotel?
+2025-09-12T22:24:50:    - Entertainment Experience Story
+2025-09-12T22:24:50:    - Please specify other type of content did you watch?
+2025-09-12T22:24:50:    - Entertainment Improvement Suggestions
+2025-09-12T22:24:50:    - General Entertainment Suggestions
+2025-09-12T22:24:50: 🎯 ENHANCED Filter options:
+2025-09-12T22:24:50:    Nationalities (55): ALL INCLUDED
+2025-09-12T22:24:50:    Visit Purposes: ['Business', 'Family Vacation', 'Leisure', 'Other']
+2025-09-12T22:24:50:    Hotel Frequency: ['1-2 times', '3-5 times', '5.0', 'More than 5 times']
+2025-09-12T22:24:50:    Text Analysis Questions: 6
+2025-09-12T22:24:50: ✅ ENHANCED: Successfully loaded exactly 400 responses
+2025-09-12T22:24:50:    UAE: 200
+2025-09-12T22:24:50:    KSA: 200
+2025-09-12T22:24:50:    Text Analysis Questions: 6
+2025-09-12T22:24:50: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T22:24:50: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T22:24:50: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T22:24:50: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:24:50: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T22:24:50: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T22:24:50: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:24:50: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:1063 in <module>                    [31m [0m
+2025-09-12T22:24:50: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m1060 [0m[2m│   │   │   │   [0mst.plotly_chart(fig_ratings, use_container_width=[94mTrue[0m)        [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m1061 [0m                                                                              [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m1062 [0m[94mif[0m [91m__name__[0m == [33m"[0m[33m__main__[0m[33m"[0m:                                                    [31m [0m
+2025-09-12T22:24:50: [31m [0m [31m❱ [0m1063 [2m│   [0m[1;4mmain()[0m                                                                    [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m1064 [0m                                                                              [31m [0m
+2025-09-12T22:24:50: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:24:50: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:862 in main                         [31m [0m
+2025-09-12T22:24:50: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m 859 [0m[2m│   │   │   │   [0m                                                              [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m 860 [0m[2m│   │   │   │   [0m[2m# Extract the actual question name from the display[0m           [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m 861 [0m[2m│   │   │   │   [0mselected_text_question = selected_text_question_display.split [31m [0m
+2025-09-12T22:24:50: [31m [0m [31m❱ [0m 862 [2m│   │   │   │   [0mresponse_count = [1;4mquestion_data_counts[selected_text_question][0m [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m 863 [0m[2m│   │   │   │   [0m                                                              [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m 864 [0m[2m│   │   │   │   [0mst.info([33mf[0m[33m"[0m[33m💡 **Selected:** [0m[33m{[0mselected_text_question[33m}[0m[33m - [0m[33m{[0mrespon [31m [0m
+2025-09-12T22:24:50: [31m [0m   [2m 865 [0m[2m│   │   │   [0m[94melse[0m:                                                             [31m [0m
+2025-09-12T22:24:50: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T22:24:50: [1;91mKeyError: [0m[32m'Visit Purpose'[0m
+2025-09-12T22:25:29: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T22:25:29: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T22:25:29: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T22:25:29: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:1063 in <module>                    [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m1060 [0m[2m│   │   │   │   [0mst.plotly_chart(fig_ratings, use_container_width=[94mTrue[0m)        [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m1061 [0m                                                                              [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m1062 [0m[94mif[0m [91m__name__[0m == [33m"[0m[33m__main__[0m[33m"[0m:                                                    [31m [0m
+2025-09-12T22:25:29: [31m [0m [31m❱ [0m1063 [2m│   [0m[1;4mmain()[0m                                                                    [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m1064 [0m                                                                              [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:511 in main                         [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m 508 [0m[2m│   │   [0m[94mreturn[0m                                                                [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m 509 [0m[2m│   [0m                                                                          [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m 510 [0m[2m│   [0m[2m# Get summary statistics[0m                                                  [31m [0m
+2025-09-12T22:25:29: [31m [0m [31m❱ [0m 511 [2m│   [0mstats = [1;4mprocessor.get_summary_stats()[0m                                     [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m 512 [0m[2m│   [0m                                                                          [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m 513 [0m[2m│   [0m[2m# Simple success message[0m                                                  [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m 514 [0m[2m│   [0m[94mif[0m stats[[33m'[0m[33mtotal_responses[0m[33m'[0m] == [94m400[0m [95mand[0m stats[[33m'[0m[33muae_responses[0m[33m'[0m] == [94m200[0m [95mand[0m  [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m [2m/home/user/webapp/[0m[1menhanced_osn_processor.py[0m:455 in get_summary_stats                 [31m [0m
+2025-09-12T22:25:29: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m452 [0m[2m│   │   │   [0m[33m'[0m[33mavailable_questions[0m[33m'[0m: meaningful_questions,                       [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m453 [0m[2m│   │   │   [0m[33m'[0m[33mtext_questions[0m[33m'[0m: [96mself[0m.text_questions,                             [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m454 [0m[2m│   │   │   [0m[33m'[0m[33mfilter_options[0m[33m'[0m: [96mself[0m.filters,                                    [31m [0m
+2025-09-12T22:25:29: [31m [0m [31m❱ [0m455 [2m│   │   │   [0m[33m'[0m[33mresponse_options[0m[33m'[0m: [1;4;96mself[0m[1;4m.response_options[0m                          [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m456 [0m[2m│   │   [0m}                                                                      [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m457 [0m[2m│   [0m                                                                           [31m [0m
+2025-09-12T22:25:29: [31m [0m   [2m458 [0m[2m│   [0m[94mdef[0m[90m [0m[92mget_text_responses_for_wordcloud[0m([96mself[0m, question, filters=[94mNone[0m):        [31m [0m
+2025-09-12T22:25:29: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T22:25:29: [1;91mAttributeError: [0m[32m'EnhancedOSNProcessor'[0m object has no attribute [32m'response_options'[0m
+2025-09-12T22:25:38: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T22:25:38: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T22:25:38: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T22:25:38: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:1064 in <module>                    [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m1061 [0m[2m│   │   │   │   [0mst.plotly_chart(fig_ratings, use_container_width=[94mTrue[0m)        [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m1062 [0m                                                                              [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m1063 [0m[94mif[0m [91m__name__[0m == [33m"[0m[33m__main__[0m[33m"[0m:                                                    [31m [0m
+2025-09-12T22:25:38: [31m [0m [31m❱ [0m1064 [2m│   [0m[1;4mmain()[0m                                                                    [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m1065 [0m                                                                              [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:511 in main                         [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m 508 [0m[2m│   │   [0m[94mreturn[0m                                                                [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m 509 [0m[2m│   [0m                                                                          [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m 510 [0m[2m│   [0m[2m# Get summary statistics[0m                                                  [31m [0m
+2025-09-12T22:25:38: [31m [0m [31m❱ [0m 511 [2m│   [0mstats = [1;4mprocessor.get_summary_stats()[0m                                     [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m 512 [0m[2m│   [0m                                                                          [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m 513 [0m[2m│   [0m[2m# Simple success message[0m                                                  [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m 514 [0m[2m│   [0m[94mif[0m stats[[33m'[0m[33mtotal_responses[0m[33m'[0m] == [94m400[0m [95mand[0m stats[[33m'[0m[33muae_responses[0m[33m'[0m] == [94m200[0m [95mand[0m  [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m [2m/home/user/webapp/[0m[1menhanced_osn_processor.py[0m:455 in get_summary_stats                 [31m [0m
+2025-09-12T22:25:38: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m452 [0m[2m│   │   │   [0m[33m'[0m[33mavailable_questions[0m[33m'[0m: meaningful_questions,                       [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m453 [0m[2m│   │   │   [0m[33m'[0m[33mtext_questions[0m[33m'[0m: [96mself[0m.text_questions,                             [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m454 [0m[2m│   │   │   [0m[33m'[0m[33mfilter_options[0m[33m'[0m: [96mself[0m.filters,                                    [31m [0m
+2025-09-12T22:25:38: [31m [0m [31m❱ [0m455 [2m│   │   │   [0m[33m'[0m[33mresponse_options[0m[33m'[0m: [1;4;96mself[0m[1;4m.response_options[0m                          [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m456 [0m[2m│   │   [0m}                                                                      [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m457 [0m[2m│   [0m                                                                           [31m [0m
+2025-09-12T22:25:38: [31m [0m   [2m458 [0m[2m│   [0m[94mdef[0m[90m [0m[92mget_text_responses_for_wordcloud[0m([96mself[0m, question, filters=[94mNone[0m):        [31m [0m
+2025-09-12T22:25:38: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T22:25:38: [1;91mAttributeError: [0m[32m'EnhancedOSNProcessor'[0m object has no attribute [32m'response_options'[0m
+2025-09-12T22:25:42: [31m──[0m[31m────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────────[0m[31m──[0m
+2025-09-12T22:25:42: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mexec_code.py[0m: [31m [0m
+2025-09-12T22:25:42: [31m [0m 128 in exec_func_with_error_handling                                                 [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m [2m/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/[0m[1mscript_runner[0m [31m [0m
+2025-09-12T22:25:42: [31m [0m [1m.py[0m:669 in code_to_exec                                                              [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:1064 in <module>                    [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m1061 [0m[2m│   │   │   │   [0mst.plotly_chart(fig_ratings, use_container_width=[94mTrue[0m)        [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m1062 [0m                                                                              [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m1063 [0m[94mif[0m [91m__name__[0m == [33m"[0m[33m__main__[0m[33m"[0m:                                                    [31m [0m
+2025-09-12T22:25:42: [31m [0m [31m❱ [0m1064 [2m│   [0m[1;4mmain()[0m                                                                    [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m1065 [0m                                                                              [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m [2m/home/user/webapp/[0m[1mbalanced_contrast_dashboard.py[0m:511 in main                         [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m 508 [0m[2m│   │   [0m[94mreturn[0m                                                                [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m 509 [0m[2m│   [0m                                                                          [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m 510 [0m[2m│   [0m[2m# Get summary statistics[0m                                                  [31m [0m
+2025-09-12T22:25:42: [31m [0m [31m❱ [0m 511 [2m│   [0mstats = [1;4mprocessor.get_summary_stats()[0m                                     [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m 512 [0m[2m│   [0m                                                                          [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m 513 [0m[2m│   [0m[2m# Simple success message[0m                                                  [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m 514 [0m[2m│   [0m[94mif[0m stats[[33m'[0m[33mtotal_responses[0m[33m'[0m] == [94m400[0m [95mand[0m stats[[33m'[0m[33muae_responses[0m[33m'[0m] == [94m200[0m [95mand[0m  [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m [2m/home/user/webapp/[0m[1menhanced_osn_processor.py[0m:455 in get_summary_stats                 [31m [0m
+2025-09-12T22:25:42: [31m [0m                                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m452 [0m[2m│   │   │   [0m[33m'[0m[33mavailable_questions[0m[33m'[0m: meaningful_questions,                       [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m453 [0m[2m│   │   │   [0m[33m'[0m[33mtext_questions[0m[33m'[0m: [96mself[0m.text_questions,                             [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m454 [0m[2m│   │   │   [0m[33m'[0m[33mfilter_options[0m[33m'[0m: [96mself[0m.filters,                                    [31m [0m
+2025-09-12T22:25:42: [31m [0m [31m❱ [0m455 [2m│   │   │   [0m[33m'[0m[33mresponse_options[0m[33m'[0m: [1;4;96mself[0m[1;4m.response_options[0m                          [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m456 [0m[2m│   │   [0m}                                                                      [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m457 [0m[2m│   [0m                                                                           [31m [0m
+2025-09-12T22:25:42: [31m [0m   [2m458 [0m[2m│   [0m[94mdef[0m[90m [0m[92mget_text_responses_for_wordcloud[0m([96mself[0m, question, filters=[94mNone[0m):        [31m [0m
+2025-09-12T22:25:42: [31m────────────────────────────────────────────────────────────────────────────────────────[0m
+2025-09-12T22:25:42: [1;91mAttributeError: [0m[32m'EnhancedOSNProcessor'[0m object has no attribute [32m'response_options'[0m
+2025-09-12T22:26:09:   Stopping...
+2025-09-12T22:26:11: 
+2025-09-12T22:26:11:   You can now view your Streamlit app in your browser.
+2025-09-12T22:26:11: 
+2025-09-12T22:26:11:   URL: http://0.0.0.0:8502
+2025-09-12T22:26:11: 

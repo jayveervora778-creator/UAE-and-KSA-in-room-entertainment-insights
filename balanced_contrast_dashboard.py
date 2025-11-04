@@ -1,0 +1,1064 @@
+#!/usr/bin/env python3
+"""
+BALANCED HIGH CONTRAST OSN Dashboard - FIXED VERSION
+✅ Dark text on white backgrounds for readability
+✅ Graphs and dropdowns work properly
+✅ No aggressive CSS that breaks functionality
+✅ Simple, clean, readable design
+"""
+
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+import numpy as np
+from enhanced_osn_processor import EnhancedOSNProcessor
+from osn_wordcloud_analyzer import OSNWordCloudAnalyzer
+from advanced_text_insights_analyzer import AdvancedTextInsightsAnalyzer
+
+# Configure Streamlit
+st.set_page_config(
+    page_title="Readable OSN Dashboard",
+    page_icon="📊",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# DARK TEXT ON WHITE BACKGROUNDS EVERYWHERE
+st.markdown("""
+<style>
+    /* FORCE WHITE BACKGROUNDS AND DARK TEXT EVERYWHERE */
+    .stApp {
+        background-color: #ffffff !important;
+        color: #2c3e50 !important;
+    }
+    
+    /* All containers - white backgrounds */
+    .main .block-container {
+        background-color: #ffffff !important;
+    }
+    
+    /* Sidebar - white background, dark text */
+    .stSidebar {
+        background-color: #ffffff !important;
+    }
+    
+    .stSidebar * {
+        color: #2c3e50 !important;
+        background-color: #ffffff !important;
+    }
+    
+    /* Headers - dark text, white backgrounds */
+    .main-header {
+        background: #ffffff !important;
+        border: 2px solid #34495e;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+    }
+    
+    .main-header h1 {
+        color: #2c3e50 !important;
+        font-weight: 800;
+        margin: 0;
+    }
+    
+    .main-header p {
+        color: #34495e !important;
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+    
+    /* MAIN TEXT - DARK ON WHITE (BUT NOT CHART DATA) */
+    h1, h2, h3, h4, h5, h6 {
+        color: #2c3e50 !important;
+        font-weight: 700 !important;
+        background-color: #ffffff !important;
+    }
+    
+    /* Main text elements - but NOT chart data labels */
+    .stMarkdown p, .stMarkdown span, .stMarkdown div {
+        color: #34495e !important;
+        background-color: #ffffff !important;
+    }
+    
+    /* Sidebar text */
+    .stSidebar p, .stSidebar span, .stSidebar label {
+        color: #2c3e50 !important;
+        background-color: #ffffff !important;
+    }
+    
+    /* Content boxes - white backgrounds, dark text */
+    .metric-card {
+        background: #ffffff !important;
+        border: 1px solid #bdc3c7;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 0.5rem 0;
+    }
+    
+    .metric-card h4 {
+        color: #2c3e50 !important;
+        font-weight: 700;
+        background-color: #ffffff !important;
+    }
+    
+    .metric-card p {
+        color: #34495e !important;
+        font-weight: 500;
+        background-color: #ffffff !important;
+    }
+    
+    /* Insight boxes - white backgrounds */
+    .insight-box {
+        background: #ffffff !important;
+        border: 2px solid #3498db;
+        border-left: 5px solid #3498db;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+    }
+    
+    .insight-box h4, .insight-box p {
+        color: #2c3e50 !important;
+        font-weight: 500;
+        background-color: #ffffff !important;
+    }
+    
+    /* Success boxes - white backgrounds */
+    .success-box {
+        background: #ffffff !important;
+        border: 2px solid #27ae60;
+        border-left: 5px solid #27ae60;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+    }
+    
+    .success-box * {
+        color: #27ae60 !important;
+        font-weight: 600;
+        background-color: #ffffff !important;
+    }
+    
+    /* Word cloud container - white background */
+    .wordcloud-container {
+        background: #ffffff !important;
+        border: 2px solid #f39c12;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+    }
+    
+    .wordcloud-container h4 {
+        color: #2c3e50 !important;
+        font-weight: 700;
+        background-color: #ffffff !important;
+    }
+    
+    /* Advanced insights - white background */
+    .insights-container {
+        background: #ffffff !important;
+        border: 2px solid #9b59b6;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+    }
+    
+    .insights-container * {
+        color: #2c3e50 !important;
+        font-weight: 500;
+        background-color: #ffffff !important;
+    }
+    
+    /* Theme tags - white background, dark text */
+    .theme-tag {
+        background: #ffffff !important;
+        border: 1px solid #3498db;
+        color: #2c3e50 !important;
+        padding: 0.4rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        margin: 0.2rem;
+        display: inline-block;
+        font-weight: 600;
+    }
+    
+    /* Priority indicators - white backgrounds */
+    .priority-critical {
+        background: #ffffff !important;
+        border: 2px solid #e74c3c;
+        color: #e74c3c !important;
+        font-weight: 700;
+        padding: 0.5rem;
+        border-radius: 5px;
+    }
+    
+    .priority-high {
+        background: #ffffff !important;
+        border: 2px solid #f39c12;
+        color: #f39c12 !important;
+        font-weight: 600;
+        padding: 0.5rem;
+        border-radius: 5px;
+    }
+    
+    /* DROPDOWNS - WHITE BACKGROUNDS, DARK TEXT */
+    .stSelectbox > div > div {
+        background-color: #ffffff !important;
+        border: 1px solid #bdc3c7 !important;
+        color: #2c3e50 !important;
+    }
+    
+    .stMultiSelect > div > div {
+        background-color: #ffffff !important;
+        border: 1px solid #bdc3c7 !important;
+        color: #2c3e50 !important;
+    }
+    
+    /* Dropdown containers */
+    .stSelectbox div[data-baseweb="select"] > div {
+        background-color: #ffffff !important;
+        color: #2c3e50 !important;
+    }
+    
+    .stMultiSelect div[data-baseweb="select"] > div {
+        background-color: #ffffff !important;
+        color: #2c3e50 !important;
+    }
+    
+    /* Dropdown menu backgrounds */
+    .stSelectbox div[data-baseweb="menu"] {
+        background-color: #ffffff !important;
+    }
+    
+    .stMultiSelect div[data-baseweb="menu"] {
+        background-color: #ffffff !important;
+    }
+    
+    /* Individual dropdown options - white backgrounds */
+    .stSelectbox div[data-baseweb="menu"] > ul > li {
+        background-color: #ffffff !important;
+        color: #2c3e50 !important;
+    }
+    
+    .stMultiSelect div[data-baseweb="menu"] > ul > li {
+        background-color: #ffffff !important;
+        color: #2c3e50 !important;
+    }
+    
+    /* Dropdown hover states - light gray on white */
+    .stSelectbox div[data-baseweb="menu"] > ul > li:hover {
+        background-color: #f8f9fa !important;
+        color: #2c3e50 !important;
+    }
+    
+    .stMultiSelect div[data-baseweb="menu"] > ul > li:hover {
+        background-color: #f8f9fa !important;
+        color: #2c3e50 !important;
+    }
+    
+    /* Selected items - blue background with white text (only exception) */
+    .stMultiSelect div[data-baseweb="tag"] {
+        background-color: #3498db !important;
+        color: #ffffff !important;
+        border: none !important;
+    }
+    
+    /* Ensure all dropdown containers have white backgrounds */
+    .stSelectbox div, .stMultiSelect div {
+        background-color: #ffffff !important;
+    }
+    
+    /* Dropdown arrows and icons - dark */
+    .stSelectbox svg, .stMultiSelect svg {
+        color: #2c3e50 !important;
+    }
+    
+    /* Tabs - white backgrounds, dark text */
+    .stTabs [data-baseweb="tab-list"] {
+        background-color: #ffffff !important;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        background-color: #ffffff !important;
+        color: #2c3e50 !important;
+        font-weight: 600;
+    }
+    
+    .stTabs [aria-selected="true"] {
+        background-color: #f8f9fa !important;
+        color: #2c3e50 !important;
+    }
+    
+    /* Buttons - functional styling */
+    .stButton > button {
+        background-color: #3498db !important;
+        color: #ffffff !important;
+        border: none !important;
+        font-weight: 600 !important;
+        padding: 0.5rem 1rem !important;
+        border-radius: 5px !important;
+    }
+    
+    .stButton > button:hover {
+        background-color: #2980b9 !important;
+        color: #ffffff !important;
+    }
+    
+    .stButton > button:active {
+        background-color: #21618c !important;
+        color: #ffffff !important;
+    }
+    
+    /* Metrics - white backgrounds */
+    [data-testid="metric-container"] {
+        background: #ffffff !important;
+        border: 1px solid #e0e0e0 !important;
+        padding: 1rem !important;
+        border-radius: 8px !important;
+    }
+    
+    [data-testid="metric-container"] * {
+        color: #2c3e50 !important;
+        background-color: #ffffff !important;
+        font-weight: 600;
+    }
+    
+    /* FORCE ALL CHART LEGENDS TO BE DARK */
+    .js-plotly-plot .legend text {
+        fill: #2c3e50 !important;
+        color: #2c3e50 !important;
+    }
+    
+    .js-plotly-plot .legend {
+        background: white !important;
+    }
+    
+    /* Chart axis labels and ticks */
+    .js-plotly-plot .xtick text, .js-plotly-plot .ytick text {
+        fill: #2c3e50 !important;
+        color: #2c3e50 !important;
+    }
+    
+    .js-plotly-plot .axis-title text {
+        fill: #2c3e50 !important;
+        color: #2c3e50 !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+@st.cache_data(ttl=300)
+def load_survey_data():
+    """Load and cache enhanced survey data"""
+    processor = EnhancedOSNProcessor()
+    success = processor.load_data()
+    if success:
+        return processor
+    return None
+
+def create_wordcloud_visualization(word_data, title="Word Cloud"):
+    """Create word cloud visualization - SIMPLE VERSION"""
+    if not word_data or not word_data['word_frequency']:
+        return None
+    
+    words = list(word_data['word_frequency'].keys())[:30]
+    frequencies = list(word_data['word_frequency'].values())[:30]
+    
+    max_freq = max(frequencies) if frequencies else 1
+    normalized_sizes = [20 + (freq / max_freq) * 40 for freq in frequencies]
+    
+    np.random.seed(42)
+    n_words = len(words)
+    
+    angles = np.linspace(0, 4 * np.pi, n_words)
+    radii = np.linspace(0.5, 3, n_words)
+    x_pos = radii * np.cos(angles)
+    y_pos = radii * np.sin(angles)
+    
+    # Simple, readable colors
+    colors = ['#2c3e50', '#3498db', '#e74c3c', '#27ae60', '#f39c12', '#9b59b6', '#34495e', '#16a085'] * (n_words // 8 + 1)
+    
+    fig = go.Figure()
+    
+    fig.add_trace(go.Scatter(
+        x=x_pos,
+        y=y_pos,
+        mode='text',
+        text=words,
+        textfont=dict(
+            size=normalized_sizes,
+            color=colors[:n_words]
+        ),
+        hovertemplate='<b>%{text}</b><br>Frequency: %{customdata}<extra></extra>',
+        customdata=frequencies,
+        showlegend=False
+    ))
+    
+    # Chart layout with dark legends
+    fig.update_layout(
+        title=dict(text=title, x=0.5, font=dict(size=16, color='#2c3e50')),
+        xaxis=dict(
+            showgrid=False, 
+            showticklabels=False, 
+            zeroline=False,
+            title_font=dict(color='#2c3e50'),
+            tickfont=dict(color='#2c3e50')
+        ),
+        yaxis=dict(
+            showgrid=False, 
+            showticklabels=False, 
+            zeroline=False,
+            title_font=dict(color='#2c3e50'),
+            tickfont=dict(color='#2c3e50')
+        ),
+        plot_bgcolor='white',
+        paper_bgcolor='white',
+        font=dict(color='#2c3e50'),
+        legend=dict(
+            font=dict(color='#2c3e50', size=12),
+            bgcolor='white',
+            bordercolor='#2c3e50',
+            borderwidth=1
+        ),
+        height=400
+    )
+    
+    return fig
+
+def display_advanced_insights(insights_report):
+    """Display advanced insights - SIMPLE VERSION"""
+    if not insights_report or 'error' in insights_report:
+        st.warning("⚠️ No advanced insights available for current selection")
+        return
+    
+    exec_summary = insights_report.get('executive_summary', {})
+    
+    st.markdown("""
+    <div class="insights-container">
+        <h3>🎯 Executive Summary - What Guest Responses Actually Mean</h3>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown(f"""
+        <div class="metric-card">
+            <h4>📊 Analysis Scope</h4>
+            <p><strong>{exec_summary.get('overview', 'No data')}</strong></p>
+            <p>Completeness: {insights_report.get('analysis_completeness', 0):.1f}%</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown(f"""
+        <div class="metric-card">
+            <h4>📈 Overall Guest Sentiment</h4>
+            <p><strong>{exec_summary.get('overall_guest_sentiment_trend', 'Unknown')}</strong></p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        critical_actions = exec_summary.get('immediate_actions_required', 0)
+        priority_class = 'priority-critical' if critical_actions > 0 else 'priority-high'
+        st.markdown(f"""
+        <div class="metric-card">
+            <h4>⚠️ Critical Actions</h4>
+            <p class="{priority_class}"><strong>{critical_actions} Immediate Actions Required</strong></p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Strategic Priorities
+    st.markdown("### 🎯 OSN Strategic Action Priorities")
+    
+    osn_priorities = insights_report.get('osn_strategic_priorities', [])
+    
+    if osn_priorities:
+        for i, priority in enumerate(osn_priorities[:5]):
+            priority_class = f"priority-{priority['priority'].lower()}" if priority['priority'].lower() in ['critical', 'high'] else 'metric-card'
+            
+            st.markdown(f"""
+            <div class="{priority_class}">
+                <h4>#{i+1} - {priority['priority']} Priority: {priority['theme']}</h4>
+                <p><strong>Action:</strong> {priority['action']}</p>
+                <p><strong>Business Impact:</strong> {priority['business_impact']}</p>
+                <p><strong>Timeline:</strong> {priority['timeline']}</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+def main():
+    """Main dashboard - SIMPLE AND FUNCTIONAL"""
+    
+    # Simple header
+    st.markdown("""
+    <div class="main-header">
+        <h1>📊 OSN Guest Survey Analytics - Readable & Functional</h1>
+        <p>Dark text on white background for maximum readability - graphs and dropdowns work properly</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Load data
+    processor = load_survey_data()
+    
+    if processor is None:
+        st.error("❌ Failed to load survey data. Please check the data file.")
+        return
+    
+    # Get summary statistics
+    stats = processor.get_summary_stats()
+    
+    # Simple success message
+    if stats['total_responses'] == 400 and stats['uae_responses'] == 200 and stats['ksa_responses'] == 200:
+        st.markdown("""
+        <div class="success-box">
+            ✅ <strong>Data Loaded Successfully:</strong> Exactly 400 responses (200 UAE + 200 KSA) with readable interface
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # NORMAL SIDEBAR - NO AGGRESSIVE STYLING
+    st.sidebar.markdown("### 🎛️ Filters")
+    
+    filter_options = stats['filter_options']
+    
+    # Normal dropdowns
+    selected_countries = st.sidebar.multiselect(
+        "🌍 Markets",
+        options=filter_options['countries'],
+        default=filter_options['countries'],
+        key="country_filter"
+    )
+    
+    selected_nationalities = st.sidebar.multiselect(
+        "🌍 Guest Nationalities",
+        options=filter_options['nationalities'],
+        key="nationality_filter",
+        help=f"Select from ALL {len(filter_options['nationalities'])} nationalities available"
+    )
+    
+    selected_purposes = st.sidebar.multiselect(
+        "✈️ Visit Purposes",
+        options=filter_options['visit_purposes'],
+        key="purpose_filter"
+    )
+    
+    selected_frequencies = st.sidebar.multiselect(
+        "🏨 Hotel Stay Frequency",
+        options=filter_options['hotel_frequency'],
+        key="frequency_filter"
+    )
+    
+    # Apply filters
+    filtered_data = processor.get_filtered_data(
+        country_filter=selected_countries,
+        nationality_filter=selected_nationalities,
+        purpose_filter=selected_purposes,
+        frequency_filter=selected_frequencies
+    )
+    
+    if len(filtered_data) == 0:
+        st.warning("⚠️ No data matches the selected filters. Please adjust your selection.")
+        return
+    
+    # NORMAL TABS
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+        "📊 Market Overview", 
+        "📈 Cross-Analysis", 
+        "🔤 Word Cloud",
+        "🧠 Advanced Insights",
+        "💼 Business Intelligence"
+    ])
+    
+    with tab1:
+        st.markdown("### 📊 Market Overview")
+        
+        # Simple metrics
+        col1, col2, col3, col4 = st.columns(4)
+        
+        with col1:
+            st.metric("Filtered Responses", len(filtered_data))
+            
+        with col2:
+            filtered_uae = len(filtered_data[filtered_data['Country'] == 'UAE'])
+            st.metric("UAE Responses", filtered_uae)
+            
+        with col3:
+            filtered_ksa = len(filtered_data[filtered_data['Country'] == 'KSA'])
+            st.metric("KSA Responses", filtered_ksa)
+            
+        with col4:
+            coverage = (len(filtered_data) / 400) * 100
+            st.metric("Coverage", f"{coverage:.1f}%")
+        
+        # NORMAL CHARTS - LET PLOTLY HANDLE STYLING
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            if len(filtered_data) > 0:
+                country_counts = filtered_data['Country'].value_counts()
+                fig_country = px.pie(
+                    values=country_counts.values,
+                    names=country_counts.index,
+                    title="Market Distribution",
+                    color_discrete_map={'UAE': '#27ae60', 'KSA': '#3498db'}
+                )
+                # Ensure ALL text including legends are dark and visible
+                fig_country.update_layout(
+                    plot_bgcolor='white',
+                    paper_bgcolor='white',
+                    font=dict(color='#2c3e50', size=12),
+                    title_font=dict(color='#2c3e50', size=16),
+                    legend=dict(
+                        font=dict(color='#2c3e50', size=12),
+                        bgcolor='white',
+                        bordercolor='#2c3e50',
+                        borderwidth=1
+                    )
+                )
+                fig_country.update_traces(
+                    textfont=dict(color='#2c3e50', size=12),
+                    textinfo='label+percent'
+                )
+                st.plotly_chart(fig_country, use_container_width=True)
+        
+        with col2:
+            if 'Nationality' in filtered_data.columns and len(filtered_data) > 0:
+                nat_counts = filtered_data['Nationality'].value_counts().head(10)
+                fig_nat = px.bar(
+                    x=nat_counts.values,
+                    y=nat_counts.index,
+                    orientation='h',
+                    title=f"Top Nationalities (from {len(filter_options['nationalities'])} total)",
+                    labels={'x': 'Count', 'y': 'Nationality'}
+                )
+                fig_nat.update_layout(
+                    plot_bgcolor='white',
+                    paper_bgcolor='white',
+                    font=dict(color='#2c3e50', size=12),
+                    title_font=dict(color='#2c3e50', size=16),
+                    legend=dict(
+                        font=dict(color='#2c3e50', size=12),
+                        bgcolor='white',
+                        bordercolor='#2c3e50',
+                        borderwidth=1
+                    )
+                )
+                fig_nat.update_traces(
+                    textfont=dict(color='#2c3e50', size=12)
+                )
+                st.plotly_chart(fig_nat, use_container_width=True)
+        
+        # Visit purpose analysis
+        if 'Visit Purpose' in filtered_data.columns and len(filtered_data) > 0:
+            st.markdown("### ✈️ Visit Purpose Analysis")
+            
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                purpose_counts = filtered_data['Visit Purpose'].value_counts()
+                fig_purpose = px.bar(
+                    x=purpose_counts.index,
+                    y=purpose_counts.values,
+                    title="Visit Purpose Distribution",
+                    labels={'x': 'Purpose', 'y': 'Count'},
+                    color_discrete_sequence=['#3498db', '#27ae60', '#f39c12', '#e74c3c']
+                )
+                fig_purpose.update_layout(
+                    plot_bgcolor='white',
+                    paper_bgcolor='white',
+                    font=dict(color='#2c3e50', size=12),
+                    title_font=dict(color='#2c3e50', size=16),
+                    legend=dict(
+                        font=dict(color='#2c3e50', size=12),
+                        bgcolor='white',
+                        bordercolor='#2c3e50',
+                        borderwidth=1
+                    )
+                )
+                fig_purpose.update_traces(
+                    textfont=dict(color='#2c3e50', size=12)
+                )
+                st.plotly_chart(fig_purpose, use_container_width=True)
+            
+            with col2:
+                if len(filtered_data) > 1:
+                    try:
+                        purpose_country = pd.crosstab(filtered_data['Visit Purpose'], filtered_data['Country'])
+                        fig_cross = px.bar(
+                            purpose_country,
+                            title="Purpose by Country",
+                            color_discrete_map={'UAE': '#27ae60', 'KSA': '#3498db'}
+                        )
+                        fig_cross.update_layout(
+                            plot_bgcolor='white',
+                            paper_bgcolor='white',
+                            font=dict(color='#2c3e50', size=12),
+                            title_font=dict(color='#2c3e50', size=16),
+                            legend=dict(
+                                font=dict(color='#2c3e50', size=12),
+                                bgcolor='white',
+                                bordercolor='#2c3e50',
+                                borderwidth=1
+                            )
+                        )
+                        fig_cross.update_traces(
+                            textfont=dict(color='#2c3e50', size=12)
+                        )
+                        st.plotly_chart(fig_cross, use_container_width=True)
+                    except:
+                        st.info("Cross-tabulation not available for current selection")
+    
+    with tab2:
+        st.markdown("### 📈 Cross-Analysis")
+        
+        # Build proper human-readable question options from the actual survey questions
+        response_options = stats.get('response_options', {})
+        question_mapping_dict = processor.question_mapping if hasattr(processor, 'question_mapping') else {}
+        
+        # Create dropdown options using actual survey questions, not column names
+        proper_questions = []
+        question_lookup = {}  # Maps display name back to column name
+        
+        # Add the main survey questions with response options
+        question_definitions = {
+            'A1': ('Nationality', 'Nationality'),
+            'A2': ('What was the primary purpose of your visit?', 'Visit Purpose'),
+            'A3': ('How many times have you stayed in a hotel over the past year?', 'Hotel Stays Per Year'),
+            'B1-A': ('What were your top 3 reasons for choosing this hotel?', 'Hotel Choice Reason 1'),
+            'B1-B': ('Would you prioritize entertainment more if traveling with children?', 'Entertainment Priority with Family'),
+            'B2-A': ('How important is in-room entertainment in shaping your hotel experience?', 'Entertainment Importance Rating'),
+            'C1': ('Did you use the in-room TV or entertainment system during your stay?', 'Used In-Room Entertainment'),
+            'C2-A': ('What type of content did you watch?', 'C2-A/1'),  # Use first sub-column
+            'D1': ('Do you currently subscribe to any streaming platforms?', 'D1/1'),  # Use first sub-column
+            'D2': ('Would you prefer access to your own streaming accounts in hotel?', 'Streaming Account Preference'),
+            'D3': ('Would you be willing to pay for enhanced in-room entertainment?', 'Willingness to Pay for Enhancement'),
+            'D4': ('What price range per day would be acceptable?', 'Acceptable Price Range')
+        }
+        
+        # Build the dropdown options from questions that have response options
+        for code, options in response_options.items():
+            if code in question_definitions:
+                question_text, column_name = question_definitions[code]
+                # Show available response options in the dropdown
+                option_preview = f" ({', '.join(options[:2])}{'...' if len(options) > 2 else ''})"
+                display_name = f"📋 {question_text}{option_preview}"
+                proper_questions.append(display_name)
+                question_lookup[display_name] = column_name
+        
+        if len(proper_questions) >= 2:
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                question1_display = st.selectbox(
+                    "🎯 Select First Question",
+                    options=proper_questions,
+                    key="crosstab_q1"
+                )
+                question1 = question_lookup.get(question1_display, question1_display)
+            
+            with col2:
+                available_q2 = [q for q in proper_questions if q != question1_display]
+                question2_display = st.selectbox(
+                    "🎯 Select Second Question", 
+                    options=available_q2,
+                    key="crosstab_q2"
+                )
+                question2 = question_lookup.get(question2_display, question2_display)
+            
+            if st.button("🔍 Generate Analysis", type="primary", key="generate_cross_analysis"):
+                with st.spinner("Analyzing..."):
+                    
+                    crosstab_filters = {
+                        'countries': selected_countries,
+                        'nationalities': selected_nationalities,
+                        'purposes': selected_purposes,
+                        'frequency': selected_frequencies
+                    }
+                    
+                    result = processor.get_cross_tabulation(question1, question2, crosstab_filters)
+                    
+                    if result and result['combinations']:
+                        st.success(f"✅ Analysis completed: {result['total_responses']} responses")
+                        
+                        # Display the actual question text, not column names
+                        q1_text = question1_display.replace("📋 ", "").split(" (")[0]
+                        q2_text = question2_display.replace("📋 ", "").split(" (")[0]
+                        
+                        st.markdown(f"""
+                        <div class="metric-card">
+                            <h4>📊 Cross-Analysis Results</h4>
+                            <p><strong>Question 1:</strong> {q1_text}</p>
+                            <p><strong>Question 2:</strong> {q2_text}</p>
+                            <p><strong>Sample Size:</strong> {result['total_responses']} responses</p>
+                        </div>
+                        """, unsafe_allow_html=True)
+                        
+                        # Simple results display
+                        st.markdown("#### 🎯 Top Combinations")
+                        
+                        for i, combo in enumerate(result['combinations'][:5], 1):
+                            st.markdown(f"""
+                            <div class="metric-card">
+                                <h4>#{i} - {combo['count']} responses ({combo['percentage']}%)</h4>
+                                <p><strong>Answer 1:</strong> {combo['question1_value']}</p>
+                                <p><strong>Answer 2:</strong> {combo['question2_value']}</p>
+                            </div>
+                            """, unsafe_allow_html=True)
+        
+        else:
+            st.warning("⚠️ Need at least 2 questions with response options for cross-analysis")
+            
+        # Show available survey questions for reference
+        if response_options:
+            with st.expander("📋 View All Survey Questions & Response Options", expanded=False):
+                st.markdown("### Survey Questions Available for Analysis")
+                for code, options in response_options.items():
+                    if code in question_definitions:
+                        question_text = question_definitions[code][0]
+                        st.markdown(f"**{question_text}** ({code})")
+                        for i, option in enumerate(options, 1):
+                            st.write(f"   {i}. {option}")
+                        st.markdown("---")
+    
+    with tab3:
+        st.markdown("### 🔤 Word Cloud Analysis")
+        
+        wordcloud_analyzer = OSNWordCloudAnalyzer()
+        text_questions = stats['text_questions']
+        
+        if text_questions:
+            # Check which text questions have data for current filters
+            text_filters = {
+                'countries': selected_countries,
+                'nationalities': selected_nationalities,
+                'purposes': selected_purposes,
+                'frequency': selected_frequencies
+            }
+            
+            # Build list of questions with available data
+            questions_with_data = []
+            question_data_counts = {}
+            
+            for question in text_questions:
+                responses = processor.get_text_responses_for_wordcloud(question, text_filters)
+                response_count = len(responses) if responses else 0
+                question_data_counts[question] = response_count
+                if response_count > 0:
+                    questions_with_data.append(f"{question} ({response_count} responses)")
+            
+            if questions_with_data:
+                st.markdown(f"📝 **{len(questions_with_data)} Text Questions with Current Filter Data:**")
+                
+                selected_text_question_display = st.selectbox(
+                    "🎯 Select Question for Word Cloud Analysis",
+                    options=questions_with_data,
+                    key="wordcloud_question"
+                )
+                
+                # Extract the actual question name from the display
+                selected_text_question = selected_text_question_display.split(" (")[0]
+                response_count = question_data_counts.get(selected_text_question, 0)
+                
+                st.info(f"💡 **Selected:** {selected_text_question} - {response_count} text responses available with current filters")
+            else:
+                st.warning("⚠️ No text responses available with current filter selection")
+                st.markdown("**💡 Suggestions:**")
+                st.write("• Try removing some filters to see more data")
+                st.write("• Business travelers may have fewer text responses than leisure travelers")
+                st.write("• Some questions like 'Entertainment Experience Story' typically have more responses")
+                
+                # Show all questions with their data counts
+                st.markdown("**📊 Data availability by question (all filters):**")
+                for question in text_questions:
+                    all_responses = processor.get_text_responses_for_wordcloud(question, None)
+                    count = len(all_responses) if all_responses else 0
+                    st.write(f"   • {question}: {count} total responses")
+                
+                # Continue to show the rest of the UI even if no word cloud data available
+                selected_text_question = None
+            
+            if selected_text_question and st.button("🚀 Generate Word Cloud", type="primary", key="generate_word_cloud"):
+                with st.spinner("Analyzing text..."):
+                    
+                    text_filters = {
+                        'countries': selected_countries,
+                        'nationalities': selected_nationalities,
+                        'purposes': selected_purposes,
+                        'frequency': selected_frequencies
+                    }
+                    
+                    text_responses = processor.get_text_responses_for_wordcloud(
+                        selected_text_question, 
+                        text_filters
+                    )
+                    
+                    if text_responses:
+                        st.success(f"✅ Analyzing {len(text_responses)} responses")
+                        
+                        # Show sample responses for context
+                        st.markdown("#### 📝 Sample Responses")
+                        sample_responses = text_responses[:3]
+                        for i, response in enumerate(sample_responses, 1):
+                            st.write(f"{i}. _{response[:100]}{'...' if len(response) > 100 else ''}_")
+                        
+                        if len(text_responses) > 3:
+                            st.write(f"... and {len(text_responses) - 3} more responses")
+                        
+                        wordcloud_results = wordcloud_analyzer.generate_wordcloud_data(
+                            text_responses,
+                            max_words=50,
+                            osn_focus=True
+                        )
+                        
+                        if wordcloud_results and wordcloud_results['word_frequency']:
+                            # Create word cloud visualization using word frequency data
+                            wordcloud_fig = create_wordcloud_visualization(
+                                wordcloud_results,
+                                title=f"Word Cloud: {selected_text_question[:30]}..."
+                            )
+                            
+                            if wordcloud_fig:
+                                st.markdown("""
+                                <div class="wordcloud-container">
+                                    <h4>🎨 Word Cloud Visualization</h4>
+                                </div>
+                                """, unsafe_allow_html=True)
+                                st.plotly_chart(wordcloud_fig, use_container_width=True)
+                                
+                                # Show categorized insights
+                                if wordcloud_results['categorized']:
+                                    st.markdown("#### 📊 Word Categories")
+                                    col1, col2 = st.columns(2)
+                                    
+                                    categories = wordcloud_results['categorized']
+                                    cat_items = list(categories.items())
+                                    
+                                    with col1:
+                                        for i, (theme, words) in enumerate(cat_items[:len(cat_items)//2]):
+                                            if words:
+                                                st.markdown(f"**🎯 {theme.title()}**")
+                                                for word, freq in list(words.items())[:3]:
+                                                    st.write(f"   • {word} ({freq})")
+                                    
+                                    with col2:
+                                        for i, (theme, words) in enumerate(cat_items[len(cat_items)//2:]):
+                                            if words:
+                                                st.markdown(f"**🎯 {theme.title()}**")
+                                                for word, freq in list(words.items())[:3]:
+                                                    st.write(f"   • {word} ({freq})")
+                                
+                                # Show OSN insights
+                                if wordcloud_results['osn_insights']:
+                                    st.markdown("#### 💡 OSN Strategic Insights")
+                                    st.markdown(wordcloud_results['osn_insights'])
+                        else:
+                            st.warning("No significant words found for visualization")
+    
+    with tab4:
+        st.markdown("### 🧠 Advanced Text Insights")
+        
+        insights_analyzer = AdvancedTextInsightsAnalyzer()
+        text_questions = stats['text_questions']
+        
+        # Show current filter status
+        filter_info = []
+        if selected_countries:
+            filter_info.append(f"Countries: {', '.join(selected_countries)}")
+        if selected_nationalities:
+            filter_info.append(f"Nationalities: {', '.join(selected_nationalities[:3])}{'...' if len(selected_nationalities) > 3 else ''}")
+        if selected_purposes:
+            filter_info.append(f"Purposes: {', '.join(selected_purposes)}")
+        if selected_frequencies:
+            filter_info.append(f"Hotel Frequency: {', '.join(selected_frequencies)}")
+        
+        if filter_info:
+            st.markdown(f"**🔍 Current Analysis Scope:** {' | '.join(filter_info)}")
+            st.markdown(f"**📊 Filtered Dataset:** {len(filtered_data)} responses (from 400 total)")
+        else:
+            st.markdown(f"**📊 Analysis Scope:** All 400 responses (no filters applied)")
+        
+        if text_questions and len(filtered_data) > 10:
+            
+            # Show what will be analyzed
+            st.markdown(f"**🔤 Text Questions to Analyze:** {len(text_questions)} questions")
+            with st.expander("📋 View Text Questions", expanded=False):
+                for i, q in enumerate(text_questions, 1):
+                    st.write(f"{i}. {q}")
+            
+            if st.button("🔍 Generate Dynamic Advanced Insights", type="primary", key="generate_advanced_insights"):
+                with st.spinner("Analyzing guest response meanings based on your filters..."):
+                    
+                    insights_report = insights_analyzer.generate_comprehensive_insights_report(
+                        filtered_data, 
+                        text_questions
+                    )
+                    
+                    if insights_report and 'error' not in insights_report:
+                        st.success(f"✅ Dynamic Analysis Complete!")
+                        st.markdown(f"""
+                        <div class="metric-card">
+                            <h4>📊 Analysis Summary</h4>
+                            <p><strong>Responses Analyzed:</strong> {insights_report.get('total_responses_analyzed', 0)}</p>
+                            <p><strong>Filter Impact:</strong> Analysis customized to your selected criteria</p>
+                            <p><strong>Insight Scope:</strong> {len(text_questions)} text question categories</p>
+                        </div>
+                        """, unsafe_allow_html=True)
+                        
+                        display_advanced_insights(insights_report)
+                        
+                    else:
+                        st.warning("⚠️ Could not generate insights. Try adjusting filters or check data availability.")
+        
+        else:
+            if len(filtered_data) <= 10:
+                st.info(f"💡 Need at least 10 responses for advanced insights analysis. Current filters result in {len(filtered_data)} responses.")
+                st.markdown("**💡 Try:** Removing some filters to increase the sample size")
+            else:
+                st.info("💡 No text questions available for advanced analysis.")
+    
+    with tab5:
+        st.markdown("### 💼 Business Intelligence")
+        
+        business_insights = processor.generate_insights(filtered_data, "strategic")
+        
+        st.markdown(f"""
+        <div class="insight-box">
+            <h4>💡 Strategic OSN Insights</h4>
+            {business_insights.replace(chr(10), '<br>')}
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Additional charts if enough data
+        if len(filtered_data) > 50:
+            st.markdown("#### 📈 Satisfaction Analysis")
+            
+            if 'Entertainment Quality Rating' in filtered_data.columns:
+                rating_dist = filtered_data['Entertainment Quality Rating'].value_counts().sort_index()
+                fig_ratings = px.bar(
+                    x=rating_dist.index,
+                    y=rating_dist.values,
+                    title="Entertainment Satisfaction",
+                    labels={'x': 'Rating', 'y': 'Count'},
+                    color_discrete_sequence=['#e74c3c', '#f39c12', '#f1c40f', '#2ecc71', '#27ae60']
+                )
+                fig_ratings.update_layout(
+                    plot_bgcolor='white',
+                    paper_bgcolor='white',
+                    font=dict(color='#2c3e50', size=12),
+                    title_font=dict(color='#2c3e50', size=16),
+                    legend=dict(
+                        font=dict(color='#2c3e50', size=12),
+                        bgcolor='white',
+                        bordercolor='#2c3e50',
+                        borderwidth=1
+                    )
+                )
+                fig_ratings.update_traces(
+                    textfont=dict(color='#2c3e50', size=12)
+                )
+                st.plotly_chart(fig_ratings, use_container_width=True)
+
+if __name__ == "__main__":
+    main()
